@@ -27,7 +27,7 @@ const slack_oauth = process.env.SLACK_OAUTH;
   });
 
   // listener that handles incoming messages
-  slackController.hears(['.*'], ['message_received', 'direct_message', 'direct_mention'], (bot, message) => {
+  slackController.hears(['.*'], ['mention', 'direct_message', 'direct_mention'], (bot, message) => {
     console.log('Slack message received');
     slackController.log('Slack message received');
     bot.reply(message, 'I have received your message');
