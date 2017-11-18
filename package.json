@@ -1,0 +1,27 @@
+{
+  "name": "but-devvy-said",
+  "version": "1.0.0",
+  "description": "A super awesome bot that will query the all-knowing database of Nigel (and maybe external resources).",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nitharios/but-devvy-said.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nitharios/but-devvy-said/issues"
+  },
+  "homepage": "https://github.com/Nitharios/but-devvy-said#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "sequelize": "^4.22.7"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^3.0.0"
+  }
+}
