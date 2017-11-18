@@ -2,7 +2,7 @@
   "name": "but-devvy-said",
   "version": "1.0.0",
   "description": "A super awesome bot that will query the all-knowing database of Nigel (and maybe external resources).",
-  "main": "server.js",
+  "main": "server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
