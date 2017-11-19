@@ -15,7 +15,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "nigel": "nodemon ./server/server.js",
+    "devvy": "nodemon ./chatbot/chatbot.js"
   },
   "repository": {
     "type": "git",
