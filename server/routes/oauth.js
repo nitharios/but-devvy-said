@@ -25,5 +25,5 @@ module.exports = (req,res) => {
       debug('OH MY! Login has had some troubles :(', err);
       // return res.redirect('/login_error.html'); // < ---- does not exist yet
     }
-  })
+  });
 };// end of handler
