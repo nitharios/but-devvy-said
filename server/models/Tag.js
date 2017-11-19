@@ -9,9 +9,9 @@ module.exports = function (sequelize, DataTypes) {
   );
 
   Tag.associate = function (models) {
-    Tag.belongsTo(models.Topic, {
-      foreignKey : 'topic_id',
-      as: 'topic'
+    Tag.hasMany(models.Resource, {
+      foreignKey : 'resource_id',
+      as: 'Resource'
     })
   }
 

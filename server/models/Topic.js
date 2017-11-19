@@ -7,13 +7,9 @@ module.exports = function (sequelize, DataTypes) {
   );
 
   Topic.associate = function (models) {
-    Topic.hasMany(models.Link, {
+    Topic.hasMany(models.Resource, {
       foreignKey : 'link_id',
       as : 'Link'
-    });
-    Topic.hasMany(mode.sTag, {
-      foreignKey : 'tag_id',
-      as : 'Tag'
     });
   }
 
