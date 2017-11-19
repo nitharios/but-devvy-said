@@ -2,6 +2,7 @@ const { Wit, log } = require('node-wit');
 const MIN_CONFIDENCE = 0.75;
 
 module.exports = function(token) {
+  
   if (!token) {
     throw new Error ('Pleare provide a Wit token!');
   }
@@ -10,7 +11,7 @@ module.exports = function(token) {
   const client = new Wit({
     // pass Wit a valid token
     accessToken : token,
-    logger : new log.Logger(log.DEBUG) // optional
+    // logger : new log.Logger(log.DEBUG) // optional
   });
 
   return {
@@ -19,33 +20,42 @@ module.exports = function(token) {
   };
 
   function receive(bot, message, next) {
+    // console.log(message.type);
     // necessary so Wit only recieves TEXT
     // otherwise, Wit would receive EVERYTHING
-    if (message.text) {
+    if (message.text && message.type !== 'self_message') {
       // sends the received message to Wit
-      client.message(message.text, {})
+      client.message(message.text)
       .then(data => {
-        // } else if (message.attachments) {
-        //   message.intents = [];
-        //   next();
-        // }
-        message.data = data;
-        return next();
+        message.entities = data.entities;
+        message.intent = data.entities.intent;
+        next();
       })
       .catch(err => {
-        console.log('ERROR');
-        throw new Error (err);
+        console.log('error', err);
+        next();
       });
-    }
 
-    next();
+    } else {
+      next();
+
+    }
   }
 
-  function hears(tests, message) {
-    if (tests && message.entities && message.entities.intent) {
+  function hears(patterns, message) {
+    // patterns is the first argument of controller.hears
+
+    // check for a pattern that wants everything
+    if (patterns.includes('.*')) return true;
+
+    if (patterns && message.entities && message.entities.intent) {
       return message.entities.intent.some(intent => {
-        return tests.some(test => {
-          if (intent.value === test && intent.confidence >= MIN_CONFIDENCE) {
+        console.log(intent);
+        
+        return patterns.some(pattern => {
+          console.log(pattern);
+          
+          if (intent.value === pattern && intent.confidence >= MIN_CONFIDENCE) {
             return true;
           }
         });

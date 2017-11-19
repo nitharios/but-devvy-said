@@ -4,9 +4,7 @@ const dotenv = require('dotenv');
 dotenv.load();
 const SLACK_TOKEN = process.env.SLACK_TOKEN || '';
 const WIT_TOKEN = process.env.WIT_TOKEN;
-const wit = require('./lib/wit.middleware')({
-  token : WIT_TOKEN
-});
+const wit = require('./lib/wit.middleware')(WIT_TOKEN);
 // module.exports = function DevvyCho(SLACK_TOKEN) {
   // initialize
   const slackController = Botkit.slackbot({
@@ -27,14 +25,11 @@ const wit = require('./lib/wit.middleware')({
     slackController.log('Slack connection established');
   });
 
-  // slackController.middleware.receive.use(wit.receive);
+  slackController.middleware.receive.use(wit.receive);
 
   // listener that handles incoming messages
-  slackController.hears(['.*'], ['mention', 'direct_message', 'direct_mention'], (bot, message) => {
+  slackController.hears(['.*'], ['mention', 'direct_message', 'direct_mention'], wit.hears, (bot, message) => {
     slackController.log('Slack message received');
-
-    // console.log(message.entities);
-    // console.log(message.entities.intent);
     
     bot.reply(message, 'I have received your message');
   });
