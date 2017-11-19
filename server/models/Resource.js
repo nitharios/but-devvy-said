@@ -5,7 +5,10 @@ module.exports = function (sequelize, DataTypes) {
   const Resource = sequelize.define('Resource', {
     title : {type : DataTypes.STRING, allowNull : false},
     url : {type : DataTypes.STRING, allowNull : true},
-    body : {type : DataTypes.TEXT, allowNull : false}
+    description : {type : DataTypes.TEXT, allowNull : false},
+    body : {type : DataTypes.TEXT, allowNull : false},
+    student : {type : DataTypes.STRING, allowNull : true},
+    teacher : {type : DataTypes.STRING, allowNull : true}
   },
     {tableName : 'resources', timestamps : false}
   );

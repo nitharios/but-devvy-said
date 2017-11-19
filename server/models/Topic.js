@@ -1,7 +1,7 @@
 module.exports = function (sequelize, DataTypes) {
 
   const Topic = sequelize.define('Topic', {
-    title : {type : DataTypes.STRING, allowNull : false}
+    name : {type : DataTypes.STRING, allowNull : false}
   },
     {tableName : 'topics', timestamps : false}
   );
