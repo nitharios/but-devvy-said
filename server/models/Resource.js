@@ -1,6 +1,7 @@
 /*This can be a link to a video, tutorial, or StackOverflow Q&A. It can also be a code or text snippet from a DevLeague student.*/
 
 module.exports = function (sequelize, DataTypes) {
+  
   const Resource = sequelize.define('Resource', {
     url : {
       type : DataTypes.STRING, 
@@ -19,7 +20,6 @@ module.exports = function (sequelize, DataTypes) {
       }
     ]
   });
-
 
   Resource.associate = function(models) {
     Resource.belongsTo(models.Topic, {
