@@ -1,4 +1,3 @@
-// THIS IS DEVVY!!
 
 const Botkit = require('botkit');
 const dotenv = require('dotenv');
