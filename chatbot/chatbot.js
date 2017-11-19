@@ -32,9 +32,8 @@ module.exports = (function DevvyCho() {
 
   // listener that handles incoming messages
   slackController.hears(['.*'], ['mention', 'direct_message', 'direct_mention'], wit.hears, (bot, message) => {
-
-
     slackController.log('Slack message received');
+
     bot.reply(message, 'I have received your message');
   });
 
