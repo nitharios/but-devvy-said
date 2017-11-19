@@ -30,7 +30,12 @@ const wit = require('./lib/wit.middleware')(WIT_TOKEN);
   // listener that handles incoming messages
   slackController.hears(['.*'], ['mention', 'direct_message', 'direct_mention'], wit.hears, (bot, message) => {
     slackController.log('Slack message received');
-    
+    // entities: intent
+    console.log(message.entities);
+    // [ { confidence: ####, value: 'string' } ]
+    console.log(message.intent);
+
+    console.log(message);
     bot.reply(message, 'I have received your message');
   });
 // };

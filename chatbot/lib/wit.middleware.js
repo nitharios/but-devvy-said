@@ -27,8 +27,8 @@ module.exports = function(token) {
       // sends the received message to Wit
       client.message(message.text)
       .then(data => {
-        message.entities = data.entities;
-        message.intent = data.entities.intent;
+        message.entities = data.entities || {};
+        message.intent = data.entities.intent || '';
         next();
       })
       .catch(err => {
