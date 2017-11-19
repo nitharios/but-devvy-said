@@ -23,7 +23,7 @@ module.exports = (req,res) => {
   slackapi.api.oauth.accsess(opts, (err, auth) =>{
     if(err){
       debug('OH MY! Login has had some troubles :(', err);
-      return res.redirect('/login_error.html'); // < ---- does not exist yet
+      // return res.redirect('/login_error.html'); // < ---- does not exist yet
     }
   })
 }// end of handler
