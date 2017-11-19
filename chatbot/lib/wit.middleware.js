@@ -28,7 +28,7 @@ module.exports = function(token) {
       client.message(message.text)
       .then(data => {
         message.entities = data.entities || null;
-        message.intent = data.entities.intent || null;
+        message.db_query = data.entities.db_query || null;
         next();
       })
       .catch(err => {
@@ -48,13 +48,9 @@ module.exports = function(token) {
     // check for a pattern that wants everything
     if (patterns.includes('.*')) return true;
 
-    if (patterns && message.entities && message.entities.intent) {
+    if (patterns && message.entities && message.entities.db_query) {
       return message.entities.intent.some(intent => {
-        console.log(intent);
-        
-        return patterns.some(pattern => {
-          console.log(pattern);
-          
+        return patterns.some(pattern => {          
           if (intent.value === pattern && intent.confidence >= MIN_CONFIDENCE) {
             return true;
           }
