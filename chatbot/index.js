@@ -1,6 +1,10 @@
 const Botkit = require('botkit');
+const dotenv = require('dotenv');
+dotenv.load();
 
-module.exports = function DevvyCho(SLACK_TOKEN) {
+const SLACK_TOKEN = process.env.SLACK_TOKEN || '';
+
+// module.exports = function DevvyCho(SLACK_TOKEN) {
   // initialize
   const slackController = Botkit.slackbot({
     // wait for a confirmation event for each outgoing message before continuing to the next message in a conversation
@@ -26,8 +30,7 @@ module.exports = function DevvyCho(SLACK_TOKEN) {
     console.log('Slack message received');
     slackController.log('Slack message received');
     bot.reply(message, 'I have received your message');
-    
   });
-};
+// };
 
 // module.exports = slackController;
