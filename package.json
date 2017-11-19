@@ -8,6 +8,7 @@
     "botkit": "^0.6.7",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
+    "node-wit": "^4.3.0",
     "pg": "^7.4.0",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.22.7",
@@ -15,7 +16,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "nigel": "nodemon ./server/server.js",
+    "devvy": "nodemon ./chatbot/chatbot.js"
   },
   "repository": {
     "type": "git",
