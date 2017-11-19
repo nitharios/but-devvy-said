@@ -7,7 +7,8 @@ module.exports = function (sequelize, DataTypes) {
     }
   },
   {
-    tableName : 'topics'
+    tableName : 'topics',
+    timestamps : false
   }, 
   {
     indexes : [
