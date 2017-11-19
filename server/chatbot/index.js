@@ -1,11 +1,6 @@
 const Botkit = require('botkit');
 
-const slack_token = process.env.SLACK_TOKEN;
-const slack_oauth = process.env.SLACK_OAUTH;
-
-// module.exports = function DevvyCho() {
-  console.log("HERE");
-  
+module.exports = function DevvyCho(SLACK_TOKEN) {
   // initialize
   const slackController = Botkit.slackbot({
     // wait for a confirmation event for each outgoing message before continuing to the next message in a conversation
@@ -13,7 +8,7 @@ const slack_oauth = process.env.SLACK_OAUTH;
   });
 
   const slackBot = slackController.spawn({
-    token : slack_token
+    token : SLACK_TOKEN
   });
 
   // create RTM connection
@@ -31,8 +26,8 @@ const slack_oauth = process.env.SLACK_OAUTH;
     console.log('Slack message received');
     slackController.log('Slack message received');
     bot.reply(message, 'I have received your message');
+    
   });
-
-// };
+};
 
 // module.exports = slackController;
