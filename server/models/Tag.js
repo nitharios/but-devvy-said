@@ -8,7 +8,8 @@ module.exports = function (sequelize, DataTypes) {
     }
   },
   {
-    tableName : 'tags'
+    tableName : 'tags',
+    timestamps : false
   },
   {
     indexes : [
@@ -22,7 +23,7 @@ module.exports = function (sequelize, DataTypes) {
 
   Tag.associate = function (models) {
     Tag.belongsToMany(models.Resource, {
-      through : 'tags', 
+      through : 'resource_tags', 
       foreignKey : 'tag_id',
       onDelete : 'CASCADE'
     });
