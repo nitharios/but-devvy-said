@@ -23,22 +23,25 @@ module.exports = function(token) {
     // otherwise, Wit would receive EVERYTHING
     if (message.text) {
       // sends the received message to Wit
-      client.message(message.text, (error, data) => {
-        if (error) {
-          next(error);
+      client.message(message.text, {})
+      .then(data => {
         // } else if (message.attachments) {
         //   message.intents = [];
         //   next();
         // }
-        }   
+        message.data = data;
+        return next();
+      })
+      .catch(err => {
+        console.log('ERROR');
+        throw new Error (err);
       });
+    }
 
     next();
-
-    }
   }
 
-  function hears(tests, messages) {
+  function hears(tests, message) {
     if (tests && message.entities && message.entities.intent) {
       return message.entities.intent.some(intent => {
         return tests.some(test => {
