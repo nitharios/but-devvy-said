@@ -3,9 +3,11 @@
 module.exports = function (sequelize, DataTypes) {
 
   const Resource = sequelize.define('Resource', {
-    type : {type : DataTypes.STRING, allowNull : false}
+    title : {type : DataTypes.STRING, allowNull : false},
+    url : {type : DataTypes.STRING, allowNull : true},
+    body : {type : DataTypes.TEXT, allowNull : false}
   },
-    {tableName : 'links', timestamps : false}
+    {tableName : 'resources', timestamps : false}
   );
 
   Resource.associate = function (models) {
@@ -13,7 +15,7 @@ module.exports = function (sequelize, DataTypes) {
       foreignKey : 'topic_id',
       as: 'Topic'
     });
-    Resource.hasMany(models.Tag, {
+    Resource.belongsToMany(models.Tag, {
       foreignKey : 'tag_id',
       as : 'Tag'
     });

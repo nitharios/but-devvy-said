@@ -3,7 +3,8 @@ const Botkit = require('botkit');
 const slack_token = process.env.SLACK_TOKEN;
 const slack_oauth = process.env.SLACK_OAUTH;
 
-// module.exports = function DevvyCho() {
+module.exports = function DevvyCho() {
+
   console.log("HERE");
   
   // initialize
@@ -27,12 +28,14 @@ const slack_oauth = process.env.SLACK_OAUTH;
   });
 
   // listener that handles incoming messages
-  slackController.hears(['.*'], ['mention', 'direct_message', 'direct_mention'], (bot, message) => {
+  slackController.hears(['.*'], ['message_received', 'direct_message', 'direct_mention'], (bot, message) => {
     console.log('Slack message received');
     slackController.log('Slack message received');
     bot.reply(message, 'I have received your message');
   });
 
-// };
+};
+
+
 
 // module.exports = slackController;
