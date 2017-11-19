@@ -9,10 +9,7 @@ module.exports = function (sequelize, DataTypes) {
   );
 
   Tag.associate = function (models) {
-    Tag.belongsToMany(models.Resource, {
-      foreignKey : 'resource_id',
-      as: 'Resource'
-    })
+    Tag.belongsToMany(models.Resource, {through : 'tags', foreignKey : 'tag_id'});
   }
 
   return Tag;

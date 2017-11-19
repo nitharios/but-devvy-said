@@ -18,10 +18,7 @@ module.exports = function (sequelize, DataTypes) {
       foreignKey : 'topic_id',
       as: 'Topic'
     });
-    Resource.belongsToMany(models.Tag, {
-      foreignKey : 'tag_id',
-      as : 'Tag'
-    });
+    Resource.belongsToMany(models.Tag, {through : 'tags', foreignKey : 'tag_id'});
   }
 
   return Resource;
