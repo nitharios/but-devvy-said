@@ -1,6 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-// const db = require('./models');
+
+/*const routes = require('./routes/index');*/
+
+
+const db = require('./models');
 const DevvyCho = require('./chatbot');
 const dotenv = require('dotenv');
 // load env variables
@@ -15,9 +19,7 @@ app.use(express.static(__dirname + '..' + '/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : true }));
 
-// connects Devvy to slack
-DevvyCho(SLACK_TOKEN);
-
 app.listen(PORT, () => {
+  db.sequelize.sync({ force: false });
   console.log(`Server listening on port: ${PORT}`);
 });
