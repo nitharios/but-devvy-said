@@ -19,6 +19,7 @@
   },
   "devDependencies": {},
   "scripts": {
+    "start": "node server/server.js",
     "nigel": "nodemon ./server/server.js",
     "devvy": "nodemon ./chatbot/chatbot.js"
   },
