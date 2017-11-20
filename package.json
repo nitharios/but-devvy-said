@@ -11,6 +11,9 @@
     "node-wit": "^4.3.0",
     "pg": "^7.4.0",
     "pg-hstore": "^2.3.2",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-scripts": "1.0.17",
     "sequelize": "^4.22.7",
     "sequelize-cli": "^3.0.0"
   },
