@@ -11,12 +11,18 @@
     "node-wit": "^4.3.0",
     "pg": "^7.4.0",
     "pg-hstore": "^2.3.2",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-scripts": "1.0.17",
     "sequelize": "^4.22.7",
     "sequelize-cli": "^3.0.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
     "nigel": "nodemon ./server/server.js",
     "devvy": "nodemon ./chatbot/chatbot.js"
   },
@@ -29,5 +35,6 @@
   "bugs": {
     "url": "https://github.com/Nitharios/but-devvy-said/issues"
   },
-  "homepage": "https://github.com/Nitharios/but-devvy-said#readme"
+  "homepage": "https://github.com/Nitharios/but-devvy-said#readme",
+  "proxy": "http://localhost:8000"
 }
