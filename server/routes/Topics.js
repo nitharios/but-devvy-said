@@ -20,14 +20,14 @@ router.route('/')
   })
   .catch(err => {
     console.log('ERROR', err);
-    return res.json(response.error);
+    return res.json(error);
   });
 })
 .post((req, res) => {
   const { name, topic_id } = req.body;
 
   if (!name || !topic_id) {
-    return res.json((response.missing_key));
+    return res.json((missing_key));
   }
 
   return Topic.findOne({
@@ -35,7 +35,7 @@ router.route('/')
   })
   .then(response => {
     if (response) {
-      return res.json(response.already_exists);
+      return res.json(already_exists);
     
     } else {
       return Topic.create({
@@ -58,7 +58,7 @@ router.route('/:topic_name')
   const { topic_name } = req.params;
 
   if (!topic_name) {
-    return(response.missing_key);
+    return(missing_key);
   }
 
   return Topic.findOne({
@@ -95,7 +95,7 @@ router.route('/:topic_name')
   })
   .catch(err => {
     console.log(err);
-    return res.json(response.error);
+    return res.json(error);
   });
 });
 
