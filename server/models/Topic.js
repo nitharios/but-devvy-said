@@ -22,7 +22,7 @@ module.exports = function (sequelize, DataTypes) {
 
   Topic.associate = function(models) {
     Topic.hasMany(models.Resource, {
-      foreignKey : 'resource_id',
+      foreignKey : 'topic_id',
     });
   };
 

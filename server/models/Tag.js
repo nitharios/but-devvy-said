@@ -1,6 +1,7 @@
 /*THIS IS A STRETCH GOAL*/
 
 module.exports = function (sequelize, DataTypes) {
+  
   const Tag = sequelize.define('Tag', {
     name : {
       type : DataTypes.STRING, 
