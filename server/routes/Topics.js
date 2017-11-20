@@ -1,8 +1,7 @@
 const express = require('express');
-const db = require('../models');
-const Resource = db.Resource;
-const Topic = db.Topic;
-
+const { Resource,
+        Topic
+      } = require('../models');
 const { already_exists,
         error, 
         missing_key 
@@ -13,9 +12,7 @@ const router = express.Router();
 router.route('/')
 .get((req, res) => {
   return Topic.findAll({
-    include : [
-      { model : Resource }
-    ],
+    include : [{ model : Resource }],
     order : [[ 'name' ]]
   })
   .then(topicsList => {
@@ -34,9 +31,7 @@ router.route('/')
   }
 
   return Topic.findOne({
-    where : {
-      name : name.toLowerCase()
-    }
+    where : { name : name.toLowerCase() }
   })
   .then(response => {
     if (response) {
@@ -67,12 +62,8 @@ router.route('/:topic_name')
   }
 
   return Topic.findOne({
-    where : {
-      name : topic_name
-    },
-    include : [
-     { model : Resource }
-    ]
+    where : { name : topic_name },
+    include : [{ model : Resource }]
   })
   .then(singleTopic => {
     return res.json(singleTopic);
@@ -89,18 +80,14 @@ router.route('/:topic_name')
   return Topic.update({
     name : updatedTopicName
   },
-  {
-    where : {
-      id : id
-    }
+  { 
+    where : { id : id }
   })
   .then(updatedTopic => {
     console.log('update successful');
     
     return updatedTopic.reload({
-      include : [
-        { model : Resource }
-      ]
+      include : [{ model : Resource }]
     })
     .then(updatedTopicDetails => {
       return res.json(updatedTopicDetails);
