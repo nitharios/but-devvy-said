@@ -1,5 +1,5 @@
 const { Wit, log } = require('node-wit');
-const MIN_CONFIDENCE = 0.75;
+const MIN_CONFIDENCE = 0.50;
 
 module.exports = function(token) {
   
@@ -19,27 +19,25 @@ module.exports = function(token) {
     hears : hears    
   };
 
-  function receive(bot, message, next) {
-    // console.log(message.type);
+  function receive(bot, message, next) {    
     // necessary so Wit only recieves TEXT
     // otherwise, Wit would receive EVERYTHING
     if (message.text && message.type !== 'self_message') {
       // sends the received message to Wit
       client.message(message.text)
       .then(data => {
-        message.entities = data.entities || null;
-        message.intent = data.entities.intent || null;
-        next();
+        if (data.entities !== {}) {
+          message.entities = data.entities;
+          message.db_query = data.entities.db_query;
+        }
       })
       .catch(err => {
-        console.log('error', err);
-        next();
+        console.log('wit error', err);
+        message.error = true;
       });
-
-    } else {
-      next();
-
     }
+
+    next();
   }
 
   function hears(patterns, message) {
