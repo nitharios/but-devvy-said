@@ -1,8 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React, { Component } from 'react';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+// import { connect } from 'react-redux';
+
+
+
+class App extends Component {
+  componentDidMount(){
+
+  }
+} 
+
+render(){
+  return(
+    <div id='app'>
+      <h3>this is the new devvy page </h3>
+    </div>
+    );
+}
+
+export default App;
