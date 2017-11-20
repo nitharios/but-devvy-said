@@ -10,7 +10,7 @@ const matcher = require('./matcher');
 
 rl.setPrompt('<TALK :) >');
 rl.prompt();
-
+// hard coding but operates 
 rl.on('line', reply => {
   matcher(reply, data => {
     switch(data.intent){
@@ -23,7 +23,7 @@ rl.on('line', reply => {
         rl.prompt();
         break;
       case "CurrentWeather":
-        console.log(`Looking for the Weather in ${data.entities.city}...`)
+        console.log(`Looking for the Weather in ${data.entities.city}...`);
         rl.prompt();
         //weather api..
         break;
