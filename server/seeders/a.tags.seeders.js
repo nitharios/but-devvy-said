@@ -9,7 +9,6 @@ module.exports = {
       },
       {
         name : 'intermediate'
-
       },
       {
         name : 'advanced'
