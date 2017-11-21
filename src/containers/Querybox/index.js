@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 class QueryBox extends Component {
   constructor(){
     super();
+    
   }
 
 
