@@ -1,5 +1,5 @@
 module.exports = {
-  byes : [
+  bye_msgs : [
     "See you later!", 
     "Bye for now!",
     "Have a great day!"
@@ -25,6 +25,9 @@ module.exports = {
     "Hmm...Nigel didn't have any info for me.",
     "shrugs",
     "Sorry, can't help you with that :("
+  ],
+  notes_query : [
+    'Would you like to see notes? (yes/no)'
   ],
   other_msgs : [
     "poke",
