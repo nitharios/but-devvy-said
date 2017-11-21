@@ -18,7 +18,7 @@ module.exports = {
   ],
   greetings : [
     "Hello!", 
-    "How are you doing?",
+    "Hey, how are you doing?",
     "Hi! Where is my Nathan?"
   ],
   missing_info : [
@@ -46,6 +46,6 @@ module.exports = {
     "I woke up like `this`",
   ],
   randomResponse : function(category) {
-    return category[Math.floor(math.random()*category.length)];  
+    return category[Math.floor(Math.random()*category.length)];  
   }
 };

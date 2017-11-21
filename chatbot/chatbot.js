@@ -49,7 +49,8 @@ module.exports = (function DevvyCho() {
       bot.reply(message, randomResponse(greetings));
 
     } else if (message.results) {
-      bot.reply(message, stringBuilder(message.results.Resources));
+      const { name, Resources } = message.results;
+      bot.reply(message, stringBuilder(name, Resources));
 
     } else {
       bot.reply(message, `${randomResponse(missing_info)} ${message.db_query[0].value}...`);
