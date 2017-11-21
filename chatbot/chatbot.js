@@ -1,10 +1,5 @@
 const Botkit = require('botkit');
-const stringBuilder = require('./lib/helpers/stringBuilder');
-const { error_msgs,
-        greetings, 
-        missing_info,
-        randomResponse
-      } = require('./lib/responses/slack.responses');
+const { responseHandler } = require('./lib/handlers/slack.handler');
 const dotenv = require('dotenv');
 // loads .env file to process.env
 dotenv.load();
@@ -42,20 +37,7 @@ module.exports = (function DevvyCho() {
   slackController.hears(['.*'], ['mention', 'direct_message', 'direct_mention'], wit.hears, (bot, message) => {
     slackController.log('Slack message received');
 
-    if (message.error) {
-      bot.reply(message, randomResponse(error_msgs));
-
-    } else if (message.greetings) {
-      bot.reply(message, randomResponse(greetings));
-
-    } else if (message.results) {
-      const { name, Resources } = message.results;
-      bot.reply(message, stringBuilder(name, Resources));
-
-    } else {
-      bot.reply(message, `${randomResponse(missing_info)}...`);
-    }
-
+    return responseHandler(bot, message);
   });
 
 })();
