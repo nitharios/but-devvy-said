@@ -43,11 +43,14 @@ module.exports = (function DevvyCho() {
     if (message.error) {
       bot.reply(message, error_msg[0]);
 
-    } else if (!message.results) {      
-      bot.reply(message, `${missing_info[0]} ${message.db_query[0].value}...`);
+    } else if (message.greetings) {
+      bot.reply(message, greeting[0]);
+
+    } else if (message.results) {      
+      bot.reply(message, 'This is what Nigel knows: ');
 
     } else {
-      bot.reply(message, greeting[0]);
+      bot.reply(message, `${missing_info[0]} ${message.db_query[0].value}...`);
     }
 
   });

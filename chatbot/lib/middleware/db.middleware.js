@@ -6,7 +6,7 @@ module.exports = function(bot, message, next) {
   console.log('db middleware');
   
   if (message.db_query) {
-    Topic.findOne({
+    return Topic.findOne({
       where : { name : message.db_query[0].value },
       include : [{ model : Resource }]
     })
@@ -23,6 +23,8 @@ module.exports = function(bot, message, next) {
       next();
     });
   } else {
+    console.log('else');
+    
     next();
   }
 };

@@ -26,15 +26,21 @@ module.exports = function(token) {
     // otherwise, Wit would receive EVERYTHING
     if (message.text && message.type !== 'self_message') {
       // sends the received message to Wit
-      client.message(message.text)
+      return client.message(message.text)
       .then(data => {
+        console.log(data.entities);
+        
         message.entities = data.entities;
 
         if (data.entities.db_query) {
           message.db_query = data.entities.db_query;
         }
 
-        next();
+        if (data.entities.greetings) {
+          message.greetings = true;
+        }
+
+       next();
       })
       .catch(err => {
         console.log('wit error', err);
