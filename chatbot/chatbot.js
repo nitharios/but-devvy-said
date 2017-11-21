@@ -1,4 +1,5 @@
 const Botkit = require('botkit');
+const botkitStoragePostgres = require('botkit-storage-postgres');
 const dotenv = require('dotenv');
 // loads .env file to process.env
 dotenv.load();
@@ -12,7 +13,13 @@ module.exports = (function DevvyCho() {
   // initialize
   const slackController = Botkit.slackbot({
     // wait for a confirmation event for each outgoing message before continuing to the next message in a conversation
-    require_delivery : true
+    require_delivery : true,
+    storage : botkitStoragePostgres({
+      host : 'localhost',
+      user : 'postgres',
+      password : '5zduWmw8$',
+      database : 'devvy'
+    })
   });
 
   const slackBot = slackController.spawn({
@@ -31,10 +38,19 @@ module.exports = (function DevvyCho() {
   slackController.middleware.receive.use(wit.receive);
 
   // listener that handles incoming messages
+
+  slackController.on('message_received', (bot, message) => {
+    slackController.log('Slack message received');
+    bot.reply(message, 'Message Received.');
+  });
+
+
   slackController.hears(['.*'], ['mention', 'direct_message', 'direct_mention'], wit.hears, (bot, message) => {
     slackController.log('Slack message received');
 
     bot.reply(message, 'I have received your message');
   });
+
+  
 
 })();
