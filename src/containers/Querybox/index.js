@@ -6,6 +6,10 @@ class QueryBox extends Component {
   constructor(){
     super();
     
+    this.setStat = ({
+      querybox: '',
+      error: ''
+    });
   }
   
   render(){
