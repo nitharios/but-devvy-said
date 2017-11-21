@@ -1,7 +1,6 @@
 const express = require('express');
 const db = require('../models');
-const Resource = db.Resource;
-const Topic = db.Topic;
+const { Resource } = db;
 const { error_occurred, 
         missing_key 
       } = require('../lib/query.responses');

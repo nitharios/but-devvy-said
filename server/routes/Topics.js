@@ -1,9 +1,8 @@
 const express = require('express');
-const { Resource,
-        Topic
-      } = require('../models');
-const { already_exists,
-        error_occurred, 
+const db = require('../models');
+const { Resource, Topic } = db;
+const { already_exists, 
+        error_occurred,
         missing_key 
       } = require('../lib/query.responses');
 
