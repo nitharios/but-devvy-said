@@ -10,9 +10,13 @@ import React, {Component } from 'react';
 class InputBar extends Component {
   constructor(){
     super();
-  // set state
- this.state = { term: ''};
 
+  // set state
+this.state = { term: ''};
+  // binding actions 
+this.onInputChange = this.onInputChange.bind(this);
+this.onFormSubmit = this.onFormSubmit.bind(this);
+ 
  }
 
  onInputChange(e) {
@@ -20,9 +24,9 @@ class InputBar extends Component {
  }
 
  onFormSubmit(e) {
-  // event.preventDefault();
+  // event.preventDefault(e);
 
-  // this.props.fetchNigel(this.state.term); // <--- this props will exist after nigle and devvy can query our db
+  this.props.fetchNigel(this.state.term); // <--- this props will exist after nigle and devvy can query our db
   this.setState({ term: ''});
  }
 
@@ -43,9 +47,5 @@ render(){
 }
 
 } // end of class
-
-
-
-
 
 export default InputBar;
