@@ -4,6 +4,7 @@ const { bye_msgs,
         greetings, 
         missing_info,
         notes_query,
+        timeout,
         randomResponse
       } = require('../responses/slack.responses');
 
@@ -14,6 +15,8 @@ module.exports = (function() {
   };
 
   function responseHandler(bot, message) {
+    console.log('Slack message received');
+
     if (message.error) {
       bot.reply(message, randomResponse(error_msgs));
 
@@ -50,6 +53,12 @@ module.exports = (function() {
       text : randomResponse(error_msgs),
       action : 'stop'
     }, 'bad_response');
+    
+    // creates a path for response timeout
+    convo.addMessage({
+      text : randomResponse(timeout),
+      action : 'stop'
+    }, 'on_timeout');
 
     convo.addQuestion(randomResponse(notes_query), [
       {
@@ -72,6 +81,9 @@ module.exports = (function() {
       }
     ], {}, 'default');
 
+    // times out after 5 seconds
+    convo.setTimeout(5000);
+    // activate conversation
     convo.activate();
   }
 })();

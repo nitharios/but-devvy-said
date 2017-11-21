@@ -30,14 +30,13 @@ module.exports = (function DevvyCho() {
     slackController.log('Slack connection established');
   });
 
+  // activates when @DevvyCho is used
+  // sends message to Wit to be deciphered
   slackController.middleware.heard.use(wit.receive);
+  // queries the db based on the intent of the user as determined by the user
   slackController.middleware.heard.use(dbQuery);
 
   // listener that handles incoming messages
-  slackController.hears(['.*'], ['mention', 'direct_message', 'direct_mention'], wit.hears, (bot, message) => {
-    slackController.log('Slack message received');
-
-    return responseHandler(bot, message);
-  });
+  slackController.hears(['.*'], ['mention', 'direct_message', 'direct_mention'], wit.hears, responseHandler);
 
 })();
