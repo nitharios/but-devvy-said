@@ -15,6 +15,8 @@ module.exports = (function() {
   };
 
   function responseHandler(bot, message) {
+    console.log('Slack message received');
+
     if (message.error) {
       bot.reply(message, randomResponse(error_msgs));
 
