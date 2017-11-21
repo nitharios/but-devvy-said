@@ -1,5 +1,5 @@
 const Botkit = require('botkit');
-const stringBuilder = require('./lib/helpers/');
+const stringBuilder = require('./lib/helpers/stringBuilder');
 const { error_msg,
         greeting, 
         missing_info 
