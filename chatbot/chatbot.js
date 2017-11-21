@@ -53,7 +53,7 @@ module.exports = (function DevvyCho() {
       bot.reply(message, stringBuilder(name, Resources));
 
     } else {
-      bot.reply(message, `${randomResponse(missing_info)} ${message.db_query[0].value}...`);
+      bot.reply(message, `${randomResponse(missing_info)}...`);
     }
 
   });
