@@ -52,8 +52,7 @@ module.exports = function(token) {
 
   function hears(patterns, message) {
     // patterns is the first argument of controller.hears
-    console.log('hears');
-    if (message.entities) return true;
+    if (patterns) return true;
 
     if (patterns && message.entities && message.entities.db_query) {
       return message.entities.db_query.some(query => {

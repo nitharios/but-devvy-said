@@ -33,7 +33,7 @@ module.exports = (function DevvyCho() {
     slackController.log('Slack connection established');
   });
 
-  slackController.middleware.receive.use(wit.receive);
+  slackController.middleware.heard.use(wit.receive);
   slackController.middleware.heard.use(dbQuery);
 
   // listener that handles incoming messages
