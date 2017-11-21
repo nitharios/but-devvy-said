@@ -4,6 +4,7 @@
   "description": "A super awesome bot that will query the all-knowing database of Nigel (and maybe external resources)",
   "main": "server/server.js",
   "dependencies": {
+    "axios": "^0.17.1",
     "body-parser": "^1.18.2",
     "botkit": "^0.6.7",
     "botkit-storage-postgres": "^0.1.0",
