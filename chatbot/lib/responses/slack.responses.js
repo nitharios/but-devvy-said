@@ -21,7 +21,12 @@ module.exports = {
     "How are you doing?",
     "Hi! Where is my Nathan?"
   ],
-  random_msgs : [
+  missing_info : [
+    "Hmm...Nigel didn't have any info for me.",
+    "shrugs",
+    "Sorry, can't help you with that :("
+  ],
+  other_msgs : [
     "poke",
     "Where should I hike this weekend?",
     "Mika is the cutest!!",
@@ -39,5 +44,8 @@ module.exports = {
     "I HATE the color pink!!!!",
     "I can't wait to go back to San Fran!!",
     "I woke up like `this`",
-  ]
+  ],
+  randomResponse : function(category) {
+    return category[Math.floor(math.random()*category.length)];  
+  }
 };
