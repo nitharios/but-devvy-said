@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import TopicsReducer from './reducer_books';
+import TopicsReducer from './reducer_topic';
 import ActiveTopic from './reducer_active_topic';
 
 
