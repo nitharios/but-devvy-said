@@ -1,4 +1,5 @@
 const Botkit = require('botkit');
+const stringBuilder = require('./lib/helpers/');
 const { error_msg,
         greeting, 
         missing_info 
@@ -46,8 +47,8 @@ module.exports = (function DevvyCho() {
     } else if (message.greetings) {
       bot.reply(message, greeting[0]);
 
-    } else if (message.results) {      
-      bot.reply(message, 'This is what Nigel knows: ');
+    } else if (message.results) {
+      bot.reply(message, stringBuilder(message.results.Resources));
 
     } else {
       bot.reply(message, `${missing_info[0]} ${message.db_query[0].value}...`);
