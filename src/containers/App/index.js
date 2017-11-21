@@ -3,6 +3,8 @@ import Nav from '../../components/nav.components';
 import Querybox from '../../containers/Querybox';
 import InputBar from '../../containers/InputBar';
 import { connect } from 'react-redux'; 
+import TopicList from '../../components/topiclist.components';
+
 
 class App extends Component {
   render() {
@@ -16,6 +18,7 @@ class App extends Component {
         <InputBar />
           <div className="display-box">
             <h4>this will be the display box</h4>
+            <TopicList />
             <Querybox />
           </div>
         </div>  
