@@ -1,9 +1,8 @@
 const express = require('express');
-const { Resource,
-        Topic
-      } = require('../models');
-const { already_exists,
-        error, 
+const db = require('../models');
+const { Resource, Topic } = db;
+const { already_exists, 
+        error_occurred,
         missing_key 
       } = require('../lib/query.responses');
 
@@ -20,7 +19,7 @@ router.route('/')
   })
   .catch(err => {
     console.log('ERROR', err);
-    return res.json(error);
+    return res.json(error_occurred);
   });
 })
 .post((req, res) => {
@@ -49,7 +48,7 @@ router.route('/')
   })
   .catch(err => {
     console.log('ERROR', err);
-    return res.json(error);
+    return res.json(error_occurred);
   });
 });
 
@@ -71,7 +70,7 @@ router.route('/:topic_name')
   })
   .catch(err => {
     console.log('ERROR', err);
-    return res.json(error);
+    return res.json(error_occurred);
   });
 })
 .put((req, res) => {
@@ -96,7 +95,7 @@ router.route('/:topic_name')
   })
   .catch(err => {
     console.log(err);
-    return res.json(error);
+    return res.json(error_occurred);
   });
 });
 
