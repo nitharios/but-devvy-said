@@ -20,40 +20,41 @@ module.exports = function(token) {
   };
 
   function receive(bot, message, next) {    
+    console.log('wit middleware');
+    
     // necessary so Wit only recieves TEXT
     // otherwise, Wit would receive EVERYTHING
     if (message.text && message.type !== 'self_message') {
       // sends the received message to Wit
       client.message(message.text)
       .then(data => {
-        if (data.entities !== {}) {
-          message.entities = data.entities;
+        message.entities = data.entities;
+
+        if (data.entities.db_query) {
           message.db_query = data.entities.db_query;
         }
+
+        next();
       })
       .catch(err => {
         console.log('wit error', err);
         message.error = true;
+        next();
       });
     }
-
-    next();
   }
 
   function hears(patterns, message) {
     // patterns is the first argument of controller.hears
+    console.log('hears');
+    if (message.entities) return true;
 
-    // check for a pattern that wants everything
-    if (patterns.includes('.*')) return true;
-
-    if (patterns && message.entities && message.entities.intent) {
-      return message.entities.intent.some(intent => {
-        console.log(intent);
-        
+    if (patterns && message.entities && message.entities.db_query) {
+      return message.entities.db_query.some(query => {
         return patterns.some(pattern => {
-          console.log(pattern);
-          
-          if (intent.value === pattern && intent.confidence >= MIN_CONFIDENCE) {
+          // check for a pattern that wants everything
+
+          if (query.value === pattern && query.confidence >= MIN_CONFIDENCE) {
             return true;
           }
         });
@@ -62,5 +63,4 @@ module.exports = function(token) {
 
     return false;
   }
-
 };

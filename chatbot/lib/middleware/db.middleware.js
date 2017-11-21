@@ -3,8 +3,9 @@ const { Resource,
       } = require('../../../server/models');
 
 module.exports = function(bot, message, next) {
+  console.log('db middleware');
   
-  if(message.db_query) {
+  if (message.db_query) {
     Topic.findOne({
       where : { name : message.db_query[0].value },
       include : [{ model : Resource }]
@@ -14,12 +15,14 @@ module.exports = function(bot, message, next) {
         if no match, singleTopic will === null
       */
       message.results = singleTopic;
+      next();
     })
     .catch(err => {
       console.log('db ERROR', err);
       message.error = true;
+      next();
     });
+  } else {
+    next();
   }
-
-  next();
 };
