@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 
 class topicsList extends Component {
   renderList() {
-    return this.props.topicss.map((topic) => {
+    return this.props.topics.map((topic) => {
       return (
         <li
          key={topics.title} 
@@ -32,7 +32,7 @@ class topicsList extends Component {
 function mapStateToProps(state) {
   // state returns as props inside of topicslist
   return {
-    topicss: state.topicss
+    topics: state.topics
   };
 }
 
