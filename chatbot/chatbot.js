@@ -37,13 +37,6 @@ module.exports = (function DevvyCho() {
   slackController.middleware.heard.use(dbQuery);
 
   // listener that handles incoming messages
-
-  slackController.on('message_received', (bot, message) => {
-    slackController.log('Slack message received');
-    bot.reply(message, 'Message Received.');
-  });
-
-
   slackController.hears(['.*'], ['mention', 'direct_message', 'direct_mention'], wit.hears, (bot, message) => {
     slackController.log('Slack message received');
 
@@ -61,7 +54,5 @@ module.exports = (function DevvyCho() {
     }
 
   });
-
-  
 
 })();
