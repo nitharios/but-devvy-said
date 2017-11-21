@@ -1,5 +1,5 @@
 module.exports = {
   already_exists : true,
-  error : true,
+  error_occurred : true,
   missing_key : true
 };
