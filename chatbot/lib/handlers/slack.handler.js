@@ -48,17 +48,17 @@ module.exports = (function() {
       action : 'completed'
     }, 'no_thread');
 
-    // creates a path for response timeout
-    convo.addMessage({
-      text : randomResponse(timeout),
-      action : 'stop'
-    }, 'on_timeout');
-
     // creates a path when no options are matched
     convo.addMessage({
       text : randomResponse(error_msgs),
       action : 'stop'
     }, 'bad_response');
+    
+    // creates a path for response timeout
+    convo.addMessage({
+      text : randomResponse(timeout),
+      action : 'stop'
+    }, 'on_timeout');
 
     convo.addQuestion(randomResponse(notes_query), [
       {
