@@ -1,19 +1,23 @@
+// NIgel actions fetch our main db for information retrieval
+
+
 import Axios from 'axios';
+
 
 const listOfUrls = '/api/urls'; // URL to Get from DB
 
-export const URL = 'LOAD_URL';
+export const GET_URL = 'GET_URL';
 export const ERROR = 'ERROR';
 
-//GET all urls
-export const loadURLs = () => {
+
+export const getUrls = () => {
   return (dispatch) => {
-    return Axios.get(listOfUrls)
-    .then(urlsList => {
-      console.log(listOfUrls);
+    return Axios.get(urls)
+    .then(urls => {
+      console.log(urls);
       dispatch({
-        type: LOAD_URL,
-        urlsList: urlsList.data
+        type: GET_URL,
+        urlsList: urls.data
       });
     })
     .catch(err => {
