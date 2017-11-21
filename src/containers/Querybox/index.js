@@ -2,9 +2,10 @@
 
 import React, { Component } from 'react';
 
-class Querybox extends Component {
+class QueryBox extends Component {
   constructor(){
     super();
+    
   }
 
 
@@ -21,4 +22,4 @@ class Querybox extends Component {
   }
 }
 
-export default Querybox;
+export default QueryBox;
