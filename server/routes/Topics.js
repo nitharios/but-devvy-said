@@ -49,7 +49,7 @@ router.route('/')
   })
   .catch(err => {
     console.log('ERROR', err);
-    return res.json(null);
+    return res.json(error);
   });
 });
 
@@ -66,11 +66,12 @@ router.route('/:topic_name')
     include : [{ model : Resource }]
   })
   .then(singleTopic => {
+    console.log('topics');
     return res.json(singleTopic);
   })
   .catch(err => {
     console.log('ERROR', err);
-    return res.json(null);
+    return res.json(error);
   });
 })
 .put((req, res) => {
