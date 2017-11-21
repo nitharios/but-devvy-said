@@ -5,11 +5,23 @@ import { createStore, applyMiddleware } from 'redux';
 import App from './containers/App';
 import reducers from './reducers';
 import { connect } from 'react-redux';
+import thunk from 'redux-thunk';
+import registerServiceWorker from './lib/registerServiceWorker';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+
+// --STORE----------///////
+const store = createStore(
+  reducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  applyMiddleware(thunk)
+);
+// --STORE----------///////
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
+  <Provider store={store}>
     <App />
   </Provider>
-  , document.querySelector('.container'));
+  , document.querySelector('root'));
+
+
+registerServiceWorker();
