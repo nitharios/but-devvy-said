@@ -27,7 +27,7 @@ module.exports = {
     "Sorry, can't help you with that :("
   ],
   notes_query : [
-    'Would you like to see notes? (yes/no)'
+    "Would you like to see notes? (yes/no)"
   ],
   other_msgs : [
     "poke",
@@ -47,6 +47,12 @@ module.exports = {
     "I HATE the color pink!!!!",
     "I can't wait to go back to San Fran!!",
     "I woke up like `this`",
+  ],
+  timeout : [
+    "...I guess I'll go do something else then...",
+    "So...no?",
+    "No response?? Rude much?",
+    "..."
   ],
   randomResponse : function(category) {
     return category[Math.floor(Math.random()*category.length)];  
