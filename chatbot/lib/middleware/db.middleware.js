@@ -23,8 +23,8 @@ module.exports = function(bot, message, next) {
       next();
     });
   } else {
-    console.log('else');
     
+    console.log('else');
     next();
   }
 };

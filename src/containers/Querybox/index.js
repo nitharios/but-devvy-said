@@ -7,8 +7,7 @@ class QueryBox extends Component {
     super();
     
   }
-
-
+  
   render(){
     return(
       <div className="main-display-box-container">

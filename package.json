@@ -15,7 +15,10 @@
     "pg-hstore": "^2.3.2",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
+    "react-redux": "^5.0.6",
     "react-scripts": "1.0.17",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
     "sequelize": "^4.22.7",
     "sequelize-cli": "^3.0.0"
   },
