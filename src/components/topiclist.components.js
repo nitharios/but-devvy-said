@@ -32,7 +32,7 @@ class TopicList extends Component {
 function mapStateToProps(state) {
   // state returns as props inside of booklist
   return {
-    books: state.topics
+    topics: state.topics
   };
 }
 

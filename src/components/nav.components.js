@@ -17,7 +17,6 @@ const Nav = () => {
       <div className="unauth-nav-links">
         <p>Home</p>
         <p>New Topic</p>
-        <p>Reload</p>
         <p>Login</p>
       </div>
     );
