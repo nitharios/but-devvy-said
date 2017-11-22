@@ -1,10 +1,9 @@
-// query box for devvy'
-
 import React, { Component } from 'react';
 import redux from 'react-redux';
 
 class QueryBox extends Component {
-  constructor(){
+
+  constructor() {
     super();
     
     this.setState = ({
@@ -15,15 +14,13 @@ class QueryBox extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(e){
+  handleChange(e) {
    this.setState({ term: e.target.value});
   }
-
-
-
   
-  render(){
-    return(
+  render() {
+
+    return (
       <div className="main-display-box-container">
         <div className="main-display-box-">
           <textarea name="description" value={this.QueryBox}>  
@@ -31,8 +28,13 @@ class QueryBox extends Component {
           </textarea>
         </div>
       </div>
-      );
+    );
+
   }
+
+
+
 }
+//end class
 
 export default QueryBox;
