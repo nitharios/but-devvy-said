@@ -31,16 +31,11 @@ module.exports = function(token) {
         console.log(data.entities);
         
         message.entities = data.entities;
+        message.info_type = message.entities.info_type;
+        message.db_query = message.entities.db_query;
+        message.greetings = message.entities.greetings;
 
-        if (data.entities.db_query) {
-          message.db_query = data.entities.db_query;
-        }
-
-        if (data.entities.greetings) {
-          message.greetings = true;
-        }
-
-       next();
+        next();
       })
       .catch(err => {
         console.log('wit error', err);
