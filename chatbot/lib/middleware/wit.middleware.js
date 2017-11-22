@@ -20,6 +20,7 @@ module.exports = function(token) {
   };
 
   function receive(bot, message, next) {    
+
     console.log('======WIT MIDDLEWARE=======');
 
     /* message has channel, user, ts, source_team, team, raw_message
