@@ -21,20 +21,25 @@ module.exports = function(token) {
 
   function receive(bot, message, next) {    
     console.log('======WIT MIDDLEWARE=======');
-    console.log(message);
 
-    //{}
-    
-    // necessary so Wit only recieves TEXT
-    // otherwise, Wit would receive EVERYTHING
+    /* message has channel, user, ts, source_team, team, raw_message
+        { 
+          type : 'direct_message',
+          text : 'i need resources on CLOSURES.'
+        }
+    */    
+
+    // Wit will only recieve TEXT
     if (message.text && message.type !== 'self_message') {
+
       // sends the received message to Wit
       return client.message(message.text)
         .then(data => { 
 
-        // { msg_i: '0jbSqnLe9kJ4NgSrN', _text: 'hi', entities: {entityName: [ [Object] ]} }
+          // { msg_i: '0jbSqnLe9kJ4NgSrN', _text: 'hi', entities: {entityName: [ [Object] ]} }
           console.log(data.entities);
           
+
           message.entities = data.entities;
           message.info_type = message.entities.info_type;
           message.db_query = message.entities.db_query;
