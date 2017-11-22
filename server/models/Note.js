@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
     title : {type : DataTypes.STRING, allowNull : false},
     student : {type : DataTypes.STRING, allowNull : true},
     bullets : {
-      type : DataTypes.JSONB, // ['Bullet point', 'Bullet point']
+      type : DataTypes.JSONB, // ['Bullet point 1', 'Bullet point 2', 'Bullet point 3']
       allowNull : false
     }
   },
