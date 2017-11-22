@@ -31,8 +31,6 @@ module.exports = (function DevvyCho() {
     slackController.log('Slack connection established');
   });
 
-  // slackController.on(responseTypes, )
-
   // activates when @DevvyCho is used
   // sends message to Wit to be deciphered
   slackController.middleware.heard.use(wit.receive);
