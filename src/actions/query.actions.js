@@ -9,9 +9,13 @@ export const query = (input) => {
   return dispatch => {
     return Axios.get(queryURL)
     .then(response => {
+      const data = response.data;
+
       dispatch({
         type : QUERY,
-        response : response
+        examplesList : data.examples,
+        notesList : data.notes,
+        resourcesList : data.resources
       });
     });
   };
