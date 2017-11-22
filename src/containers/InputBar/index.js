@@ -1,6 +1,7 @@
 import React, {Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from  'redux';
+
 // import Axios from 
 //  !!!!---will need actions to support a call to nigel and the web___!!!
 // *import {action to nigle} from night 
@@ -9,49 +10,51 @@ import { bindActionCreators } from  'redux';
 
 
 class InputBar extends Component {
-  constructor(){
-    super();
 
-  // set state
-this.state = { term: ''};
-  // binding actions 
-this.onInputChange = this.onInputChange.bind(this);
-this.onFormSubmit = this.onFormSubmit.bind(this);
- 
- }
+  constructor(props) {
 
- onInputSearch(e){
+    super(props);
+  
+    this.state = { term: ''};
+      
+    this.onInputChange = this.onInputChange.bind(this);
+    this.onFormSubmit = this.onFormSubmit.bind(this);
 
- }
+  }
 
- onInputChange(e) {
-  this.setState({ term: e.target.value});
- }
+  onInputSearch(e) {
 
- onFormSubmit(e) {
-  e.preventDefault();
+  }
 
-  this.setState({ term: this.target.value});
- }
+  onInputChange(e) {
+   this.setState({ term: e.target.value});
+  }
 
-render(){
-  return(
-    <form onSubmit={this.onFormSubmit}className="query-bar">
-      <input 
-        placeholder= "Ask devvy Cho~!"
-        className="form"
-        value={this.state.term}
-        onChange={this.onInputChange}
-        method="get"
+  onFormSubmit(e) {
+   e.preventDefault();
+   this.setState({ term: this.target.value});
+  }
 
-      />
-      <span className="query-button">
-        <button type="submit" className="submit-btn"> Ask~!</button>
-      </span>
-    </form>
-  );
+  render() {
+
+    return (
+      <form onSubmit={this.onFormSubmit}className="query-bar">
+        <input 
+          placeholder= "Ask devvy Cho~!"
+          className="form"
+          value={this.state.term}
+          onChange={this.onInputChange}
+          method="get"
+        />
+        <span className="query-button">
+          <button type="submit" className="submit-btn"> Ask~!</button>
+        </span>
+      </form>
+    );
+  }
+
+
 }
-
-} // end of class
+//end class
 
 export default InputBar;
