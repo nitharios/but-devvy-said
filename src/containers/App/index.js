@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { addUserText } from '../../actions/user.actions';
 import { query } from '../../actions/query.actions';
 
 class App extends Component {
@@ -35,7 +34,6 @@ class App extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    // this.props.addUserText(this.state.userInput);
     this.props.query(this.state.userInput);
 
     this.setState({
@@ -45,7 +43,7 @@ class App extends Component {
 
  
   render() {
-    return (
+    return(
       <div id="app">
 
         <div id="information-box">
@@ -58,10 +56,6 @@ class App extends Component {
           <div className="information" id="resources">
             { this.props.resourcesList }
           </div>
-        </div>
-
-        <div id="chatbox">
-
         </div>
 
         <div id="inputbox">
@@ -97,10 +91,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    // addUserText : () => {
-    //   dispatch(addUserText(input));
-    // },
-
     query : (input) => {
       dispatch(query(input));
     }
