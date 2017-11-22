@@ -24,6 +24,9 @@ module.exports = function (sequelize, DataTypes) {
     Topic.hasMany(models.Resource, {
       foreignKey : 'topic_id',
     });
+    Topic.hasMany(models.Note, {
+      foreignKey : 'topic_id',
+    });
   };
 
   return Topic;
