@@ -1,9 +1,9 @@
 const stringBuilder = require('../helpers/stringBuilder');
-const { bye_msgs,
+const { additional_query,
+        bye_msgs,
         error_msgs,
         greetings, 
         missing_info,
-        notes_query,
         timeout,
         randomResponse
       } = require('../responses/slack.responses');
@@ -11,6 +11,7 @@ const { bye_msgs,
 module.exports = (function() {
 
   return {
+    // mentionHandler : mentionHandler,
     responseHandler : responseHandler
   };
 
@@ -31,11 +32,14 @@ module.exports = (function() {
       });
 
     } else {
-      bot.reply(message, `${randomResponse(missing_info)}...`);
+      bot.reply(message, `${randomResponse(missing_info)}`);
     }
   }
 
-  function conversationHandler(err, convo) {   
+  function conversationHandler(err, convo) {
+    // contains variants of 'yes', 'no', and 'quit' 
+    let { utterances } = convo.context.bot;
+      
     // creates a path when the user says 'yes'
     convo.addMessage({
       text : 'Okay, let me check...',
@@ -60,15 +64,15 @@ module.exports = (function() {
       action : 'stop'
     }, 'on_timeout');
 
-    convo.addQuestion(randomResponse(notes_query), [
+    convo.addQuestion(randomResponse(additional_query), [
       {
-        pattern : 'yes',
+        pattern : utterances.yes,
         callback : (response, convo) => {
           convo.gotoThread('yes_thread');
         }
       },
       {
-        pattern : 'no',
+        pattern : utterances.no,
         callback : (response, convo) => {
           convo.gotoThread('no_thread');
         }
