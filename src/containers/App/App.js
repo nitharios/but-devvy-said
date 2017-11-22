@@ -10,7 +10,6 @@ import QueryBox from '../QueryBox/QueryBox';
 import InputBar from '../InputBar/InputBar';
 
 /*COMPONENTS*/
-import Nav from '../../components/Nav';
 import TopicList from '../TopicList/TopicList';
 
 import './App.css';
@@ -25,6 +24,7 @@ class App extends Component {
     return (
       <div className="App">
 
+
         <div className="App-header">
           <div className="App-bar">
             <ul>
@@ -35,14 +35,25 @@ class App extends Component {
           </div>
           <img src='DevvyCho.jpg' width='120' height='90' alt='' />
         </div>
-        
-        <InputBar />
-        <div className="App-chat-window">
-          <h4>Display Box</h4>
-          <TopicList />
-          <QueryBox />
+
+        <div className="App-chat">
+          <div className="App-chat-window">
+            <span>Hello Friend!</span>
+            <span>Hi Devvy!</span>
+            <span>How can I help?</span>
+            <span>What is Javascript?</span>
+            <span>Hmm...</span>
+          </div>
+        </div>
+
+        <div className="App-input">
+          <div>
+            <textarea placeholder="Ask Me Something!"></textarea>
+            <button>Send</button>
+          </div>
         </div>
         
+
       </div>
     );
   }

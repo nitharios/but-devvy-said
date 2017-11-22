@@ -47,3 +47,50 @@
     text-decoration: underline;
     cursor: pointer;
   }
+
+
+.App-chat {
+  border: 3px dashed magenta;
+}
+
+.App-chat-window {
+  border: 1px solid black;
+  font-size: 2em;
+  width: 80%;
+  margin: 0 auto;
+}
+  .App-chat-window span {
+    display: block;
+    border: 1px solid white;
+    font-family: sans-serif;
+  }
+
+
+
+
+.App-input {
+  border: 1px dashed black;
+  height: 100%;
+  position: relative;
+}
+  .App-input div {
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid black;
+  }
+  .App-input textarea {
+    border: 1px solid magenta;
+    margin: 5px;
+    display: block;
+    width: 75%;
+  }
+  .App-input button {
+    border: 1px solid yellow;
+    border-radius: 5px;
+    background-color: yellow;
+    font-weight: bold;
+    margin: 5px;
+  }
+  .App-input button:hover {
+    cursor: pointer;
+  }

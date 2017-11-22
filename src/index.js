@@ -15,6 +15,8 @@ import registerServiceWorker from './lib/registerServiceWorker';
 /*COMPONENTS*/
 import App from './containers/App/App';
 
+import './index.css';
+
 // --STORE----------///////
 const store = createStore(
   reducers,
