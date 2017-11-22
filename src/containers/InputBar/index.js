@@ -24,10 +24,9 @@ this.onFormSubmit = this.onFormSubmit.bind(this);
  }
 
  onFormSubmit(e) {
-  // event.preventDefault(e);
+  e.preventDefault();
 
-  this.props.fetchNigel(this.state.term); // <--- this props will exist after nigle and devvy can query our db
-  this.setState({ term: ''});
+  this.setState({ term: this.target.value});
  }
 
 render(){
