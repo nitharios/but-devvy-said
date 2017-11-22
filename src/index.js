@@ -4,6 +4,12 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
+
 import reducers from './reducers';
 import thunk from 'redux-thunk';
 import registerServiceWorker from './lib/registerServiceWorker';
@@ -23,7 +29,12 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router>
+      <div>
+        <Route exact path='/' component={App}/>
+        <Route path='/about' component={App} />
+      </div>
+    </Router>
   </Provider>
   , document.getElementById('root'));
 

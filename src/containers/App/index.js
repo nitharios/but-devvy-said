@@ -1,11 +1,30 @@
 /*MAIN COMPONENT*/
 import React, { Component } from 'react';
+<<<<<<< HEAD:src/containers/App/App.js
+import { connect } from 'react-redux'; 
+
+/*CONTAINERS*/
+import Header from '../Header';
+import QueryBox from '../QueryBox';
+import InputBar from '../InputBar';
+
+/*COMPONENTS*/
+import TopicList from '../TopicList';
+
+import './App.css';
+=======
+>>>>>>> development:src/containers/App/index.js
 
 class App extends Component {
 
   render() {
+
     return (
       <div className="App">
+<<<<<<< HEAD:src/containers/App/App.js
+      
+        <Header />
+=======
         <div className="App-header">
           <div className="App-bar">
             <ul>
@@ -16,6 +35,7 @@ class App extends Component {
           </div>
           <img src='DevvyCho.jpg' width='120' height='90' alt='' />
         </div>
+>>>>>>> development:src/containers/App/index.js
 
         <div className="App-chat">
           <div className="App-chat-window">
