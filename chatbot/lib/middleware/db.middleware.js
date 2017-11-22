@@ -6,6 +6,7 @@ module.exports = function(bot, message, next) {
   console.log('db middleware');
   let model = Resource;
   
+  // if there is an info type user wants a specific model query
   if (message.info_type && message.db_query) {
     switch(message.info_type) {
       case 'notes':
@@ -17,7 +18,7 @@ module.exports = function(bot, message, next) {
         break;
 
       default:
-        model = Resource;
+        break;
     }
   }
 

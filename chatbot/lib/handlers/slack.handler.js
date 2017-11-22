@@ -32,7 +32,7 @@ module.exports = (function() {
       });
 
     } else {
-      bot.reply(message, `${randomResponse(missing_info)}...`);
+      bot.reply(message, `${randomResponse(missing_info)}`);
     }
   }
 
