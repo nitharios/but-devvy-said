@@ -1,5 +1,5 @@
 module.exports = {
-  byes : [
+  bye_msgs : [
     "See you later!", 
     "Bye for now!",
     "Have a great day!"
@@ -8,7 +8,8 @@ module.exports = {
     "Oh no! Something went wrong!",
     "Hmm...check back later...",
     "Not in the mood right now!!!",
-    "404, you know what that means ~"
+    "404, you know what that means ~",
+    "Sorry, Mika is is sitting on my keyboard right now."
   ],
   emojis : [
     ":eyes:", 
@@ -24,12 +25,17 @@ module.exports = {
   missing_info : [
     "Hmm...Nigel didn't have any info for me.",
     "shrugs",
-    "Sorry, can't help you with that :("
+    "Sorry, can't help you with that :(",
+    "My Nathan might know!"
+  ],
+  notes_query : [
+    "Would you like to see notes? (yes/no)"
   ],
   other_msgs : [
     "poke",
     "Where should I hike this weekend?",
     "Mika is the cutest!!",
+    "Mika will make it all better!",
     "Have you seen my Nathan?",
     "He hasn't resolved my `Promise()` yet ;(",
     "The way he feels about me is `variable`",
@@ -44,6 +50,13 @@ module.exports = {
     "I HATE the color pink!!!!",
     "I can't wait to go back to San Fran!!",
     "I woke up like `this`",
+  ],
+  timeout : [
+    "...I guess I'll go do something else then...",
+    "So...no?",
+    "No response?? Rude much?",
+    "...",
+    "If not, I'm just going to play with Mika"
   ],
   randomResponse : function(category) {
     return category[Math.floor(Math.random()*category.length)];  
