@@ -7,7 +7,7 @@ dotenv.load();
 
 module.exports = (function DevvyCho() {
 
-  const SLACK_TOKEN = process.env.SLACK_TOKEN || '';
+  const SLACK_TOKEN = process.env.SLACK_TOKEN;
   const WIT_TOKEN = process.env.WIT_TOKEN;
   // invoke wit middleware and pass in token
   const wit = require('./lib/middleware/wit.middleware')(WIT_TOKEN);
