@@ -1,66 +1,61 @@
-/*MAIN COMPONENT*/
 import React, { Component } from 'react';
-<<<<<<< HEAD:src/containers/App/App.js
-import { connect } from 'react-redux'; 
-
-/*CONTAINERS*/
-import Header from '../Header';
-import QueryBox from '../QueryBox';
-import InputBar from '../InputBar';
-
-/*COMPONENTS*/
-import TopicList from '../TopicList';
-
-import './App.css';
-=======
->>>>>>> development:src/containers/App/index.js
+import { connect } from 'react-redux';
 
 class App extends Component {
+  constructor() {
+    super();
 
+    this.devvyText = '';
+    this.userText = '';
+    this.userInput = '';
+  }
+
+  handleChange(e) {
+    const target = e.target;
+    const name = target.name;
+    const value = target.value;
+
+    this.setState({
+      [name] : value
+    });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+
+    
+
+    this.setState({
+      userInput : ''
+    });
+  }
+
+ 
   render() {
-
     return (
-      <div className="App">
-<<<<<<< HEAD:src/containers/App/App.js
-      
-        <Header />
-=======
-        <div className="App-header">
-          <div className="App-bar">
-            <ul>
-              <li><a>About</a></li>
-              <li><a>New Topic</a></li>
-              <li><a>Related</a></li>
-            </ul>
-          </div>
-          <img src='DevvyCho.jpg' width='120' height='90' alt='' />
-        </div>
->>>>>>> development:src/containers/App/index.js
+      <div id="app">
 
-        <div className="App-chat">
-          <div className="App-chat-window">
-            <span>Hello Friend!</span>
-            <span>Hi Devvy!</span>
-            <span>How can I help?</span>
-            <span>What is Javascript?</span>
-            <span>Hmm...</span>
-          </div>
+        <div id="chatbox">
+
         </div>
 
-        <div className="App-input">
-          <div>
-            <textarea placeholder="Ask Me Something!"></textarea>
-            <button>Send</button>
-          </div>
+        <div id="inputbox">
+          <input
+            onChange={ this.handleChange }
+            name="userInput"
+            placeholder="How can I help you?"
+            type="text" />
+          <input
+            onClick={ this.handleSubmit } 
+            type="button"
+            value="GO" />
+          <input
+            onClick={ this.handleClear }
+            type="button"
+            value="CLEAR" />
         </div>
-        
 
       </div>
     );
   }
-
-
 }
-//end class
-
-export default App;
