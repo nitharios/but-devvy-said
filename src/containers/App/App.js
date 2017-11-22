@@ -6,11 +6,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'; 
 
 /*CONTAINERS*/
-import QueryBox from '../QueryBox/QueryBox';
-import InputBar from '../InputBar/InputBar';
+import QueryBox from '../QueryBox';
+import InputBar from '../InputBar';
 
 /*COMPONENTS*/
-import TopicList from '../TopicList/TopicList';
+import TopicList from '../TopicList';
 
 import './App.css';
 
