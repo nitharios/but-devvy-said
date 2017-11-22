@@ -1,22 +1,23 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { selectTopics } from '../actions/index';
 import { bindActionCreators } from 'redux';
 
-class TopicsList extends Component {
+/*ACTIONS*/
+import { selectTopic } from '../../actions/index';
+
+class TopicList extends Component {
   renderList() {
     return this.props.topics.map((topic) => {
       return (
         <li
-         key={topics.title} 
-         onClick={() => this.props.selecttopics(topics)}
+         key={topic.title} 
+         onClick={() => this.props.selectTopic(topic)}
          className="list-group-item">
-         {topics.title}
+         {topic.title}
         </li>
         );
      });
   }
-
 
   render() {
     return(
@@ -27,23 +28,24 @@ class TopicsList extends Component {
   }
 }
 
-
-
 function mapStateToProps(state) {
-  // state returns as props inside of topicslist
+  // state returns as props inside of booklist
   return {
     topics: state.topics
   };
 }
 
-// anything run here will end up as props on the topicslist container
+// anything run here will end up as props on the booklist container
 function mapDispatchToProps(dispatch) {
 
-// when selecttopics is called result should be passed to all reducers
-  return bindActionCreators({ selecttTopics: selectTopics }, dispatch)
+// when selectbook is called result should be passed to all reducers
+  return bindActionCreators({ selectTopic: selectTopic }, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(topicsList);
+export default connect(
+  mapStateToProps, 
+  mapDispatchToProps
+)(TopicList);
 
 
 

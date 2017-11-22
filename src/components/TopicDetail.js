@@ -1,7 +1,6 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
 
-
 class TopicDetail extends Component {
   render() {
 
@@ -25,4 +24,7 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(TopicDetail);
+export default connect(
+  mapStateToProps,
+  null
+)(TopicDetail);
