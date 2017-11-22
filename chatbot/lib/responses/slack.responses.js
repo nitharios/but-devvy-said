@@ -28,8 +28,8 @@ module.exports = {
     "Sorry, can't help you with that :(",
     "My Nathan might know!"
   ],
-  notes_query : [
-    "Would you like to see notes? (yes/no)"
+  additional_query : [
+    "Would you like to me to ask Nigel for more information? (yes/no)"
   ],
   other_msgs : [
     "poke",
