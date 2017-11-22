@@ -1,4 +1,11 @@
 module.exports = {
+  additional_query : [
+    "Would you like to me to ask Nigel for more information? (yes/no)",
+    "Would you like to see notes or examples?"
+  ],
+  affirmations : [
+    "Okay, let me check..."
+  ],
   bye_msgs : [
     "See you later!", 
     "Bye for now!",
@@ -27,9 +34,6 @@ module.exports = {
     "shrugs",
     "Sorry, can't help you with that :(",
     "My Nathan might know!"
-  ],
-  additional_query : [
-    "Would you like to me to ask Nigel for more information? (yes/no)"
   ],
   other_msgs : [
     "poke",

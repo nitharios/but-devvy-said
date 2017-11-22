@@ -1,5 +1,6 @@
 const stringBuilder = require('../helpers/stringBuilder');
 const { additional_query,
+        affirmations,
         bye_msgs,
         error_msgs,
         greetings, 
@@ -40,17 +41,30 @@ module.exports = (function() {
     // contains variants of 'yes', 'no', and 'quit' 
     let { utterances } = convo.context.bot;
       
-    // creates a path when the user says 'yes'
-    convo.addMessage({
-      text : 'Okay, let me check...',
-      action : 'completed'
-    }, 'yes_thread');
-
     // creates a path when the user says 'no'
     convo.addMessage({
       text : randomResponse(bye_msgs),
       action : 'completed'
     }, 'no_thread');
+
+    // creates a path when the user says 'yes'
+    convo.addMessage({
+      text : randomResponse(affirmations),
+      action : 'completed'
+    }, 'yes_thread');
+
+    // creates a path when the user wants to see notes
+    convo.addMessage({
+      text : randomResponse(affirmations),
+      action : 'completed'
+    }, 'notes_thread');
+
+    // creates a path when the user wants to see examples
+    convo.addMessage({
+      text : randomResponse(affirmations),
+      action : 'completed'
+    }, 'examples_thread');
+
 
     // creates a path when no options are matched
     convo.addMessage({

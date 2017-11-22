@@ -1,8 +1,6 @@
 /*MAIN COMPONENT*/
-/*MAIN COMPONENT*/
-/*MAIN COMPONENT*/
-
 import React, { Component } from 'react';
+<<<<<<< HEAD:src/containers/App/App.js
 import { connect } from 'react-redux'; 
 
 /*CONTAINERS*/
@@ -14,19 +12,30 @@ import InputBar from '../InputBar';
 import TopicList from '../TopicList';
 
 import './App.css';
+=======
+>>>>>>> development:src/containers/App/index.js
 
 class App extends Component {
-
-  constructor(props) {
-    super(props);
-  }
 
   render() {
 
     return (
       <div className="App">
+<<<<<<< HEAD:src/containers/App/App.js
       
         <Header />
+=======
+        <div className="App-header">
+          <div className="App-bar">
+            <ul>
+              <li><a>About</a></li>
+              <li><a>New Topic</a></li>
+              <li><a>Related</a></li>
+            </ul>
+          </div>
+          <img src='DevvyCho.jpg' width='120' height='90' alt='' />
+        </div>
+>>>>>>> development:src/containers/App/index.js
 
         <div className="App-chat">
           <div className="App-chat-window">

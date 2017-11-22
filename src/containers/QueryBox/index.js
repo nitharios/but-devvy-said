@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import redux from 'react-redux';
 
 class QueryBox extends Component {
 
@@ -19,7 +18,6 @@ class QueryBox extends Component {
   }
   
   render() {
-
     return (
       <div className="main-display-box-container">
         <div className="main-display-box-">
@@ -29,12 +27,8 @@ class QueryBox extends Component {
         </div>
       </div>
     );
-
   }
-
-
-
 }
-//end class
+
 
 export default QueryBox;

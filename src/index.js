@@ -1,12 +1,8 @@
 /*REACT ENTRY POINT*/
-/*REACT ENTRY POINT*/
-/*REACT ENTRY POINT*/
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import { connect } from 'react-redux';
 
 import {
   BrowserRouter as Router,
@@ -19,7 +15,7 @@ import thunk from 'redux-thunk';
 import registerServiceWorker from './lib/registerServiceWorker';
 
 /*COMPONENTS*/
-import App from './containers/App/App';
+import App from './containers/App/';
 
 import './index.css';
 
