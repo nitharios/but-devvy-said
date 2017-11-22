@@ -1,4 +1,4 @@
-/*This can be a link to a video, tutorial, or StackOverflow Q&A. It can also be a code or text snippet from a DevLeague student.*/
+/*This model represents a link to an external resource.*/
 
 module.exports = function (sequelize, DataTypes) {
   
