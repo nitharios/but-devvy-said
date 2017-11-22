@@ -21,7 +21,6 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   Topic.associate = function(models) {
-
     Topic.hasMany(models.Resource, {
       foreignKey : 'topic_id',
     });
