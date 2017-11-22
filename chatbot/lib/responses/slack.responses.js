@@ -9,7 +9,10 @@ module.exports = {
   bye_msgs : [
     "See you later!", 
     "Bye for now!",
-    "Have a great day!"
+    "Have a great day!",
+    "Avoir mon amie!",
+    "Cheers ! :D buhbye!",
+    "Have a nice cup of tea~"
   ],
   error_msgs : [
     "Oh no! Something went wrong!",
@@ -27,13 +30,18 @@ module.exports = {
   greetings : [
     "Hello!", 
     "Hey, how are you doing?",
-    "Hi! Where is my Nathan?"
+    "Hi! Where is my Nathan?",
+    "Hello, Im Devvy, Im great :D~!",
+    "Huya! how goes there!!!"
   ],
   missing_info : [
     "Hmm...Nigel didn't have any info for me.",
     "shrugs",
     "Sorry, can't help you with that :(",
-    "My Nathan might know!"
+    "My Nathan might know!",
+    "Chris is fixing the gap in my information",
+    "Nathan is fixing the gap in my information",
+    "Justin is fixing the gap in my information"
   ],
   other_msgs : [
     "poke",
@@ -54,6 +62,9 @@ module.exports = {
     "I HATE the color pink!!!!",
     "I can't wait to go back to San Fran!!",
     "I woke up like `this`",
+    "Merry Christmas! Its that time of year !",
+    "why looky here! so many hard working devs ^^",
+    "devvy is hungry, feed me code"
   ],
   timeout : [
     "...I guess I'll go do something else then...",
