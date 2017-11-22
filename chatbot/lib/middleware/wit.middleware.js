@@ -23,7 +23,7 @@ module.exports = function(token) {
     console.log('wit middleware');
     
     // necessary so Wit only recieves TEXT
-    // otherwise, Wit would receive EVERYTHING
+    // otherwise, Wit would receive EVERYTHING 
     if (message.text && message.type !== 'self_message') {
       // sends the received message to Wit
       return client.message(message.text)
