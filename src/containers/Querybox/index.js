@@ -11,13 +11,14 @@ class QueryBox extends Component {
       error: ''
     });
   }
+
   
   render(){
     return(
       <div className="main-display-box-container">
         <div className="main-display-box-">
-          <textarea rows="5" cols="20">
-            this is where Devvy query results will go
+          <textarea name="description" value="query results">  
+            This is the display portion of devvy
           </textarea>
         </div>
       </div>
