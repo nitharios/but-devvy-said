@@ -21,12 +21,19 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   Topic.associate = function(models) {
+
     Topic.hasMany(models.Resource, {
       foreignKey : 'topic_id',
     });
+
     Topic.hasMany(models.Note, {
       foreignKey : 'topic_id',
     });
+
+    Topic.hasMany(models.Example, {
+      foreignKey : 'topic_id',
+    });
+
   };
 
   return Topic;

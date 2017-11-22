@@ -5,9 +5,9 @@ module.exports = function(sequelize, DataTypes) {
   const Example = sequelize.define('Example', {
     title : {type : DataTypes.STRING, allowNull : true},
     format : {type : DataTypes.STRING, allowNull : false},
-    comment : {type : DataTypes.STRING, allowNull : true},
+    comment : {type : DataTypes.TEXT, allowNull : true},
     code : {
-      type : DataTypes.JSONB,
+      type : DataTypes.TEXT,
       allowNull : false
     }
   });
