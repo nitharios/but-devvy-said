@@ -11,6 +11,7 @@ const { bye_msgs,
 module.exports = (function() {
 
   return {
+    // mentionHandler : mentionHandler,
     responseHandler : responseHandler
   };
 

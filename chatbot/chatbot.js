@@ -1,5 +1,6 @@
 const Botkit = require('botkit');
 const { responseHandler } = require('./lib/handlers/slack.handler');
+const responseTypes = ['direct_message', 'direct_mention'];
 const dotenv = require('dotenv');
 // loads .env file to process.env
 dotenv.load();
@@ -29,6 +30,8 @@ module.exports = (function DevvyCho() {
 
     slackController.log('Slack connection established');
   });
+
+  // slackController.on(responseTypes, )
 
   // activates when @DevvyCho is used
   // sends message to Wit to be deciphered
