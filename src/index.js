@@ -14,7 +14,7 @@ import App from './containers/App';
 import NewTopic from './containers/NewTopic';
 
 /* Components */
-import About from './components/About';
+import About from './components/about.component';
 
 /* library files */
 import registerServiceWorker from './lib/registerServiceWorker';

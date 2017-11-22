@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+// import { addUserText } from '../../actions/user.actions';
+import { query } from '../../actions/query.actions';
 
 class App extends Component {
   constructor() {
@@ -8,6 +10,16 @@ class App extends Component {
     this.devvyText = '';
     this.userText = '';
     this.userInput = '';
+
+    this.handleClear = this.handleClear.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleClear(e) {
+    this.setState({
+      userInput : ''
+    });
   }
 
   handleChange(e) {
@@ -23,7 +35,8 @@ class App extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    
+    // this.props.addUserText(this.state.userInput);
+    this.props.query(this.state.userInput);
 
     this.setState({
       userInput : ''
@@ -35,6 +48,10 @@ class App extends Component {
     return (
       <div id="app">
 
+        <div id="information-box">
+
+        </div>
+
         <div id="chatbox">
 
         </div>
@@ -44,7 +61,8 @@ class App extends Component {
             onChange={ this.handleChange }
             name="userInput"
             placeholder="How can I help you?"
-            type="text" />
+            type="text" 
+            value= { this.state.userInput } />
           <input
             onClick={ this.handleSubmit } 
             type="button"
@@ -59,3 +77,29 @@ class App extends Component {
     );
   }
 }
+
+// maps store state to local props
+const mapStateToProps = (state) => {
+  return {
+    examplesList : state.examplesList,
+    notesList : state.notesList,
+    resourcesList : state.resourcesList
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    // addUserText : () => {
+    //   dispatch(addUserText(input));
+    // },
+
+    query : (input) => {
+      dispatch(query(input));
+    }
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App)
