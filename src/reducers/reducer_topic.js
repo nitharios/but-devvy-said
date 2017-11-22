@@ -1,4 +1,3 @@
-
 export default function() {
   return [ 
    {title: 'JavaScript', length: 100},
