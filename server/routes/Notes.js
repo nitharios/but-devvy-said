@@ -23,26 +23,36 @@ router.route('/')
   })
   .post((req, res) => {
     
-    /*  { topic : 'Arrow Functions', title : 'Arrow Function Notes', student : 'Chris', bullets : ['Bullet Point 1', 'Bullet Point 2', 'Bullet Point 3'] }  */
+    /*  
+      { 
+        topic : 'Arrow Functions',
+        title : 'My Notes on Arrow Functions', 
+        firstName : 'Chris',
+        lastName : 'Min',
+        cohort : 19,
+        bullets : ['Bullet Point 1', 'Bullet Point 2', 'Bullet Point 3'] 
+      }  
+    */
 
-    const { topic, title, student, bullets } = req.body;
-    if (!topic || !title || !student || !bullets) {
-      return res.json((missing_key));
-    } 
+    const { topic, title, student, cohort, bullets } = req.body;
+    //should do validation.. 
     return Note.create({
       topic : topic,
       title : title,
       student : student,
+      cohort : cohort,
       bullets : bullets
     })
     .then(newNote => {
       return res.json(newNote);
     })
     .catch(error => {
+      console.log(error);
       return res.json(error_occurred);
     });
 
   });
+
 
 
 module.exports = router;
