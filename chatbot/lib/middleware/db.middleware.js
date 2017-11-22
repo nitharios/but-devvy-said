@@ -1,9 +1,13 @@
 const { Resource,
-        Topic 
+        Topic,
+        Note,
+        Example
       } = require('../../../server/models');
 
-module.exports = function(bot, message, next) {
-  console.log('db middleware');
+module.exports = function(bot, message, next) { 
+  console.log('=====DB MIDDLEWARE======');
+  console.log(message);
+
   let model = Resource;
   
   // if there is an info type user wants a specific model query
@@ -24,14 +28,15 @@ module.exports = function(bot, message, next) {
 
   if (message.db_query) {
 
+    let topicName = message.db_query[0].value;
+
     return Topic.findOne({
-      where : { name : message.db_query[0].value },
-      include : [{ model : model }]
+      where : { name : topicName },
+      include : [ { model : model } ]
     })
     .then(singleTopic => {
-      /*
-        if no match, singleTopic will === null
-      */
+      //if no match, singleTopic == null
+
       message.results = singleTopic;
       next();
     })
@@ -42,7 +47,7 @@ module.exports = function(bot, message, next) {
     });
   } else {
     
-    console.log('else');
+    console.log('Message is not a db_query');
     next();
   }
 };
