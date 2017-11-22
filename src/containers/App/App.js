@@ -25,10 +25,15 @@ class App extends Component {
     return (
       <div className="App">
 
-        <Nav />
-
         <div className="App-header">
-          <h1 className="App-title">Welcome to Devvy Cho Artificial Intelligence</h1>
+          <div className="App-bar">
+            <ul>
+              <li><a>About</a></li>
+              <li><a>New Topic</a></li>
+              <li><a>Related</a></li>
+            </ul>
+          </div>
+          <img src='DevvyCho.jpg' width='120' height='90' alt='' />
         </div>
         
         <InputBar />
