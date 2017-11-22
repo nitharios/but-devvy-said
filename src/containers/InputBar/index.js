@@ -1,13 +1,4 @@
-import React, {Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from  'redux';
-
-// import Axios from 
-//  !!!!---will need actions to support a call to nigel and the web___!!!
-// *import {action to nigle} from night 
-// *import { action from devvy} form devvy 
-// *----------------------------------
-
+import React, { Component } from 'react';
 
 class InputBar extends Component {
 

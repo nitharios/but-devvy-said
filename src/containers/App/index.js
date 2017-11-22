@@ -1,30 +1,11 @@
 /*MAIN COMPONENT*/
-/*MAIN COMPONENT*/
-/*MAIN COMPONENT*/
-
 import React, { Component } from 'react';
-import { connect } from 'react-redux'; 
-
-/*CONTAINERS*/
-import QueryBox from '../QueryBox';
-import InputBar from '../InputBar';
-
-/*COMPONENTS*/
-import TopicList from '../TopicList';
-
-import './App.css';
 
 class App extends Component {
-
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (
       <div className="App">
-
-
         <div className="App-header">
           <div className="App-bar">
             <ul>
