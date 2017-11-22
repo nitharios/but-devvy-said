@@ -1,5 +1,4 @@
 /*This model represents a link to an external resource.*/
-
 module.exports = function (sequelize, DataTypes) {
   
   const Resource = sequelize.define('Resource', {
