@@ -6,10 +6,16 @@ class QueryBox extends Component {
   constructor(){
     super();
     
-    this.setStat = ({
+    this.setState = ({
       querybox: '',
       error: ''
     });
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e){
+   this.setState({ term: e.target.value});
   }
 
   
@@ -17,8 +23,8 @@ class QueryBox extends Component {
     return(
       <div className="main-display-box-container">
         <div className="main-display-box-">
-          <textarea name="description" value="query results">  
-            This is the display portion of devvy
+          <textarea name="description" value={this.handleChange}>  
+            where data will be displayed
           </textarea>
         </div>
       </div>
