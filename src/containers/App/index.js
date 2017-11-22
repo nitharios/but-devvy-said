@@ -49,7 +49,15 @@ class App extends Component {
       <div id="app">
 
         <div id="information-box">
-
+          <div className="information" id="examples">
+            { this.props.examplesList }
+          </div>
+          <div className="information" id="notes">
+            { this.props.notesList }
+          </div>
+          <div className="information" id="resources">
+            { this.props.resourcesList }
+          </div>
         </div>
 
         <div id="chatbox">
