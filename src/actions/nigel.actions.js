@@ -1,8 +1,5 @@
 // NIgel actions fetch our main db for information retrieval
-
-
 import Axios from 'axios';
-
 
 const listOfUrls = '/api/urls'; // URL to Get from DB
 
