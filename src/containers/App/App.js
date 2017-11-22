@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'; 
 
 /*CONTAINERS*/
+import Header from '../Header';
 import QueryBox from '../QueryBox';
 import InputBar from '../InputBar';
 
@@ -21,20 +22,11 @@ class App extends Component {
   }
 
   render() {
+
     return (
       <div className="App">
-
-
-        <div className="App-header">
-          <div className="App-bar">
-            <ul>
-              <li><a>About</a></li>
-              <li><a>New Topic</a></li>
-              <li><a>Related</a></li>
-            </ul>
-          </div>
-          <img src='DevvyCho.jpg' width='120' height='90' alt='' />
-        </div>
+      
+        <Header />
 
         <div className="App-chat">
           <div className="App-chat-window">
