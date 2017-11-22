@@ -4,7 +4,7 @@ const MIN_CONFIDENCE = 0.50;
 module.exports = function(token) {
   
   if (!token) {
-    throw new Error ('Pleare provide a Wit token!');
+    throw new Error ('Please provide a Wit token!');
   }
 
   // new instatiation of Wit
