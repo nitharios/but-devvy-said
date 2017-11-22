@@ -1,6 +1,7 @@
 import React, {Component } from 'react';
-// import { connect } from 'react-redux';
-// import { bindActionCreators } from  'redux';
+import { connect } from 'react-redux';
+import { bindActionCreators } from  'redux';
+import 
 //  !!!!---will need actions to support a call to nigel and the web___!!!
 // *import {action to nigle} from night 
 // *import { action from devvy} form devvy 
@@ -17,6 +18,10 @@ this.state = { term: ''};
 this.onInputChange = this.onInputChange.bind(this);
 this.onFormSubmit = this.onFormSubmit.bind(this);
  
+ }
+
+ onInputSearch(e){
+
  }
 
  onInputChange(e) {
@@ -37,6 +42,8 @@ render(){
         className="form"
         value={this.state.term}
         onChange={this.onInputChange}
+        method="get"
+
       />
       <span className="query-button">
         <button type="submit" className="submit-btn"> Ask~!</button>

@@ -1,7 +1,9 @@
-import Axios from 'axios';
+// import Axios from 'axios';
 
-axios.get('https://api.wit.ai/message' )
-  .then(function(response){
-    console.log(response.data); // ex.: { user: 'Your User'}
-    console.log(response.status); // ex.: 200
-  });  
+// const wit = '/api/wit/query';
+
+// export const WIT_QUERY = 'WIT_QUERY';
+// // const WIT_URL = 'https://api.wit.ai/message';
+
+// export const witQuery = (witQuery) => {
+//   return(dispatch) => {}
