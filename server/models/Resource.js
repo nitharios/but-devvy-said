@@ -2,10 +2,6 @@
 module.exports = function (sequelize, DataTypes) {
   
   const Resource = sequelize.define('Resource', {
-    title : {
-      type : DataTypes.STRING,
-      allowNull : false
-    },
     url : {
       type : DataTypes.STRING, 
       allowNull : true
