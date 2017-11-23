@@ -100,7 +100,7 @@ module.exports = (function() {
     ], {}, 'default');
 
     // times out after 5 seconds
-    convo.setTimeout(5000);
+    convo.setTimeout(10000);
     // activate conversation
     convo.activate();
   }
