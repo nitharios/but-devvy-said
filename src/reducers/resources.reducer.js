@@ -6,5 +6,8 @@ export default (state = initialState, action) => {
   switch(action.type) {
     case QUERY:
       return [ ...action.resourcesList ];
+
+    default:
+      return state;
   }
 };

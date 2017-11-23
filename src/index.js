@@ -27,7 +27,7 @@ const store = createStore(
 );
 // ------STORE--------
 
-ReactDOM.renders(
+ReactDOM.render(
   <Provider store={ store }>
     <Router>
       <div id="source">
@@ -46,7 +46,8 @@ ReactDOM.renders(
 
       </div>
     </Router>
-  </Provider>
+  </Provider>,
+  document.getElementById('root')
 );
 
 registerServiceWorker();

@@ -7,9 +7,11 @@ class App extends Component {
   constructor() {
     super();
 
-    this.devvyText = '';
-    this.userText = '';
-    this.userInput = '';
+    this.state = {
+      devvyText : '',
+      userText : '',
+      userInput : ''    
+    };
 
     this.handleClear = this.handleClear.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -68,7 +70,7 @@ class App extends Component {
             name="userInput"
             placeholder="How can I help you?"
             type="text" 
-            value= { this.state.userInput } />
+            value={ this.state.userInput } />
           <input
             onClick={ this.handleSubmit } 
             type="button"
