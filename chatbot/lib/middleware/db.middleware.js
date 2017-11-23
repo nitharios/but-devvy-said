@@ -23,7 +23,7 @@ module.exports = function(bot, message, next) {
         break;
 
       default:
-        model = Resource;
+        model = Note;
         break;
     }
   }
@@ -48,8 +48,9 @@ module.exports = function(bot, message, next) {
       next();
     });
   } else {
-    
     console.log('Message is not a db_query');
     next();
   }
+
+
 };

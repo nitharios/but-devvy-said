@@ -41,7 +41,6 @@ module.exports = function(token) {
           // { msg_i: '0jbSqnLe9kJ4NgSrN', _text: 'hi', entities: {entityName: [ [Object] ]} }
           console.log(data.entities);
           
-
           message.entities = data.entities;
           message.info_type = message.entities.info_type;
           message.db_query = message.entities.db_query;
