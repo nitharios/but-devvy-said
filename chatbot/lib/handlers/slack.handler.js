@@ -27,8 +27,8 @@ module.exports = (function() {
 
     } else if (message.results) {
       console.log(message.results);
-      const { name, Notes } = message.results;
-      bot.reply(message, stringBuilder(name, Notes), (err, response) => {
+      const { name, Resources } = message.results;
+      bot.reply(message, stringBuilder(name, Resources), (err, response) => {
         // response carries the details of the message passed back to the user
         bot.createConversation(message, conversationHandler);
       });
