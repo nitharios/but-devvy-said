@@ -1,66 +1,108 @@
-/*MAIN COMPONENT*/
 import React, { Component } from 'react';
-<<<<<<< HEAD:src/containers/App/App.js
-import { connect } from 'react-redux'; 
-
-/*CONTAINERS*/
-import Header from '../Header';
-import QueryBox from '../QueryBox';
-import InputBar from '../InputBar';
-
-/*COMPONENTS*/
-import TopicList from '../TopicList';
-
-import './App.css';
-=======
->>>>>>> development:src/containers/App/index.js
+import { connect } from 'react-redux';
+import { query } from '../../actions/query.actions';
+import ListBuilder from '../../components/listbuilder.component';
 
 class App extends Component {
+  constructor() {
+    super();
 
+    this.state = {
+      devvyText : '',
+      userText : '',
+      userInput : ''    
+    };
+
+    this.handleClear = this.handleClear.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleClear(e) {
+    this.setState({
+      userInput : ''
+    });
+  }
+
+  handleChange(e) {
+    const target = e.target;
+    const name = target.name;
+    const value = target.value;
+
+    this.setState({
+      [name] : value
+    });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+
+    this.props.query(this.state.userInput);
+
+    this.setState({
+      userInput : ''
+    });
+  }
+ 
   render() {
+    return(
+      <div id="app">
 
-    return (
-      <div className="App">
-<<<<<<< HEAD:src/containers/App/App.js
-      
-        <Header />
-=======
-        <div className="App-header">
-          <div className="App-bar">
-            <ul>
-              <li><a>About</a></li>
-              <li><a>New Topic</a></li>
-              <li><a>Related</a></li>
-            </ul>
-          </div>
-          <img src='DevvyCho.jpg' width='120' height='90' alt='' />
-        </div>
->>>>>>> development:src/containers/App/index.js
-
-        <div className="App-chat">
-          <div className="App-chat-window">
-            <span>Hello Friend!</span>
-            <span>Hi Devvy!</span>
-            <span>How can I help?</span>
-            <span>What is Javascript?</span>
-            <span>Hmm...</span>
-          </div>
+        <div id="information-box">
+          <ListBuilder
+            id="examples"
+            informationList={ this.props.examplesList }
+            type="code" />
+          <ListBuilder
+            id="notes"
+            informationList={ this.props.notesList }
+            type="bullets" />
+          <ListBuilder
+            id="resources"
+            informationList={ this.props.resourcesList }
+            type="url" />
         </div>
 
-        <div className="App-input">
-          <div>
-            <textarea placeholder="Ask Me Something!"></textarea>
-            <button>Send</button>
-          </div>
+        <div id="inputbox">
+          <input
+            onChange={ this.handleChange }
+            name="userInput"
+            placeholder="How can I help you?"
+            type="text" 
+            value={ this.state.userInput } />
+          <input
+            onClick={ this.handleSubmit } 
+            type="button"
+            value="GO" />
+          <input
+            onClick={ this.handleClear }
+            type="button"
+            value="CLEAR" />
         </div>
-        
 
       </div>
     );
   }
-
-
 }
-//end class
 
-export default App;
+// maps store state to local props
+const mapStateToProps = state => {
+  return {
+    examplesList : state.examplesList,
+    notesList : state.notesList,
+    resourcesList : state.resourcesList
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    query : input => {
+      dispatch(query(input));
+    }
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App)

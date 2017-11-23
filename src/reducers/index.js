@@ -1,8 +1,13 @@
 import { combineReducers } from 'redux';
-import topicsList from './topics.reducer';
 
-const rootReducer = combineReducers({
-  topicsList : topicsList
+import examplesList from './example.reducer';
+import notesList from './note.reducer';
+import resourcesList from './resource.reducer';
+import topicsList from './topic.reducer';
+
+export default combineReducers({
+  examplesList,
+  notesList,
+  resourcesList,
+  topicsList
 });
-
-export default rootReducer;
