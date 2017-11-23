@@ -23,7 +23,7 @@ module.exports = function(bot, message, next) {
         break;
 
       default:
-        model = Note;
+        model = Resource;
         break;
     }
   }
