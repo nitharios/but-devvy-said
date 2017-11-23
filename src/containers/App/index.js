@@ -86,7 +86,7 @@ class App extends Component {
 }
 
 // maps store state to local props
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     examplesList : state.examplesList,
     notesList : state.notesList,
@@ -94,9 +94,9 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    query : (input) => {
+    query : input => {
       dispatch(query(input));
     }
   }
