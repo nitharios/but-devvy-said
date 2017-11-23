@@ -10,7 +10,7 @@ module.exports = function() {
     queryExamples : queryExamples
   };
 
-  function queryResources() {
+  function queryResources(bot, message, next) {
     return Resource.findAll({
       limit : 5,
       order : [ ['updatedAt', 'DESC'] ]
@@ -25,7 +25,7 @@ module.exports = function() {
     });
   }
 
-  function queryNotes() {
+  function queryNotes(bot, message, next) {
     return Note.findAll({
       limit : 5,
       order : [ ['updatedAt', 'DESC'] ]
@@ -40,7 +40,7 @@ module.exports = function() {
     });
   }
 
-  function queryExamples() {
+  function queryExamples(bot, message, next) {
     return Example.findAll({
       limit : 5,
       order : [ ['updatedAt', 'DESC'] ]
