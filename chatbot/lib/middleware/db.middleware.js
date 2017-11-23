@@ -4,16 +4,11 @@ const { Resource,
         Example
       } = require('../../../server/models');
 
-module.exports = function(bot, message, next) { 
-  console.log('=====dbQuery HEARD MIDDLEWARE======');
-  console.log(message);
-
-  let model = null;
-  let intent = message.info_type[0].value;
-  
+module.exports = function(bot, message, next) {
+  let model = Resource;
   // if there is an info type user wants a specific model query
   if (message.info_type && message.db_query) {
-    switch(intent) {
+    switch(message.info_type) {
       case 'notes':
         model = Note;
         break;
@@ -23,7 +18,6 @@ module.exports = function(bot, message, next) {
         break;
 
       default:
-        model = Resource;
         break;
     }
   }
@@ -47,10 +41,11 @@ module.exports = function(bot, message, next) {
       message.error = true;
       next();
     });
+
   } else {
     console.log('Message is not a db_query');
     next();
   }
 
-
+  next();
 };

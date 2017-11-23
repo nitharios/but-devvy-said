@@ -20,47 +20,29 @@ module.exports = function(token) {
   };
 
   function receive(bot, message, next) {    
-
-    console.log('======wit.receive HEARD MIDDLEWARE=======');
-    console.log(message);
-
-    /* message has channel, user, ts, source_team, team, raw_message
-        { 
-          type : 'direct_message',
-          text : 'i need resources on CLOSURES.'
-        }
-    */    
-
     // Wit will only recieve TEXT
     if (message.text && message.type !== 'self_message') {
 
       // sends the received message to Wit
       return client.message(message.text)
-        .then(data => { 
+      .then(data => {           
+        message.entities = data.entities;
+        message.info_type = message.entities.info_type;
+        message.db_query = message.entities.db_query;
+        message.greetings = message.entities.greetings;
 
-          // { msg_i: '0jbSqnLe9kJ4NgSrN', _text: 'hi', entities: {entityName: [ [Object] ]} }
-          console.log(data.entities);
-          
-          message.entities = data.entities;
-          message.info_type = message.entities.info_type;
-          message.db_query = message.entities.db_query;
-          message.greetings = message.entities.greetings;
-
-          next();
-        })
-        .catch(err => {
-          console.log('wit error', err);
-          message.error = true;
-          next();
-        });
+        next();
+      })
+      .catch(err => {
+        console.log('wit error', err);
+        message.error = true;
+        next();
+      });
     }
 
   }
 
   function hears(patterns, message) {
-    console.log("======wit.hears HEAR MIDDLEWARE=======");
-    console.log(message);
-
     // patterns is the first argument of controller.hears
     if (patterns) return true;
 
@@ -78,6 +60,4 @@ module.exports = function(token) {
 
     return false;
   }
-
-
 };
