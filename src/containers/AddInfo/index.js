@@ -5,6 +5,8 @@ import { addNewExample } from '../../actions/example.actions';
 import { addNewNote } from '../../actions/note.actions';
 import { addNewResource } from '../../actions/resource.actions';
 
+import Select from '../../components/select.component';
+
 const EXAMPLE = 'example';
 const NOTE = 'note';
 const RESOURCE = 'resource';
@@ -40,6 +42,7 @@ class AddInfo extends Component {
   handleReset(e) {
     this.setState({
       model : '',
+      topic_id : '',
       title : '',
       format : '',
       code : '',
@@ -65,7 +68,7 @@ class AddInfo extends Component {
     e.preventDefault();
 
     let info = {};
-    let { title, format, 
+    let { topic_id, title, format, 
           code, comment, 
           student, cohort, 
           bullets, url 
@@ -74,6 +77,7 @@ class AddInfo extends Component {
     switch(this.state.model) {
       case EXAMPLE:
         info = {
+          topic_id : topic_id,
           title : title,
           format : format,
           code : code,
@@ -85,6 +89,7 @@ class AddInfo extends Component {
 
       case NOTE:
         info = {
+          topic_id : topic_id,
           title : title,
           student : student,
           cohort : cohort,
@@ -96,6 +101,7 @@ class AddInfo extends Component {
 
       case RESOURCE:
         info = {
+          topic_id : topic_id,
           title : title,
           url : url
         };
@@ -109,6 +115,7 @@ class AddInfo extends Component {
 
     this.setState({
       model : '',
+      topic_id : '',
       title : '',
       format : '',
       code : '',
@@ -126,6 +133,13 @@ class AddInfo extends Component {
         <form 
           className="add-info-form"
           onSubmit={ this.handleSubmit } >
+
+          <Select
+            defaultValue={ this.state.topic_id }
+            list={ this.props.topicsList }
+            name="topic_id"
+            onChange={ this.handleChange }
+            type="name" />
 
           <input
             defaultValue={ this.state.title }
@@ -185,6 +199,12 @@ class AddInfo extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    topicsList : state.topicsList
+  }
+}
+
 const mapDispatchToProps = dispatch => {
   return {
     loadTopics : ()  => {
@@ -203,6 +223,6 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(AddInfo)

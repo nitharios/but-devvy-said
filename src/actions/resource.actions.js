@@ -15,6 +15,10 @@ export const addNewResource = info => {
         type : ADD_RESOURCE,
         newResource : data.newResource
       });
+    })
+    .catch(err => {
+      console.log(err);
+      return;
     });
   };
 };

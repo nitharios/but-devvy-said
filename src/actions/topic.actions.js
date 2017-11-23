@@ -5,7 +5,7 @@ const topicsURL = '/api/topics';
 
 // send query to back end 
 // expect a parsed response back
-export const loadTopics = (input) => {
+export const loadTopics = () => {
   return dispatch => {
     return Axios.get(topicsURL)
     .then(response => {
@@ -15,6 +15,10 @@ export const loadTopics = (input) => {
         type : LOAD_TOPICS,
         topicsList : data.topics
       });
+    })
+    .catch(err => {
+      console.log(err);
+      return;
     });
   };
 };

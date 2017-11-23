@@ -15,6 +15,10 @@ export const addNewExample = info => {
         type : ADD_EXAMPLE,
         newExample : data.newExample
       });
+    })
+    .catch(err => {
+      console.log(err);
+      return;
     });
   };
 };

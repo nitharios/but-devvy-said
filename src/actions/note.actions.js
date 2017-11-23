@@ -15,6 +15,10 @@ export const addNewNote = info => {
         type : ADD_NOTE,
         newNote : data.newNote
       });
+    })
+    .catch(err => {
+      console.log(err);
+      return;
     });
   };
 };

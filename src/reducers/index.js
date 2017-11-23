@@ -1,11 +1,13 @@
 import { combineReducers } from 'redux';
 
-import examplesList from './examples.reducer';
-import notesList from './notes.reducer';
-import resourcesList from './resources.reducer';
+import examplesList from './example.reducer';
+import notesList from './note.reducer';
+import resourcesList from './resource.reducer';
+import topicsList from './topic.reducer';
 
 export default combineReducers({
   examplesList,
   notesList,
-  resourcesList
+  resourcesList,
+  topicsList
 });

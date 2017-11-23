@@ -17,6 +17,10 @@ export const query = (input) => {
         notesList : data.notes,
         resourcesList : data.resources
       });
+    })
+    .catch(err => {
+      console.log(err);
+      return;
     });
   };
 };
