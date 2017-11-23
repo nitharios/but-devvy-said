@@ -11,8 +11,7 @@ module.exports = {
     "Bye for now!",
     "Have a great day!",
     "Avoir mon amie!",
-    "Cheers ! :D buhbye!",
-    "Have a nice cup of tea~"
+    "Have a nice cup of tea ~"
   ],
   error_msgs : [
     "Oh no! Something went wrong!",
@@ -31,8 +30,7 @@ module.exports = {
     "Hello!", 
     "Hey, how are you doing?",
     "Hi! Where is my Nathan?",
-    "Hello, Im Devvy, Im great :D~!",
-    "Huya! how goes there!!!"
+    "Hello, my name is Devvy!",
   ],
   missing_info : [
     "Hmm...Nigel didn't have any info for me.",
@@ -40,7 +38,6 @@ module.exports = {
     "Sorry, can't help you with that :(",
     "My Nathan might know!",
     "Chris is fixing the gap in my information",
-    "Nathan is fixing the gap in my information",
     "Justin is fixing the gap in my information"
   ],
   other_msgs : [
@@ -63,8 +60,7 @@ module.exports = {
     "I can't wait to go back to San Fran!!",
     "I woke up like `this`",
     "Merry Christmas! Its that time of year !",
-    "why looky here! so many hard working devs ^^",
-    "devvy is hungry, feed me code"
+    "Why looky here! So many hard working devs ^^",
   ],
   timeout : [
     "...I guess I'll go do something else then...",
