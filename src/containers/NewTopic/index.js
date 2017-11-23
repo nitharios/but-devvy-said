@@ -1,6 +1,6 @@
+/* NOT CURRENTLY NECESSARY */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { addNewTopic } from 
 
 class NewTopic extends Component {
   constructor() {
