@@ -23,7 +23,6 @@ module.exports = function(bot, message, next) {
   }
 
   if (message.db_query) {
-
     let topicName = message.db_query[0].value;
 
     return Topic.findOne({
@@ -37,8 +36,7 @@ module.exports = function(bot, message, next) {
       ]
     })
     .then(singleTopic => {
-      //if no match, singleTopic == null
-
+      // if no match, singleTopic == null
       message.results = singleTopic;
       next();
     })
