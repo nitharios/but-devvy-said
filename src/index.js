@@ -11,7 +11,6 @@ import {
 } from 'react-router-dom';
 /* Containers */
 import App from './containers/App';
-import NewTopic from './containers/NewTopic';
 
 /* Components */
 import About from './components/about.component';
@@ -42,7 +41,6 @@ ReactDOM.render(
 
         <Route exact path="/" component={ App } />
         <Route path="/about" component={ About } />
-        <Route path="/newtopic" component={ NewTopic } />
 
       </div>
     </Router>

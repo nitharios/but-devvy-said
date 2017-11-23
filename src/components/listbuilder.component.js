@@ -1,13 +1,13 @@
 import React from 'react';
 
 export default ({ informationList, type, id }) => {
-  return(
+  return(    
     <div className="information" id={ id }>
       { 
         informationList
-        .map(info => {
+        .map((info, idx) => {          
           return(
-            <div>
+            <div key={ idx }>
               <div>{ info.title || type }</div>
               <div>{ info[type] }</div>
             </div>
