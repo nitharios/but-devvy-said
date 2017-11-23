@@ -14,6 +14,7 @@ import App from './containers/App';
 
 /* Components */
 import About from './components/about.component';
+import NavBar from './components/navbar.component';
 
 /* library files */
 import registerServiceWorker from './lib/registerServiceWorker';
@@ -37,6 +38,8 @@ ReactDOM.render(
               <div></div>
             </Link>
           </div>
+
+          <NavBar />
         </header>
 
         <Route exact path="/" component={ App } />
