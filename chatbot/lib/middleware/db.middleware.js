@@ -5,14 +5,15 @@ const { Resource,
       } = require('../../../server/models');
 
 module.exports = function(bot, message, next) { 
-  console.log('=====DB MIDDLEWARE======');
+  console.log('=====dbQuery HEARD MIDDLEWARE======');
   console.log(message);
 
-  let model = Resource;
+  let model = null;
+  let intent = message.info_type[0].value;
   
   // if there is an info type user wants a specific model query
   if (message.info_type && message.db_query) {
-    switch(message.info_type) {
+    switch(intent) {
       case 'notes':
         model = Note;
         break;
@@ -22,6 +23,7 @@ module.exports = function(bot, message, next) {
         break;
 
       default:
+        model = Resource;
         break;
     }
   }

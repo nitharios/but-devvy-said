@@ -21,7 +21,8 @@ module.exports = function(token) {
 
   function receive(bot, message, next) {    
 
-    console.log('======WIT MIDDLEWARE=======');
+    console.log('======wit.receive HEARD MIDDLEWARE=======');
+    console.log(message);
 
     /* message has channel, user, ts, source_team, team, raw_message
         { 
@@ -58,6 +59,9 @@ module.exports = function(token) {
   }
 
   function hears(patterns, message) {
+    console.log("======wit.hears HEAR MIDDLEWARE=======");
+    console.log(message);
+
     // patterns is the first argument of controller.hears
     if (patterns) return true;
 
