@@ -28,7 +28,13 @@ module.exports = function(bot, message, next) {
 
     return Topic.findOne({
       where : { name : topicName },
-      include : [ { model : model } ]
+      include : [
+        { 
+          model : model,
+          order : [[ 'createdAt', 'DESC' ]],
+          limit : 5
+        }
+      ]
     })
     .then(singleTopic => {
       //if no match, singleTopic == null

@@ -11,7 +11,13 @@ const router = express.Router();
 router.route('/')
 .get((req, res) => {
   return Topic.findAll({
-    include : [{ model : Resource }],
+    include : [
+      { 
+        model : Resource,
+        order : [[ 'createdAt', 'DESC' ]],
+        limit : 5
+      }
+    ],
     order : [[ 'name' ]]
   })
   .then(topicsList => {
