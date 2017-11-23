@@ -1,4 +1,4 @@
-module.exports = controller.hears(['question me', 'lets chat', 'hey devvy lets chat'], 'message_received', function(bot, message) {
+controller.hears(['question me', 'lets chat', 'hey devvy lets chat'], 'message_received', function(bot, message) {
   // start a conversation to handle this response.
   bot.startConversation(message, function(err, convo) {
 
