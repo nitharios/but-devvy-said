@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { query } from '../../actions/query.actions';
+import ListBuilder from '../../components/listbuilder.component';
 
 class App extends Component {
   constructor() {
@@ -47,15 +48,18 @@ class App extends Component {
       <div id="app">
 
         <div id="information-box">
-          <div className="information" id="examples">
-            { this.props.examplesList }
-          </div>
-          <div className="information" id="notes">
-            { this.props.notesList }
-          </div>
-          <div className="information" id="resources">
-            { this.props.resourcesList }
-          </div>
+          <ListBuilder
+            id="examples"
+            informationList={ this.props.examplesList }
+            type="code" />
+          <ListBuilder
+            id="notes"
+            informationList={ this.props.notesList }
+            type="bullets" />
+          <ListBuilder
+            id="resources"
+            informationList={ this.props.resourcesList }
+            type="url" />
         </div>
 
         <div id="inputbox">
