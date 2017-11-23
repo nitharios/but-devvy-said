@@ -26,6 +26,7 @@ module.exports = (function() {
       bot.reply(message, randomResponse(greetings));
 
     } else if (message.results) {
+      console.log(message.results);
       const { name, Resources } = message.results;
       bot.reply(message, stringBuilder(name, Resources), (err, response) => {
         // response carries the details of the message passed back to the user

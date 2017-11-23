@@ -10,7 +10,7 @@ module.exports = function(token) {
   // new instatiation of Wit
   const client = new Wit({
     // pass Wit a valid token
-    accessToken : token,
+    accessToken : token
     // logger : new log.Logger(log.DEBUG) // optional
   });
 
@@ -20,32 +20,47 @@ module.exports = function(token) {
   };
 
   function receive(bot, message, next) {    
-    console.log('wit middleware');
-    
-    // necessary so Wit only recieves TEXT
-    // otherwise, Wit would receive EVERYTHING 
+
+    console.log('======wit.receive HEARD MIDDLEWARE=======');
+    console.log(message);
+
+    /* message has channel, user, ts, source_team, team, raw_message
+        { 
+          type : 'direct_message',
+          text : 'i need resources on CLOSURES.'
+        }
+    */    
+
+    // Wit will only recieve TEXT
     if (message.text && message.type !== 'self_message') {
+
       // sends the received message to Wit
       return client.message(message.text)
-      .then(data => {
-        console.log(data.entities);
-        
-        message.entities = data.entities;
-        message.info_type = message.entities.info_type;
-        message.db_query = message.entities.db_query;
-        message.greetings = message.entities.greetings;
+        .then(data => { 
 
-        next();
-      })
-      .catch(err => {
-        console.log('wit error', err);
-        message.error = true;
-        next();
-      });
+          // { msg_i: '0jbSqnLe9kJ4NgSrN', _text: 'hi', entities: {entityName: [ [Object] ]} }
+          console.log(data.entities);
+          
+          message.entities = data.entities;
+          message.info_type = message.entities.info_type;
+          message.db_query = message.entities.db_query;
+          message.greetings = message.entities.greetings;
+
+          next();
+        })
+        .catch(err => {
+          console.log('wit error', err);
+          message.error = true;
+          next();
+        });
     }
+
   }
 
   function hears(patterns, message) {
+    console.log("======wit.hears HEAR MIDDLEWARE=======");
+    console.log(message);
+
     // patterns is the first argument of controller.hears
     if (patterns) return true;
 
@@ -63,4 +78,6 @@ module.exports = function(token) {
 
     return false;
   }
+
+
 };

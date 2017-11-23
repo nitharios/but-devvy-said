@@ -9,22 +9,28 @@ module.exports = {
         title : 'Event Listener Arrow Function',
         format : 'Javascript',
         comment : 'A situation where lexical scope matters',
-        code : 'CODE IS HERE',
-        topic_id : 9
+        code : 'This is a code snippet.',
+        topic_id : 9,
+        createdAt : new Date(),
+        updatedAt : new Date()
       },
       {
         title : 'Using a Constructor',
         format : 'Javascript ES6',
         comment : 'From Articles and Products',
-        code : 'CODE IS HERE',
-        topic_id : 3
+        code : 'This is a code snippet.',
+        topic_id : 3,
+        createdAt : new Date(),
+        updatedAt : new Date()
       },
       {
         title : 'Callback Function',
         format : 'Javascript',
         comment : 'A function passed into another function',
-        code : 'CODE IS HERE',
-        topic_id : 5
+        code : 'This is a code snippet.',
+        topic_id : 5,
+        createdAt : new Date(),
+        updatedAt : new Date()
       }
 
     ], {});

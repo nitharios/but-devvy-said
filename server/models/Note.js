@@ -15,13 +15,15 @@ module.exports = function(sequelize, DataTypes) {
       allowNull : true
     },
     bullets : {
-      type : DataTypes.JSONB, // ['Bullet point 1', 'Bullet point 2', 'Bullet point 3']
+      type : DataTypes.TEXT,
       allowNull : false
     }
   },
+
   {
     tableName : 'notes'
   },
+  
   {
     indexes : [
       {
