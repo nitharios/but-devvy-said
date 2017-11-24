@@ -42,6 +42,8 @@ class App extends Component {
   }
  
   render() {
+    console.log(this.props.singleTopic.error);
+    
     return(
       <div id="app">
 
@@ -79,7 +81,11 @@ class App extends Component {
 
         { this.props.singleTopic.name
           ?  <div>This what I know about the { this.props.singleTopic.name } topic</div>
-          : <div>Sorry! I don't have any info on that :(</div>
+          : null
+        }
+        { this.props.singleTopic.error
+          ? <div>Sorry! I don't have any info on that</div>
+          : null
         }
 
       </div>

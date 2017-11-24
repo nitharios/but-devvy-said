@@ -18,7 +18,8 @@ export const query = userQuery => {
             type : MISSING_INFO,
             topicData : { 
               id : 0,
-              name : null
+              name : null,
+              error : true
             }
           });
 
