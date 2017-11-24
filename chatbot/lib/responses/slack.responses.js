@@ -36,9 +36,7 @@ module.exports = {
     "Hmm...Nigel didn't have any info for me.",
     "shrugs",
     "Sorry, can't help you with that :(",
-    "My Nathan might know!",
-    "Chris is fixing the gap in my information",
-    "Justin is fixing the gap in my information"
+    "No idea!"
   ],
   other_msgs : [
     "poke",
@@ -59,8 +57,11 @@ module.exports = {
     "I HATE the color pink!!!!",
     "I can't wait to go back to San Fran!!",
     "I woke up like `this`",
-    "Merry Christmas! Its that time of year !",
+    "Merry Christmas! It's that time of year !",
     "Why looky here! So many hard working devs ^^",
+    "My Nathan might know!",
+    "Chris is fixing the gap in my information",
+    "Justin is fixing the gap in my information"
   ],
   timeout : [
     "...I guess I'll go do something else then...",
