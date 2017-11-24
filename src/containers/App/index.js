@@ -78,8 +78,8 @@ class App extends Component {
         </div>
 
         { this.props.singleTopic.name
-          ? <div>This what I know about the { this.props.singleTopic.name } topic</div>
-          : null
+          ?  <div>This what I know about the { this.props.singleTopic.name } topic</div>
+          : <div>Sorry! I don't have any info on that</div>
         }
 
       </div>
@@ -89,6 +89,7 @@ class App extends Component {
 
 // maps store state to local props
 const mapStateToProps = state => {  
+
   return {
     examplesList : state.examplesList,
     notesList : state.notesList,

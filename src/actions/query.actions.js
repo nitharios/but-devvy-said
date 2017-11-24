@@ -1,5 +1,6 @@
 import Axios from 'axios';
 export const QUERY = 'QUERY';
+export const MISSING_INFO = 'MISSING_INFO';
 
 const queryURL = '/api/query';
 
@@ -10,15 +11,29 @@ export const query = userQuery => {
     return Axios.post(queryURL, userQuery)
     .then(response => {
       const data = response.data;
-      console.log(data);
 
-      dispatch({
-        type : QUERY,
-        topicData : data,
-        examplesList : data.Examples,
-        notesList : data.Notes,
-        resourcesList : data.Resources
-      });
+      switch(data) {
+        case null:
+          dispatch({
+            type : MISSING_INFO,
+            topicData : { 
+              id : 0,
+              name : null
+            }
+          });
+
+          break;
+
+        default:
+          dispatch({
+            type : QUERY,
+            topicData : data,
+            examplesList : data.Examples,
+            notesList : data.Notes,
+            resourcesList : data.Resources
+          });        
+      }
+
     })
     .catch(err => {
       console.log(err);
