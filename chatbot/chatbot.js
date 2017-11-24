@@ -5,12 +5,11 @@ const dotenv = require('dotenv');
 // loads .env file to process.env
 dotenv.load();
 
-module.exports = (function DevvyCho() {
+module.exports = (function() {
 
   const SLACK_TOKEN = process.env.SLACK_TOKEN;
-  const WIT_TOKEN = process.env.WIT_TOKEN;
   // invoke wit middleware and pass in token
-  const wit = require('./lib/middleware/wit.middleware')(WIT_TOKEN);
+  const wit = require('./lib/middleware/wit.middleware');
   const dbQuery = require('./lib/middleware/db.middleware');
   // initialize
   const slackController = Botkit.slackbot({
@@ -23,13 +22,17 @@ module.exports = (function DevvyCho() {
   });
 
   // create RTM connection
-  slackBot.startRTM((err, bot, payload) => {
-    if (err) {
-      throw new Error('Could not connect to Slack');
-    }
+  (function start() {
+    slackBot.startRTM((err, bot, payload) => {
+      if (err) {
+        slackController.log('ERROR! Could not connect to Slack');
+        slackController.log('Retrying connection in 60 seconds...');
+        return setTimeout(start, 60000);
+      }
 
-    slackController.log('Slack connection established');
-  });
+      slackController.log('Slack connection established');
+    }); 
+  })();
 
   // activates when @DevvyCho is used
   // sends message to Wit to be deciphered
@@ -39,5 +42,10 @@ module.exports = (function DevvyCho() {
 
   // listener that handles incoming messages
   slackController.hears(['.*'], ['mention', 'direct_message', 'direct_mention'], wit.hears, responseHandler);
+
+  // restarts connection if autonomously closed
+  slackController.on('rtm_close', (bot, err) => {
+    start();
+  });
 
 })();

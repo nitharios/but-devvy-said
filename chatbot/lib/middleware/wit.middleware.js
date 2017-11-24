@@ -1,18 +1,7 @@
 const { Wit, log } = require('node-wit');
-const MIN_CONFIDENCE = 0.50;
+const { client, MIN_CONFIDENCE } = require('../../../node-wit/wit.js');
 
-module.exports = function(token) {
-  
-  if (!token) {
-    throw new Error ('Please provide a Wit token!');
-  }
-
-  // new instatiation of Wit
-  const client = new Wit({
-    // pass Wit a valid token
-    accessToken : token
-    // logger : new log.Logger(log.DEBUG) // optional
-  });
+module.exports = (function() {
 
   return {
     receive : receive,
@@ -22,7 +11,6 @@ module.exports = function(token) {
   function receive(bot, message, next) {    
     // Wit will only recieve TEXT
     if (message.text && message.type !== 'self_message') {
-
       // sends the received message to Wit
       return client.message(message.text)
       .then(data => {           
@@ -30,16 +18,16 @@ module.exports = function(token) {
         message.info_type = message.entities.info_type;
         message.db_query = message.entities.db_query;
         message.greetings = message.entities.greetings;
-
         next();
+
       })
       .catch(err => {
         console.log('wit error', err);
         message.error = true;
         next();
+
       });
     }
-
   }
 
   function hears(patterns, message) {
@@ -50,7 +38,6 @@ module.exports = function(token) {
       return message.entities.db_query.some(query => {
         return patterns.some(pattern => {
           // check for a pattern that wants everything
-
           if (query.value === pattern && query.confidence >= MIN_CONFIDENCE) {
             return true;
           }
@@ -60,4 +47,4 @@ module.exports = function(token) {
 
     return false;
   }
-};
+})();

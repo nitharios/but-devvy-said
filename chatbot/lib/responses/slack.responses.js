@@ -18,7 +18,7 @@ module.exports = {
     "Hmm...check back later...",
     "Not in the mood right now!!!",
     "404, you know what that means ~",
-    "Sorry, Mika is is sitting on my keyboard right now."
+    "Sorry, I'm playing with Mika right now."
   ],
   emojis : [
     ":eyes:", 
@@ -30,15 +30,13 @@ module.exports = {
     "Hello!", 
     "Hey, how are you doing?",
     "Hi! Where is my Nathan?",
-    "Hello, my name is Devvy!",
+    "Hello, my name is Devvy.",
   ],
   missing_info : [
     "Hmm...Nigel didn't have any info for me.",
     "shrugs",
     "Sorry, can't help you with that :(",
-    "My Nathan might know!",
-    "Chris is fixing the gap in my information",
-    "Justin is fixing the gap in my information"
+    "No idea!"
   ],
   other_msgs : [
     "poke",
@@ -59,8 +57,11 @@ module.exports = {
     "I HATE the color pink!!!!",
     "I can't wait to go back to San Fran!!",
     "I woke up like `this`",
-    "Merry Christmas! Its that time of year !",
+    "Merry Christmas! It's that time of year !",
     "Why looky here! So many hard working devs ^^",
+    "My Nathan might know!",
+    "Chris is fixing the gap in my information",
+    "Justin is fixing the gap in my information"
   ],
   timeout : [
     "...I guess I'll go do something else then...",
