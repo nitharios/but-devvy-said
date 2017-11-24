@@ -7,14 +7,14 @@ const queryURL = '/api/query';
 // expect a parsed response back
 export const query = userQuery => {
   return dispatch => {
-    console.log(userQuery);
-    
     return Axios.post(queryURL, userQuery)
     .then(response => {
       const data = response.data;
+      console.log(data);
 
       dispatch({
         type : QUERY,
+        topicData : data,
         examplesList : data.Examples,
         notesList : data.Notes,
         resourcesList : data.Resources
