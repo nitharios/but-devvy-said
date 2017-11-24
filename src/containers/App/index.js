@@ -10,7 +10,7 @@ class App extends Component {
     this.state = {
       devvyText : '',
       userText : '',
-      userInput : ''    
+      userQuery : ''    
     };
 
     this.handleClear = this.handleClear.bind(this);
@@ -19,9 +19,7 @@ class App extends Component {
   }
 
   handleClear(e) {
-    this.setState({
-      userInput : ''
-    });
+    this.setState({ userQuery : '' });
   }
 
   handleChange(e) {
@@ -36,15 +34,16 @@ class App extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    
+    let query = { userQuery : this.state.userQuery };
 
-    this.props.query(this.state.userInput);
-
-    this.setState({
-      userInput : ''
-    });
+    this.props.query(query);
+    this.setState({ userQuery : '' });
   }
  
   render() {
+    console.log(this.props.singleTopic.error);
+    
     return(
       <div id="app">
 
@@ -66,10 +65,10 @@ class App extends Component {
         <div id="inputbox">
           <input
             onChange={ this.handleChange }
-            name="userInput"
+            name="userQuery"
             placeholder="How can I help you?"
             type="text" 
-            value={ this.state.userInput } />
+            value={ this.state.userQuery } />
           <input
             onClick={ this.handleSubmit } 
             type="button"
@@ -80,17 +79,28 @@ class App extends Component {
             value="CLEAR" />
         </div>
 
+        { this.props.singleTopic.name
+          ?  <div>This what I know about the { this.props.singleTopic.name } topic</div>
+          : null
+        }
+        { this.props.singleTopic.error
+          ? <div>Sorry! I don't have any info on that</div>
+          : null
+        }
+
       </div>
     );
   }
 }
 
 // maps store state to local props
-const mapStateToProps = state => {
+const mapStateToProps = state => {  
+
   return {
     examplesList : state.examplesList,
     notesList : state.notesList,
-    resourcesList : state.resourcesList
+    resourcesList : state.resourcesList,
+    singleTopic : state.singleTopic
   }
 }
 

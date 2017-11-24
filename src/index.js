@@ -9,6 +9,7 @@ import {
   Link,
   Route
 } from 'react-router-dom';
+
 /* Containers */
 import App from './containers/App';
 import AddInfo from './containers/AddInfo';
@@ -19,6 +20,9 @@ import NavBar from './components/navbar.component';
 
 /* library files */
 import registerServiceWorker from './lib/registerServiceWorker';
+
+/* SASS */
+import './styles/index.scss';
 
 // ------STORE--------
 const store = createStore(

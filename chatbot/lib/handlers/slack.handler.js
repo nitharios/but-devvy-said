@@ -1,4 +1,5 @@
 const stringBuilder = require('../helpers/stringBuilder');
+const user = require('../responses/user.responses');
 const { additional_query,
         affirmations,
         bye_msgs,
@@ -12,7 +13,6 @@ const { additional_query,
 module.exports = (function() {
 
   return {
-    // mentionHandler : mentionHandler,
     responseHandler : responseHandler
   };
 
@@ -38,9 +38,8 @@ module.exports = (function() {
   }
 
   function conversationHandler(err, convo) {
-    // contains variants of 'yes', 'no', and 'quit' 
-    let { utterances } = convo.context.bot;
-      
+    console.log('sanity', convo.vars);
+    
     // creates a path when the user says 'no'
     convo.addMessage({
       text : randomResponse(bye_msgs),
@@ -80,13 +79,13 @@ module.exports = (function() {
 
     convo.addQuestion(randomResponse(additional_query), [
       {
-        pattern : utterances.yes,
+        pattern : user.yes,
         callback : (response, convo) => {
           convo.gotoThread('yes_thread');
         }
       },
       {
-        pattern : utterances.no,
+        pattern : user.no,
         callback : (response, convo) => {
           convo.gotoThread('no_thread');
         }
@@ -99,8 +98,8 @@ module.exports = (function() {
       }
     ], {}, 'default');
 
-    // times out after 5 seconds
-    convo.setTimeout(5000);
+    // times out after 15 seconds
+    convo.setTimeout(15000);
     // activate conversation
     convo.activate();
   }
