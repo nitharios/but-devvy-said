@@ -1,7 +1,5 @@
 const stringBuilder = require('../helpers/stringBuilder');
 const user = require('../responses/user.responses');
-console.log(user);
-
 const { additional_query,
         affirmations,
         bye_msgs,
@@ -41,9 +39,8 @@ module.exports = (function() {
   }
 
   function conversationHandler(err, convo) {
-    // contains variants of 'yes', 'no', and 'quit' 
-    // let { utterances } = convo.context.bot;
-    // console.log(utterances);
+    console.log('sanity', convo.vars);
+    
     // creates a path when the user says 'no'
     convo.addMessage({
       text : randomResponse(bye_msgs),

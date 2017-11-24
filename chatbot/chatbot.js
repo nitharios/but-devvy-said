@@ -23,13 +23,16 @@ module.exports = (function DevvyCho() {
   });
 
   // create RTM connection
-  slackBot.startRTM((err, bot, payload) => {
-    if (err) {
-      throw new Error('Could not connect to Slack');
-    }
+  (function start() {
+    slackBot.startRTM((err, bot, payload) => {
+      if (err) {
+        slackController.log('ERROR! Could not connect to Slack');
+        return setTimeout(start, 60000);
+      }
 
-    slackController.log('Slack connection established');
-  });
+      slackController.log('Slack connection established');
+    }); 
+  })();
 
   // activates when @DevvyCho is used
   // sends message to Wit to be deciphered
@@ -39,5 +42,10 @@ module.exports = (function DevvyCho() {
 
   // listener that handles incoming messages
   slackController.hears(['.*'], ['mention', 'direct_message', 'direct_mention'], wit.hears, responseHandler);
+
+  // restarts connection if autonomously closed
+  slackController.on('rtm_close', (bot, err) => {
+    start();
+  });
 
 })();
