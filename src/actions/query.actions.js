@@ -38,7 +38,14 @@ export const query = userQuery => {
     })
     .catch(err => {
       console.log(err);
-      return;
+      dispatch({
+        type : MISSING_INFO,
+        topicData : { 
+          id : 0,
+          name : null,
+          error : true
+        }
+      });
     });
   };
 };
