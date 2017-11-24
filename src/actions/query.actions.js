@@ -13,9 +13,9 @@ export const query = (input) => {
 
       dispatch({
         type : QUERY,
-        examplesList : data.examples,
-        notesList : data.notes,
-        resourcesList : data.resources
+        examplesList : data.Examples,
+        notesList : data.Notes,
+        resourcesList : data.Resources
       });
     })
     .catch(err => {
