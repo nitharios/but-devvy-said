@@ -1,18 +1,7 @@
 const { Wit, log } = require('node-wit');
-const MIN_CONFIDENCE = 0.50;
+const { client, MIN_CONFIDENCE } = require('../../../node-wit/wit.js');
 
-module.exports = function(token) {
-  
-  if (!token) {
-    throw new Error ('Please provide a Wit token!');
-  }
-
-  // new instatiation of Wit
-  const client = new Wit({
-    // pass Wit a valid token
-    accessToken : token
-    // logger : new log.Logger(log.DEBUG) // optional
-  });
+module.exports = (function() {
 
   return {
     receive : receive,
@@ -58,4 +47,4 @@ module.exports = function(token) {
 
     return false;
   }
-};
+})();

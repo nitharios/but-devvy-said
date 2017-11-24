@@ -5,12 +5,11 @@ const dotenv = require('dotenv');
 // loads .env file to process.env
 dotenv.load();
 
-module.exports = (function DevvyCho() {
+module.exports = (function() {
 
   const SLACK_TOKEN = process.env.SLACK_TOKEN;
-  const WIT_TOKEN = process.env.WIT_TOKEN;
   // invoke wit middleware and pass in token
-  const wit = require('./lib/middleware/wit.middleware')(WIT_TOKEN);
+  const wit = require('./lib/middleware/wit.middleware');
   const dbQuery = require('./lib/middleware/db.middleware');
   // initialize
   const slackController = Botkit.slackbot({

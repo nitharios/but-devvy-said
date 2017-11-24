@@ -13,7 +13,6 @@ const { additional_query,
 module.exports = (function() {
 
   return {
-    // mentionHandler : mentionHandler,
     responseHandler : responseHandler
   };
 
