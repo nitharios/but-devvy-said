@@ -27,6 +27,7 @@ module.exports = (function DevvyCho() {
     slackBot.startRTM((err, bot, payload) => {
       if (err) {
         slackController.log('ERROR! Could not connect to Slack');
+        slackController.log('Retrying connection in 60 seconds...');
         return setTimeout(start, 60000);
       }
 
