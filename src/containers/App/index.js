@@ -47,6 +47,27 @@ class App extends Component {
     return(
       <div id="app">
 
+        <div id="input-box">
+          <input
+            id="text-input"
+            onChange={ this.handleChange }
+            name="userQuery"
+            placeholder="How can I help you?"
+            type="text" 
+            value={ this.state.userQuery } />
+          <input
+            className="button"
+            id="go-button"
+            onClick={ this.handleSubmit } 
+            type="button"
+            value="GO" />
+          <input
+            className="button"
+            id="clear-button"
+            onClick={ this.handleClear }
+            type="button"
+            value="CLEAR" />
+        </div>
         <div id="information-box">
           <ListBuilder
             id="examples"
@@ -62,22 +83,6 @@ class App extends Component {
             type="url" />
         </div>
 
-        <div id="inputbox">
-          <input
-            onChange={ this.handleChange }
-            name="userQuery"
-            placeholder="How can I help you?"
-            type="text" 
-            value={ this.state.userQuery } />
-          <input
-            onClick={ this.handleSubmit } 
-            type="button"
-            value="GO" />
-          <input
-            onClick={ this.handleClear }
-            type="button"
-            value="CLEAR" />
-        </div>
 
         { this.props.singleTopic.name
           ?  <div>This what I know about the { this.props.singleTopic.name } topic</div>

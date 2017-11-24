@@ -52,27 +52,77 @@ body {
 #nav-bar {
   @include flex-style(row nowrap, space-between);
   background-color: $accent-color;
+  align-items: center;
+  height: 50px;
 
   #devvy-cho-logo {
     background-image: url('/assets/DevvyCho.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 100%;
-    margin-left: 25px;
+    margin-left: 50px;
 
     // controls size of clickable
     div {
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
     }
   }
 
   #text-nav-links {
-    @include flex-style(row nowrap, space-around);
+    @include flex-style(row nowrap, center);
     width: 50%;
     align-items: center;
+
+    div {
+      margin: 0px 10px 0px 10px;
+    }
+  }
+}
+
+#app {
+  width: 75%;
+  margin: 30px auto;
+
+  #input-box {
+    @include flex-style(row nowrap, center);
+    width: 100%;
+    margin-bottom: 20px;
+
+    #text-input {
+      width: 70%;
+      height: 35px;
+      font-size: 20px;
+      text-indent: 5px;
+    }
+
+    .button {
+      border: 1px solid black;
+      display: inline-block;
+      margin-left: 10px;
+
+      #go-button {
+        width: 35px;
+        height: 35px;                
+      }
+
+      #clear-button {
+        width: 45px;
+        height: 35px;
+      }
+    }
+  }
+
+  #information-box {
+    border: 1px solid $primary-color;
+    width: 100%;
+    height: 300px;
+
+    .information {
+      margin: 10px;
+    }
   }
 }
