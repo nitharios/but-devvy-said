@@ -31,12 +31,12 @@ module.exports = function(bot, message, next) {
         { 
           model : Example,
           order : [[ 'createdAt', 'DESC' ]],
-          limit : 2
+          limit : 3
         },
         { 
           model : Note,
           order : [[ 'createdAt', 'DESC' ]],
-          limit : 2
+          limit : 3
         },
         { 
           model : Resource,
