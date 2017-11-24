@@ -10,7 +10,7 @@ class App extends Component {
     this.state = {
       devvyText : '',
       userText : '',
-      userInput : ''    
+      userQuery : ''    
     };
 
     this.handleClear = this.handleClear.bind(this);
@@ -20,7 +20,7 @@ class App extends Component {
 
   handleClear(e) {
     this.setState({
-      userInput : ''
+      userQuery : ''
     });
   }
 
@@ -36,12 +36,11 @@ class App extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    
+    let query = { userQuery : this.state.userQuery };
 
-    this.props.query(this.state.userInput);
-
-    this.setState({
-      userInput : ''
-    });
+    this.props.query(query);
+    this.setState({ userQuery : '' });
   }
  
   render() {
@@ -66,10 +65,10 @@ class App extends Component {
         <div id="inputbox">
           <input
             onChange={ this.handleChange }
-            name="userInput"
+            name="userQuery"
             placeholder="How can I help you?"
             type="text" 
-            value={ this.state.userInput } />
+            value={ this.state.userQuery } />
           <input
             onClick={ this.handleSubmit } 
             type="button"

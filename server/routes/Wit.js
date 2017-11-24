@@ -14,6 +14,7 @@ router.route('/')
 .post((req, res) => {
   const { userQuery } = req.body;
   console.log(userQuery);
+  console.log(req.body);
 
   return client.message(userQuery)
   .then(data => {

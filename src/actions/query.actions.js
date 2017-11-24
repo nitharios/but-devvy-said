@@ -5,9 +5,11 @@ const queryURL = '/api/query';
 
 // send query to back end 
 // expect a parsed response back
-export const query = (input) => {
+export const query = userQuery => {
   return dispatch => {
-    return Axios.get(queryURL)
+    console.log(userQuery);
+    
+    return Axios.post(queryURL, userQuery)
     .then(response => {
       const data = response.data;
 
