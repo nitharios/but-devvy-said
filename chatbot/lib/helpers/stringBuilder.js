@@ -1,8 +1,17 @@
-module.exports = function(name, resourceArr) {
-  const resultString = 'This is what Nigel knows about that: \n'; 
-  let resourceString = resourceArr.reduce((previous, current) => {
-    return previous.concat(`${current.url}\n`);
-  }, '');
+module.exports = function(topicName, infoType, infoArr) {
+  const resultString = `Here are the available ${infoType}: \n`;
+  const noResultString = `Sorry, no ${infoType} are available!`; 
+  let infoString = '';
 
-  return resultString.concat(resourceString);    
+  if (infoArr.length > 0) {
+    infoString = infoArr.reduce((previous, current) => {
+      return previous.concat(`${current.url}\n`);
+    }, '');
+    
+    return resultString.concat(infoString);    
+
+  } else {
+     return noResultString;
+
+  }
 };
