@@ -30,16 +30,17 @@ $footer-color: #a6a3a2;
 /* Style Settings  */
 html {
   @include box-style(border-box);
-  font-family: 'Molengo', sans-serif;
   font-size: 20px;
 }
 
 *, *:before, *:after {
-  @include box-style(inherit)
+  @include box-style(inherit);
+  font-family: "Redressed";
 }
 
 body {
   margin: 0;
+
   div {
     // border: 1px solid black;
   }
@@ -86,6 +87,14 @@ body {
 #app {
   width: 75%;
   margin: 30px auto;
+
+  #banner {
+    width: 100%;
+    margin-bottom: 20px;
+    font-family: "Niconne";
+    font-size: 40px;
+    text-align: center;
+  }
 
   #input-box {
     @include flex-style(row nowrap, center);

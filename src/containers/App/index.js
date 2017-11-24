@@ -46,6 +46,9 @@ class App extends Component {
     
     return(
       <div id="app">
+        <div id="banner">
+          Hello, my name is Devvy Cho!
+        </div>
 
         <div id="input-box">
           <input
