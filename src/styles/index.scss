@@ -1,0 +1,41 @@
+// theme colors
+$bg-color: #FFFFFF;
+$primary-color: #000000;
+$accent-color: #33cccc;
+$contrast-accent: #ffa31a;
+$footer-color: #a6a3a2;
+
+// mixins
+@mixin flex-style($flow, $justify) {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  flex-flow: $flow;
+  justify-content: $justify;
+}
+
+@mixin box-style($style) {
+  -webkit-box-sizing: $style;
+  -moz-box-sizing: $style;
+  box-sizing: $style;
+}
+
+@mixin border-style() {
+  border: 1px solid $primary-color;
+}
+
+body {
+  margin: 0;
+  background-color: #000000;
+}
+
+.devvy-cho-logo {
+  background-image: url('/assets/DevvyCho.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 300px;
+}

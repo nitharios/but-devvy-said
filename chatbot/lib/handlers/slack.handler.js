@@ -1,5 +1,8 @@
 const stringBuilder = require('../helpers/stringBuilder');
 const user = require('../responses/user.responses');
+const EXAMPLES = 'examples';
+const NOTES = 'notes';
+const RESOURCES = 'resources';
 const { additional_query,
         affirmations,
         bye_msgs,
@@ -27,9 +30,11 @@ module.exports = (function() {
 
     } else if (message.results) {
       const { name, Resources } = message.results;
-      bot.reply(message, stringBuilder(name, Resources), (err, response) => {
+      bot.reply(message, stringBuilder(name, RESOURCES, Resources), (err, response) => {
         // response carries the details of the message passed back to the user
-        bot.createConversation(message, conversationHandler);
+        bot.createConversation(message, (err, convo) => {
+          conversationHandler(err, convo, message);
+        });
       });
 
     } else {
@@ -37,8 +42,9 @@ module.exports = (function() {
     }
   }
 
-  function conversationHandler(err, convo) {
-    console.log('sanity', convo.vars);
+  function conversationHandler(err, convo, message) {
+    console.log('sanity', message);
+    const { name, Examples, Notes } = message.results;
     
     // creates a path when the user says 'no'
     convo.addMessage({
@@ -54,13 +60,13 @@ module.exports = (function() {
 
     // creates a path when the user wants to see notes
     convo.addMessage({
-      text : randomResponse(affirmations),
+      text : stringBuilder(name, NOTES, Notes),
       action : 'completed'
     }, 'notes_thread');
 
     // creates a path when the user wants to see examples
     convo.addMessage({
-      text : randomResponse(affirmations),
+      text : stringBuilder(name, EXAMPLES, Examples),
       action : 'completed'
     }, 'examples_thread');
 
@@ -79,15 +85,15 @@ module.exports = (function() {
 
     convo.addQuestion(randomResponse(additional_query), [
       {
-        pattern : user.yes,
+        pattern : 'notes',
         callback : (response, convo) => {
-          convo.gotoThread('yes_thread');
+          convo.gotoThread('notes_thread');
         }
       },
       {
-        pattern : user.no,
+        pattern : 'examples',
         callback : (response, convo) => {
-          convo.gotoThread('no_thread');
+          convo.gotoThread('examples_thread');
         }
       },
       {

@@ -1,7 +1,7 @@
 module.exports = {
   additional_query : [
-    "Would you like to me to ask Nigel for more information? (yes/no)",
-    "Would you like to see notes or examples?"
+    "Would you like to me to ask Nigel for notes or examples? (notes/examples)",
+    "Would you like to see notes or examples? (notes/examples)"
   ],
   affirmations : [
     "Okay, let me check..."
