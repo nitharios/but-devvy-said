@@ -79,7 +79,7 @@ class App extends Component {
 
         { this.props.singleTopic.name
           ?  <div>This what I know about the { this.props.singleTopic.name } topic</div>
-          : <div>Sorry! I don't have any info on that</div>
+          : <div>Sorry! I don't have any info on that :(</div>
         }
 
       </div>
