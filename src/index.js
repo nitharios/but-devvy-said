@@ -20,6 +20,9 @@ import NavBar from './components/navbar.component';
 /* library files */
 import registerServiceWorker from './lib/registerServiceWorker';
 
+/* SASS */
+import './styles/index.scss';
+
 // ------STORE--------
 const store = createStore(
   reducers,
