@@ -71,30 +71,29 @@ class App extends Component {
             type="button"
             value="CLEAR" />
         </div>
+
+        { this.props.singleTopic.name
+          ? <div className="response-box">This is the information I have...</div>
+          : <div className="response-box">Sorry! I don't have any info on that</div>
+        }
+
         <div id="information-box">
           <ListBuilder
             id="examples"
             informationList={ this.props.examplesList }
+            label="Examples"
             type="code" />
           <ListBuilder
             id="notes"
             informationList={ this.props.notesList }
+            label="Notes"
             type="bullets" />
           <ListBuilder
             id="resources"
             informationList={ this.props.resourcesList }
+            label="Resources"
             type="url" />
         </div>
-
-
-        { this.props.singleTopic.name
-          ?  <div>This what I know about the { this.props.singleTopic.name } topic</div>
-          : null
-        }
-        { this.props.singleTopic.error
-          ? <div>Sorry! I don't have any info on that</div>
-          : null
-        }
 
       </div>
     );
