@@ -1,14 +1,14 @@
 import React from 'react';
 
-export default ({ informationList, type, id }) => {
+export default ({ informationList, type, label, id }) => {
   return(    
     <div className="information" id={ id }>
+      <div className="info-header">{ label }</div>
       { 
         informationList
         .map((info, idx) => {          
           return(
             <div key={ idx }>
-              <div>{ info.title || type }</div>
               <div>{ info[type] }</div>
             </div>
           )

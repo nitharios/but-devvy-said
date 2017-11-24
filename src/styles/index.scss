@@ -1,8 +1,8 @@
 // theme colors
 $bg-color: #FFFFFF;
 $primary-color: #000000;
-$accent-color: #33cccc;
-$contrast-accent: #ffa31a;
+$accent-color: #91A3B0; // cadet grey
+$contrast-accent: #36454F; // charcoal
 $footer-color: #a6a3a2;
 
 // mixins
@@ -27,15 +27,128 @@ $footer-color: #a6a3a2;
   border: 1px solid $primary-color;
 }
 
-body {
-  margin: 0;
-  background-color: #000000;
+/* Style Settings  */
+html {
+  @include box-style(border-box);
+  font-size: 20px;
 }
 
-.devvy-cho-logo {
-  background-image: url('/assets/DevvyCho.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 300px;
-  height: 300px;
+*, *:before, *:after {
+  @include box-style(inherit);
+  font-family: "Redressed";
+}
+
+body {
+  margin: 0;
+
+  div {
+    // border: 1px solid black;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+#nav-bar {
+  @include flex-style(row nowrap, space-between);
+  background-color: $accent-color;
+  align-items: center;
+  height: 50px;
+
+  #devvy-cho-logo {
+    background-image: url('/assets/DevvyCho.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    margin-left: 50px;
+
+    // controls size of clickable
+    div {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  #text-nav-links {
+    @include flex-style(row nowrap, center);
+    width: 50%;
+    align-items: center;
+
+    div {
+      margin: 0px 10px 0px 10px;
+    }
+  }
+}
+
+#app {
+  width: 75%;
+  margin: 30px auto;
+
+  #banner {
+    width: 100%;
+    margin-bottom: 20px;
+    font-family: "Niconne";
+    font-size: 40px;
+    text-align: center;
+  }
+
+  #input-box {
+    @include flex-style(row nowrap, center);
+    width: 100%;
+
+    #text-input {
+      width: 70%;
+      height: 35px;
+      font-size: 20px;
+      text-indent: 5px;
+    }
+
+    .button {
+      border: 1px solid black;
+      display: inline-block;
+      margin-left: 10px;
+
+      #go-button {
+        width: 35px;
+        height: 35px;                
+      }
+
+      #clear-button {
+        width: 45px;
+        height: 35px;
+      }
+    }
+  }
+
+  .response-box {
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  #information-box {
+    border: 1px solid $accent-color;
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+
+    .information {
+      padding: 10px;
+
+      .info-header {
+        font-size: 25px;
+        margin-bottom: 5px;
+      }
+    }
+
+    #notes {
+      border-top: 1px solid $accent-color;
+      border-bottom: 1px solid $accent-color;
+      border-radius: 10px;
+    }
+  }
 }

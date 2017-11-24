@@ -6,7 +6,6 @@ import reducers from './reducers';
 import thunk from 'redux-thunk';
 import {
   BrowserRouter as Router,
-  Link,
   Route
 } from 'react-router-dom';
 
@@ -38,12 +37,6 @@ ReactDOM.render(
       <div id="source">
 
         <header id="global-nav-header">
-          <div id="devvy-cho-logo">
-            <Link to="/">
-              <div></div>
-            </Link>
-          </div>
-
           <NavBar />
         </header>
 

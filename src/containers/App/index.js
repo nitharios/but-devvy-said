@@ -46,47 +46,54 @@ class App extends Component {
     
     return(
       <div id="app">
-
-        <div id="information-box">
-          <ListBuilder
-            id="examples"
-            informationList={ this.props.examplesList }
-            type="code" />
-          <ListBuilder
-            id="notes"
-            informationList={ this.props.notesList }
-            type="bullets" />
-          <ListBuilder
-            id="resources"
-            informationList={ this.props.resourcesList }
-            type="url" />
+        <div id="banner">
+          Hello, my name is Devvy Cho!
         </div>
 
-        <div id="inputbox">
+        <div id="input-box">
           <input
+            id="text-input"
             onChange={ this.handleChange }
             name="userQuery"
             placeholder="How can I help you?"
             type="text" 
             value={ this.state.userQuery } />
           <input
+            className="button"
+            id="go-button"
             onClick={ this.handleSubmit } 
             type="button"
             value="GO" />
           <input
+            className="button"
+            id="clear-button"
             onClick={ this.handleClear }
             type="button"
             value="CLEAR" />
         </div>
 
         { this.props.singleTopic.name
-          ?  <div>This what I know about the { this.props.singleTopic.name } topic</div>
-          : null
+          ? <div className="response-box">This is the information I have...</div>
+          : <div className="response-box">Sorry! I don't have any info on that</div>
         }
-        { this.props.singleTopic.error
-          ? <div>Sorry! I don't have any info on that</div>
-          : null
-        }
+
+        <div id="information-box">
+          <ListBuilder
+            id="examples"
+            informationList={ this.props.examplesList }
+            label="Examples"
+            type="code" />
+          <ListBuilder
+            id="notes"
+            informationList={ this.props.notesList }
+            label="Notes"
+            type="bullets" />
+          <ListBuilder
+            id="resources"
+            informationList={ this.props.resourcesList }
+            label="Resources"
+            type="url" />
+        </div>
 
       </div>
     );
