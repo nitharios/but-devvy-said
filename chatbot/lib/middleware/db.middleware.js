@@ -10,11 +10,14 @@ module.exports = (bot, message, next) => {
     // find a topic where name is topicName and include only the following attributes
     return Topic.findOne({
       where : { name : topicName },
-      attributes : [
-        'examples', 
-        'links', 
-        'notes'
-      ]
+      include : [{
+        model : Resource,
+        attributes : [
+          'examples', 
+          'links', 
+          'notes'
+        ]        
+      }]
     })
     .then(singleTopic => {
       // if no match, singleTopic === null

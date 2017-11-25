@@ -1,8 +1,8 @@
 module.exports = {
   
   additional_query : [
-    "Would you like to me to ask Nigel for notes or examples? (notes/examples)",
-    "Would you like to see notes or examples? (notes/examples)"
+    "Would you like to me to ask Nigel for other resources?",
+    "Would you like to see other resources?"
   ],
   affirmations : [
     "Okay, let me check..."
@@ -63,6 +63,9 @@ module.exports = {
     "My Nathan might know!",
     "Chris is fixing the gap in my information",
     "Justin is fixing the gap in my information"
+  ],
+  query_type : [
+    "Would you like to see examples, links, or notes?"
   ],
   timeout : [
     "...I guess I'll go do something else then...",
