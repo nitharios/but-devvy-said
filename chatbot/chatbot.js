@@ -1,6 +1,5 @@
 const Botkit = require('botkit');
 const { responseHandler } = require('./lib/handlers/slack.handler');
-const responseTypes = ['direct_message', 'direct_mention'];
 const dotenv = require('dotenv');
 // loads .env file to process.env
 dotenv.load();
@@ -39,11 +38,8 @@ module.exports = (function() {
   slackController.middleware.heard.use(wit.receive);
   // queries the db based on the intent of the user as determined by the user
   slackController.middleware.heard.use(dbQuery);
-
-
   // listener that handles incoming messages
   slackController.hears(['.*'], ['mention', 'direct_message', 'direct_mention'], wit.hears, responseHandler);
-
   // restarts connection if autonomously closed
   slackController.on('rtm_close', (bot, err) => {
     start();
