@@ -29,8 +29,8 @@ module.exports = (function() {
       bot.reply(message, randomResponse(greetings));
 
     } else if (message.results) {
-      const { name, Resources } = message.results;
-      bot.reply(message, stringBuilder(name, RESOURCES, Resources), (err, response) => {
+      const { name, links } = message.results;
+      bot.reply(message, stringBuilder(name, RESOURCES, links), (err, response) => {
         // response carries the details of the message passed back to the user
         bot.createConversation(message, (err, convo) => {
           conversationHandler(err, convo, message);
@@ -43,7 +43,7 @@ module.exports = (function() {
   }
 
   function conversationHandler(err, convo, message) {
-    const { name, Examples, Notes } = message.results;
+    const { name, examples, notes } = message.results;
     
     // creates a path when the user says 'no'
     convo.addMessage({
@@ -59,13 +59,13 @@ module.exports = (function() {
 
     // creates a path when the user wants to see notes
     convo.addMessage({
-      text : stringBuilder(name, NOTES, Notes),
+      text : stringBuilder(name, NOTES, notes),
       action : 'completed'
     }, 'notes_thread');
 
     // creates a path when the user wants to see examples
     convo.addMessage({
-      text : stringBuilder(name, EXAMPLES, Examples),
+      text : stringBuilder(name, EXAMPLES, examples),
       action : 'completed'
     }, 'examples_thread');
 

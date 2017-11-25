@@ -1,40 +1,23 @@
-const models = require('./models.middleware.js');
+const db = require('../../../server/models');
+const { Topic, Resource } = db;
 
-const { 
-  Topic, 
-  Resource, 
-  Note, 
-  Example } = require('../../../server/models');
-
-module.exports = function(bot, message, next) {
- 
-  let model = Resource;
-
+module.exports = (bot, message, next) => {
+  // if a db_query has been recognized query db with it
   if (message.db_query) {
+    // need to handle the case where there are multiple queries
     let topicName = message.db_query[0].value;
 
+    // find a topic where name is topicName and include only the following attributes
     return Topic.findOne({
       where : { name : topicName },
-      include : [
-        { 
-          model : Example,
-          order : [[ 'createdAt', 'DESC' ]],
-          limit : 3
-        },
-        { 
-          model : Note,
-          order : [[ 'createdAt', 'DESC' ]],
-          limit : 3
-        },
-        { 
-          model : Resource,
-          order : [[ 'createdAt', 'DESC' ]],
-          limit : 5
-        }
+      attributes : [
+        'examples', 
+        'links', 
+        'notes'
       ]
     })
     .then(singleTopic => {
-      // if no match, singleTopic == null
+      // if no match, singleTopic === null
       message.results = singleTopic;
       next();
     })
@@ -44,6 +27,7 @@ module.exports = function(bot, message, next) {
       next();
     });
 
+  // else pass to next middleware
   } else {
     next();
   }
