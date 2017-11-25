@@ -20,6 +20,9 @@ module.exports = (function() {
     token : SLACK_TOKEN
   });
 
+  console.log(slackBot);
+  
+
   // create RTM connection
   (function start() {
     slackBot.startRTM((err, bot, payload) => {
