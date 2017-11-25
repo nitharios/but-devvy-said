@@ -1,17 +1,22 @@
 module.exports = {
+  
   additional_query : [
-    "Would you like to me to ask Nigel for notes or examples? (notes/examples)",
-    "Would you like to see notes or examples? (notes/examples)"
+    "Would you like to me to ask Nigel for other resources?",
+    "Would you like to see other resources?",
+    "Need more?",
+    "Anything else? :blush:"
   ],
   affirmations : [
-    "Okay, let me check..."
+    "Let me check...",
+    "Hold on...",
+    "One sec...",
+    "Checking now..."
   ],
   bye_msgs : [
     "See you later!", 
     "Bye for now!",
     "Have a great day!",
-    "Avoir mon amie!",
-    "Have a nice cup of tea ~"
+    "Okay, bye!"
   ],
   error_msgs : [
     "Oh no! Something went wrong!",
@@ -21,13 +26,19 @@ module.exports = {
     "Sorry, I'm playing with Mika right now."
   ],
   emojis : [
-    ":eyes:", 
-    ":heart:", 
+    ":blush:",
+    ":eyes:",
+    ":flushed:", 
+    ":heart:",
+    ":persevere:",
+    ":rage:",
     ":slightly_smiling_face:", 
-    ":sleeping:"
+    ":sleeping:",
+    ":sob:",
+    ":zzz:"
   ],
   greetings : [
-    "Hello!", 
+    "Hello! :heart:", 
     "Hey, how are you doing?",
     "Hi! Where is my Nathan?",
     "Hello, my name is Devvy.",
@@ -35,15 +46,19 @@ module.exports = {
   missing_info : [
     "Hmm...Nigel didn't have any info for me.",
     "shrugs",
-    "Sorry, can't help you with that :(",
-    "No idea!"
+    "Sorry, can't help you with that :persevere:",
+    "No idea!",
+    "I'm sorry, I don't know :sob:",
+    "My Nathan might know!",
+    "Chris is fixing the gap in my information",
+    "Justin is fixing the gap in my information"
+
   ],
   other_msgs : [
     "poke",
     "Where should I hike this weekend?",
     "Mika is the cutest!!",
     "Mika will make it all better!",
-    "Have you seen my Nathan?",
     "He hasn't resolved my `Promise()` yet ;(",
     "The way he feels about me is `variable`",
     "My love for him is `constant`",
@@ -59,17 +74,24 @@ module.exports = {
     "I woke up like `this`",
     "Merry Christmas! It's that time of year !",
     "Why looky here! So many hard working devs ^^",
-    "My Nathan might know!",
-    "Chris is fixing the gap in my information",
-    "Justin is fixing the gap in my information"
+    "Avoir mon amie!",
+    "Have a nice cup of tea ~"
   ],
-  timeout : [
+  query_type : [
+    "Would you like to see examples, links, or notes?",
+    "Examples, links, or notes?",
+    "Do you want examples, links, or notes?",
+    "Umm...do you want examples, links, or notes?"
+  ],
+  timeout_msgs : [
     "...I guess I'll go do something else then...",
     "So...no?",
-    "No response?? Rude much?",
+    "No response?? Rude much? :rage:",
     "...",
-    "If not, I'm just going to play with Mika"
+    "If not, I'm just going to play with Mika ",
+    ":zzz:"
   ],
+
   randomResponse : function(category) {
     return category[Math.floor(Math.random()*category.length)];  
   }

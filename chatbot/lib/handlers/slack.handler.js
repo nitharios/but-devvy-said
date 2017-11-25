@@ -2,16 +2,17 @@ const stringBuilder = require('../helpers/stringBuilder');
 const user = require('../responses/user.responses');
 const EXAMPLES = 'examples';
 const NOTES = 'notes';
-const RESOURCES = 'resources';
+const LINKS = 'links';
+const RESPONSES = require('../responses/slack.responses');
 const { additional_query,
         affirmations,
         bye_msgs,
         error_msgs,
         greetings, 
         missing_info,
-        timeout,
-        randomResponse
-      } = require('../responses/slack.responses');
+        query_type,
+        timeout_msgs,
+        randomResponse } = RESPONSES;
 
 module.exports = (function() {
 
@@ -23,76 +24,56 @@ module.exports = (function() {
     console.log('Slack message received');
 
     if (message.error) {
+      bot.reply(message, { type: "typing" });
       bot.reply(message, randomResponse(error_msgs));
 
     } else if (message.greetings) {
+      bot.reply(message, { type: "typing" });
       bot.reply(message, randomResponse(greetings));
 
     } else if (message.results) {
-      const { name, Resources } = message.results;
-      bot.reply(message, stringBuilder(name, RESOURCES, Resources), (err, response) => {
-        // response carries the details of the message passed back to the user
-        bot.createConversation(message, (err, convo) => {
-          conversationHandler(err, convo, message);
-        });
+      
+      bot.createConversation(message, (err, convo) => {
+        bot.reply(message, { type: "typing" });
+        resourcesHandler(err, convo, message, bot);
       });
+      
+      // bot.reply(message, stringBuilder(name, LINKS, links), (err, response) => {
+      //   // response carries the details of the message passed back to the user
+      // });
 
     } else {
+      bot.reply(message, { type: "typing" });
       bot.reply(message, `${randomResponse(missing_info)}`);
     }
   }
 
-  function conversationHandler(err, convo, message) {
-    const { name, Examples, Notes } = message.results;
-    
-    // creates a path when the user says 'no'
-    convo.addMessage({
-      text : randomResponse(bye_msgs),
-      action : 'completed'
-    }, 'no_thread');
-
-    // creates a path when the user says 'yes'
-    convo.addMessage({
-      text : randomResponse(affirmations),
-      action : 'completed'
-    }, 'yes_thread');
-
-    // creates a path when the user wants to see notes
-    convo.addMessage({
-      text : stringBuilder(name, NOTES, Notes),
-      action : 'completed'
-    }, 'notes_thread');
-
-    // creates a path when the user wants to see examples
-    convo.addMessage({
-      text : stringBuilder(name, EXAMPLES, Examples),
-      action : 'completed'
-    }, 'examples_thread');
-
-
-    // creates a path when no options are matched
-    convo.addMessage({
-      text : randomResponse(error_msgs),
-      action : 'stop'
-    }, 'bad_response');
-    
-    // creates a path for response timeout
-    convo.addMessage({
-      text : randomResponse(timeout),
-      action : 'stop'
-    }, 'on_timeout');
-
-    convo.addQuestion(randomResponse(additional_query), [
+  function resourcesHandler(err, convo, message, bot) {
+    // Resources is an array
+    const { name, Resources } = message.results;
+    const patternsArr = [
       {
-        pattern : 'notes',
+        pattern : EXAMPLES,
+        callback : (response, convo) => {
+          convo.gotoThread('examples_thread');
+        }
+      },
+      {
+        pattern : LINKS,
+        callback : (response, convo) => {
+          convo.gotoThread('links_thread');
+        }
+      },
+      {
+        pattern : NOTES,
         callback : (response, convo) => {
           convo.gotoThread('notes_thread');
         }
       },
       {
-        pattern : 'examples',
+        pattern : user.yes,
         callback : (response, convo) => {
-          convo.gotoThread('examples_thread');
+          convo.gotoThread('default');
         }
       },
       {
@@ -107,11 +88,59 @@ module.exports = (function() {
           convo.gotoThread('bad_response');
         }
       }
-    ], {}, 'default');
+    ];
+
+    // what type of resource would you like?
+    convo.addQuestion(randomResponse(query_type), patternsArr, {}, 'primary_query');
+
+    // would you like to see more resources?
+    convo.addQuestion(randomResponse(additional_query), patternsArr, {}, 'additional_query');
+
+    // default message and 'yes' path
+    convo.addMessage({
+      text : randomResponse(affirmations),
+      action : 'primary_query'
+    }, 'default');
+
+    // creates a path when the user says 'no'
+    convo.addMessage({
+      text : randomResponse(bye_msgs),
+      action : 'completed'
+    }, 'no_thread');
+
+    // creates a path when the user wants to see examples
+    convo.addMessage({
+      text : stringBuilder(name, EXAMPLES, Resources),
+      action : 'additional_query'
+    }, 'examples_thread');
+
+    // creates a path when the user wants to see links
+    convo.addMessage({
+      text : stringBuilder(name, LINKS, Resources),
+      action : 'additional_query'
+    }, 'links_thread');
+
+    // creates a path when the user wants to see notes
+    convo.addMessage({
+      text : stringBuilder(name, NOTES, Resources),
+      action : 'additional_query'
+    }, 'notes_thread');
+
+    // creates a path when no options are matched
+    convo.addMessage({
+      text : randomResponse(error_msgs),
+      action : 'stop'
+    }, 'bad_response');
+    
+    // creates a path for response timeout
+    convo.addMessage({
+      text : randomResponse(timeout_msgs),
+      action : 'stop'
+    }, 'on_timeout');
 
     // times out after 15 seconds
     convo.setTimeout(15000);
-    // activate conversation
+    // activate resources
     convo.activate();
   }
 })();
