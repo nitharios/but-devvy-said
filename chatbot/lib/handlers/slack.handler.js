@@ -97,6 +97,12 @@ module.exports = (function() {
         }
       },
       {
+        pattern : user.no,
+        callback : (response, convo) => {
+          convo.gotoThread('no_thread');
+        }
+      },
+      {
         default : true,
         callback : (response, convo) => {
           convo.gotoThread('bad_response');
