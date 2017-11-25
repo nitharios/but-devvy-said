@@ -1,39 +1,31 @@
-/*This model represents a link to an external resource.*/
-module.exports = function (sequelize, DataTypes) {
-  
+/*This is our new model according to Jesse's suggestion.*/
+
+module.exports = function(sequelize, DataTypes) {
+
   const Resource = sequelize.define('Resource', {
-    url : {
-      type : DataTypes.STRING, 
-      allowNull : true
-    }
+    title : {type : DataTypes.STRING, allowNull : false}, //'Arrow Function Notes'
+    links : {type : DataTypes.STRING, allowNull : false}, //'http://bit.ly/2zOQycP'
+    example : {type : DataTypes.TEXT, allowNull : false}, //code snippet
+    notes : {type : DataTypes.TEXT, allowNull : false}, //page of class notes
+    cohort : {type : DataTypes.INTEGER, allowNull : false}, //C19
+    name : {type : DataTypes.STRING, allowNull : false}, //'Chris'
   },
+
   {
-    tableName : 'resources'
-  },
-  {
-    indexes : [
-      {
-        name : 'resources_pk',
-        unique : true,
-        fields : ['id']
-      }
-    ]
+    tableName : 'resources',
+    timestamps : true,
+    createdAt : 'Submission Date',
+    updatedAt : 'Last Updated'
   });
 
   Resource.associate = function(models) {
 
-    /*Resource.belongsTo(models.Topic, {
+    Resource.belongsTo(models.Topic, {
       foreignKey : 'topic_id'
-    });*/
-    
-    Resource.belongsToMany(models.Topic, {
-      through : 'TopicResource',
-      foreignKey : 'resourceId',
-      otherKey : 'topicId'
-
     });
-    
+
   };
 
   return Resource;
+
 };
