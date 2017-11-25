@@ -1,9 +1,9 @@
 // theme colors
 $bg-color: #FFFFFF;
-$primary-color: #000000;
-$accent-color: #91A3B0; // cadet grey
-$contrast-accent: #36454F; // charcoal
-$footer-color: #a6a3a2;
+$primary-color: #008B8B; // dark cyan
+$accent-color:  #F8DE7E; // jasmine
+$contrast-accent: #FFFF66; // laser lemon
+$font-color: #000000;
 
 // mixins
 @mixin flex-style($flow, $justify) {
@@ -46,25 +46,36 @@ body {
   }
 
   a {
+    color: $bg-color;
     text-decoration: none;
+    font-size: 25px;
+  }
+
+  a:hover {
+    color: $contrast-accent;
   }
 }
 
 #nav-bar {
   @include flex-style(row nowrap, space-between);
-  background-color: $accent-color;
+  background-color: $primary-color;
   align-items: center;
-  height: 50px;
+  height: 60px;
 
   #devvy-cho-logo {
     background-image: url('/assets/DevvyCho.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
+    border: 3px solid $bg-color;
     border-radius: 100%;
-    margin-left: 50px;
+    margin-left: 10%;
+
+    &:hover {
+      border-color: $contrast-accent;
+    }
 
     // controls size of clickable
     div {
@@ -74,11 +85,13 @@ body {
   }
 
   #text-nav-links {
-    @include flex-style(row nowrap, center);
+    @include flex-style(row nowrap, flex-end);
     width: 50%;
+    margin-right: 10%;
     align-items: center;
 
     div {
+      padding: 5px;
       margin: 0px 10px 0px 10px;
     }
   }
@@ -90,7 +103,8 @@ body {
 
   #banner {
     width: 100%;
-    margin-bottom: 20px;
+    margin-top: 50px;
+    margin-bottom: 30px;
     font-family: "Niconne";
     font-size: 40px;
     text-align: center;
@@ -108,7 +122,7 @@ body {
     }
 
     .button {
-      border: 1px solid black;
+      border: 1px solid $primary-color;
       display: inline-block;
       margin-left: 10px;
 
@@ -145,14 +159,14 @@ body {
     }
 
     .information {
-      border-top: 1px solid $accent-color;
-      border-left: 1px solid $accent-color;
-      border-right: 1px solid $accent-color;
+      border-top: 1px solid $primary-color;
+      border-left: 1px solid $primary-color;
+      border-right: 1px solid $primary-color;
       border-radius: 10px;
     }
 
     #resources {
-      border-bottom: 1px solid $accent-color;
+      border-bottom: 1px solid $primary-color;
       border-radius: 10px;
     }
   }
