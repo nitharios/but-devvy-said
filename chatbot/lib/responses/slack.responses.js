@@ -7,7 +7,9 @@ module.exports = {
     "Anything else? :blush:"
   ],
   affirmations : [
-    "Okay, let me check..."
+    "Okay, let me check...",
+    "Okay, hold on...",
+    "Gotcha, one sec..."
   ],
   bye_msgs : [
     "See you later!", 
@@ -45,14 +47,17 @@ module.exports = {
     "shrugs",
     "Sorry, can't help you with that :persevere:",
     "No idea!",
-    "I'm sorry, I don't know :sob:"
+    "I'm sorry, I don't know :sob:",
+    "My Nathan might know!",
+    "Chris is fixing the gap in my information",
+    "Justin is fixing the gap in my information"
+
   ],
   other_msgs : [
     "poke",
     "Where should I hike this weekend?",
     "Mika is the cutest!!",
     "Mika will make it all better!",
-    "Have you seen my Nathan?",
     "He hasn't resolved my `Promise()` yet ;(",
     "The way he feels about me is `variable`",
     "My love for him is `constant`",
@@ -68,16 +73,14 @@ module.exports = {
     "I woke up like `this`",
     "Merry Christmas! It's that time of year !",
     "Why looky here! So many hard working devs ^^",
-    "My Nathan might know!",
-    "Chris is fixing the gap in my information",
-    "Justin is fixing the gap in my information",
     "Avoir mon amie!",
     "Have a nice cup of tea ~"
   ],
   query_type : [
     "Would you like to see examples, links, or notes?",
     "Examples, links, or notes?",
-    "Do you want examples, links, or notes?"
+    "Do you want examples, links, or notes?",
+    "Umm...do you want examples, links, or notes?"
   ],
   timeout_msgs : [
     "...I guess I'll go do something else then...",

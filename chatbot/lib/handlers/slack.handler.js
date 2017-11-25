@@ -32,7 +32,7 @@ module.exports = (function() {
     } else if (message.results) {
       
       bot.createConversation(message, (err, convo) => {
-        conversationHandler(err, convo, message);
+        resourcesHandler(err, convo, message);
       });
       
       // bot.reply(message, stringBuilder(name, LINKS, links), (err, response) => {
@@ -44,7 +44,7 @@ module.exports = (function() {
     }
   }
 
-  function conversationHandler(err, convo, message) {
+  function resourcesHandler(err, convo, message) {
     const { name, Resources } = message.results;
     const { examples, links, notes } = Resources;
     const patternsArr = [
@@ -136,7 +136,7 @@ module.exports = (function() {
 
     // times out after 15 seconds
     convo.setTimeout(15000);
-    // activate conversation
+    // activate resources
     convo.activate();
   }
 })();
