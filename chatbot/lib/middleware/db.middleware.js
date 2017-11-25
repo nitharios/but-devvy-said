@@ -7,6 +7,7 @@ const {
   Example } = require('../../../server/models');
 
 module.exports = function(bot, message, next) {
+ 
   let model = Resource;
 
   if (message.db_query) {
@@ -44,7 +45,6 @@ module.exports = function(bot, message, next) {
     });
 
   } else {
-    console.log('Message is not a db_query');
     next();
   }
 

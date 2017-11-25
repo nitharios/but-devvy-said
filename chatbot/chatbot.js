@@ -40,6 +40,7 @@ module.exports = (function() {
   // queries the db based on the intent of the user as determined by the user
   slackController.middleware.heard.use(dbQuery);
 
+
   // listener that handles incoming messages
   slackController.hears(['.*'], ['mention', 'direct_message', 'direct_mention'], wit.hears, responseHandler);
 

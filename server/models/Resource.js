@@ -21,6 +21,10 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   Resource.associate = function(models) {
+
+    /*Resource.belongsTo(models.Topic, {
+      foreignKey : 'topic_id'
+    });*/
     
     Resource.belongsToMany(models.Topic, {
       through : 'TopicResource',
@@ -28,6 +32,7 @@ module.exports = function (sequelize, DataTypes) {
       otherKey : 'topicId'
 
     });
+    
   };
 
   return Resource;
