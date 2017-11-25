@@ -66,7 +66,7 @@ class AddInfo extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log('!_click on submit hit_!')
+    console.log('click on submit hit_!')
     let info = {};
     let { topic_id, title, format, 
           code, comment, 
