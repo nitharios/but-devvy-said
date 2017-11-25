@@ -1,21 +1,49 @@
 /*This is our new model according to Jesse's suggestion.*/
-
 module.exports = function(sequelize, DataTypes) {
 
   const Resource = sequelize.define('Resource', {
-    title : {type : DataTypes.STRING, allowNull : false}, //'Arrow Function Notes'
-    links : {type : DataTypes.STRING, allowNull : false}, //'http://bit.ly/2zOQycP'
-    example : {type : DataTypes.TEXT, allowNull : false}, //code snippet
-    notes : {type : DataTypes.TEXT, allowNull : false}, //page of class notes
-    cohort : {type : DataTypes.INTEGER, allowNull : false}, //C19
-    name : {type : DataTypes.STRING, allowNull : false}, //'Chris'
+    // 'arrow function notes'
+    title : {
+      type : DataTypes.STRING, 
+      allowNull : false
+    },
+    //'http://bit.ly/2zOQycP'
+    links : {
+      type : DataTypes.STRING, 
+      allowNull : true
+    },
+    // code snippet
+    examples : {
+      type : DataTypes.TEXT, 
+      allowNull : true
+    },
+    // class notes
+    notes : {
+      type : DataTypes.TEXT, 
+      allowNull : true
+    },
+    // C19
+    cohort : {
+      type : DataTypes.INTEGER, 
+      allowNull : true
+    },
+    // 'Chris'
+    name : {
+      type : DataTypes.STRING, 
+      allowNull : false
+    },
   },
-
   {
     tableName : 'resources',
-    timestamps : true,
-    createdAt : 'Submission Date',
-    updatedAt : 'Last Updated'
+  },
+  {
+    indexes : [
+      {
+        name : 'resources_pk',
+        unique : true,
+        fields : ['id']
+      }
+    ]
   });
 
   Resource.associate = function(models) {
@@ -27,5 +55,4 @@ module.exports = function(sequelize, DataTypes) {
   };
 
   return Resource;
-
 };
