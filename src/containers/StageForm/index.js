@@ -29,7 +29,10 @@ class StageForm extends Component {
     const { onSubmit } = this.props;
     const { page } = this.state;
     return (
-      <div>
+      <div className="stage-form">
+        <h2>info</h2>
+        <h2>more infor</h2>
+        <h2>more infor</h2>
       {/*  {page === 1 && <StageForm2 onSubmit={this.nextPage} />}
         {page === 2 &&
           <StageForm2
