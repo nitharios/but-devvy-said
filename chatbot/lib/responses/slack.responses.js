@@ -7,9 +7,10 @@ module.exports = {
     "Anything else? :blush:"
   ],
   affirmations : [
-    "Okay, let me check...",
-    "Okay, hold on...",
-    "Gotcha, one sec..."
+    "Let me check...",
+    "Hold on...",
+    "One sec...",
+    "Checking now..."
   ],
   bye_msgs : [
     "See you later!", 

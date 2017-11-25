@@ -69,7 +69,7 @@ module.exports = (function() {
       {
         pattern : user.yes,
         callback : (response, convo) => {
-          convo.gotoThread('yes_thread');
+          convo.gotoThread('default');
         }
       },
       {
@@ -85,24 +85,24 @@ module.exports = (function() {
         }
       }
     ];
-    
-    // first question posed to user
-    convo.addQuestion(randomResponse(query_type), patternsArr, {}, 'default');
 
-    // additional query posted to user
+    // what type of resource would you like?
+    convo.addQuestion(randomResponse(query_type), patternsArr, {}, 'primary_query');
+
+    // would you like to see more resources?
     convo.addQuestion(randomResponse(additional_query), patternsArr, {}, 'additional_query');
+
+    // default message and 'yes' path
+    convo.addMessage({
+      text : randomResponse(affirmations),
+      action : 'primary_query'
+    }, 'default');
 
     // creates a path when the user says 'no'
     convo.addMessage({
       text : randomResponse(bye_msgs),
       action : 'completed'
     }, 'no_thread');
-
-    // creates a path when the user says 'yes'
-    convo.addMessage({
-      text : randomResponse(affirmations),
-      action : 'default'
-    }, 'yes_thread');
 
     // creates a path when the user wants to see examples
     convo.addMessage({
