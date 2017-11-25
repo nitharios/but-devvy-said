@@ -34,10 +34,6 @@ module.exports = (function() {
       bot.createConversation(message, (err, convo) => {
         resourcesHandler(err, convo, message, bot);
       });
-      
-      // bot.reply(message, stringBuilder(name, LINKS, links), (err, response) => {
-      //   // response carries the details of the message passed back to the user
-      // });
 
     } else {
       bot.replyWithTyping(message, `${randomResponse(missing_info)}`);
