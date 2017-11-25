@@ -30,10 +30,8 @@ class StageForm extends Component {
     const { page } = this.state;
     return (
       <div className="stage-form">
-        <h2>info</h2>
-        <h2>more infor</h2>
-        <h2>more infor</h2>
-      {/*  {page === 1 && <StageForm2 onSubmit={this.nextPage} />}
+       
+        {page === 1 && <StageForm2 onSubmit={this.nextPage} />}
         {page === 2 &&
           <StageForm2
             previousPage={this.previousPage}
@@ -43,7 +41,7 @@ class StageForm extends Component {
           <StageForm3
             previousPage={this.previousPage}
             onSubmit={onSubmit}
-          />}*/}
+          />}
       </div>
     );
   }

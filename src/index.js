@@ -43,8 +43,8 @@ ReactDOM.render(
         <header id="global-nav-header">
           <NavBar />
         </header>
-      <StageForm onSubmit={showResults} />
 
+      <StageForm onSubmit={showResults} />
         <div>
           <Route exact path="/" component={ App } />
           <Route path="/about" component={ About } />
