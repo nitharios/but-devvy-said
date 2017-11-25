@@ -27,7 +27,7 @@ module.exports = function (sequelize, DataTypes) {
     
     Resource.belongsToMany(models.Tag, {
       through : 'resource_tags', 
-      foreignKey : 'tag_id',
+      foreignKey : 'topic_id',
       onDelete : 'CASCADE'
     });
   };
