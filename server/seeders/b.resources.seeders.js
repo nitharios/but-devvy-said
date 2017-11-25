@@ -6,7 +6,7 @@ const MomentRandom = require('moment-random');
 module.exports = {
   up: (queryInterface, Sequelize) => {
   
-    return queryInterface.bulkInsert('answers', [
+    return queryInterface.bulkInsert('resources', [
 
       {
         title : 'What is meant by Asynchronous Javascript?',
@@ -45,7 +45,7 @@ module.exports = {
 
   down: (queryInterface, Sequelize) => {
 
-    return queryInterface.bulkDelete('answers', null, {});
+    return queryInterface.bulkDelete('resources', null, {});
 
   }
 };
