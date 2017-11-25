@@ -11,7 +11,7 @@ const { additional_query,
         greetings, 
         missing_info,
         query_type,
-        timeout,
+        timeout_msgs,
         randomResponse } = RESPONSES;
 
 module.exports = (function() {
@@ -130,7 +130,7 @@ module.exports = (function() {
     
     // creates a path for response timeout
     convo.addMessage({
-      text : randomResponse(timeout),
+      text : randomResponse(timeout_msgs),
       action : 'stop'
     }, 'on_timeout');
 

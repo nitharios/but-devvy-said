@@ -79,7 +79,7 @@ module.exports = {
     "Examples, links, or notes?",
     "Do you want examples, links, or notes?"
   ],
-  timeout : [
+  timeout_msgs : [
     "...I guess I'll go do something else then...",
     "So...no?",
     "No response?? Rude much? :rage:",
@@ -87,7 +87,7 @@ module.exports = {
     "If not, I'm just going to play with Mika ",
     ":zzz:"
   ],
-  
+
   randomResponse : function(category) {
     return category[Math.floor(Math.random()*category.length)];  
   }
