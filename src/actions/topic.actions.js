@@ -1,8 +1,8 @@
 import Axios from 'axios';
 export const LOAD_TOPICS = 'LOAD_TOPICS';
-
+const mockData = {}
 const topicsURL = '/api/topics';
-
+// debugger
 // send query to back end 
 // expect a parsed response back
 export const loadTopics = () => {
@@ -10,10 +10,9 @@ export const loadTopics = () => {
     return Axios.get(topicsURL)
     .then(response => {
       const data = response.data;
-
       dispatch({
         type : LOAD_TOPICS,
-        topicsList : data.topics
+        topicsList : data
       });
     })
     .catch(err => {
@@ -22,3 +21,5 @@ export const loadTopics = () => {
     });
   };
 };
+
+

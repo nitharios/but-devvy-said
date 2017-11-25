@@ -9,9 +9,7 @@ module.exports = (function() {
   };
 
   function receive(bot, message, next) {
-    console.log('===== wit.receive HEARD MIDDLEWARE =====');
-    console.log(message);
-
+    
     // Wit will only recieve TEXT
     if (message.text && message.type !== 'self_message') {
       // sends the received message to Wit

@@ -24,20 +24,27 @@ module.exports = function (sequelize, DataTypes) {
 
     Topic.belongsToMany(models.Resource, {
       through : 'TopicResource',
-      foreignKey : 'topic_id',
+      foreignKey : 'topicId',
+      otherKey : 'resourceId'
     });
 
     Topic.belongsToMany(models.Note, {
       through : 'TopicNote',
-      foreignKey : 'topic_id',
+      foreignKey : 'topicId',
+      otherKey : 'noteId'
     });
 
     Topic.belongsToMany(models.Example, {
       through : 'TopicExample',
-      foreignKey : 'topic_id',
+      foreignKey : 'topicId',
+      otherKey : 'exampleId'
     });
 
   };
 
+  
+
   return Topic;
+
+
 };

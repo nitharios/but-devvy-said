@@ -39,9 +39,11 @@ module.exports = function(sequelize, DataTypes) {
       foreignKey : 'topic_id'
     });
 */
+
     Note.belongsToMany(models.Topic, {
       through : 'TopicNote',
-      foreignKey : 'note_id'
+      foreignKey : 'noteId',
+      otherKey : 'topicId'
     });
 
   };

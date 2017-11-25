@@ -1,28 +1,15 @@
-const { Resource,
-        Topic,
-        Note,
-        Example
-      } = require('../../../server/models');
+const models = require('./models.middleware.js');
+
+const { 
+  Topic, 
+  Resource, 
+  Note, 
+  Example } = require('../../../server/models');
 
 module.exports = function(bot, message, next) {
   console.log('===== dbQuery HEARD MIDDLEWARE =====');
   console.log(message);
   let model = Resource;
-  // if there is an info type, user wants a specific model query
-  // if (message.info_type && message.db_query) {
-  //   switch(message.info_type) {
-  //     case 'notes':
-  //       model = Note;
-  //       break;
-
-  //     case 'examples':
-  //       model = Example;
-  //       break;
-
-  //     default:
-  //       break;
-  //   }
-  // }
 
   if (message.db_query) {
     let topicName = message.db_query[0].value;

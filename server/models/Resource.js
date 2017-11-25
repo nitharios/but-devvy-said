@@ -28,7 +28,9 @@ module.exports = function (sequelize, DataTypes) {
     
     Resource.belongsToMany(models.Topic, {
       through : 'TopicResource',
-      foreignKey : 'resource_id'
+      foreignKey : 'resourceId',
+      otherKey : 'topicId'
+
     });
     
   };
