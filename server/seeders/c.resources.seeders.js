@@ -7,8 +7,7 @@ module.exports = {
       {
         url : 'http://bit.ly/2zOQycP', //SO async
         createdAt : new Date(),
-        updatedAt : new Date(),
-        topics : [ { name : 'javascript' }, { name : 'asynchronous' } ]
+        updatedAt : new Date()
       },
       {
         url : 'http://bit.ly/2mDwgh3', //YT NetNinja 'what is async javascript?'
