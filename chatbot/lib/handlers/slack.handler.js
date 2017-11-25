@@ -24,17 +24,14 @@ module.exports = (function() {
     console.log('Slack message received');
 
     if (message.error) {
-      bot.reply(message, { type: "typing" });
-      bot.reply(message, randomResponse(error_msgs));
+      bot.replyWithTyping(message, randomResponse(error_msgs));
 
     } else if (message.greetings) {
-      bot.reply(message, { type: "typing" });
-      bot.reply(message, randomResponse(greetings));
+      bot.replyWithTyping(message, randomResponse(greetings));
 
     } else if (message.results) {
       
       bot.createConversation(message, (err, convo) => {
-        bot.reply(message, { type: "typing" });
         resourcesHandler(err, convo, message, bot);
       });
       
@@ -43,18 +40,18 @@ module.exports = (function() {
       // });
 
     } else {
-      bot.reply(message, { type: "typing" });
-      bot.reply(message, `${randomResponse(missing_info)}`);
+      bot.replyWithTyping(message, `${randomResponse(missing_info)}`);
     }
   }
 
-  function resourcesHandler(err, convo, message, bot) {
+  function resourcesHandler(err, convo, message) {
     // Resources is an array
     const { name, Resources } = message.results;
     const patternsArr = [
       {
         pattern : EXAMPLES,
         callback : (response, convo) => {
+          
           convo.gotoThread('examples_thread');
         }
       },
