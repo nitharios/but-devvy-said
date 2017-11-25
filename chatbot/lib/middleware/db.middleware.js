@@ -13,6 +13,7 @@ module.exports = (bot, message, next) => {
       include : [{
         model : Resource,
         attributes : [
+          'title',
           'examples', 
           'links', 
           'notes'

@@ -5,7 +5,7 @@ module.exports = function(topicName, infoType, infoArr) {
 
   if (infoArr.length > 0) {
     infoString = infoArr.reduce((previous, current) => {
-      return previous.concat(`${current.url}\n`);
+      return previous.concat(`${current[infoType]}\n`);
     }, '');
     
     return resultString.concat(infoString);    
