@@ -47,86 +47,50 @@ module.exports = (function() {
   function conversationHandler(err, convo, message) {
     const { name, Resources } = message.results;
     const { examples, links, notes } = Resources;
+    const patternsArr = [
+      {
+        pattern : EXAMPLES,
+        callback : (response, convo) => {
+          convo.gotoThread('examples_thread');
+        }
+      },
+      {
+        pattern : LINKS,
+        callback : (response, convo) => {
+          convo.gotoThread('links_thread');
+        }
+      },
+      {
+        pattern : NOTES,
+        callback : (response, convo) => {
+          convo.gotoThread('notes_thread');
+        }
+      },
+      {
+        pattern : user.yes,
+        callback : (response, convo) => {
+          convo.gotoThread('yes_thread');
+        }
+      },
+      {
+        pattern : user.no,
+        callback : (response, convo) => {
+          convo.gotoThread('no_thread');
+        }
+      },
+      {
+        default : true,
+        callback : (response, convo) => {
+          convo.gotoThread('bad_response');
+        }
+      }
+    ];
     
     // first question posed to user
-    convo.addQuestion(randomResponse(query_type), [
-      {
-        pattern : EXAMPLES,
-        callback : (response, convo) => {
-          convo.gotoThread('examples_thread');
-        }
-      },
-      {
-        pattern : LINKS,
-        callback : (response, convo) => {
-          convo.gotoThread('links_thread');
-        }
-      },
-      {
-        pattern : NOTES,
-        callback : (response, convo) => {
-          convo.gotoThread('notes_thread');
-        }
-      },
-      {
-        pattern : user.yes,
-        callback : (response, convo) => {
-          convo.gotoThread('yes_thread');
-        }
-      },
-      {
-        pattern : user.no,
-        callback : (response, convo) => {
-          convo.gotoThread('no_thread');
-        }
-      },
-      {
-        default : true,
-        callback : (response, convo) => {
-          convo.gotoThread('bad_response');
-        }
-      }
-    ], {}, 'default');
+    convo.addQuestion(randomResponse(query_type), patternsArr, {}, 'default');
 
     // additional query posted to user
-    convo.addQuestion(randomResponse(additional_query), [
-      {
-        pattern : LINKS,
-        callback : (response, convo) => {
-          convo.gotoThread('links_thread');
-        }
-      },
-      {
-        pattern : EXAMPLES,
-        callback : (response, convo) => {
-          convo.gotoThread('examples_thread');
-        }
-      },
-      {
-        pattern : NOTES,
-        callback : (response, convo) => {
-          convo.gotoThread('notes_thread');
-        }
-      },
-      {
-        pattern : user.yes,
-        callback : (response, convo) => {
-          convo.gotoThread('yes_thread');
-        }
-      },
-      {
-        pattern : user.no,
-        callback : (response, convo) => {
-          convo.gotoThread('no_thread');
-        }
-      },
-      {
-        default : true,
-        callback : (response, convo) => {
-          convo.gotoThread('bad_response');
-        }
-      }
-    ], {}, 'additional_query');
+    convo.addQuestion(randomResponse(additional_query), patternsArr, {}, 'additional_query');
 
     // creates a path when the user says 'no'
     convo.addMessage({
