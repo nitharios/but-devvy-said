@@ -13,8 +13,7 @@ module.exports = {
     "See you later!", 
     "Bye for now!",
     "Have a great day!",
-    "Avoir mon amie!",
-    "Have a nice cup of tea ~"
+    "Okay, bye!"
   ],
   error_msgs : [
     "Oh no! Something went wrong!",
@@ -32,7 +31,8 @@ module.exports = {
     ":rage:",
     ":slightly_smiling_face:", 
     ":sleeping:",
-    ":sob:"
+    ":sob:",
+    ":zzz:"
   ],
   greetings : [
     "Hello! :heart:", 
@@ -70,7 +70,9 @@ module.exports = {
     "Why looky here! So many hard working devs ^^",
     "My Nathan might know!",
     "Chris is fixing the gap in my information",
-    "Justin is fixing the gap in my information"
+    "Justin is fixing the gap in my information",
+    "Avoir mon amie!",
+    "Have a nice cup of tea ~"
   ],
   query_type : [
     "Would you like to see examples, links, or notes?",
@@ -82,8 +84,10 @@ module.exports = {
     "So...no?",
     "No response?? Rude much? :rage:",
     "...",
-    "If not, I'm just going to play with Mika"
+    "If not, I'm just going to play with Mika ",
+    ":zzz:"
   ],
+  
   randomResponse : function(category) {
     return category[Math.floor(Math.random()*category.length)];  
   }
