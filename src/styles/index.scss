@@ -93,6 +93,13 @@ body {
     div {
       padding: 5px;
       margin: 0px 10px 0px 10px;
+
+      &:hover {
+        // opacity: 0.5;
+        // background-color: $font-color;
+        // z-index: 10;
+        border-radius: 10px;
+      }
     }
   }
 }
@@ -102,8 +109,28 @@ body {
   margin: 30px auto;
 
   #banner {
+    background-image: url('/assets/DevvyCho.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border: 5px solid $accent-color;
+    border-radius: 25%;
+  }
+
+  #welcome-msg {
     width: 100%;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 30px;
     font-family: "Niconne";
     font-size: 40px;
