@@ -1,21 +1,19 @@
 import React , {Component} from 'react';
-import Proptypes from 'prop-types';
-// import StageForm2 from './stage2Form';
-// import StageForm3 from './stage3Form';
-// import StageForm4 from './stage4Form';
+import PropTypes from 'prop-types';
+import StageForm2 from './stage2Form';
+import StageForm3 from './stage3Form';
+import StageForm4 from './stage4Form';
 
 class StageForm extends Component {
   constructor(props){
     super(props);
 
-    //state
+    //state and page bindings
     this.nextPage = this.nextPage.bind(this);
     this.previousPage = this.previousPage.bind(this);
     this.state = {
       page:1,
     };
-
-
   } //constructor end ---!!!!
 
   // handlers for form
