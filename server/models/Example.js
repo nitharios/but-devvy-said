@@ -32,9 +32,13 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Example.associate = function(models) {
-    Example.belongsTo(models.Topic, {
-      foreignKey : 'topic_id'
+
+    Example.belongsToMany(models.Topic, {
+      through : 'TopicExample',
+      foreignKey : 'exampleId',
+      otherKey : 'topicId'
     });
+
   };
 
   return Example;
