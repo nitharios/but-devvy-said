@@ -13,7 +13,8 @@ module.exports = {
         cohort : 19,
         name : 'Justin',
         createdAt : new Date(),
-        updatedAt : new Date()
+        updatedAt : new Date(),
+        topic_id : 1
       },
       {
         title : 'How to use Promises',
@@ -23,7 +24,8 @@ module.exports = {
         cohort : 18,
         name : 'Nathan',
         createdAt : new Date(),
-        updatedAt : new Date()
+        updatedAt : new Date(),
+        topic_id : 2,
       },
       {
         title : 'Every Function is an Object',
@@ -33,7 +35,8 @@ module.exports = {
         cohort : 17,
         name : 'Chris',
         createdAt : new Date(),
-        updatedAt : new Date()
+        updatedAt : new Date(),
+        topic_id: 3
       }
 
     ], {});
