@@ -24,14 +24,6 @@ router.route('/')
 .post((req, res) => {
   
   const { title, format, code, comment } = req.body;
-  //should do validation.. f
-  // console.log(topic,"TOPICS!")
-  // console.log(title,"TITLE!")
-  // console.log(student,"STUDETN!!")
-  // console.log(format,"FORMATTTT!")
-  // console.log(cohort,"COHORT !")
-  // console.log(bullets, " BULLETS")
-  console.log(req.body, " REQ BOD")
 
   return Example.create({
     title : title,
