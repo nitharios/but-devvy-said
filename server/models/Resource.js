@@ -2,7 +2,7 @@
 
 module.exports = function(sequelize, DataTypes) {
 
-  const Answer = sequelize.define('Answer', {
+  const Resource = sequelize.define('Resource', {
     title : {type : DataTypes.STRING, allowNull : false}, //'Arrow Function Notes'
     links : {type : DataTypes.STRING, allowNull : false}, //'http://bit.ly/2zOQycP'
     example : {type : DataTypes.TEXT, allowNull : false}, //code snippet
@@ -12,20 +12,20 @@ module.exports = function(sequelize, DataTypes) {
   },
 
   {
-    tableName : 'answers',
+    tableName : 'resources',
     timestamps : true,
     createdAt : 'Submission Date',
     updatedAt : 'Last Updated'
   });
 
-  Answer.associate = function(models) {
+  Resource.associate = function(models) {
 
-    Answer.belongsTo(models.Topic, {
+    Resource.belongsTo(models.Topic, {
       foreignKey : 'topic_id'
     });
 
   };
 
-  return Answer;
+  return Resource;
 
 };
