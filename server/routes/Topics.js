@@ -9,8 +9,8 @@ const { already_exists,
 const router = express.Router();
 
 router.route('/')
-.get((req, res) => {
-  return Topic.findAll({
+.get((req, res) => { 
+  return Topic.findAll({ 
     include : [
       { 
         model : Resource,

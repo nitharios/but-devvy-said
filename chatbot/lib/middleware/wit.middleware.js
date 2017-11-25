@@ -8,7 +8,9 @@ module.exports = (function() {
     hears : hears    
   };
 
-  function receive(bot, message, next) {    
+  function receive(bot, message, next) {
+    console.log('wit.receive HEARD MIDDLEWARE==========')
+    console.log(message);
     // Wit will only recieve TEXT
     if (message.text && message.type !== 'self_message') {
       // sends the received message to Wit
@@ -31,6 +33,8 @@ module.exports = (function() {
   }
 
   function hears(patterns, message) {
+    console.log('wit.hears HEAR MIDDLEWARE==========')
+    console.log(message);
     // patterns is the first argument of controller.hears
     if (patterns) return true;
 
