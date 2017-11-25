@@ -50,7 +50,7 @@ class App extends Component {
           Hello, my name is Devvy Cho!
         </div>
 
-        <div id="input-box">
+        <div id="text-box">
           <input
             id="text-input"
             onChange={ this.handleChange }
@@ -58,6 +58,9 @@ class App extends Component {
             placeholder="How can I help you?"
             type="text" 
             value={ this.state.userQuery } />
+        </div>
+
+        <div id="button-box">
           <input
             className="button"
             id="go-button"

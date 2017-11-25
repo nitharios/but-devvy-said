@@ -110,22 +110,35 @@ body {
     text-align: center;
   }
 
-  #input-box {
-    @include flex-style(row nowrap, center);
+  #text-box {
     width: 100%;
+    text-align: center;
 
     #text-input {
-      width: 70%;
+      width: 90%;
       height: 35px;
       font-size: 20px;
       text-indent: 5px;
     }
+  }
+
+  #button-box {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
 
     .button {
       border: 1px solid $primary-color;
       display: inline-block;
-      margin-left: 10px;
-      width: 50px;
+      margin: 5px;
+      width: 70px;
+      height: 35px;
+      font-size: 15px;
+
+      &:hover {
+        border: 3px solid $primary-color;
+        border-radius: 7px;
+      }
     }
   }
 
@@ -133,7 +146,7 @@ body {
     width: 100%;
     margin: 20px auto;
     text-align: center;
-  }
+  }    
 
   #information-box {
     width: 100%;
