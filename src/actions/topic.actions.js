@@ -2,13 +2,14 @@ import Axios from 'axios';
 export const LOAD_TOPICS = 'LOAD_TOPICS';
 
 const topicsURL = '/api/topics';
-
+// debugger
 // send query to back end 
 // expect a parsed response back
 export const loadTopics = () => {
   return dispatch => {
     return Axios.get(topicsURL)
     .then(response => {
+      console.log(response.data[0], '<---DATA PROMISE HERE!!!')
       const data = response.data;
 
       dispatch({
@@ -22,3 +23,5 @@ export const loadTopics = () => {
     });
   };
 };
+
+
