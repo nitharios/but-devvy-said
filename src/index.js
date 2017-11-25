@@ -15,9 +15,11 @@ import {
 import App from './containers/App';
 import AddInfo from './containers/AddInfo';
 import StageForm from './containers/StageForm';
+
 /* Components */
 import About from './components/about.component';
 import NavBar from './components/navbar.component';
+import showResults from './components/showResults.component';
 
 /* library files */
 import registerServiceWorker from './lib/registerServiceWorker';
@@ -49,6 +51,7 @@ ReactDOM.render(
 
 
       </div>
+      <StageForm onSubmit={showResults} />
     </Router>
   </Provider>,
   document.getElementById('root')
