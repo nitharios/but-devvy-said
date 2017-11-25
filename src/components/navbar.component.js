@@ -7,16 +7,16 @@ export default ({ falseParameter }) => {
   return(
     <div id="nav-bar">
       <div id="devvy-cho-logo">
-        <Link to="/">
+        <Link to="/about">
           <div></div>
         </Link>
       </div>
       <div id="text-nav-links">
-        <Link to="/about">
-          <div>About</div>
+        <Link to="/">
+          <div>Home</div>
         </Link>
         <Link to="/addinfo">
-          <div>Add Info</div>
+          <div>Add</div>
         </Link>
         <Link to="/">
           <div>Extra</div>
