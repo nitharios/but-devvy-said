@@ -45,8 +45,8 @@ module.exports = (function() {
   }
 
   function resourcesHandler(err, convo, message) {
+    // Resources is an array
     const { name, Resources } = message.results;
-    const { examples, links, notes } = Resources;
     const patternsArr = [
       {
         pattern : EXAMPLES,
@@ -106,19 +106,19 @@ module.exports = (function() {
 
     // creates a path when the user wants to see examples
     convo.addMessage({
-      text : stringBuilder(name, EXAMPLES, examples),
+      text : stringBuilder(name, EXAMPLES, Resources),
       action : 'additional_query'
     }, 'examples_thread');
 
     // creates a path when the user wants to see links
     convo.addMessage({
-      text : stringBuilder(name, LINKS, links),
+      text : stringBuilder(name, LINKS, Resources),
       action : 'additional_query'
     }, 'links_thread');
 
     // creates a path when the user wants to see notes
     convo.addMessage({
-      text : stringBuilder(name, NOTES, notes),
+      text : stringBuilder(name, NOTES, Resources),
       action : 'additional_query'
     }, 'notes_thread');
 
