@@ -1,6 +1,6 @@
 import Axios from 'axios';
 export const LOAD_TOPICS = 'LOAD_TOPICS';
-
+const mockData = {}
 const topicsURL = '/api/topics';
 // debugger
 // send query to back end 
@@ -9,12 +9,12 @@ export const loadTopics = () => {
   return dispatch => {
     return Axios.get(topicsURL)
     .then(response => {
-      console.log(response.data[0], '<---DATA PROMISE HERE!!!')
       const data = response.data;
+            console.log(data, '<---DATA PROMISE HERE!!!')
 
       dispatch({
         type : LOAD_TOPICS,
-        topicsList : data.topics
+        topicsList : data
       });
     })
     .catch(err => {

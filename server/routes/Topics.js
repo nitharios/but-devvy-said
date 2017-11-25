@@ -21,6 +21,7 @@ router.route('/')
     order : [[ 'name' ]]
   })
   .then(topicsList => {
+    console.log(topicsList, ' TOPIC LIST $O@&Y%@$&(%@')
     return res.json(topicsList);
   })
   .catch(err => {
@@ -61,7 +62,6 @@ router.route('/')
 router.route('/:topic_name')
 .get((req, res) => {
   const { topic_name } = req.params;
-
   if (!topic_name) {
     return(missing_key);
   }
