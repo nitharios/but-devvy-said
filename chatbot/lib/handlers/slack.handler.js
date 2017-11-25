@@ -43,7 +43,6 @@ module.exports = (function() {
   }
 
   function conversationHandler(err, convo, message) {
-    console.log('sanity', message);
     const { name, Examples, Notes } = message.results;
     
     // creates a path when the user says 'no'
