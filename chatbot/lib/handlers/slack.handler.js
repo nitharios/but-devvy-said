@@ -24,15 +24,18 @@ module.exports = (function() {
     console.log('Slack message received');
 
     if (message.error) {
+      bot.reply(message, { type: "typing" });
       bot.reply(message, randomResponse(error_msgs));
 
     } else if (message.greetings) {
+      bot.reply(message, { type: "typing" });
       bot.reply(message, randomResponse(greetings));
 
     } else if (message.results) {
       
       bot.createConversation(message, (err, convo) => {
-        resourcesHandler(err, convo, message);
+        bot.reply(message, { type: "typing" });
+        resourcesHandler(err, convo, message, bot);
       });
       
       // bot.reply(message, stringBuilder(name, LINKS, links), (err, response) => {
@@ -40,11 +43,12 @@ module.exports = (function() {
       // });
 
     } else {
+      bot.reply(message, { type: "typing" });
       bot.reply(message, `${randomResponse(missing_info)}`);
     }
   }
 
-  function resourcesHandler(err, convo, message) {
+  function resourcesHandler(err, convo, message, bot) {
     // Resources is an array
     const { name, Resources } = message.results;
     const patternsArr = [
