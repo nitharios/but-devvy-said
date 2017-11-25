@@ -8,16 +8,24 @@ module.exports = (function() {
     hears : hears    
   };
 
-  function receive(bot, message, next) {    
+  function receive(bot, message, next) {
+    console.log('===== wit.receive HEARD MIDDLEWARE =====');
+    console.log(message);
+
     // Wit will only recieve TEXT
     if (message.text && message.type !== 'self_message') {
       // sends the received message to Wit
       return client.message(message.text)
-      .then(data => {           
+      .then(data => {
+        console.log('===== RESPONSE FROM WIT.AI =====');
+
         message.entities = data.entities;
         message.info_type = message.entities.info_type;
         message.db_query = message.entities.db_query;
         message.greetings = message.entities.greetings;
+
+        console.log(message); 
+
         next();
 
       })
@@ -31,6 +39,10 @@ module.exports = (function() {
   }
 
   function hears(patterns, message) {
+    console.log('===== wit.hears HEAR MIDDLEWARE =====');
+    console.log(patterns);
+    console.log(message);
+    
     // patterns is the first argument of controller.hears
     if (patterns) return true;
 
@@ -47,4 +59,6 @@ module.exports = (function() {
 
     return false;
   }
+
+
 })();

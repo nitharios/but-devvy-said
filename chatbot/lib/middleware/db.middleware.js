@@ -5,6 +5,8 @@ const { Resource,
       } = require('../../../server/models');
 
 module.exports = function(bot, message, next) {
+  console.log('===== dbQuery HEARD MIDDLEWARE =====');
+  console.log(message);
   let model = Resource;
   // if there is an info type, user wants a specific model query
   // if (message.info_type && message.db_query) {
