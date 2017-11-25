@@ -21,15 +21,16 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   Resource.associate = function(models) {
-    Resource.belongsTo(models.Topic, {
+
+    /*Resource.belongsTo(models.Topic, {
       foreignKey : 'topic_id'
+    });*/
+    
+    Resource.belongsToMany(models.Topic, {
+      through : 'TopicResource',
+      foreignKey : 'resource_id'
     });
     
-    Resource.belongsToMany(models.Tag, {
-      through : 'resource_tags', 
-      foreignKey : 'tag_id',
-      onDelete : 'CASCADE'
-    });
   };
 
   return Resource;
