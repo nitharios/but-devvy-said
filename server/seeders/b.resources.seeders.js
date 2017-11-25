@@ -1,7 +1,4 @@
 'use strict';
-const Moment = require('moment');
-Moment().format('MMMM Do YYYY, h:mm:ss a');
-const MomentRandom = require('moment-random');
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -15,8 +12,8 @@ module.exports = {
         notes : 'These are class notes.',
         cohort : 19,
         name : 'Justin',
-        "Submission Date" : new Date(),
-        "Last Updated" : new Date()
+        createdAt : new Date(),
+        updatedAt : new Date()
       },
       {
         title : 'How to use Promises',
@@ -25,8 +22,8 @@ module.exports = {
         notes : 'These are class notes.',
         cohort : 18,
         name : 'Nathan',
-        "Submission Date" : new Date(),
-        "Last Updated" : new Date()
+        createdAt : new Date(),
+        updatedAt : new Date()
       },
       {
         title : 'Every Function is an Object',
@@ -35,8 +32,8 @@ module.exports = {
         notes : 'These are class notes.',
         cohort : 17,
         name : 'Chris',
-        "Submission Date" : new Date(),
-        "Last Updated" : new Date()
+        createdAt : new Date(),
+        updatedAt : new Date()
       }
 
     ], {});
