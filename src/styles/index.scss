@@ -104,7 +104,7 @@ body {
   }
 }
 
-#app {
+#app, #about {
   width: 75%;
   margin: 30px auto;
 
@@ -199,6 +199,28 @@ body {
     #resources {
       border-bottom: 1px solid $primary-color;
       border-radius: 10px;
+    }
+  }
+}
+
+#about {
+  width: 75%;
+  margin: 30px auto;
+
+  #header {
+    width: 100%;
+    margin-top: 60px;
+    margin-bottom: 15px;
+    margin-left: 30px;
+    font-family: "Niconne";
+    font-size: 40px;
+  }
+
+  .content {
+    font-size: 25px;
+
+    div {
+      margin: 20px auto;
     }
   }
 }
