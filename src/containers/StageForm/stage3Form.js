@@ -12,19 +12,19 @@ const StageForm3 = props => {
     <form onSubmit={handleSubmit}>
       <Field name="email" type="email" component={renderFormField} label="Email" />
       <div>
-        <label>Sex</label>
+        <label>resources</label>
         <div>
           <label>
-            <Field name="sex" component="input" type="radio" value="male" />
+            <Field name="resources" component="input" type="radio" value="male" />
             {' '}
-            Male
+            Notes
           </label>
           <label>
-            <Field name="sex" component="input" type="radio" value="female" />
+            <Field name="resources" component="input" type="radio" value="female" />
             {' '}
-            Female
+            Example
           </label>
-          <Field name="sex" component={renderError} />
+          <Field name="resources" component={renderError} />
         </div>
       </div>
       <div>
