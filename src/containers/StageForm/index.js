@@ -48,7 +48,7 @@ class StageForm extends Component {
 }
 
 StageForm.propTypes = {
-  // onSubmit: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default StageForm;
