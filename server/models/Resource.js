@@ -26,6 +26,7 @@ module.exports = function (sequelize, DataTypes) {
       through : 'TopicResource',
       foreignKey : 'resourceId',
       otherKey : 'topicId'
+
     });
   };
 
