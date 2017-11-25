@@ -23,14 +23,21 @@ router.route('/')
 })
 .post((req, res) => {
   
-  const { topic, title, student, cohort, bullets } = req.body;
+  const { title, format, code, comment } = req.body;
   //should do validation.. f
+  // console.log(topic,"TOPICS!")
+  // console.log(title,"TITLE!")
+  // console.log(student,"STUDETN!!")
+  // console.log(format,"FORMATTTT!")
+  // console.log(cohort,"COHORT !")
+  // console.log(bullets, " BULLETS")
+  console.log(req.body, " REQ BOD")
+
   return Example.create({
-    topic : topic,
     title : title,
-    student : student,
-    cohort : cohort,
-    bullets : bullets
+    format: format,
+    code : code,
+    comment: comment
   })
   .then(newExample => {
     return res.json(newExample);
