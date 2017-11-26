@@ -40,18 +40,20 @@ class StageForm extends Component {
       <div className="stage-form">
        
         {page === 1 && <StageForm2 onSubmit={ this.nextPage }/>}
+
         {page === 2 &&
           <StageForm3
             previousPage={ this.previousPage }
             onSubmit={ this.nextPage }
           />}
+          
         {page === 3 &&
           <StageForm4
             previousPage={ this.previousPage }
             onSubmit={ this.onSubmit }
           />}
       </div>
-    );
+    );  //{ handleSubmit, pristine, previousPage, submitting }
   }
 }
 
