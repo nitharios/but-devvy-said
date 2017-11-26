@@ -16,7 +16,6 @@ const renderTypeSelector = ({ input, meta: { touched, error } }) => (
 
 const StageForm4 = props => {
   const { handleSubmit, pristine, previousPage, submitting } = props;
-  console.log(this.props, 'THIS PROPS ON FORM 4')
   return (
     <form onSubmit={handleSubmit}>
       <div>

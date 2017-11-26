@@ -44,8 +44,6 @@ ReactDOM.render(
           <NavBar />
         </header>
 
-{/*      <StageForm onSubmit={showResults} />
-*/}       
           <Route exact path="/" component={ App } />
           <Route path="/about" component={ About } />
           <Route path="/addinfo" component={ AddInfo } />
