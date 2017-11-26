@@ -28,19 +28,20 @@ class StageForm extends Component {
   render(){
     const { onSubmit } = this.props;
     const { page } = this.state;
+
     return (
       <div className="stage-form">
        
-        {page === 1 && <StageForm2 onSubmit={this.nextPage} />}
+        {page === 1 && <StageForm2 onSubmit={ this.nextPage }/>}
         {page === 2 &&
           <StageForm2
-            previousPage={this.previousPage}
-            onSubmit={this.nextPage}
+            previousPage={ this.previousPage }
+            onSubmit={ this.nextPage }
           />}
         {page === 3 &&
           <StageForm3
-            previousPage={this.previousPage}
-            onSubmit={onSubmit}
+            previousPage={ this.previousPage }
+            onSubmit={ onSubmit }
           />}
       </div>
     );

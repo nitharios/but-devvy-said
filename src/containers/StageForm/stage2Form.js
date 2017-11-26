@@ -27,8 +27,8 @@ const StageForm2 = props => {
 };
 
 export default reduxForm({
-  form: 'stageform',                
-  destroyOnUnmount: false, 
-  forceUnregisterOnUnmount: true, 
+  form: 'stageform', //<------ same form name
+  destroyOnUnmount: false, //<------ Preserves form data
+  forceUnregisterOnUnmount: true, // <------ unregister fields on unmount
   validate,
 })(StageForm2);
