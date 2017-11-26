@@ -1,66 +1,76 @@
-import React , {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import StageForm2 from './stage2Form';
-import StageForm3 from './stage3Form';
-import StageForm4 from './stage4Form';
+import FirstPage from './FirstPage';
+import SecondPage from './SecondPage';
+import ThirdPage from './ThirdPage';
 
 class StageForm extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
-    //state and page bindings
+    this.state = {
+      page : 1
+    };
+
     this.nextPage = this.nextPage.bind(this);
     this.previousPage = this.previousPage.bind(this);
-    this.state = {
-      page: 1,
-    };
     this.handleSubmit = this.handleSubmit.bind(this);
-  } //constructor end ---!!!!
+  } 
 
-  // handlers for form
-  nextPage(){
-    this.setState({ page: this.state.page + 1 });
+  nextPage() {
+    this.setState({page : this.state.page + 1});
   }
 
-  previousPage(){
-    this.setState({ page: this.state.page - 1 });
+  previousPage() {
+    this.setState({page : this.state.page - 1});
   }
 
-  handleSubmit(){
-    // preventDefault();
-    // onSubmit();
+  handleSubmit(event) {
+    console.log('Hey it worked.');
   }
 
-  render(){
-    const { onSubmit } = this.props;
-    const { page } = this.state;
+  render() {
+    console.log('StageForm1 render');
+    console.log(this.props);
+
+    let page = this.state.page;
    
     return (
       <div className="stage-form">
        
-        {page === 1 && <StageForm2 onSubmit={ this.nextPage }/>}
+        {
+          page === 1 && <FirstPage nextPage={this.nextPage} />
+        }
 
-        {page === 2 &&
-          <StageForm3
-            previousPage={ this.previousPage }
-            onSubmit={ this.nextPage }
-          />}
+        {
+          page === 2 &&
+          <SecondPage
+            previousPage={this.previousPage}
+            nextPage={this.nextPage}
+          />
+        }
 
-        {page === 3 &&
-          <StageForm4
-            previousPage={ this.previousPage }
-            onSubmit={ this.onSubmit }
-          />}
+        {
+          page === 3 &&
+          <ThirdPage
+            previousPage={this.previousPage}
+            onSubmit={this.handleSubmit}
+          />
+        }
+
       </div>
-    );  //{ handleSubmit, pristine, previousPage, submitting }
+    );
   }
-}
 
-// StageForm.propTypes = {
-//   onSubmit: PropTypes.func.isRequired,
-// };
+
+}
+//end component
 
 export default StageForm;
+
+/*StageForm.propTypes = {
+  onSubmit : PropTypes.func.isRequired,
+};*/
 
 
 
