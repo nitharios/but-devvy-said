@@ -81,33 +81,32 @@ class App extends Component {
           : <div className="response-box">Sorry! I don't have any info on that</div>
         }
 
-        <Tabs defaultIndex={ 0 }>
-          <TabList>
-            <Tab>Examples</Tab>
-            <Tab>Notes</Tab>
-            <Tab>Links</Tab>
+        <Tabs id="information-box" defaultIndex={ 0 }>
+          <TabList id="tab-list">
+            <Tab className="information-tab">Examples</Tab>
+            <Tab className="information-tab">Notes</Tab>
+            <Tab className="information-tab">Links</Tab>
           </TabList>
           
-          <TabPanel>
+          <TabPanel className="information">
             <ListBuilder
               informationList={ this.props.resourcesList }
               label="Examples"
               type="examples" />
           </TabPanel>
-          <TabPanel>
+          <TabPanel className="information">
             <ListBuilder
               informationList={ this.props.resourcesList }
               label="Notes"
               type="notes" />
           </TabPanel>
-          <TabPanel>
+          <TabPanel className="information">
             <ListBuilder
               informationList={ this.props.resourcesList }
               label="Links"
               type="links" />
           </TabPanel> 
         </Tabs>
-
       </div>
     );
   }

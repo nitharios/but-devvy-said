@@ -4,7 +4,7 @@ import Highlight from 'react-highlight';
 export default ({ informationList, type, label }) => {
   
   return(    
-    <div className="information" id={ type }>
+    <div id={ type }>
       { 
         informationList
         .map((info, idx) => {          
