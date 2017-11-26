@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { query } from '../../actions/query.actions';
 import ListBuilder from '../../components/listbuilder.component';
 
@@ -10,7 +11,7 @@ class App extends Component {
     this.state = {
       devvyText : '',
       userText : '',
-      userQuery : ''    
+      userQuery : ''  
     };
 
     this.handleClear = this.handleClear.bind(this);
@@ -80,20 +81,32 @@ class App extends Component {
           : <div className="response-box">Sorry! I don't have any info on that</div>
         }
 
-        <div id="information-box">
-          <ListBuilder
-            informationList={ this.props.resourcesList }
-            label="Examples"
-            type="examples" />
-          <ListBuilder
-            informationList={ this.props.resourcesList }
-            label="Notes"
-            type="notes" />
-          <ListBuilder
-            informationList={ this.props.resourcesList }
-            label="Links"
-            type="links" />
-        </div>
+        <Tabs defaultIndex={ 0 }>
+          <TabList>
+            <Tab>Examples</Tab>
+            <Tab>Notes</Tab>
+            <Tab>Links</Tab>
+          </TabList>
+          
+          <TabPanel>
+            <ListBuilder
+              informationList={ this.props.resourcesList }
+              label="Examples"
+              type="examples" />
+          </TabPanel>
+          <TabPanel>
+            <ListBuilder
+              informationList={ this.props.resourcesList }
+              label="Notes"
+              type="notes" />
+          </TabPanel>
+          <TabPanel>
+            <ListBuilder
+              informationList={ this.props.resourcesList }
+              label="Links"
+              type="links" />
+          </TabPanel> 
+        </Tabs>
 
       </div>
     );
