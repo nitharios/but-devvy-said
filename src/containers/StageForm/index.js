@@ -34,12 +34,12 @@ class StageForm extends Component {
        
         {page === 1 && <StageForm2 onSubmit={ this.nextPage }/>}
         {page === 2 &&
-          <StageForm2
+          <StageForm3
             previousPage={ this.previousPage }
             onSubmit={ this.nextPage }
           />}
         {page === 3 &&
-          <StageForm3
+          <StageForm4
             previousPage={ this.previousPage }
             onSubmit={ onSubmit }
           />}
