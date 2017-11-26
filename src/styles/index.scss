@@ -181,7 +181,9 @@ body {
     border-radius: 10px;
 
     .information {
+      max-height: 400px;
       padding: 10px;
+      overflow-y: scroll;
 
       .info-header {
         font-size: 25px;
@@ -226,9 +228,7 @@ body {
 }
 
 /* Highlighter styles  */
-/*
-Docco style used in http://jashkenas.github.com/docco/ converted by Simon Madine (@thingsinjars)
-*/
+/* Docco style used in http://jashkenas.github.com/docco/ converted by Simon Madine (@thingsinjars) */
 
 .hljs {
   display: block;
