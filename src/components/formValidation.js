@@ -20,9 +20,9 @@ const validate = values => {
     errors.email = 'Invalid email address: please use a valid email';
   }
 
-  if (!values.cohort) {
-    errors.cohort = 'Please insert Cohort number ';
-  }
+  // if (!values.cohort) {
+  //   errors.cohort = 'Please insert Cohort number ';
+  // }
 
   return errors;
   };

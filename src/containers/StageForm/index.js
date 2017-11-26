@@ -18,11 +18,11 @@ class StageForm extends Component {
 
   // handlers for form
   nextPage(){
-    this.setState({ page: this.state.page + 1});
+    this.setState({ page: this.state.page + 1 });
   }
 
   previousPage(){
-    this.setState({ page: this.state.page - 1});
+    this.setState({ page: this.state.page - 1 });
   }
 
   render(){

@@ -44,13 +44,13 @@ ReactDOM.render(
           <NavBar />
         </header>
 
-      <StageForm onSubmit={showResults} />
-        <div>
+{/*      <StageForm onSubmit={showResults} />
+*/}       
           <Route exact path="/" component={ App } />
           <Route path="/about" component={ About } />
           <Route path="/addinfo" component={ AddInfo } />
           <Route path="/stageform" component={ StageForm } />
-        </div>
+        
 
       </div>
     </Router>
