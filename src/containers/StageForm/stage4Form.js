@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import validate from '../../components/formValidation';
 
-const types = ['Note', 'Example', 'Code', 'Format' ];
+const types = ['Note', 'Example', 'link' , 'All 3'];
 
 const renderTypeSelector = ({ input, meta: { touched, error } }) => (
   <div>
@@ -23,20 +23,36 @@ const StageForm4 = props => {
         <Field name="note-type" component={renderTypeSelector} />
       </div>
       <div>
-        <label htmlFor="employed">Employed</label>
+        <label htmlFor="devleague-student">Devleague Student?</label>
         <div>
-          <Field
-            name="employed"
-            id="employed"
+          <Field 
+            value="Yes"
+            name="student-yes"
+            id="student"
             component="input"
             type="checkbox"
-          />
+          /> Yes
+          <Field
+            value='No'
+            name="student-no"
+            id="student"
+            component="input"
+            type="checkbox"
+          /> No
         </div>
       </div>
       <div>
         <label>Notes</label>
         <div>
           <Field name="notes" component="textarea" placeholder="Notes" />
+        </div>
+        <label>Examples</label>
+        <div>
+          <Field name="Examples" component="textarea" placeholder="Examples" />
+        </div>
+        <label>Link</label> - one link only
+        <div>
+          <Field name="Links" component="textarea" placeholder="Links" />
         </div>
       </div>
       <div>

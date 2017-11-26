@@ -15,14 +15,24 @@ const StageForm3 = props => {
         <label>resources</label>
         <div>
           <label>
-            <Field name="resources" component="input" type="radio" value="male" />
+            <Field name="resources" component="input" type="radio" value="notes" />
             {' '}
             Notes
           </label>
           <label>
-            <Field name="resources" component="input" type="radio" value="female" />
+            <Field name="resources" component="input" type="radio" value="example" />
             {' '}
             Example
+          </label>
+           <label>
+            <Field name="resources" component="input" type="radio" value="links" />
+            {' '}
+            Links
+          </label>
+          <label>
+            <Field name="resources" component="input" type="radio" value="all" />
+            {' '}
+            All 3
           </label>
           <Field name="resources" component={renderError} />
         </div>
