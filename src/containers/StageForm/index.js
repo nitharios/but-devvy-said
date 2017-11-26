@@ -12,8 +12,9 @@ class StageForm extends Component {
     this.nextPage = this.nextPage.bind(this);
     this.previousPage = this.previousPage.bind(this);
     this.state = {
-      page:1,
+      page: 1,
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   } //constructor end ---!!!!
 
   // handlers for form
@@ -25,10 +26,16 @@ class StageForm extends Component {
     this.setState({ page: this.state.page - 1 });
   }
 
+  handleSubmit(){
+    // preventDefault();
+    // onSubmit();
+  }
+
   render(){
     const { onSubmit } = this.props;
     const { page } = this.state;
-
+    console.log(this.props, " THESE ARE THE POPS")
+    console.log(onSubmit, " THESE ARE THE defined props POPS")
     return (
       <div className="stage-form">
        
@@ -41,16 +48,16 @@ class StageForm extends Component {
         {page === 3 &&
           <StageForm4
             previousPage={ this.previousPage }
-            onSubmit={ onSubmit }
+            onSubmit={ this.onSubmit }
           />}
       </div>
     );
   }
 }
 
-StageForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-};
+// StageForm.propTypes = {
+//   onSubmit: PropTypes.func.isRequired,
+// };
 
 export default StageForm;
 
