@@ -42,6 +42,7 @@
     "react": "^16.1.1",
     "react-dev-utils": "^4.2.1",
     "react-dom": "^16.1.1",
+    "react-highlight": "briancappello/react-highlight#react-v16-compiled",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",

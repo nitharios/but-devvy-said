@@ -1,4 +1,5 @@
 import React from 'react';
+import Highlight from 'react-highlight';
 
 export default ({ informationList, type, label }) => {
   
@@ -16,7 +17,14 @@ export default ({ informationList, type, label }) => {
                     { info[type] }
                     </a>
                   </div>
-                : <div>{ info[type] }</div>
+                : <div> 
+                    { type === 'examples'
+                      ? <Highlight className="js">
+                          <div>{ info[type] }</div>
+                        </Highlight>
+                      : <div>{ info[type] }</div>
+                    }
+                  </div>
               }
             </div>
           )
