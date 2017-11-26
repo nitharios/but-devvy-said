@@ -5,7 +5,7 @@ import { addNewExample } from '../../actions/example.actions';
 import { addNewNote } from '../../actions/note.actions';
 import { addNewResource } from '../../actions/resource.actions';
 
-import { WithContext as ReactTags } from 'react-tag-input';
+// import { WithContext as ReactTags } from 'react-tag-input';
 import Select from '../../components/select.component';
 
 const EXAMPLE = 'example';
