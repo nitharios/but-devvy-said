@@ -3,10 +3,14 @@ import { Field, reduxForm } from 'redux-form';
 import validate from '../../components/formValidation';
 import renderFormField from './renderFormField';
 
-const StageForm2 = props => {
-  const { handleSubmit } = props;
+const FirstPage = props => {
+  console.log('FirstPage render');
+  console.log(props);
+
+  const { nextPage } = props;
+
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={nextPage}> 
       <Field
         name="firstName"
         type="text"
@@ -24,6 +28,7 @@ const StageForm2 = props => {
       </div>
     </form>
   );
+
 };
 
 export default reduxForm({
@@ -31,4 +36,4 @@ export default reduxForm({
   destroyOnUnmount: false, //<------ Preserves form data
   forceUnregisterOnUnmount: true, // <------ unregister fields on unmount
   validate,
-})(StageForm2);
+})(FirstPage);

@@ -5,6 +5,7 @@ import { addNewExample } from '../../actions/example.actions';
 import { addNewNote } from '../../actions/note.actions';
 import { addNewResource } from '../../actions/resource.actions';
 
+import { WithContext as ReactTags } from 'react-tag-input';
 import Select from '../../components/select.component';
 
 const EXAMPLE = 'example';
@@ -38,6 +39,8 @@ class AddInfo extends Component {
   componentDidMount() {
     this.props.loadTopics();
   }
+
+  
 
   handleReset(e) {
     this.setState({
@@ -128,6 +131,8 @@ class AddInfo extends Component {
   }
 
   render() {
+    let tags = [{topic : 'Javascript'}, {topic : 'Promises'}, {topic : 'Async'}];
+    let suggestions = 'Suggestions';
     return(
       <div>
         <form 
@@ -194,6 +199,7 @@ class AddInfo extends Component {
             value="Submit" />
 
         </form>
+
       </div>
     )
   }
