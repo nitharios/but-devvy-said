@@ -34,8 +34,7 @@ class StageForm extends Component {
   render(){
     const { onSubmit } = this.props;
     const { page } = this.state;
-    console.log(this.props, " THESE ARE THE POPS")
-    console.log(onSubmit, " THESE ARE THE defined props POPS")
+   
     return (
       <div className="stage-form">
        
@@ -46,7 +45,7 @@ class StageForm extends Component {
             previousPage={ this.previousPage }
             onSubmit={ this.nextPage }
           />}
-          
+
         {page === 3 &&
           <StageForm4
             previousPage={ this.previousPage }
