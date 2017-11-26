@@ -14,8 +14,12 @@ const renderTypeSelector = ({ input, meta: { touched, error } }) => (
   </div>
 );
 
-const StageForm4 = props => {
+const ThirdPage = props => {
+  console.log('ThirdPage render');
+  console.log(props);
+
   const { handleSubmit, pristine, previousPage, submitting } = props;
+
   return (
     <form onSubmit={handleSubmit}>
       <div>
@@ -56,10 +60,12 @@ const StageForm4 = props => {
         </div>
       </div>
       <div>
-        <button type="button" className="previous" onClick={ previousPage }>
+        <button type="button" className="previous" onClick={previousPage} >
           Previous
         </button>
-        <button type="submit" disabled={ pristine || submitting }>Submit</button>
+        <button type="submit" disabled={ pristine || submitting } onClick={handleSubmit}>
+          Submit
+        </button>
       </div>
     </form>
   );
@@ -69,4 +75,4 @@ export default reduxForm({
   destroyOnUnmount: false,       
   forceUnregisterOnUnmount: true, 
   validate,
-})(StageForm4);
+})(ThirdPage);

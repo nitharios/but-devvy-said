@@ -6,10 +6,14 @@ import validate from '../../components/formValidation';
 const renderError = ({ meta: { touched, error } }) =>
   touched && error ? <span>{error}</span> : false;
 
-const StageForm3 = props => {
-  const { handleSubmit, previousPage } = props;
+const SecondPage = props => {
+  console.log('SecondPage render');
+  console.log(props);
+
+  const { nextPage, previousPage } = props;
+
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={nextPage}>
       <Field name="email" type="email" component={renderFormField} label="Email" />
       <div>
         <label>resources</label>
@@ -41,7 +45,7 @@ const StageForm3 = props => {
         <button type="button" className="previous" onClick={previousPage}>
           Previous
         </button>
-        <button type="submit" className="next">Next</button>
+        <button type="submit" className="next" onClick={nextPage}>Next</button>
       </div>
     </form>
   );
@@ -52,4 +56,4 @@ export default reduxForm({
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
   validate,
-})(StageForm3);
+})(SecondPage);
