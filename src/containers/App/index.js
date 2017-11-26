@@ -41,9 +41,7 @@ class App extends Component {
     this.setState({ userQuery : '' });
   }
  
-  render() {
-    console.log(this.props.singleTopic.error);
-    
+  render() {    
     return(
       <div id="app">
         <div id="banner"></div>
@@ -78,26 +76,23 @@ class App extends Component {
         </div>
 
         { this.props.singleTopic.name
-          ? <div className="response-box">This is the information I have...</div>
+          ? <div className="response-box">This is the information I have!</div>
           : <div className="response-box">Sorry! I don't have any info on that</div>
         }
 
         <div id="information-box">
           <ListBuilder
-            id="examples"
-            informationList={ this.props.examplesList }
-            label="Examples"
-            type="code" />
-          <ListBuilder
-            id="notes"
-            informationList={ this.props.notesList }
-            label="Notes"
-            type="bullets" />
-          <ListBuilder
-            id="resources"
             informationList={ this.props.resourcesList }
-            label="Resources"
-            type="url" />
+            label="Examples"
+            type="examples" />
+          <ListBuilder
+            informationList={ this.props.resourcesList }
+            label="Notes"
+            type="notes" />
+          <ListBuilder
+            informationList={ this.props.resourcesList }
+            label="Links"
+            type="links" />
         </div>
 
       </div>
@@ -109,8 +104,6 @@ class App extends Component {
 const mapStateToProps = state => {  
 
   return {
-    examplesList : state.examplesList,
-    notesList : state.notesList,
     resourcesList : state.resourcesList,
     singleTopic : state.singleTopic
   }

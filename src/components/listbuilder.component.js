@@ -1,15 +1,33 @@
 import React from 'react';
+import Highlight from 'react-highlight';
 
-export default ({ informationList, type, label, id }) => {
+export default ({ informationList, type, label }) => {
+  
   return(    
-    <div className="information" id={ id }>
+    <div className="information" id={ type }>
       <div className="info-header">{ label }</div>
       { 
         informationList
         .map((info, idx) => {          
-          return(
+          return( 
             <div key={ idx }>
-              <div>{ info[type] }</div>
+              { type === 'links'
+                ? <div>
+                   <a href={ info[type] }>
+                    { info[type] }
+                    </a>
+                  </div>
+                : <div> 
+                    { type === 'examples'
+                      ? <Highlight className="js">
+                          <div>{ info[type] }</div>
+                        </Highlight>
+                      : <Highlight className="markdown">
+                          <div>{ info[type] }</div>
+                        </Highlight>
+                    }
+                  </div>
+              }
             </div>
           )
         })

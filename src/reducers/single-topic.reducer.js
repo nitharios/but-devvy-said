@@ -2,7 +2,7 @@ import { QUERY, MISSING_INFO } from '../actions/query.actions';
 
 const initialState = {};
 
-export default (state = initialState, action) => {  
+export default (state = initialState, action) => { 
   switch(action.type) {
     case QUERY:
       return Object.assign({}, state, action.topicData);
