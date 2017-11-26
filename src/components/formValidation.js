@@ -1,9 +1,9 @@
 const validate = values => {
   const errors = {};
 
-  if(!values.title) {
-    error.title = 'Title Required';
-  }
+  // if(!values.title) {
+  //   error.title = 'Title Required';
+  // }
 
   if (!values.firstName) {
     errors.firstName ="Name Required";

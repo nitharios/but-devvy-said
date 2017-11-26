@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-// import validate from './validate';
 import renderFormField from './renderFormField';
+import validate from '../../components/formValidation';
 
 const renderError = ({ meta: { touched, error } }) =>
   touched && error ? <span>{error}</span> : false;
@@ -38,8 +38,8 @@ const StageForm3 = props => {
 };
 
 export default reduxForm({
-  form: 'stageform', //                 <------ same form name
-  destroyOnUnmount: false, //        <------ preserve form data
-  forceUnregisterOnUnmount: true, // <------ unregister fields on unmount
-  // validate,
+  form: 'stageform',                 
+  destroyOnUnmount: false,
+  forceUnregisterOnUnmount: true,
+  validate,
 })(StageForm3);

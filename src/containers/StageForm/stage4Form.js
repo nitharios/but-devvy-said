@@ -1,6 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-// import validate from './validate';
+import validate from '../../components/formValidation';
+
 const types = ['Note', 'Example', 'Code', 'Format' ];
 
 const renderTypeSelector = ({ input, meta: { touched, error } }) => (
@@ -39,10 +40,10 @@ const StageForm4 = props => {
         </div>
       </div>
       <div>
-        <button type="button" className="previous" onClick={previousPage}>
+        <button type="button" className="previous" onClick={ previousPage }>
           Previous
         </button>
-        <button type="submit" disabled={pristine || submitting}>Submit</button>
+        <button type="submit" disabled={ pristine || submitting }>Submit</button>
       </div>
     </form>
   );
@@ -51,5 +52,5 @@ export default reduxForm({
   form: 'stageform',               
   destroyOnUnmount: false,       
   forceUnregisterOnUnmount: true, 
-  // validate,
+  validate,
 })(StageForm4);
