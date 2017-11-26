@@ -8,9 +8,16 @@ export default ({ informationList, type, label }) => {
       { 
         informationList
         .map((info, idx) => {          
-          return(
+          return( 
             <div key={ idx }>
-              <div>{ info[type] }</div>
+              { type === 'links'
+                ? <div>
+                   <a href={ info[type] }>
+                    { info[type] }
+                    </a>
+                  </div>
+                : <div>{ info[type] }</div>
+              }
             </div>
           )
         })

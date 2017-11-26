@@ -44,6 +44,13 @@ body {
   div {
     // border: 1px solid black;
   }
+}
+
+#nav-bar {
+  @include flex-style(row nowrap, space-between);
+  background-color: $primary-color;
+  align-items: center;
+  height: 60px;
 
   a {
     color: $bg-color;
@@ -54,13 +61,6 @@ body {
   a:hover {
     color: $contrast-accent;
   }
-}
-
-#nav-bar {
-  @include flex-style(row nowrap, space-between);
-  background-color: $primary-color;
-  align-items: center;
-  height: 60px;
 
   #devvy-cho-logo {
     background-image: url('/assets/DevvyCho.jpg');
@@ -196,7 +196,7 @@ body {
       border-radius: 10px;
     }
 
-    #resources {
+    #links {
       border-bottom: 1px solid $primary-color;
       border-radius: 10px;
     }
