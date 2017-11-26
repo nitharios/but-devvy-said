@@ -11,6 +11,7 @@ const { additional_query,
         greetings, 
         missing_info,
         query_type,
+        thanks_reply,
         timeout_msgs,
         randomResponse } = RESPONSES;
 
@@ -26,8 +27,14 @@ module.exports = (function() {
     if (message.error) {
       bot.replyWithTyping(message, randomResponse(error_msgs));
 
+    } else if (message.bye) {
+      bot.replyWithTyping(message, randomResponse(bye_msgs));
+
     } else if (message.greetings) {
       bot.replyWithTyping(message, randomResponse(greetings));
+
+    } else if (message.thanks) {
+      bot.replyWithTyping(message, randomResponse(thanks_reply));
 
     } else if (message.results) {
       
@@ -41,19 +48,22 @@ module.exports = (function() {
   }
 
   function resourcesHandler(err, convo, message) {
+    let actionThread = 'primary_query';
     // Resources is an array
     const { name, Resources } = message.results;
+    const { info_type } = message;
     const patternsArr = [
       {
         pattern : EXAMPLES,
         callback : (response, convo) => {
-          
+          actionThread = 'primary_query';
           convo.gotoThread('examples_thread');
         }
       },
       {
         pattern : LINKS,
         callback : (response, convo) => {
+          actionThread = 'primary_query';
           convo.gotoThread('links_thread');
         }
       },
@@ -66,6 +76,7 @@ module.exports = (function() {
       {
         pattern : user.yes,
         callback : (response, convo) => {
+          actionThread = 'primary_query';
           convo.gotoThread('default');
         }
       },
@@ -83,17 +94,22 @@ module.exports = (function() {
       }
     ];
 
+    // if user asked for specific resource, go to that thread
+    if (info_type) {
+      actionThread = info_type[0].value.concat('_thread');
+    }
+
+    // default message and 'yes' path
+    convo.addMessage({
+      text : randomResponse(affirmations),
+      action : actionThread
+    }, 'default');
+
     // what type of resource would you like?
     convo.addQuestion(randomResponse(query_type), patternsArr, {}, 'primary_query');
 
     // would you like to see more resources?
     convo.addQuestion(randomResponse(additional_query), patternsArr, {}, 'additional_query');
-
-    // default message and 'yes' path
-    convo.addMessage({
-      text : randomResponse(affirmations),
-      action : 'primary_query'
-    }, 'default');
 
     // creates a path when the user says 'no'
     convo.addMessage({
