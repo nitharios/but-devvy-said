@@ -1,8 +1,9 @@
 import React from 'react';
 
-export default ({ informationList, type, label, id }) => {
+export default ({ informationList, type, label }) => {
+  
   return(    
-    <div className="information" id={ id }>
+    <div className="information" id={ type }>
       <div className="info-header">{ label }</div>
       { 
         informationList

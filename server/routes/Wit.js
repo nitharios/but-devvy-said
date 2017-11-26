@@ -12,7 +12,6 @@ router.route('/')
 
   return client.message(userQuery)
   .then(data => {
-    
     let { db_query } = data.entities;
 
     return Topic.findOne({ 
