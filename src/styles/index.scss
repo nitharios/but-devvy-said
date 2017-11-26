@@ -1,0 +1,325 @@
+// theme colors
+$bg-color: #FFFFFF;
+$primary-color: #008B8B; // dark cyan
+$accent-color:  #F8DE7E; // jasmine
+$contrast-accent: #FFFF66; // laser lemon
+$font-color: #000000;
+
+// mixins
+@mixin flex-style($flow, $justify) {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  flex-flow: $flow;
+  justify-content: $justify;
+}
+
+@mixin box-style($style) {
+  -webkit-box-sizing: $style;
+  -moz-box-sizing: $style;
+  box-sizing: $style;
+}
+
+@mixin border-style() {
+  border: 1px solid $primary-color;
+}
+
+/* Style Settings  */
+html {
+  @include box-style(border-box);
+  font-size: 20px;
+}
+
+*, *:before, *:after {
+  @include box-style(inherit);
+  font-family: "Redressed";
+}
+
+body {
+  margin: 0;
+
+  div {
+    // border: 1px solid black;
+  }
+}
+
+#nav-bar {
+  @include flex-style(row nowrap, space-between);
+  background-color: $primary-color;
+  align-items: center;
+  height: 60px;
+
+  a {
+    color: $bg-color;
+    text-decoration: none;
+    font-size: 25px;
+  }
+
+  a:hover {
+    color: $contrast-accent;
+  }
+
+  #devvy-cho-logo {
+    background-image: url('/assets/DevvyCho.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 50px;
+    height: 50px;
+    border: 3px solid $bg-color;
+    border-radius: 100%;
+    margin-left: 10%;
+
+    &:hover {
+      border-color: $contrast-accent;
+    }
+
+    // controls size of clickable
+    div {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  #text-nav-links {
+    @include flex-style(row nowrap, flex-end);
+    width: 50%;
+    margin-right: 10%;
+    align-items: center;
+
+    div {
+      padding: 5px;
+      margin: 0px 10px 0px 10px;
+
+      &:hover {
+        // opacity: 0.5;
+        // background-color: $font-color;
+        // z-index: 10;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+#app, #about {
+  width: 75%;
+  margin: 30px auto;
+
+  #banner {
+    background-image: url('/assets/DevvyCho.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border: 5px solid $accent-color;
+    border-radius: 25%;
+  }
+
+  #welcome-msg {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: "Niconne";
+    font-size: 40px;
+    text-align: center;
+  }
+
+  #text-box {
+    width: 100%;
+    text-align: center;
+
+    #text-input {
+      width: 90%;
+      height: 35px;
+      font-size: 20px;
+      text-indent: 5px;
+    }
+  }
+
+  #button-box {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+
+    .button {
+      border: 1px solid $primary-color;
+      display: inline-block;
+      margin: 5px;
+      width: 70px;
+      height: 35px;
+      font-size: 15px;
+
+      &:hover {
+        border: 3px solid $primary-color;
+        border-radius: 7px;
+      }
+    }
+  }
+
+  .response-box {
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+  }    
+
+  #information-box {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+
+    .information {
+      max-height: 400px;
+      padding: 10px;
+      overflow-y: scroll;
+
+      .info-header {
+        font-size: 25px;
+        margin-bottom: 5px;
+      }
+    }
+
+    .information {
+      border-top: 1px solid $primary-color;
+      border-left: 1px solid $primary-color;
+      border-right: 1px solid $primary-color;
+      border-radius: 10px;
+    }
+
+    #links {
+      border-bottom: 1px solid $primary-color;
+      border-radius: 10px;
+    }
+  }
+}
+
+#about {
+  width: 75%;
+  margin: 30px auto;
+
+  #header {
+    width: 100%;
+    margin-top: 60px;
+    margin-bottom: 15px;
+    margin-left: 30px;
+    font-family: "Niconne";
+    font-size: 40px;
+  }
+
+  .content {
+    font-size: 25px;
+
+    div {
+      margin: 20px auto;
+    }
+  }
+}
+
+/* Highlighter styles  */
+/* Docco style used in http://jashkenas.github.com/docco/ converted by Simon Madine (@thingsinjars) */
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #000;
+  background: #f8f8ff;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #408080;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-subst {
+  color: #954121;
+}
+
+.hljs-number {
+  color: #40a070;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #219161;
+}
+
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-section,
+.hljs-type {
+  color: #19469d;
+}
+
+.hljs-params {
+  color: #00f;
+}
+
+.hljs-title {
+  color: #458;
+  font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #000080;
+  font-weight: normal;
+}
+
+.hljs-variable,
+.hljs-template-variable {
+  color: #008080;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #b68;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #990073;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #0086b3;
+}
+
+.hljs-meta {
+  color: #999;
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
