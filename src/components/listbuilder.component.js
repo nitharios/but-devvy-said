@@ -10,14 +10,14 @@ export default ({ informationList, type, label }) => {
         .map((info, idx) => {          
           return( 
             <div key={ idx }>
-              { type === 'links'
+              { type === 'link'
                 ? <div>
                    <a href={ info[type] }>
                     { info[type] }
                     </a>
                   </div>
                 : <div> 
-                    { type === 'examples'
+                    { type === 'example'
                       ? <Highlight className="js">
                           <div>{ info[type] }</div>
                         </Highlight>

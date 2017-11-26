@@ -92,19 +92,19 @@ class App extends Component {
             <ListBuilder
               informationList={ this.props.resourcesList }
               label="Examples"
-              type="examples" />
+              type="example" />
           </TabPanel>
           <TabPanel className="information">
             <ListBuilder
               informationList={ this.props.resourcesList }
               label="Notes"
-              type="notes" />
+              type="note" />
           </TabPanel>
           <TabPanel className="information">
             <ListBuilder
               informationList={ this.props.resourcesList }
               label="Links"
-              type="links" />
+              type="link" />
           </TabPanel> 
         </Tabs>
       </div>
