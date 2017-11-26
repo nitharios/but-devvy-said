@@ -48,6 +48,7 @@
     "react-sanfona": "^1.0.6",
     "react-tabs": "^2.1.1",
     "redux": "^3.7.2",
+    "redux-form": "^7.1.2",
     "redux-thunk": "^2.2.0",
     "sequelize": "^4.22.7",
     "sequelize-cli": "^3.1.0",
