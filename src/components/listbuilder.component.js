@@ -22,7 +22,9 @@ export default ({ informationList, type, label }) => {
                       ? <Highlight className="js">
                           <div>{ info[type] }</div>
                         </Highlight>
-                      : <div>{ info[type] }</div>
+                      : <Highlight className="markdown">
+                          <div>{ info[type] }</div>
+                        </Highlight>
                     }
                   </div>
               }
