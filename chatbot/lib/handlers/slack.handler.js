@@ -24,33 +24,30 @@ module.exports = (function() {
     console.log('Slack message received');
 
     if (message.error) {
-      bot.reply(message, randomResponse(error_msgs));
+      bot.replyWithTyping(message, randomResponse(error_msgs));
 
     } else if (message.greetings) {
-      bot.reply(message, randomResponse(greetings));
+      bot.replyWithTyping(message, randomResponse(greetings));
 
     } else if (message.results) {
       
       bot.createConversation(message, (err, convo) => {
-        resourcesHandler(err, convo, message);
+        resourcesHandler(err, convo, message, bot);
       });
-      
-      // bot.reply(message, stringBuilder(name, LINKS, links), (err, response) => {
-      //   // response carries the details of the message passed back to the user
-      // });
 
     } else {
-      bot.reply(message, `${randomResponse(missing_info)}`);
+      bot.replyWithTyping(message, `${randomResponse(missing_info)}`);
     }
   }
 
   function resourcesHandler(err, convo, message) {
+    // Resources is an array
     const { name, Resources } = message.results;
-    const { examples, links, notes } = Resources;
     const patternsArr = [
       {
         pattern : EXAMPLES,
         callback : (response, convo) => {
+          
           convo.gotoThread('examples_thread');
         }
       },
@@ -69,7 +66,7 @@ module.exports = (function() {
       {
         pattern : user.yes,
         callback : (response, convo) => {
-          convo.gotoThread('yes_thread');
+          convo.gotoThread('default');
         }
       },
       {
@@ -85,12 +82,18 @@ module.exports = (function() {
         }
       }
     ];
-    
-    // first question posed to user
-    convo.addQuestion(randomResponse(query_type), patternsArr, {}, 'default');
 
-    // additional query posted to user
+    // what type of resource would you like?
+    convo.addQuestion(randomResponse(query_type), patternsArr, {}, 'primary_query');
+
+    // would you like to see more resources?
     convo.addQuestion(randomResponse(additional_query), patternsArr, {}, 'additional_query');
+
+    // default message and 'yes' path
+    convo.addMessage({
+      text : randomResponse(affirmations),
+      action : 'primary_query'
+    }, 'default');
 
     // creates a path when the user says 'no'
     convo.addMessage({
@@ -98,27 +101,21 @@ module.exports = (function() {
       action : 'completed'
     }, 'no_thread');
 
-    // creates a path when the user says 'yes'
-    convo.addMessage({
-      text : randomResponse(affirmations),
-      action : 'default'
-    }, 'yes_thread');
-
     // creates a path when the user wants to see examples
     convo.addMessage({
-      text : stringBuilder(name, EXAMPLES, examples),
+      text : stringBuilder(name, EXAMPLES, Resources),
       action : 'additional_query'
     }, 'examples_thread');
 
     // creates a path when the user wants to see links
     convo.addMessage({
-      text : stringBuilder(name, LINKS, links),
+      text : stringBuilder(name, LINKS, Resources),
       action : 'additional_query'
     }, 'links_thread');
 
     // creates a path when the user wants to see notes
     convo.addMessage({
-      text : stringBuilder(name, NOTES, notes),
+      text : stringBuilder(name, NOTES, Resources),
       action : 'additional_query'
     }, 'notes_thread');
 

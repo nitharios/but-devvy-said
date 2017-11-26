@@ -17,6 +17,39 @@ module.exports = {
         topic_id : 1
       },
       {
+        title : 'Promises',
+        links : 'http://bit.ly/2zQPmFe', //how to use Promise
+        examples : 'This is a code snippet.',
+        notes : 'These are class notes.',
+        cohort : 18,
+        name : 'Nathan',
+        createdAt : new Date(),
+        updatedAt : new Date(),
+        topic_id : 2,
+      },
+      {
+        title : 'How to use Promises',
+        links : 'http://bit.ly/2zQPmFe', //how to use Promise
+        examples : 'This is a code snippet.',
+        notes : 'These are class notes.',
+        cohort : 18,
+        name : 'Nathan',
+        createdAt : new Date(),
+        updatedAt : new Date(),
+        topic_id : 2,
+      },
+      {
+        title : 'How to use a promise',
+        links : 'http://bit.ly/2zQPmFe', //how to use Promise
+        examples : 'This is a code snippet.',
+        notes : 'These are class notes.',
+        cohort : 18,
+        name : 'Nathan',
+        createdAt : new Date(),
+        updatedAt : new Date(),
+        topic_id : 2,
+      },
+      {
         title : 'How to use Promises',
         links : 'http://bit.ly/2zQPmFe', //how to use Promise
         examples : 'This is a code snippet.',

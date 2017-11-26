@@ -10,10 +10,10 @@ export const query = userQuery => {
   return dispatch => {
     return Axios.post(queryURL, userQuery)
     .then(response => {
-      const data = response.data;
+      const data = response.data; 
 
       switch(data) {
-        case null:
+        case null:        
           dispatch({
             type : MISSING_INFO,
             topicData : { 
@@ -29,8 +29,6 @@ export const query = userQuery => {
           dispatch({
             type : QUERY,
             topicData : data,
-            examplesList : data.Examples,
-            notesList : data.Notes,
             resourcesList : data.Resources
           });        
       }
