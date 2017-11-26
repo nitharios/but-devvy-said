@@ -8,17 +8,17 @@ module.exports = function(sequelize, DataTypes) {
       allowNull : false
     },
     //'http://bit.ly/2zOQycP'
-    links : {
+    link : {
       type : DataTypes.STRING, 
       allowNull : true
     },
     // code snippet
-    examples : {
+    example : {
       type : DataTypes.TEXT, 
       allowNull : true
     },
     // class notes
-    notes : {
+    note : {
       type : DataTypes.TEXT, 
       allowNull : true
     },

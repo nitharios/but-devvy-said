@@ -6,18 +6,12 @@ module.exports = (bot, message, next) => {
   if (message.db_query) {
     // need to handle the case where there are multiple queries
     let topicName = message.db_query[0].value;
-    // find a topic where name is topicName and include only the following attributes
+    // find a topic where name is topicName and include only the following attributes    
     return Topic.findOne({
       where : { name : topicName },
       include : [
         {
           model : Resource,
-          attributes : [
-            'title',
-            'examples', 
-            'links', 
-            'notes'
-          ],
           limit : 5,
           order : [[ 'createdAt', 'DESC' ]]
         }
