@@ -24,20 +24,26 @@ div.tagInputClass input.tagInputFieldClass:focus {
   
 }
 
-/* STYLES FOR SELECTED TAGS */
+
+/* STYLES FOR SELECTED TAGS AND REMOVE BUTTON */
 div.selectedClass span.tagClass {
   border: 1px solid black;
+  position: relative;
   border-radius: 2px;
   background: #eee;
-  font-size: 1em;
+  font-size: 0.85em;
   display: inline-block;
-  padding: 3px;
+  padding: 4px 6px;
   margin: 5px;
   cursor: move;
 }
 div.selectedClass a.removeClass {
+  position: relative;
+  left: 4px;
   color: black;
-  margin: 1px;
+  font-size: 0.9em;
+  height: 50%;
+  margin: 0 auto;
 }
 div.selectedClass a.removeClass:hover {
   color: green;
@@ -71,9 +77,6 @@ div.suggestionsClass ul li.activeSuggestionClass {
   background: #b7cfe0;
   cursor: pointer;
 }
-
-
-/* STYLES FOR REMOVE BUTTON */
 
 
 
