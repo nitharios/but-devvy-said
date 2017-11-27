@@ -1,43 +1,61 @@
+.TagInput-label {
+  margin: 5px;
+}
+
+/* ReactTags Styling */
+/* STYLES FOR THE MAIN DIV */
 div.tagsClass {
   border: 2px dashed black;
   position: relative;
+  margin: 5px;
 }
 
+
+/* STYLES FOR INPUT */
 div.tagInputClass input.tagInputFieldClass {
   height: 31px;
   margin: 5px;
   font-size: 12px;
   width: 80%;
   border: 1px solid black;
+  border-radius: 2px;
 }
-
 div.tagInputClass input.tagInputFieldClass:focus {
-  background-color: yellow;
+  
 }
 
-
+/* STYLES FOR SELECTED TAGS */
 div.selectedClass span.tagClass {
   border: 1px solid black;
+  border-radius: 2px;
   background: #eee;
   font-size: 1em;
   display: inline-block;
   padding: 3px;
   margin: 5px;
   cursor: move;
-  border-radius: 2px;
+}
+div.selectedClass a.removeClass {
+  color: black;
+  margin: 1px;
+}
+div.selectedClass a.removeClass:hover {
+  color: green;
+  cursor: pointer;
 }
 
-
+/* STYLES FOR SUGGESTIONS */
 div.suggestionsClass {
   position: absolute;
   border: 1px solid black;
   border-radius: 2px;
-  margin: 5px;
+  margin: 10px 5px;
   background-color: pink;
 }
 div.suggestionsClass ul {
   list-style-type: none;
   display: table-row;
+  background: white;
   box-shadow: .05em .01em .5em rgba(0,0,0,.2);
 }
 div.suggestionsClass li {
@@ -49,16 +67,13 @@ div.suggestionsClass li mark {
   background: none;
   font-weight: 600;
 }
-
 div.suggestionsClass ul li.activeSuggestionClass {
   background: #b7cfe0;
   cursor: pointer;
 }
 
 
+/* STYLES FOR REMOVE BUTTON */
 
-div.removeClass {
-
-}
 
 

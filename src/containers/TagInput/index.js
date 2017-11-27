@@ -54,16 +54,16 @@ class TagInput extends Component {
   render() {
     console.log('TagInput render');
 
+    let tags = this.state.tags;
     let suggestions = this.props.topicsList.map(i => {
       return i.name;
     }); //array of strings, only the 'name' property of our topicsList
-    console.log(suggestions);
 
     return (
       <div>
-        <label>Please Provide Topics..</label>
+        <label className="TagInput-label">Please Provide Topics..</label>
         <ReactTags
-          tags={this.props.topicsList}
+          tags={tags}
           suggestions={suggestions}
           placeholder="Enter Topics.."
           labelField="name"
@@ -72,14 +72,17 @@ class TagInput extends Component {
           handleDrag={this.handleDrag}
 
           classNames={{
-            tags: 'tagsClass',
-            tagInput: 'tagInputClass',
-            tagInputField: 'tagInputFieldClass',
-            selected: 'selectedClass',
-            tag: 'tagClass',
-            remove: 'removeClass',
-            suggestions: 'suggestionsClass',
-            activeSuggestion: 'activeSuggestionClass'
+            tags : 'tagsClass',
+            tag : 'tagClass',
+
+            tagInput : 'tagInputClass',
+            tagInputField : 'tagInputFieldClass',
+
+            selected : 'selectedClass',
+            remove : 'removeClass',
+
+            suggestions : 'suggestionsClass',
+            activeSuggestion : 'activeSuggestionClass'
           }}
 
         />
