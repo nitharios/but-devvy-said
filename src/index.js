@@ -14,7 +14,7 @@ import {
 /* Containers */
 import App from './containers/App';
 import AddInfo from './containers/AddInfo';
-import StageForm from './containers/StageForm';
+import WizardForm from './containers/WizardForm';
 
 /* Components */
 import About from './components/about.component';
@@ -47,7 +47,7 @@ ReactDOM.render(
           <Route exact path="/" component={ App } />
           <Route path="/about" component={ About } />
           <Route path="/addinfo" component={ AddInfo } />
-          <Route path="/stageform" component={ StageForm } />
+          <Route path="/wizardform" component={ WizardForm } />
         
 
       </div>

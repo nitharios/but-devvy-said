@@ -6,7 +6,7 @@ import FirstPage from './FirstPage';
 import SecondPage from './SecondPage';
 import ThirdPage from './ThirdPage';
 
-class StageForm extends Component {
+class WizardForm extends Component {
   constructor(props) {
     super(props);
 
@@ -68,7 +68,7 @@ class StageForm extends Component {
 }
 //end class
 
-export default StageForm;
+export default WizardForm;
 
 /*StageForm.propTypes = {
   onSubmit : PropTypes.func.isRequired,
