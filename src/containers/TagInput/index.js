@@ -5,6 +5,9 @@ import { WithContext as ReactTags } from 'react-tag-input';
 /*ACTIONS*/
 import { loadTopics } from '../../actions/topic.actions';
 
+/*STYLES*/
+import './TagInput.css';
+
 class TagInput extends Component {
 
   constructor(props) {
@@ -51,7 +54,6 @@ class TagInput extends Component {
   render() {
     console.log('TagInput render');
 
-    let tags = this.state.tags;
     let suggestions = this.props.topicsList.map(i => {
       return i.name;
     }); //array of strings, only the 'name' property of our topicsList
@@ -65,9 +67,23 @@ class TagInput extends Component {
           suggestions={suggestions}
           placeholder="Topics.."
           labelField="name"
+          autocomplete={1}
+          maxLength={420}
           handleDelete={this.handleDelete}
           handleAddition={this.handleAddition}
-          handleDrag={this.handleDrag} 
+          handleDrag={this.handleDrag}
+
+          classNames={{
+            tags: 'tagsClass',
+            tagInput: 'tagInputClass',
+            tagInputField: 'tagInputFieldClass',
+            selected: 'selectedClass',
+            tag: 'tagClass',
+            remove: 'removeClass',
+            suggestions: 'suggestionsClass',
+            activeSuggestion: 'activeSuggestionClass'
+          }}
+
         />
       </div>
     );

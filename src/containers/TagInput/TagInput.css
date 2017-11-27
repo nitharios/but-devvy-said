@@ -1,0 +1,12 @@
+div.tagsClass {
+  border: 3px dashed black;
+}
+
+div.tagInputClass {
+  border: 1px solid cyan;
+}
+
+div.tagInputFieldClass {
+  border: 1px solid red;
+}
+
