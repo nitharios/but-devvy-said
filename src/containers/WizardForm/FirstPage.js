@@ -3,7 +3,6 @@ import { Field, reduxForm } from 'redux-form';
 import validate from '../../components/formValidation';
 import renderFormField from './renderFormField';
 
-import TagInput from '../TagInput';
 
 const FirstPage = props => {
   console.log('FirstPage render');
@@ -28,8 +27,6 @@ const FirstPage = props => {
       <div>
         <button type="submit" className="next">Next</button>
       </div>
-
-      <TagInput />
       
     </form>
   );

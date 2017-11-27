@@ -4,6 +4,7 @@ import { WithContext as ReactTags } from 'react-tag-input';
 
 /*ACTIONS*/
 import { loadTopics } from '../../actions/topic.actions';
+import { addNewResource } from '../../actions/resource.actions';
 
 /*STYLES*/
 import './TagInput.css';
@@ -59,6 +60,8 @@ class TagInput extends Component {
       return i.name;
     }); //array of strings, only the 'name' property of our topicsList
 
+    console.log(tags);
+
     return (
       <div>
         <label className="TagInput-label">Please Provide Topics..</label>
@@ -74,13 +77,10 @@ class TagInput extends Component {
           classNames={{
             tags : 'tagsClass',
             tag : 'tagClass',
-
             tagInput : 'tagInputClass',
             tagInputField : 'tagInputFieldClass',
-
             selected : 'selectedClass',
             remove : 'removeClass',
-
             suggestions : 'suggestionsClass',
             activeSuggestion : 'activeSuggestionClass'
           }}
@@ -105,6 +105,9 @@ const mapDispatchToProps = dispatch => {
   return {
     loadTopics : ()  => {
       dispatch(loadTopics());
+    },
+    addNewResource : (newResource) => {
+      dispatch(addNewResource(newResource));
     }
   };
 }
