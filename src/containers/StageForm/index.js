@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addNewResource } from '../../actions/resource.actions';
 import PropTypes from 'prop-types';
 import FirstPage from './FirstPage';
 import SecondPage from './SecondPage';
@@ -25,16 +27,13 @@ class StageForm extends Component {
     this.setState({page : this.state.page - 1});
   }
 
-  handleSubmit(event) {
-    console.log('Hey it worked.');
+  handleSubmit(data) {
+    this.props.addNewResource(data);    
   }
 
   render() {
-    console.log('StageForm1 render');
-    console.log(this.props);
+    const { page } = this.state;
 
-    let page = this.state.page;
-   
     return (
       <div className="stage-form">
        
@@ -61,24 +60,18 @@ class StageForm extends Component {
       </div>
     );
   }
-
-
 }
 //end component
 
-export default StageForm;
+const mapDispatchToProps = dispatch => {
+  return {
+    addNewResource : data => {
+      dispatch(addNewResource(data));
+    }
+  }
+}
 
-/*StageForm.propTypes = {
-  onSubmit : PropTypes.func.isRequired,
-};*/
-
-
-
-
-
-
-
-
-
-
-
+export default connect(
+  null,
+  mapDispatchToProps
+)(StageForm)
