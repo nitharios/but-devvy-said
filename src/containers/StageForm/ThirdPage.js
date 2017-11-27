@@ -21,7 +21,7 @@ const ThirdPage = props => {
   const { handleSubmit, pristine, previousPage, submitting } = props;
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit(this.handleSubmit)}>
       <div>
         <label>types</label>
         <Field name="note-type" component={renderTypeSelector} />
@@ -63,7 +63,7 @@ const ThirdPage = props => {
         <button type="button" className="previous" onClick={previousPage} >
           Previous
         </button>
-        <button type="submit" disabled={ pristine || submitting } onClick={handleSubmit}>
+        <button type="submit" disabled={ pristine || submitting }>
           Submit
         </button>
       </div>

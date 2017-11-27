@@ -3,19 +3,26 @@ import PropTypes from 'prop-types';
 import FirstPage from './FirstPage';
 import SecondPage from './SecondPage';
 import ThirdPage from './ThirdPage';
-
+import {connect} from 'redux';
 class StageForm extends Component {
   constructor(props) {
     super(props);
-
+      
     this.state = {
-      page : 1
+      page : 1,
+      firstName: '',
+      lastName: '',
+      notes: '',
     };
 
     this.nextPage = this.nextPage.bind(this);
     this.previousPage = this.previousPage.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   } 
+
+  componentWillMount(){
+    console.log('mounter');
+  }
 
   nextPage() {
     this.setState({page : this.state.page + 1});
@@ -25,8 +32,16 @@ class StageForm extends Component {
     this.setState({page : this.state.page - 1});
   }
 
-  handleSubmit(event) {
+  handleSubmit(e) {
     console.log('Hey it worked.');
+      // preventDefault(e);
+
+    let formData = new FormData();
+
+    formData.append('firstName', this.state.firstName);
+    formData.append('lastName', this.state.lastName);
+    formData.append('notes', this.state.notes);
+
   }
 
   render() {
@@ -61,22 +76,13 @@ class StageForm extends Component {
       </div>
     );
   }
-
-
 }
 //end component
 
 export default StageForm;
 
-/*StageForm.propTypes = {
-  onSubmit : PropTypes.func.isRequired,
-};*/
 
-
-
-
-
-
+//<form onSubmit={handleSubmit(this.myOwnFunction)}>. handleSubmit has to be provided trough the props: const { handleSubmit } = this.props.
 
 
 
