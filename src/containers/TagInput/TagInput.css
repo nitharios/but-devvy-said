@@ -1,12 +1,64 @@
 div.tagsClass {
-  border: 3px dashed black;
+  border: 2px dashed black;
+  position: relative;
 }
 
-div.tagInputClass {
-  border: 1px solid cyan;
+div.tagInputClass input.tagInputFieldClass {
+  height: 31px;
+  margin: 5px;
+  font-size: 12px;
+  width: 80%;
+  border: 1px solid black;
 }
 
-div.tagInputFieldClass {
-  border: 1px solid red;
+div.tagInputClass input.tagInputFieldClass:focus {
+  background-color: yellow;
 }
+
+
+div.selectedClass span.tagClass {
+  border: 1px solid black;
+  background: #eee;
+  font-size: 1em;
+  display: inline-block;
+  padding: 3px;
+  margin: 5px;
+  cursor: move;
+  border-radius: 2px;
+}
+
+
+div.suggestionsClass {
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 2px;
+  margin: 5px;
+  background-color: pink;
+}
+div.suggestionsClass ul {
+  list-style-type: none;
+  display: table-row;
+  box-shadow: .05em .01em .5em rgba(0,0,0,.2);
+}
+div.suggestionsClass li {
+  padding: 5px 10px;
+  margin: 0;
+}
+div.suggestionsClass li mark {
+  text-decoration: underline;
+  background: none;
+  font-weight: 600;
+}
+
+div.suggestionsClass ul li.activeSuggestionClass {
+  background: #b7cfe0;
+  cursor: pointer;
+}
+
+
+
+div.removeClass {
+
+}
+
 

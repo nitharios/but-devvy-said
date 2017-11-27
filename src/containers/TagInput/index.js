@@ -65,10 +65,8 @@ class TagInput extends Component {
         <ReactTags
           tags={this.props.topicsList}
           suggestions={suggestions}
-          placeholder="Topics.."
+          placeholder="Enter Topics.."
           labelField="name"
-          autocomplete={1}
-          maxLength={420}
           handleDelete={this.handleDelete}
           handleAddition={this.handleAddition}
           handleDrag={this.handleDrag}
