@@ -4,12 +4,7 @@ import validate from '../../components/formValidation';
 import renderFormField from './renderFormField';
 
 const FirstPage = props => {
-const { handleSubmit } = props;
-  console.log('FirstPage render');
-  console.log(props,'props first page');
-  console.log(handleSubmit,'HANDLESUBMIT first page DECON!!!');
-
-const { nextPage } = props;
+  const { nextPage } = props;
 
   return (
     <form onSubmit={nextPage}> 

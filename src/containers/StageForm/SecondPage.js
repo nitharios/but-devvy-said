@@ -7,9 +7,6 @@ const renderError = ({ meta: { touched, error } }) =>
   touched && error ? <span>{error}</span> : false;
 
 const SecondPage = props => {
-  console.log('SecondPage render');
-  console.log(props);
-
   const { nextPage, previousPage } = props;
 
   return (

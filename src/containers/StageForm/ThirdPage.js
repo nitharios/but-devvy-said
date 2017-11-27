@@ -15,15 +15,10 @@ const renderTypeSelector = ({ input, meta: { touched, error } }) => (
 );
 
 const ThirdPage = props => {
-  console.log('ThirdPage render');
-  console.log(props, '<-----3rd Page Props!!!!!!');
   const { handleSubmit, pristine, previousPage, submitting } = props;
-console.log(handleSubmit,"HANDLESUBMIT 3rd PAGE")
-console.log(pristine,"PRITINE 3rd PAGE")
-console.log(submitting,"SUBMITTING 3rd PAGE prop")
 
   return (
-    <form onSubmit={this.handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <div>
         <label>types</label>
         <Field name="note-type" component={renderTypeSelector} />

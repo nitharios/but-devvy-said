@@ -1,33 +1,23 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addNewResource } from '../../actions/resource.actions';
 import PropTypes from 'prop-types';
 import FirstPage from './FirstPage';
 import SecondPage from './SecondPage';
 import ThirdPage from './ThirdPage';
-import showResults from '../../components/showResults.component';
-// import {connect} from 'redux';
 
 class StageForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      page : 1,
-      // firstName: '',
-      // lastName: '',
-      // notes: '',
-    };
 
-    // this.submit = (values) => {
-    //   console.log('Submission Master Page');
-    //   console.log(values)
-    // };
+    this.state = {
+      page : 1
+    };
 
     this.nextPage = this.nextPage.bind(this);
     this.previousPage = this.previousPage.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   } 
-
-  componentWillMount(){
-    console.log('mounter');
-  }
 
   nextPage() {
     this.setState({page : this.state.page + 1});
@@ -37,23 +27,13 @@ class StageForm extends Component {
     this.setState({page : this.state.page - 1});
   }
 
-  // handleSubmit(e) {
-  //   console.log('Hey it worked.');
-  //     // preventDefault(e)
-  //   let formData = new FormData();
-  //   formData.append('firstName', this.state.firstName);
-  //   formData.append('lastName', this.state.lastName);
-  //   formData.append('notes', this.state.notes);
-  // }
-
-  
+  handleSubmit(data) {
+    this.props.addNewResource(data);    
+  }
 
   render() {
-    console.log('StageForm1 render');
-    console.log(this.props);
+    const { page } = this.state;
 
-    let page = this.state.page;
-   
     return (
       <div className="stage-form">
        
@@ -83,23 +63,15 @@ class StageForm extends Component {
 }
 //end component
 
-// export default StageForm;
+const mapDispatchToProps = dispatch => {
+  return {
+    addNewResource : data => {
+      dispatch(addNewResource(data));
+    }
+  }
+}
+
 export default connect(
-  state => ({
-    // optional. grab values to fill the form from somewhere.
-    initialValues: this.state
-  }),
-  dispatch => ({
-    // reduxForm() expects the component to have an onSubmit
-    // prop. You could also pass this from a parent component.
-    // I want to dispatch a redux action.
-    onSubmit: data => dispatch(myActionToDoStuff(data))
-  })
-)(myReduxForm)
-
-//<form onSubmit={handleSubmit(this.myOwnFunction)}>. handleSubmit has to be provided trough the props: const { handleSubmit } = this.props.
-
-
-
-
-
+  null,
+  mapDispatchToProps
+)(StageForm)
