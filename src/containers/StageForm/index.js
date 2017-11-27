@@ -3,21 +3,26 @@ import PropTypes from 'prop-types';
 import FirstPage from './FirstPage';
 import SecondPage from './SecondPage';
 import ThirdPage from './ThirdPage';
-import {connect} from 'redux';
+import showResults from '../../components/showResults.component';
+// import {connect} from 'redux';
+
 class StageForm extends Component {
   constructor(props) {
     super(props);
-      
     this.state = {
       page : 1,
-      firstName: '',
-      lastName: '',
-      notes: '',
+      // firstName: '',
+      // lastName: '',
+      // notes: '',
     };
+
+    // this.submit = (values) => {
+    //   console.log('Submission Master Page');
+    //   console.log(values)
+    // };
 
     this.nextPage = this.nextPage.bind(this);
     this.previousPage = this.previousPage.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   } 
 
   componentWillMount(){
@@ -32,17 +37,16 @@ class StageForm extends Component {
     this.setState({page : this.state.page - 1});
   }
 
-  handleSubmit(e) {
-    console.log('Hey it worked.');
-      // preventDefault(e);
+  // handleSubmit(e) {
+  //   console.log('Hey it worked.');
+  //     // preventDefault(e)
+  //   let formData = new FormData();
+  //   formData.append('firstName', this.state.firstName);
+  //   formData.append('lastName', this.state.lastName);
+  //   formData.append('notes', this.state.notes);
+  // }
 
-    let formData = new FormData();
-
-    formData.append('firstName', this.state.firstName);
-    formData.append('lastName', this.state.lastName);
-    formData.append('notes', this.state.notes);
-
-  }
+  
 
   render() {
     console.log('StageForm1 render');

@@ -13,7 +13,7 @@ const SecondPage = props => {
   const { nextPage, previousPage } = props;
 
   return (
-    <form onSubmit={nextPage}>
+    <form onSubmit={nextPage, previousPage}>
       <Field name="email" type="email" component={renderFormField} label="Email" />
       <div>
         <label>resources</label>
