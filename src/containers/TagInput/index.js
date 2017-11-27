@@ -55,12 +55,13 @@ class TagInput extends Component {
     let suggestions = this.props.topicsList.map(i => {
       return i.name;
     }); //array of strings, only the 'name' property of our topicsList
+    console.log(suggestions);
 
     return (
       <div>
         <label>Please Provide Topics..</label>
         <ReactTags
-          tags={tags}
+          tags={this.props.topicsList}
           suggestions={suggestions}
           placeholder="Topics.."
           labelField="name"
