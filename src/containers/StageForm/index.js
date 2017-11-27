@@ -83,8 +83,19 @@ class StageForm extends Component {
 }
 //end component
 
-export default StageForm;
-
+// export default StageForm;
+export default connect(
+  state => ({
+    // optional. grab values to fill the form from somewhere.
+    initialValues: this.state
+  }),
+  dispatch => ({
+    // reduxForm() expects the component to have an onSubmit
+    // prop. You could also pass this from a parent component.
+    // I want to dispatch a redux action.
+    onSubmit: data => dispatch(myActionToDoStuff(data))
+  })
+)(myReduxForm)
 
 //<form onSubmit={handleSubmit(this.myOwnFunction)}>. handleSubmit has to be provided trough the props: const { handleSubmit } = this.props.
 
