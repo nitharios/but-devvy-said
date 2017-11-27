@@ -1,6 +1,6 @@
-import React from 'react';
-
 // Handles Component rendering for fields on forms
+
+import React from 'react';
 
 const renderFormField = ({ input, label, type, meta: { touched, error } }) => (
   <div>

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+
+/*CHILD COMPONENTS*/
 import FirstPage from './FirstPage';
 import SecondPage from './SecondPage';
 import ThirdPage from './ThirdPage';
@@ -64,7 +66,7 @@ class StageForm extends Component {
 
 
 }
-//end component
+//end class
 
 export default StageForm;
 
