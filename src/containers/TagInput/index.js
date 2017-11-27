@@ -10,6 +10,10 @@ class TagInput extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      tags : [] //{id : 1, name : 'async'}, {}, {}
+    };
+
     this.handleDelete = this.handleDelete.bind(this);
     this.handleAddition = this.handleAddition.bind(this);
     this.handleDrag = this.handleDrag.bind(this);
@@ -20,37 +24,46 @@ class TagInput extends Component {
   }
 
   handleDelete(i) {
-    let topics = this.props.topicsList;
-    topics.splice(i, 1);
+    let tags = this.state.tags;
+    tags.splice(i, 1);
   }
 
-  handleAddition(tag) {
-    let topics = this.props.topicsList;
-    topics.push({
-      id : topics.length + 1,
-      name : tag
+  handleAddition(newTag) {
+    let tags = this.state.tags;
+    tags.push({
+      id : tags.length + 1,
+      name : newTag
     });
+    this.setState({tags : tags});
   }
 
   handleDrag(tag, currPos, nextPos) {
-    let topics = this.props.topicsList;
+    let tags = this.state.tags;
 
     //mutate array
-    topics.splice(currPos, 1);
-    topics.splice(nextPos, 0, tag);
+    tags.splice(currPos, 1);
+    tags.splice(nextPos, 0, tag);
 
     //re-render
-
+    this.setState({tags : tags});
   }
 
   render() {
     console.log('TagInput render');
-    let topics = this.props.topicsList; //[] of 244 topics
+
+    let tags = this.state.tags;
+    let suggestions = this.props.topicsList.map(i => {
+      return i.name;
+    }); //array of strings, only the 'name' property of our topicsList
 
     return (
       <div>
-        <label>Add A Topic..</label>
-        <ReactTags 
+        <label>Please Provide Topics..</label>
+        <ReactTags
+          tags={tags}
+          suggestions={suggestions}
+          placeholder="Topics.."
+          labelField="name"
           handleDelete={this.handleDelete}
           handleAddition={this.handleAddition}
           handleDrag={this.handleDrag} 
