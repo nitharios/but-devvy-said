@@ -25,7 +25,7 @@ router.route('/')
 .post((req, res) => {
   const { title, topic_id } = req.body;
   const data = req.body;
-
+console.log(data, " DATA FROM FORMS!!!!")
   if (!title || !topic_id) {
     return res.json(missing_key);
   }

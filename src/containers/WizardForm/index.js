@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addNewResource } from '../../actions/resource.actions';
 import PropTypes from 'prop-types';
 
 /*CHILD COMPONENTS*/
@@ -27,16 +29,13 @@ class WizardForm extends Component {
     this.setState({page : this.state.page - 1});
   }
 
-  handleSubmit(event) {
-    console.log('Hey it worked.');
+  handleSubmit(data) {
+    this.props.addNewResource(data);    
   }
 
   render() {
-    console.log('StageForm1 render');
-    console.log(this.props);
+    const { page } = this.state;
 
-    let page = this.state.page;
-   
     return (
       <div className="stage-form">
        
@@ -63,20 +62,18 @@ class WizardForm extends Component {
       </div>
     );
   }
-
-
 }
-//end class
+//end component
 
-export default WizardForm;
+const mapDispatchToProps = dispatch => {
+  return {
+    addNewResource : data => {
+      dispatch(addNewResource(data));
+    }
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
+export default connect(
+  null,
+  mapDispatchToProps
+)(StageForm)

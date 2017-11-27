@@ -5,9 +5,6 @@ import renderFormField from './renderFormField';
 
 
 const FirstPage = props => {
-  console.log('FirstPage render');
-  console.log(props);
-
   const { nextPage } = props;
 
   return (
