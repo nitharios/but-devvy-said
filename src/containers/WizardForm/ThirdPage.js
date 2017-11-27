@@ -2,6 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import validate from '../../components/formValidation';
 
+
 const types = ['Note', 'Example', 'link' , 'All 3'];
 
 const renderTypeSelector = ({ input, meta: { touched, error } }) => (
@@ -22,6 +23,7 @@ const ThirdPage = props => {
 
   return (
     <form onSubmit={handleSubmit}>
+
       <div>
         <label>types</label>
         <Field name="note-type" component={renderTypeSelector} />

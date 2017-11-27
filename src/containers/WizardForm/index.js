@@ -70,10 +70,6 @@ class WizardForm extends Component {
 
 export default WizardForm;
 
-/*StageForm.propTypes = {
-  onSubmit : PropTypes.func.isRequired,
-};*/
-
 
 
 

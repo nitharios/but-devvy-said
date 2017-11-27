@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loadTopics } from '../../actions/topic.actions';
 import { WithContext as ReactTags } from 'react-tag-input';
+
+/*ACTIONS*/
+import { loadTopics } from '../../actions/topic.actions';
 
 class TagInput extends Component {
 
@@ -18,27 +20,42 @@ class TagInput extends Component {
   }
 
   handleDelete(i) {
-
+    let topics = this.props.topicsList;
+    topics.splice(i, 1);
   }
 
   handleAddition(tag) {
-
+    let topics = this.props.topicsList;
+    topics.push({
+      id : topics.length + 1,
+      name : tag
+    });
   }
 
-  handleDrag() {
+  handleDrag(tag, currPos, nextPos) {
+    let topics = this.props.topicsList;
+
+    //mutate array
+    topics.splice(currPos, 1);
+    topics.splice(nextPos, 0, tag);
+
+    //re-render
 
   }
 
   render() {
     console.log('TagInput render');
-    const { tags, suggestions } = this.props.topicsList;
+    let topics = this.props.topicsList; //[] of 244 topics
+
     return (
-        <ReactTags tags={tags}
-          suggestions={suggestions}
+      <div>
+        <label>Add A Topic..</label>
+        <ReactTags 
           handleDelete={this.handleDelete}
           handleAddition={this.handleAddition}
           handleDrag={this.handleDrag} 
         />
+      </div>
     );
   }
 
