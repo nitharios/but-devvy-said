@@ -37,9 +37,10 @@ module.exports = (function() {
       bot.replyWithTyping(message, randomResponse(thanks_reply));
 
     } else if (message.results) {
-      
+
+      bot.reply(message, { type: "typing" });
       bot.createConversation(message, (err, convo) => {
-        resourcesHandler(err, convo, message, bot);
+        resourcesHandler(err, convo, message);
       });
 
     } else {
@@ -48,7 +49,6 @@ module.exports = (function() {
   }
 
   function resourcesHandler(err, convo, message) {
-    let actionThread = 'primary_query';
     // Resources is an array
     const { name, Resources } = message.results;
     const { info_type } = message;
@@ -56,14 +56,12 @@ module.exports = (function() {
       {
         pattern : EXAMPLES,
         callback : (response, convo) => {
-          actionThread = 'primary_query';
           convo.gotoThread('examples_thread');
         }
       },
       {
         pattern : LINKS,
         callback : (response, convo) => {
-          actionThread = 'primary_query';
           convo.gotoThread('links_thread');
         }
       },
@@ -76,7 +74,6 @@ module.exports = (function() {
       {
         pattern : user.yes,
         callback : (response, convo) => {
-          actionThread = 'primary_query';
           convo.gotoThread('default');
         }
       },
@@ -95,14 +92,14 @@ module.exports = (function() {
     ];
 
     // if user asked for specific resource, go to that thread
-    if (info_type) {
-      actionThread = info_type[0].value.concat('_thread');
-    }
+    // if (info_type) {
+    //   actionThread = info_type[0].value.concat('_thread');
+    // }
 
     // default message and 'yes' path
     convo.addMessage({
       text : randomResponse(affirmations),
-      action : actionThread
+      action : 'primary_query',
     }, 'default');
 
     // what type of resource would you like?
