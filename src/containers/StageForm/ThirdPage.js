@@ -15,9 +15,6 @@ const renderTypeSelector = ({ input, meta: { touched, error } }) => (
 );
 
 const ThirdPage = props => {
-  console.log('ThirdPage render');
-  console.log(props);
-
   const { handleSubmit, pristine, previousPage, submitting } = props;
 
   return (
@@ -63,7 +60,7 @@ const ThirdPage = props => {
         <button type="button" className="previous" onClick={previousPage} >
           Previous
         </button>
-        <button type="submit" disabled={ pristine || submitting } onClick={handleSubmit}>
+        <button type="submit" disabled={ pristine || submitting }>
           Submit
         </button>
       </div>
