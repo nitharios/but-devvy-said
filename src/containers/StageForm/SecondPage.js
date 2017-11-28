@@ -1,56 +1,52 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import renderFormField from './renderFormField';
-import validate from '../../components/formValidation';
+import validate from '../../components/validation.component';
 
-const renderError = ({ meta: { touched, error } }) =>
-  touched && error ? <span>{error}</span> : false;
+const renderError = ({ meta: { touched, error } }) => {
+  return(
+    touched && error 
+    ? <div>{error}</div> 
+    : false
+  )
+}
 
 const SecondPage = props => {
-  const { nextPage, previousPage } = props;
+  const { nextPage, previousPage, submitting, pristine } = props;
 
   return (
-    <form onSubmit={nextPage, previousPage}>
-      <Field name="email" type="email" component={renderFormField} label="Email" />
+    <form onSubmit={ nextPage }>
       <div>
-        <label>resources</label>
-        <div>
-          <label>
-            <Field name="resources" component="input" type="radio" value="notes" />
-            {' '}
-            Notes
-          </label>
-          <label>
-            <Field name="resources" component="input" type="radio" value="example" />
-            {' '}
-            Example
-          </label>
-           <label>
-            <Field name="resources" component="input" type="radio" value="links" />
-            {' '}
-            Links
-          </label>
-          <label>
-            <Field name="resources" component="input" type="radio" value="all" />
-            {' '}
-            All 3
-          </label>
-          <Field name="resources" component={renderError} />
-        </div>
+        <Field
+          component={ renderFormField }
+          label="Title"
+          name="title"
+          placeholder="Input a title"
+          type="text" />
+        <Field
+          component={ renderFormField }
+          label="Topic"
+          name="topic"
+          placeholder="Choose a topic"
+          type="text" />
       </div>
       <div>
-        <button type="button" className="previous" onClick={previousPage}>
-          Previous
-        </button>
-        <button type="submit" className="next" onClick={nextPage}>Next</button>
+        <input 
+          disabled={ pristine || submitting }
+          type="submit" 
+          value="Next" />
+        <input 
+          type="button" 
+          onClick={ previousPage }
+          value="Back" />
       </div>
     </form>
   );
 };
 
 export default reduxForm({
-  form: 'stageform',                 
-  destroyOnUnmount: false,
-  forceUnregisterOnUnmount: true,
+  form : 'stageform',                 
+  destroyOnUnmount : false,
+  forceUnregisterOnUnmount : true,
   validate,
 })(SecondPage);
