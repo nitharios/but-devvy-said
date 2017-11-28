@@ -1,47 +1,44 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import validate from '../../components/formValidation';
+import validate from '../../components/validation.component';
 import renderFormField from './renderFormField';
-
 
 const FirstPage = props => {
   const { nextPage } = props;
 
   return (
-    <form onSubmit={nextPage}> 
-      <Field
-        name="firstName"
-        type="text"
-        component={renderFormField}
-        label="First Name"
-        placeholder=""
-      />
-      <Field
-        name="lastName"
-        type="text"
-        component={renderFormField}
-        label="Last Name"
-        placeholder=""
-      />
-      <Field
-        name="email"
-        type="email"
-        component={renderFormField}
-        label="E-mail Address"
-        placeholder=""
-      />
+    <form onSubmit={ nextPage }> 
       <div>
-        <button type="submit" className="next">Next</button>
+        <Field
+          component={ renderFormField }
+          label="Name"
+          name="name"
+          placeholder="(optional)"
+          type="text" />
+        <Field
+          component={ renderFormField }
+          label="Cohort"
+          name="cohort"
+          placeholder="(optional)"
+          type="number" />
       </div>
-      
+      <div>
+        <input 
+          type="submit" 
+          value="Next" />
+      </div>
     </form>
   );
 
+  
 };
 
 export default reduxForm({
-  form: 'stageform', //<------ same form name
-  destroyOnUnmount: false, //<------ Preserves form data
-  forceUnregisterOnUnmount: true, // <------ unregister fields on unmount
+  // same form name
+  form : 'stageform',
+  // preserves form data
+  destroyOnUnmount : false,
+  // unregister fields on unmount
+  forceUnregisterOnUnmount : true,
   validate,
 })(FirstPage);

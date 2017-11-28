@@ -5,8 +5,6 @@ import { Field, reduxForm } from 'redux-form';
 import renderFormField from './renderFormField';
 import textField from './textField';
 import validate from '../../components/formValidation';
-import TagInput from '../TagInput';
-
 
 const types = ['Note', 'Example', 'link' , 'All 3'];
 
@@ -24,59 +22,50 @@ const ThirdPage = props => {
   const { handleSubmit, pristine, previousPage, submitting } = props;
 
   return (
-    <form onSubmit={handleSubmit}>
-
-      <div>
-
+    <form onSubmit={ handleSubmit }>
+      <div> 
+        <div>Note</div>
         <Field 
+          component="textarea" 
+          label="Note"
           name="note" 
-          type="text"
-          label="Notes"
-          component={textField}
-          placeholder="Bullets Points Here.." 
-        />
-
-        <Field 
+          placeholder="Add your notes here"
+          type="text" />
+        <div>Example</div>
+        <Field
+          component="textarea" 
+          label="Example"
           name="example" 
-          type="text" 
-          label="Examples"
-          component={textField} 
-          placeholder="Code Here.."
-        />
-
+          placeholder="Add your example here" 
+          type="text" />
         <Field 
-          name="link" 
+          component={ renderFormField } 
           label="Link"
-          component={({ label }) => { 
-            return (
-              <div>
-                <label>{label}</label>
-                <div>
-                  <input type="url" defaultValue="http://" />
-                </div>
-              </div>
-            );
-          }}/>
-      
+          name="link" 
+          placeholder="Add your link here"
+          type="text" />
       </div>
 
-      <TagInput />
-
       <div>
-        <button type="button" className="previous" onClick={previousPage} >
-          Previous
-        </button>
-        <button type="submit" disabled={ pristine || submitting }>
-          Submit
-        </button>
+        <input 
+          disabled={ pristine || submitting }
+          type="submit" 
+          value="Submit" />
+        <input 
+          type="button" 
+          onClick={ previousPage } 
+          value="Back" />
       </div>
 
     </form>
   );
+
 };
+//end class
+
 export default reduxForm({
-  form: 'stageform',               
-  destroyOnUnmount: false,       
-  forceUnregisterOnUnmount: true, 
+  form : 'stageform',               
+  destroyOnUnmount : false,       
+  forceUnregisterOnUnmount : true, 
   validate,
 })(ThirdPage);

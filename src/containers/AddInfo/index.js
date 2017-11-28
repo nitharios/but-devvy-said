@@ -129,7 +129,7 @@ class AddInfo extends Component {
   }
 
   render() {
-    
+
     return(
       <div>
         <form 

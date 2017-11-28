@@ -1,40 +1,43 @@
 module.exports = {
-  
   additional_query : [
-    "Would you like to me to ask Nigel for other resources?",
+    "Would you like to me to check for other resources?",
     "Would you like to see other resources?",
     "Need more?",
-    "Anything else? :blush:"
+    "Anything else? :blush:",
   ],
   affirmations : [
     "Let me check...",
-    "Hold on...",
-    "One sec...",
-    "Checking now..."
+    "Hold on.",
+    "One sec.",
+    "Checking now...",
+    "Uno momento!"
   ],
   bye_msgs : [
     "See you later!", 
-    "Bye for now!",
+    "Bye for now! :smiley:",
     "Have a great day!",
     "Okay, bye!"
   ],
   error_msgs : [
     "Oh no! Something went wrong!",
     "Hmm...check back later...",
-    "Not in the mood right now!!!",
-    "404, you know what that means ~",
+    "Not in the mood right now!!! :rage:",
+    "404, you know what that means ~ :grumpycat:",
     "Sorry, I'm playing with Mika right now."
   ],
   emojis : [
     ":blush:",
     ":eyes:",
-    ":flushed:", 
+    ":flushed:",
+    ":grumpycat:",
     ":heart:",
     ":persevere:",
     ":rage:",
     ":slightly_smiling_face:", 
     ":sleeping:",
+    ":smiley",
     ":sob:",
+    ":worried:",
     ":zzz:"
   ],
   greetings : [
@@ -42,9 +45,10 @@ module.exports = {
     "Hey, how are you doing?",
     "Hi! Where is my Nathan?",
     "Hello, my name is Devvy.",
+    "Hi :slightly_smiling_face:"
   ],
   missing_info : [
-    "Hmm...Nigel didn't have any info for me.",
+    "Hmm...I don't have any info on that :worried:",
     "shrugs",
     "Sorry, can't help you with that :persevere:",
     "No idea!",
@@ -81,7 +85,15 @@ module.exports = {
     "Would you like to see examples, links, or notes?",
     "Examples, links, or notes?",
     "Do you want examples, links, or notes?",
-    "Umm...do you want examples, links, or notes?"
+    "Umm...do you want examples, links, or notes?",
+    "What kind of resource would you like to see?"
+  ],
+  thanks_reply : [
+    "You are very welcome! :slightly_smiling_face:",
+    "No problem!",
+    "You're welcome.",
+    "Anytime :blush:",
+    ":panda_dance:"
   ],
   timeout_msgs : [
     "...I guess I'll go do something else then...",

@@ -25,22 +25,22 @@ router.route('/')
 .post((req, res) => {
   console.log(req.body);
   const data = req.body;
+  const title = data.title;
+  const topic_id = data.topic_id;
+
+  if (!title || !topic_id) {
+    return res.json(missing_key);
+  }
 
   return Resource.create({
-    //first page
-    firstName : data.firstName,
-    lastName : data.lastName,
-    email : data.email,
-
-    //second page
-    track : data.track,
+    name : data.name,
     cohort : data.cohort,
-
-    //third page
-    topics : data.topics,
+    title : title,
+    tags : data.tags,
+    topic_id : topic_id,
     note : data.note,
     example : data.example,
-    link: data.link,
+    link: data.link
   })
   .then(newResource => {
     console.log('new resource added');
