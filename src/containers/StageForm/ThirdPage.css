@@ -1,33 +1,56 @@
+/* PARENT DIV */
 .ThirdPage {
-  border: 3px dashed black;
   position: relative;
+  border: 3px dashed black;
 }
 
+
+/* NOTES EXAMPLES LINK FIELDS AND LABELS */
 .ThirdPage-fields {
   border: 1px solid blue;
+  width: 50%;
   margin: 5px;
   padding: 5px;
   position: relative;
+  margin: 0 auto;
 }
 
 .ThirdPage-label {
   margin-bottom: 5px;
+  padding: 3px;
+  border: 1px solid black;
+  width: 100%;
 }
 
+.ThirdPage input {
+  width: 100%;
+}
 .ThirdPage textarea {
-  width: 50%;
+  border: 1px solid green;
+  width: 100%;
+}
+
+.ThirdPage-example-box {
+  background-color: pink;
 }
 
 
+/* BOTTOM HALF, SUBMIT AND BACK BUTTONS */
 .ThirdPage-submit {
   border: 1px solid magenta;
+  width: 50%;
   margin: 5px;
   padding: 5px;
+  margin: 0 auto;
+  text-align: center;
 }
   .ThirdPage-submit input {
     border: 1px solid black;
+    font-size: 1.25em;
     border-radius: 3px;
-    margin: 2px;
+    margin: 5px;
+    padding: 2px;
+    width: 20%;
   }
   .ThirdPage-submit input:hover {
     cursor: pointer;

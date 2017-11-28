@@ -17,11 +17,12 @@ const ThirdPage = props => {
           component="textarea"
           rows={10}
           name="note"
-          placeholder="Add your notes here"
+          placeholder="Add your notes here.."
         />
 
         <div className="ThirdPage-label">Examples</div>
         <Field
+          className="ThirdPage-example-box"
           component="textarea"
           rows={10}
           name="example" 
@@ -32,7 +33,6 @@ const ThirdPage = props => {
         <Field
           component={ formField } 
           name="link" 
-          placeholder="Add your link here"
           type="text" />
       </div>
 
