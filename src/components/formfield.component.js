@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../containers/StageForm/ThirdPage.css';
+
 // Handles Component rendering for fields on forms
 export default ({ input, label, placeholder, type, meta: { touched, error } }) => (
   <div>

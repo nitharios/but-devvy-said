@@ -3,6 +3,8 @@ import { Field, reduxForm } from 'redux-form';
 import formField from '../../components/formfield.component';
 import validate from '../../components/validate.component';
 
+
+
 const SecondPage = props => {
   const { nextPage, previousPage, pristine, submitting, topicsList } = props;
 
