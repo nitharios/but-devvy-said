@@ -1,0 +1,35 @@
+.ThirdPage {
+  border: 3px dashed black;
+  position: relative;
+}
+
+.ThirdPage-fields {
+  border: 1px solid blue;
+  margin: 5px;
+  padding: 5px;
+  position: relative;
+}
+
+.ThirdPage-label {
+  margin-bottom: 5px;
+}
+
+.ThirdPage textarea {
+  width: 50%;
+}
+
+
+.ThirdPage-submit {
+  border: 1px solid magenta;
+  margin: 5px;
+  padding: 5px;
+}
+  .ThirdPage-submit input {
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 2px;
+  }
+  .ThirdPage-submit input:hover {
+    cursor: pointer;
+    font-weight: bold;
+  }

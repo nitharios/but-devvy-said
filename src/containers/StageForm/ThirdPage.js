@@ -3,34 +3,40 @@ import { Field, reduxForm } from 'redux-form';
 import formField from '../../components/formfield.component';
 import validate from '../../components/validate.component';
 
+/*STYLES*/
+import './ThirdPage.css';
+
 const ThirdPage = props => {
   const { handleSubmit, pristine, previousPage, submitting } = props;
 
   return (
-    <form onSubmit={ handleSubmit }>
-      <div> 
-        <div>Note</div>
+    <form className="ThirdPage" onSubmit={ handleSubmit }>
+      <div className="ThirdPage-fields"> 
+        <div className="ThirdPage-label">Notes</div>
         <Field 
-          component="textarea" 
-          label="Note"
-          name="note" 
+          component="textarea"
+          rows={10}
+          name="note"
           placeholder="Add your notes here"
-          type="text" />
-        <div>Example</div>
+        />
+
+        <div className="ThirdPage-label">Examples</div>
         <Field
-          component="textarea" 
-          label="Example"
+          component="textarea"
+          rows={10}
           name="example" 
-          placeholder="Add your example here" 
-          type="text" />
-        <Field 
+          placeholder="Add code snippet here.." 
+        />
+
+        <div className="ThirdPage-label">Link</div>
+        <Field
           component={ formField } 
-          label="Link"
           name="link" 
           placeholder="Add your link here"
           type="text" />
       </div>
-      <div>
+
+      <div className="ThirdPage-submit">
         <input 
           disabled={ pristine || submitting }
           type="submit" 
@@ -40,6 +46,7 @@ const ThirdPage = props => {
           onClick={ previousPage } 
           value="Back" />
       </div>
+
     </form>
   );
 };
