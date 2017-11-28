@@ -3,6 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import formField from '../../components/formfield.component';
 import validate from '../../components/validate.component';
 
+
 /*STYLES*/
 import './ThirdPage.css';
 
@@ -28,7 +29,7 @@ const ThirdPage = props => {
           name="example" 
           placeholder="Add code snippet here.." 
         />
-
+        
         <div className="ThirdPage-label">Link</div>
         <Field
           component={ formField } 
@@ -46,6 +47,7 @@ const ThirdPage = props => {
           onClick={ previousPage } 
           value="Back" />
       </div>
+
 
     </form>
   );

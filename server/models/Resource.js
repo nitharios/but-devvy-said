@@ -2,36 +2,35 @@
 module.exports = function(sequelize, DataTypes) {
 
   const Resource = sequelize.define('Resource', {
-    // 'arrow function notes'
-    title : {
-      type : DataTypes.STRING, 
-      allowNull : false
-    },
-    //'http://bit.ly/2zOQycP'
-    link : {
+    
+    name : {
       type : DataTypes.STRING, 
       allowNull : true
     },
-    // code snippet
-    example : {
-      type : DataTypes.TEXT, 
-      allowNull : true
-    },
-    // class notes
-    note : {
-      type : DataTypes.TEXT, 
-      allowNull : true
-    },
-    // C19
     cohort : {
       type : DataTypes.INTEGER, 
       allowNull : true
     },
-    // 'Chris'
-    name : {
-      type : DataTypes.STRING, 
+    title : {
+      type : DataTypes.STRING,
       allowNull : false
     },
+    tags : {
+      type : DataTypes.ARRAY(DataTypes.STRING),
+      allowNull : false
+    },
+    note : {
+      type : DataTypes.TEXT, 
+      allowNull : true
+    },
+    example : {
+      type : DataTypes.TEXT, 
+      allowNull : true
+    },
+    link : {
+      type : DataTypes.STRING, 
+      allowNull : true
+    }
   },
   {
     tableName : 'resources',

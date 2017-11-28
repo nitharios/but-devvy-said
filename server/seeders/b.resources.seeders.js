@@ -6,70 +6,40 @@ module.exports = {
     return queryInterface.bulkInsert('resources', [
 
       {
-        title : 'What is meant by Asynchronous Javascript?',
-        link : 'http://bit.ly/2zOQycP', //SO async
-        example : 'This is a code snippet.',
-        note : 'These are class notes.',
-        cohort : 19,
         name : 'Justin',
+        cohort : 19,
+        title : 'What is meant by Asynchronous Javascript?',
+        tags : ['asynchronous', 'promises'],
+        note : 'These are class notes.',
+        example : 'This is a code snippet.',
+        link : 'http://bit.ly/2zOQycP', 
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 1
       },
       {
-        title : 'Promises',
-        link : 'http://bit.ly/2zQPmFe', //how to use Promise
-        example : 'This is a code snippet.',
-        note : 'These are class notes.',
-        cohort : 18,
-        name : 'Nathan',
-        createdAt : new Date(),
-        updatedAt : new Date(),
-        topic_id : 2,
-      },
-      {
-        title : 'How to use Promises',
-        link : 'http://bit.ly/2zQPmFe', //how to use Promise
-        example : 'This is a code snippet.',
-        note : 'These are class notes.',
-        cohort : 18,
-        name : 'Nathan',
-        createdAt : new Date(),
-        updatedAt : new Date(),
-        topic_id : 2,
-      },
-      {
-        title : 'How to use a promise',
-        link : 'http://bit.ly/2zQPmFe', //how to use Promise
-        example : 'This is a code snippet.',
-        note : 'These are class notes.',
-        cohort : 18,
-        name : 'Nathan',
-        createdAt : new Date(),
-        updatedAt : new Date(),
-        topic_id : 2,
-      },
-      {
-        title : 'How to use Promises',
-        link : 'http://bit.ly/2zQPmFe', //how to use Promise
-        example : 'This is a code snippet.',
-        note : 'These are class notes.',
-        cohort : 18,
-        name : 'Nathan',
-        createdAt : new Date(),
-        updatedAt : new Date(),
-        topic_id : 2,
-      },
-      {
-        title : 'Every Function is an Object',
-        link : 'http://bit.ly/2AT46kf', //every function is obj
-        example : 'This is a code snippet.',
-        note : 'These are class notes.',
-        cohort : 17,
         name : 'Chris',
+        cohort : 19,
+        title : 'How to Use Arrow Functions',
+        tags : ['arrow function', 'context'],
+        note : 'These are class notes.',
+        example : 'This is a code snippet.',
+        link : 'http://bit.ly/2zOQycP', 
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id: 3
+        topic_id : 1
+      },
+      {
+        name : 'Nathan',
+        cohort : 19,
+        title : 'All About Prototypes and Inheritance',
+        tags : ['prototype', 'inheritance'],
+        note : 'These are class notes.',
+        example : 'This is a code snippet.',
+        link : 'http://bit.ly/2zOQycP', 
+        createdAt : new Date(),
+        updatedAt : new Date(),
+        topic_id : 1
       }
 
     ], {});
