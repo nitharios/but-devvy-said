@@ -21,7 +21,6 @@ router.route('/')
     order : [[ 'name' ]]
   })
   .then(topicsList => {
-    console.log(topicsList, ' TOPIC LIST $O@&Y%@$&(%@')
     return res.json(topicsList);
   })
   .catch(err => {
