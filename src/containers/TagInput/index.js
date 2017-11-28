@@ -64,7 +64,7 @@ class TagInput extends Component {
 
     return (
       <div>
-        <label className="TagInput-label">Please Provide Topics..</label>
+        <div className="TagInput-label"><span>Please Provide Topics..</span></div>
         <ReactTags
           name="tags"
           tags={tags}
