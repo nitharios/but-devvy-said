@@ -11,7 +11,6 @@ import {
 
 /* Containers */
 import App from './containers/App';
-import AddInfo from './containers/AddInfo';
 import StageForm from './containers/StageForm';
 
 /* Components */
@@ -44,8 +43,7 @@ ReactDOM.render(
 
         <Route exact path="/" component={ App } />
         <Route path="/about" component={ About } />
-        <Route path="/addinfo" component={ AddInfo } />
-        <Route path="/stageform" component={ StageForm } />
+        <Route path="/addinfo" component={ StageForm } />
         
         <Footer />
       </div>
