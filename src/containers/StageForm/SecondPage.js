@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import renderFormField from './renderFormField';
-import validate from '../../components/formValidation';
+import validate from '../../components/validation.component';
 
 const renderError = ({ meta: { touched, error } }) => {
   return(

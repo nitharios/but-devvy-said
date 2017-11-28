@@ -1,6 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import validate from '../../components/formValidation';
+import validate from '../../components/validation.component';
 import renderFormField from './renderFormField';
 
 const ThirdPage = props => {
