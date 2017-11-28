@@ -53,9 +53,7 @@ module.exports = {
     "Sorry, can't help you with that :persevere:",
     "No idea!",
     "I'm sorry, I don't know :sob:",
-    "My Nathan might know!",
-    "Chris is fixing the gap in my information",
-    "Justin is fixing the gap in my information"
+    "My Nathan might know!"
 
   ],
   other_msgs : [

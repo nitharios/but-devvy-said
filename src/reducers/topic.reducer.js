@@ -5,7 +5,7 @@ const initialState = [];
 export default (state = initialState, action) => {
   switch(action.type) {
     case LOAD_TOPICS:
-      console.log("LOAD");      
+      console.log("LOAD");                 
       return [ ...action.topicsList ];
 
     default:

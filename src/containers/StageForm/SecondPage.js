@@ -1,10 +1,12 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { Field, 
+         formValueSelector,
+         reduxForm } from 'redux-form';
 import formField from '../../components/formfield.component';
 import validate from '../../components/validate.component';
 
 const SecondPage = props => {
-  const { nextPage, previousPage, submitting, pristine } = props;
+  const { nextPage, previousPage, pristine, submitting, topicsList } = props;
 
   return (
     <form onSubmit={ nextPage }>
@@ -15,12 +17,21 @@ const SecondPage = props => {
           name="title"
           placeholder="Input a title"
           type="text" />
+
+        <div>Select a Topic</div>
         <Field
-          component={ formField }
-          label="Topic"
-          name="topic"
-          placeholder="Choose a topic"
-          type="text" />
+          component="select"
+          name="topic_id" >
+          { topicsList.map((topic, idx) => {
+            return(
+              <option
+                key={ idx }
+                value={ topic.id } >
+                { topic.name }
+              </option>
+            )
+          }) }
+        </Field>
       </div>
       <div>
         <input 
