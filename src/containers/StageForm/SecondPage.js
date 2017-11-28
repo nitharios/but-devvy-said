@@ -1,7 +1,5 @@
 import React from 'react';
-import { Field, 
-         formValueSelector,
-         reduxForm } from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
 import formField from '../../components/formfield.component';
 import validate from '../../components/validate.component';
 
