@@ -9,11 +9,11 @@ const router = express.Router();
 router.route('/')
 .post((req, res) => {
   const { userQuery } = req.body;
-
+  
   return client.message(userQuery)
   .then(data => {
-    let { db_query } = data.entities;
-
+    const { db_query } = data.entities;
+    
     return Topic.findOne({ 
       where : { name : db_query[0].value },
       include : [
@@ -24,12 +24,12 @@ router.route('/')
         }
       ]
     })
-    .then(topicInfo => {
+    .then(topicInfo => {      
       return res.json(topicInfo);
     });
   })
   .catch(err => {
-    console.log(error_occurred);
+    console.log(err);
     return res.json(error_occurred);
   });
 });

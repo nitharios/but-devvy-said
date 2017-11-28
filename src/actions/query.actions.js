@@ -26,6 +26,8 @@ export const query = userQuery => {
           break;
 
         default:
+          console.log(data.Resources);
+          
           dispatch({
             type : QUERY,
             topicData : data,

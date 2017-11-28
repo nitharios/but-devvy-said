@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+// import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { Accordion, AccordionItem } from 'react-sanfona';
 import { query } from '../../actions/query.actions';
 import ListBuilder from '../../components/listbuilder.component';
 
@@ -81,7 +82,29 @@ class App extends Component {
           : <div className="response-box">Sorry! I don't have any info on that</div>
         }
 
-        <Tabs id="information-box" defaultIndex={ 0 }>
+        <Accordion allowMultiple={ true }>
+          <AccordionItem title='Examples'>
+            <ListBuilder
+              informationList={ this.props.resourcesList }
+              label="Examples"
+              type="example" />
+          </AccordionItem>
+          <AccordionItem title='Notes'>
+            <ListBuilder
+              informationList={ this.props.resourcesList }
+              label="Notes"
+              type="note" />
+          </AccordionItem>
+          <AccordionItem title='Links'>
+            <ListBuilder
+              informationList={ this.props.resourcesList }
+              label="Links"
+              type="link" />
+          </AccordionItem>
+        </Accordion>
+
+
+{/*        <Tabs id="information-box" defaultIndex={ 0 }>
           <TabList id="tab-list">
             <Tab className="information-tab">Examples</Tab>
             <Tab className="information-tab">Notes</Tab>
@@ -106,7 +129,7 @@ class App extends Component {
               label="Links"
               type="link" />
           </TabPanel> 
-        </Tabs>
+        </Tabs>*/}
       </div>
     );
   }
