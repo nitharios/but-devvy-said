@@ -12,12 +12,6 @@ import './ThirdPage.css';
 const ThirdPage = props => {
   const { handleSubmit, pristine, previousPage, submitting } = props;
 
-  const options = {
-    lineNumbers: true,
-    readOnly: false,
-    mode: "javascript"
-  };
-
   return (
     <form className="ThirdPage" onSubmit={ handleSubmit }>
       <div className="ThirdPage-fields"> 
