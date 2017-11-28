@@ -3,6 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import formField from '../../components/formfield.component';
 import validate from '../../components/validate.component';
 
+import CodeEditor from '../CodeEditor';
 import TagInput from '../TagInput';
 
 /*STYLES*/
@@ -10,6 +11,12 @@ import './ThirdPage.css';
 
 const ThirdPage = props => {
   const { handleSubmit, pristine, previousPage, submitting } = props;
+
+  const options = {
+    lineNumbers: true,
+    readOnly: false,
+    mode: "javascript"
+  };
 
   return (
     <form className="ThirdPage" onSubmit={ handleSubmit }>
@@ -23,13 +30,8 @@ const ThirdPage = props => {
         />
 
         <div className="ThirdPage-label">Examples</div>
-        <Field
-          className="ThirdPage-example-box"
-          component="textarea"
-          rows={10}
-          name="example" 
-          placeholder="Add code snippet here.." 
-        />
+        
+        <CodeEditor />
         
         <div className="ThirdPage-label">Link</div>
         <Field

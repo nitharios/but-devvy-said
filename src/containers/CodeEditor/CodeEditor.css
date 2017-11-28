@@ -1,0 +1,25 @@
+.CodeEditor {
+  border: 2px dashed black;
+}
+
+.CodeEditor-options {
+  margin: 15px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.CodeEditor-options select {
+  padding: 3px;
+  margin: 5px;
+}
+
+.CodeEditor-options button {
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 3px;
+  margin: 5px;
+}
+.CodeEditor-options button:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
