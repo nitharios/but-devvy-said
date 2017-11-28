@@ -19,6 +19,7 @@ module.exports = (function() {
         message.entities = data.entities;
         message.info_type = message.entities.info_type;
         message.db_query = message.entities.db_query;
+        message.number = message.entities.number;
         message.greetings = message.entities.greetings;
         message.bye = message.entities.bye;
         message.thanks = message.entities.thanks;

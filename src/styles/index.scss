@@ -1,5 +1,6 @@
 // theme colors
 $bg-color: #FFFFFF;
+$contrast-bg-color: #E6E8FA; // glitter
 $primary-color: #008B8B; // dark cyan
 $accent-color:  #F8DE7E; // jasmine
 $contrast-accent: #FFFF66; // laser lemon
@@ -163,8 +164,8 @@ body {
       font-size: 15px;
 
       &:hover {
-        border: 3px solid $primary-color;
-        border-radius: 7px;
+        background-color: $primary-color;
+        color: $bg-color;
       }
     }
   }
@@ -200,11 +201,11 @@ body {
     }
 
     .information-title {
-      // border: 1px solid $primary-color;
-      // background-color: $primary-color;
-      // color: $bg-color;
       padding: 10px;
-      // margin-bottom: 10px;
+      &:hover {
+        background-color: $primary-color;
+        color: $bg-color;  
+      }
     }
   }
 }
@@ -215,7 +216,7 @@ body {
   
 #about {
   width: 75%;
-  margin: 30px auto;
+  margin: 75px auto;
 
   #header {
     width: 100%;
@@ -227,6 +228,12 @@ body {
   }
 
   .content {
+    background-color: $contrast-bg-color;
+    border-radius: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
     font-size: 25px;
 
     div {
@@ -251,22 +258,45 @@ body {
       background-position: center;
       background-repeat: no-repeat;
       background-size: 100%;
-      width: 30px;
-      height: 30px;
+      margin-left: 10px;
+      margin-right: 10px;
+      border-radius: 10px;
+    }
+
+    #instagram-bg {
+      @include flex-style(row nowrap, center);
+      align-items: center;
+      background-color: $primary-color;
+      -webkit-filter: invert(1);
+      filter: invert(1);
+      width: 40px;
+      height: 40px;
       border-radius: 10px;
     }
 
     #instagram {
+      background-color: $primary-color;
       background-image: url('/assets/instagram.png');
+      width: 30px;
+      height: 30px;
     }
 
     #twitter {
-      background-image: url('/assets/twitter.png');
+      background-image: url('/assets/twitter-blue.png');
+      width: 50px;
+      height: 50px;
     }
 
     #devleague {
       background-image: url('/assets/devleague_logo.webp');
       width: 125px;
+      height: 30px;
+    }
+
+    #github {
+      background-image: url('/assets/github.png');
+      width: 35px;
+      height: 35px;
     }
   }
 }

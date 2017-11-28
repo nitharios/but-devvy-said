@@ -12,15 +12,27 @@ router.route('/')
   
   return client.message(userQuery)
   .then(data => {
-    const { db_query } = data.entities;
+    const { entities } = data;
+    const { db_query } = entities;
+    // let attributes = ['example', 'note', 'link'];
+    let limit = 5;
+
+    if (entities.number) {
+      limit = entities.number[0].value;
+    }
+
+    // if (entities.info_type) {
+    //   attributes = [entities.info_type[0].value];
+    // }
     
     return Topic.findOne({ 
       where : { name : db_query[0].value },
       include : [
         {
           model : Resource,
-          limit : 5,
-          order : [[ 'createdAt', 'DESC' ]]
+          order : [[ 'createdAt', 'DESC' ]],
+          // attributes : attributes,
+          limit : limit
         }
       ]
     })
