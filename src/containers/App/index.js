@@ -82,20 +82,38 @@ class App extends Component {
           : <div className="response-box">Sorry! I don't have any info on that</div>
         }
 
-        <Accordion allowMultiple={ true }>
-          <AccordionItem title='Examples'>
+        <Accordion 
+          allowMultiple={ true }
+          easing="ease"
+          className="information-box" >
+          <AccordionItem 
+            className="information"
+            easing="ease"
+            expandedClassName="expanded"
+            titleClassName="information-title"
+            title="Examples" >
             <ListBuilder
               informationList={ this.props.resourcesList }
               label="Examples"
               type="example" />
           </AccordionItem>
-          <AccordionItem title='Notes'>
+          <AccordionItem 
+            className="information"
+            easing="ease"
+            expandedClassName="expanded"
+            titleClassName="information-title"
+            title="Notes" >
             <ListBuilder
               informationList={ this.props.resourcesList }
               label="Notes"
               type="note" />
           </AccordionItem>
-          <AccordionItem title='Links'>
+          <AccordionItem
+            className="information"
+            easing="ease"
+            expandedClassName="expanded"
+            titleClassName="information-title"
+            title="Links" >
             <ListBuilder
               informationList={ this.props.resourcesList }
               label="Links"
@@ -103,33 +121,6 @@ class App extends Component {
           </AccordionItem>
         </Accordion>
 
-
-{/*        <Tabs id="information-box" defaultIndex={ 0 }>
-          <TabList id="tab-list">
-            <Tab className="information-tab">Examples</Tab>
-            <Tab className="information-tab">Notes</Tab>
-            <Tab className="information-tab">Links</Tab>
-          </TabList>
-          
-          <TabPanel className="information">
-            <ListBuilder
-              informationList={ this.props.resourcesList }
-              label="Examples"
-              type="example" />
-          </TabPanel>
-          <TabPanel className="information">
-            <ListBuilder
-              informationList={ this.props.resourcesList }
-              label="Notes"
-              type="note" />
-          </TabPanel>
-          <TabPanel className="information">
-            <ListBuilder
-              informationList={ this.props.resourcesList }
-              label="Links"
-              type="link" />
-          </TabPanel> 
-        </Tabs>*/}
       </div>
     );
   }
