@@ -11,42 +11,29 @@ const SecondPage = props => {
 
   return (
     <form onSubmit={nextPage, previousPage}>
-      <Field name="email" type="email" component={renderFormField} label="Email" />
+
       <div>
-        <label>resources</label>
-        <div>
-          <label>
-            <Field name="resources" component="input" type="radio" value="notes" />
-            {' '}
-            Notes
-          </label>
-          <label>
-            <Field name="resources" component="input" type="radio" value="example" />
-            {' '}
-            Example
-          </label>
-           <label>
-            <Field name="resources" component="input" type="radio" value="links" />
-            {' '}
-            Links
-          </label>
-          <label>
-            <Field name="resources" component="input" type="radio" value="all" />
-            {' '}
-            All 3
-          </label>
-          <Field name="resources" component={renderError} />
-        </div>
+        <Field 
+          name="cohort"
+          type="number"
+          component={renderFormField}
+          label="DevLeague Cohort"
+          placeholder="Enter Cohort #.."
+        />
       </div>
+
       <div>
         <button type="button" className="previous" onClick={previousPage}>
           Previous
         </button>
         <button type="submit" className="next" onClick={nextPage}>Next</button>
       </div>
+
     </form>
   );
 };
+
+
 
 export default reduxForm({
   form: 'stageform',                 

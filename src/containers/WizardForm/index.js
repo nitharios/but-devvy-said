@@ -30,6 +30,7 @@ class WizardForm extends Component {
   }
 
   handleSubmit(data) {
+    console.log(data);
     this.props.addNewResource(data);    
   }
 
@@ -76,4 +77,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   null,
   mapDispatchToProps
-)(StageForm)
+)(WizardForm)

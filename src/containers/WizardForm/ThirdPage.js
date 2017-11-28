@@ -1,6 +1,9 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import renderFormField from './renderFormField';
 import validate from '../../components/formValidation';
+
+import TagInput from '../TagInput';
 
 
 const types = ['Note', 'Example', 'link' , 'All 3'];
@@ -21,43 +24,36 @@ const ThirdPage = props => {
   return (
     <form onSubmit={handleSubmit}>
 
+      <TagInput />
+
       <div>
-        <label>types</label>
-        <Field name="note-type" component={renderTypeSelector} />
+
+        <Field 
+          name="note" 
+          type="text"
+          label="Notes"
+          component={renderFormField}
+          placeholder="" 
+        />
+
+        <Field 
+          name="example" 
+          type="text" 
+          label="Examples"
+          component={renderFormField} 
+          placeholder="Code Here.."
+        />
+
+        <Field 
+          name="link" 
+          type="url" 
+          label="Link"
+          component={renderFormField}
+          placeholder="URL here.."
+        />
+      
       </div>
-      <div>
-        <label htmlFor="devleague-student">Devleague Student?</label>
-        <div>
-          <Field 
-            value="Yes"
-            name="student-yes"
-            id="student"
-            component="input"
-            type="checkbox"
-          /> Yes
-          <Field
-            value='No'
-            name="student-no"
-            id="student"
-            component="input"
-            type="checkbox"
-          /> No
-        </div>
-      </div>
-      <div>
-        <label>Notes</label>
-        <div>
-          <Field name="notes" component="textarea" placeholder="Notes" />
-        </div>
-        <label>Examples</label>
-        <div>
-          <Field name="Examples" component="textarea" placeholder="Examples" />
-        </div>
-        <label>Link</label> - one link only
-        <div>
-          <Field name="Links" component="textarea" placeholder="Links" />
-        </div>
-      </div>
+
       <div>
         <button type="button" className="previous" onClick={previousPage} >
           Previous
@@ -66,6 +62,7 @@ const ThirdPage = props => {
           Submit
         </button>
       </div>
+
     </form>
   );
 };

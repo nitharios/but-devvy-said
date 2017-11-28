@@ -37,39 +37,6 @@ module.exports = {
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 2,
-      },
-      {
-        title : 'How to use a promise',
-        link : 'http://bit.ly/2zQPmFe', //how to use Promise
-        example : 'This is a code snippet.',
-        note : 'These are class notes.',
-        cohort : 18,
-        name : 'Nathan',
-        createdAt : new Date(),
-        updatedAt : new Date(),
-        topic_id : 2,
-      },
-      {
-        title : 'How to use Promises',
-        link : 'http://bit.ly/2zQPmFe', //how to use Promise
-        example : 'This is a code snippet.',
-        note : 'These are class notes.',
-        cohort : 18,
-        name : 'Nathan',
-        createdAt : new Date(),
-        updatedAt : new Date(),
-        topic_id : 2,
-      },
-      {
-        title : 'Every Function is an Object',
-        link : 'http://bit.ly/2AT46kf', //every function is obj
-        example : 'This is a code snippet.',
-        note : 'These are class notes.',
-        cohort : 17,
-        name : 'Chris',
-        createdAt : new Date(),
-        updatedAt : new Date(),
-        topic_id: 3
       }
 
     ], {});

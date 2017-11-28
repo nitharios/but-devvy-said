@@ -14,12 +14,21 @@ const FirstPage = props => {
         type="text"
         component={renderFormField}
         label="First Name"
+        placeholder=""
       />
       <Field
         name="lastName"
         type="text"
         component={renderFormField}
         label="Last Name"
+        placeholder=""
+      />
+      <Field
+        name="email"
+        type="email"
+        component={renderFormField}
+        label="E-mail Address"
+        placeholder=""
       />
       <div>
         <button type="submit" className="next">Next</button>
