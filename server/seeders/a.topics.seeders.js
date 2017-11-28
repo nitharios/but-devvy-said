@@ -33,7 +33,7 @@ module.exports = {
       },
       {
         name : 'array indices'
-      }
+      },
       {
         name : 'array iterative method'
       },

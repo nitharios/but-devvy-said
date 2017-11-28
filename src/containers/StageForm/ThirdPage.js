@@ -18,9 +18,15 @@ const ThirdPage = props => {
       <div className="ThirdPage-fields">
       
         <div className="ThirdPage-label">Notes</div>
-        <Field 
+        {/*<Field 
           component={TextEditor}
           name="note"
+        />*/}
+        <Field 
+          component="textarea"
+          rows={10}
+          name="note"
+          placeholder="Add your notes here.."
         />
 
         <div className="ThirdPage-label">Examples</div>

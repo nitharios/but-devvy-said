@@ -46,7 +46,8 @@ module.exports = {
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 3
-      }
+      },
+      
 
     ], {});
 
