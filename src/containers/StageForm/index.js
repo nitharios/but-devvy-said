@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { loadTopics } from '../../actions/topic.actions';
 import { addNewResource } from '../../actions/resource.actions';
 import FirstPage from './FirstPage';
 import SecondPage from './SecondPage';
@@ -7,7 +8,7 @@ import ThirdPage from './ThirdPage';
 
 class StageForm extends Component {
   constructor(props) {
-    super(props);
+    super();
 
     this.state = {
       page : 1
@@ -16,7 +17,8 @@ class StageForm extends Component {
     this.nextPage = this.nextPage.bind(this);
     this.previousPage = this.previousPage.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  } 
+  }
+
 
   nextPage() {
     this.setState({ page : this.state.page + 1 });
@@ -30,6 +32,10 @@ class StageForm extends Component {
     this.props.addNewResource(info);    
   }
 
+  componentWillMount() {
+    this.props.loadTopics();
+  }
+  
   render() {
     const { page } = this.state;
 
@@ -38,27 +44,37 @@ class StageForm extends Component {
         {
           page === 1 && 
           <FirstPage 
-            nextPage={this.nextPage} />
+            nextPage={ this.nextPage } />
         }
         {
           page === 2 &&
           <SecondPage
-            previousPage={this.previousPage}
-            nextPage={this.nextPage} />
+            nextPage={ this.nextPage }
+            previousPage={ this.previousPage } 
+            topicsList={ this.props.topicsList }/>
         }
         {
           page === 3 &&
           <ThirdPage
-            previousPage={this.previousPage}
-            onSubmit={this.handleSubmit} />
+            previousPage={ this.previousPage }
+            onSubmit={ this.handleSubmit } />
         }
       </div>
     );
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    topicsList : state.topicsList
+  }
+}
+
 const mapDispatchToProps = dispatch => {
   return {
+    loadTopics : ()  => {
+      dispatch(loadTopics());
+    },
     addNewResource : info => {
       dispatch(addNewResource(info));
     }
@@ -66,6 +82,6 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(StageForm)

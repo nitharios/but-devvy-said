@@ -8,6 +8,7 @@ export const loadTopics = () => {
     return Axios.get(topicsURL)
     .then(response => {
       const data = response.data;
+            
       dispatch({
         type : LOAD_TOPICS,
         topicsList : data

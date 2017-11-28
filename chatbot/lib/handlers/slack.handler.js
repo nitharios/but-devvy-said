@@ -10,6 +10,7 @@ const { additional_query,
         error_msgs,
         greetings, 
         missing_info,
+        other_msgs,
         query_type,
         thanks_reply,
         timeout_msgs,
@@ -44,7 +45,7 @@ module.exports = (function() {
       });
 
     } else {
-      bot.replyWithTyping(message, `${randomResponse(missing_info)}`);
+      bot.replyWithTyping(message, `${randomResponse(other_msgs)}`);
     }
   }
 
