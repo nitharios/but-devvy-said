@@ -17,9 +17,11 @@ export const loadTopics = () => {
     })
     .catch(err => {
       console.log(err);
-      return;
     });
+
   };
+
+  
 };
 
 

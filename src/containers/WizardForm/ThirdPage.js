@@ -1,6 +1,12 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+
+/*COMPONENTS*/
+import renderFormField from './renderFormField';
+import textField from './textField';
 import validate from '../../components/formValidation';
+import TagInput from '../TagInput';
+
 
 const types = ['Note', 'Example', 'link' , 'All 3'];
 
@@ -19,43 +25,43 @@ const ThirdPage = props => {
 
   return (
     <form onSubmit={handleSubmit}>
+
       <div>
-        <label>types</label>
-        <Field name="note-type" component={renderTypeSelector} />
+
+        <Field 
+          name="note" 
+          type="text"
+          label="Notes"
+          component={textField}
+          placeholder="Bullets Points Here.." 
+        />
+
+        <Field 
+          name="example" 
+          type="text" 
+          label="Examples"
+          component={textField} 
+          placeholder="Code Here.."
+        />
+
+        <Field 
+          name="link" 
+          label="Link"
+          component={({ label }) => { 
+            return (
+              <div>
+                <label>{label}</label>
+                <div>
+                  <input type="url" defaultValue="http://" />
+                </div>
+              </div>
+            );
+          }}/>
+      
       </div>
-      <div>
-        <label htmlFor="devleague-student">Devleague Student?</label>
-        <div>
-          <Field 
-            value="Yes"
-            name="student-yes"
-            id="student"
-            component="input"
-            type="checkbox"
-          /> Yes
-          <Field
-            value='No'
-            name="student-no"
-            id="student"
-            component="input"
-            type="checkbox"
-          /> No
-        </div>
-      </div>
-      <div>
-        <label>Notes</label>
-        <div>
-          <Field name="notes" component="textarea" placeholder="Notes" />
-        </div>
-        <label>Examples</label>
-        <div>
-          <Field name="Examples" component="textarea" placeholder="Examples" />
-        </div>
-        <label>Link</label> - one link only
-        <div>
-          <Field name="Links" component="textarea" placeholder="Links" />
-        </div>
-      </div>
+
+      <TagInput />
+
       <div>
         <button type="button" className="previous" onClick={previousPage} >
           Previous
@@ -64,6 +70,7 @@ const ThirdPage = props => {
           Submit
         </button>
       </div>
+
     </form>
   );
 };

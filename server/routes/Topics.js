@@ -11,17 +11,16 @@ const router = express.Router();
 router.route('/')
 .get((req, res) => { 
   return Topic.findAll({ 
-    include : [
+    /*include : [
       { 
         model : Resource,
         order : [[ 'createdAt', 'DESC' ]],
         limit : 5
       }
-    ],
-    order : [[ 'name' ]]
+    ],*/
+    order : [[ 'id' ]]
   })
   .then(topicsList => {
-    console.log(topicsList, ' TOPIC LIST $O@&Y%@$&(%@')
     return res.json(topicsList);
   })
   .catch(err => {

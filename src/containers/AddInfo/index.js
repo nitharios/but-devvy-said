@@ -5,7 +5,6 @@ import { addNewExample } from '../../actions/example.actions';
 import { addNewNote } from '../../actions/note.actions';
 import { addNewResource } from '../../actions/resource.actions';
 
-// import { WithContext as ReactTags } from 'react-tag-input';
 import Select from '../../components/select.component';
 
 const EXAMPLE = 'example';
@@ -40,8 +39,6 @@ class AddInfo extends Component {
     this.props.loadTopics();
   }
 
-  
-
   handleReset(e) {
     this.setState({
       model : '',
@@ -69,7 +66,8 @@ class AddInfo extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log('click on submit hit_!')
+    console.log('click on submit hit_!');
+
     let info = {};
     let { topic_id, title, format, 
           code, comment, 
@@ -131,8 +129,7 @@ class AddInfo extends Component {
   }
 
   render() {
-    let tags = [{topic : 'Javascript'}, {topic : 'Promises'}, {topic : 'Async'}];
-    let suggestions = 'Suggestions';
+    
     return(
       <div>
         <form 

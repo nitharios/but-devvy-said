@@ -23,29 +23,32 @@ router.route('/')
   });
 })
 .post((req, res) => {
-  const { title, topic_id } = req.body;
+  console.log(req.body);
   const data = req.body;
-console.log(data, " DATA FROM FORMS!!!!")
-  if (!title || !topic_id) {
-    return res.json(missing_key);
-  }
 
   return Resource.create({
-    title : title,
-    topic_id : topic_id,
+    //first page
+    firstName : data.firstName,
+    lastName : data.lastName,
+    email : data.email,
+
+    //second page
+    track : data.track,
+    cohort : data.cohort,
+
+    //third page
+    topics : data.topics,
+    note : data.note,
     example : data.example,
     link: data.link,
-    note : data.note,
-    cohort : data.cohort,
-    name : data.name
   })
   .then(newResource => {
     console.log('new resource added');
-    res.json(newResource);
+    return res.json(newResource);
   })
   .catch(err => {
     console.log('ERROR', err);
-    res.json(error_occurred);
+    return res.json(error_occurred);
     
   });
 });

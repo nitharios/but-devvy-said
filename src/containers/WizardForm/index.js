@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addNewResource } from '../../actions/resource.actions';
 import PropTypes from 'prop-types';
+
+/*CHILD COMPONENTS*/
 import FirstPage from './FirstPage';
 import SecondPage from './SecondPage';
 import ThirdPage from './ThirdPage';
 
-class StageForm extends Component {
+class WizardForm extends Component {
   constructor(props) {
     super(props);
 
@@ -28,6 +30,7 @@ class StageForm extends Component {
   }
 
   handleSubmit(data) {
+    console.log(data);
     this.props.addNewResource(data);    
   }
 
@@ -74,4 +77,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   null,
   mapDispatchToProps
-)(StageForm)
+)(WizardForm)
