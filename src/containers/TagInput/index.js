@@ -66,6 +66,7 @@ class TagInput extends Component {
       <div>
         <label className="TagInput-label">Please Provide Topics..</label>
         <ReactTags
+          name="tags"
           tags={tags}
           suggestions={suggestions}
           placeholder="Enter Topics.."

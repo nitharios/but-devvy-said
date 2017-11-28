@@ -17,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     tags : {
       type : DataTypes.ARRAY(DataTypes.STRING),
-      allowNull : false
+      allowNull : true
     },
     note : {
       type : DataTypes.TEXT, 

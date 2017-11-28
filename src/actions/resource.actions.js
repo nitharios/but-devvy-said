@@ -6,6 +6,7 @@ const resourcesURL = '/api/resources';
 // send query to back end 
 // expect a parsed response back
 export const addNewResource = info => {
+  console.log(info);
   return dispatch => {
     return Axios.post(resourcesURL, info)
     .then(response => {

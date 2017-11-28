@@ -3,6 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import formField from '../../components/formfield.component';
 import validate from '../../components/validate.component';
 
+import TagInput from '../TagInput';
 
 /*STYLES*/
 import './ThirdPage.css';
@@ -36,6 +37,7 @@ const ThirdPage = props => {
           name="link" 
           type="text" />
       </div>
+      <TagInput />
 
       <div className="ThirdPage-submit">
         <input 

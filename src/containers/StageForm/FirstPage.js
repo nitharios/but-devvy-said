@@ -3,14 +3,12 @@ import { Field, reduxForm } from 'redux-form';
 import formField from '../../components/formfield.component';
 import validate from '../../components/validate.component';
 
-import TagInput from '../TagInput';
-
 const FirstPage = props => {
   const { nextPage } = props;
 
   return (
     <form onSubmit={ nextPage }> 
-      <TagInput />
+      
       <div>
         <Field
           component={ formField }
