@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addNewResource } from '../../actions/resource.actions';
-import PropTypes from 'prop-types';
 import FirstPage from './FirstPage';
 import SecondPage from './SecondPage';
 import ThirdPage from './ThirdPage';
@@ -20,15 +19,15 @@ class StageForm extends Component {
   } 
 
   nextPage() {
-    this.setState({page : this.state.page + 1});
+    this.setState({ page : this.state.page + 1 });
   }
 
   previousPage() {
-    this.setState({page : this.state.page - 1});
+    this.setState({ page : this.state.page - 1 });
   }
 
-  handleSubmit(data) {
-    this.props.addNewResource(data);    
+  handleSubmit(info) {    
+    this.props.addNewResource(info);    
   }
 
   render() {
@@ -36,37 +35,32 @@ class StageForm extends Component {
 
     return (
       <div className="stage-form">
-       
         {
-          page === 1 && <FirstPage nextPage={this.nextPage} />
+          page === 1 && 
+          <FirstPage 
+            nextPage={this.nextPage} />
         }
-
         {
           page === 2 &&
           <SecondPage
             previousPage={this.previousPage}
-            nextPage={this.nextPage}
-          />
+            nextPage={this.nextPage} />
         }
-
         {
           page === 3 &&
           <ThirdPage
             previousPage={this.previousPage}
-            onSubmit={this.handleSubmit}
-          />
+            onSubmit={this.handleSubmit} />
         }
-
       </div>
     );
   }
 }
-//end component
 
 const mapDispatchToProps = dispatch => {
   return {
-    addNewResource : data => {
-      dispatch(addNewResource(data));
+    addNewResource : info => {
+      dispatch(addNewResource(info));
     }
   }
 }

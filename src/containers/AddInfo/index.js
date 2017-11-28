@@ -131,8 +131,6 @@ class AddInfo extends Component {
   }
 
   render() {
-    let tags = [{topic : 'Javascript'}, {topic : 'Promises'}, {topic : 'Async'}];
-    let suggestions = 'Suggestions';
     return(
       <div>
         <form 

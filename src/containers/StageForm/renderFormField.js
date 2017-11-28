@@ -1,12 +1,11 @@
 import React from 'react';
 
 // Handles Component rendering for fields on forms
-
-const renderFormField = ({ input, label, type, meta: { touched, error } }) => (
+const renderFormField = ({ input, label, placeholder, type, meta: { touched, error } }) => (
   <div>
-    <label>{label}</label>
+    <div>{ label }</div>
     <div>
-      <input { ...input } placeholder={ label } type={ type } />
+      <input { ...input } placeholder={ placeholder } type={ type } />
       { touched && error && <span>{ error }</span>}
     </div>
   </div>

@@ -7,7 +7,7 @@ const resourcesURL = '/api/resources';
 // expect a parsed response back
 export const addNewResource = info => {
   return dispatch => {
-    return Axios.post(resourcesURL)
+    return Axios.post(resourcesURL, info)
     .then(response => {
       const data = response.data;
 

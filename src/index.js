@@ -4,7 +4,6 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import reducers from './reducers';
 import thunk from 'redux-thunk';
-import { reducer as reduxFormReducer } from 'redux-form'; // !! may change
 
 import {
   BrowserRouter as Router,
@@ -19,7 +18,6 @@ import StageForm from './containers/StageForm';
 /* Components */
 import About from './components/about.component';
 import NavBar from './components/navbar.component';
-import showResults from './components/showResults.component';
 
 /* library files */
 import registerServiceWorker from './lib/registerServiceWorker';
@@ -44,12 +42,11 @@ ReactDOM.render(
           <NavBar />
         </header>
 
-          <Route exact path="/" component={ App } />
-          <Route path="/about" component={ About } />
-          <Route path="/addinfo" component={ AddInfo } />
-          <Route path="/stageform" component={ StageForm } />
+        <Route exact path="/" component={ App } />
+        <Route path="/about" component={ About } />
+        <Route path="/addinfo" component={ AddInfo } />
+        <Route path="/stageform" component={ StageForm } />
         
-
       </div>
     </Router>
   </Provider>,
