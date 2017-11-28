@@ -34,6 +34,8 @@
     "jest": "20.0.4",
     "node-wit": "^4.3.0",
     "object-assign": "4.1.1",
+    "passport": "^0.4.0",
+    "passport-github2": "^0.1.11",
     "pg": "^7.4.0",
     "pg-hstore": "^2.3.2",
     "postcss-flexbugs-fixes": "3.2.0",
