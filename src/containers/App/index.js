@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+// import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { Accordion, AccordionItem } from 'react-sanfona';
 import { query } from '../../actions/query.actions';
 import ListBuilder from '../../components/listbuilder.component';
 
@@ -81,32 +82,45 @@ class App extends Component {
           : <div className="response-box">Sorry! I don't have any info on that</div>
         }
 
-        <Tabs id="information-box" defaultIndex={ 0 }>
-          <TabList id="tab-list">
-            <Tab className="information-tab">Examples</Tab>
-            <Tab className="information-tab">Notes</Tab>
-            <Tab className="information-tab">Links</Tab>
-          </TabList>
-          
-          <TabPanel className="information">
+        <Accordion 
+          allowMultiple={ true }
+          easing="ease"
+          className="information-box" >
+          <AccordionItem 
+            className="information"
+            easing="ease"
+            expandedClassName="expanded"
+            titleClassName="information-title"
+            title="Examples" >
             <ListBuilder
               informationList={ this.props.resourcesList }
               label="Examples"
               type="example" />
-          </TabPanel>
-          <TabPanel className="information">
+          </AccordionItem>
+          <AccordionItem 
+            className="information"
+            easing="ease"
+            expandedClassName="expanded"
+            titleClassName="information-title"
+            title="Notes" >
             <ListBuilder
               informationList={ this.props.resourcesList }
               label="Notes"
               type="note" />
-          </TabPanel>
-          <TabPanel className="information">
+          </AccordionItem>
+          <AccordionItem
+            className="information"
+            easing="ease"
+            expandedClassName="expanded"
+            titleClassName="information-title"
+            title="Links" >
             <ListBuilder
               informationList={ this.props.resourcesList }
               label="Links"
               type="link" />
-          </TabPanel> 
-        </Tabs>
+          </AccordionItem>
+        </Accordion>
+
       </div>
     );
   }
