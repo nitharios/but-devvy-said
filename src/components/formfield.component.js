@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Handles Component rendering for fields on forms
-const renderFormField = ({ input, label, placeholder, type, meta: { touched, error } }) => (
+export default ({ input, label, placeholder, type, meta: { touched, error } }) => (
   <div>
     <div>{ label }</div>
     <div>
@@ -10,5 +10,3 @@ const renderFormField = ({ input, label, placeholder, type, meta: { touched, err
     </div>
   </div>
 );
-
-export default renderFormField;

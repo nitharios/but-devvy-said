@@ -1,15 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import renderFormField from './renderFormField';
-import validate from '../../components/validation.component';
-
-const renderError = ({ meta: { touched, error } }) => {
-  return(
-    touched && error 
-    ? <div>{error}</div> 
-    : false
-  )
-}
+import formField from '../../components/formfield.component';
+import validate from '../../components/validate.component';
 
 const SecondPage = props => {
   const { nextPage, previousPage, submitting, pristine } = props;
@@ -18,13 +10,13 @@ const SecondPage = props => {
     <form onSubmit={ nextPage }>
       <div>
         <Field
-          component={ renderFormField }
+          component={ formField }
           label="Title"
           name="title"
           placeholder="Input a title"
           type="text" />
         <Field
-          component={ renderFormField }
+          component={ formField }
           label="Topic"
           name="topic"
           placeholder="Choose a topic"

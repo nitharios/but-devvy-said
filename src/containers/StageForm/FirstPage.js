@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import validate from '../../components/validation.component';
-import renderFormField from './renderFormField';
+import formField from '../../components/formfield.component';
+import validate from '../../components/validate.component';
 
 const FirstPage = props => {
   const { nextPage } = props;
@@ -10,13 +10,13 @@ const FirstPage = props => {
     <form onSubmit={ nextPage }> 
       <div>
         <Field
-          component={ renderFormField }
+          component={ formField }
           label="Name"
           name="name"
           placeholder="(optional)"
           type="text" />
         <Field
-          component={ renderFormField }
+          component={ formField }
           label="Cohort"
           name="cohort"
           placeholder="(optional)"
