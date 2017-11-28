@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import validate from '../../components/validation.component';
-import renderFormField from './renderFormField';
+import formField from '../../components/formfield.component';
+import validate from '../../components/validate.component';
 
 const ThirdPage = props => {
   const { handleSubmit, pristine, previousPage, submitting } = props;
@@ -24,7 +24,7 @@ const ThirdPage = props => {
           placeholder="Add your example here" 
           type="text" />
         <Field 
-          component={ renderFormField } 
+          component={ formField } 
           label="Link"
           name="link" 
           placeholder="Add your link here"
