@@ -1,13 +1,21 @@
 .TagInput-label {
-  margin: 5px;
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  font-size: 0.75em;
+  text-align: left;
+}
+.TagInput-label span {
+  margin-left: 5px;
 }
 
 /* ReactTags Styling */
 /* STYLES FOR THE MAIN DIV */
 div.tagsClass {
-  border: 2px dashed black;
+  border: 1px solid black;
+  width: 50%;
   position: relative;
-  margin: 5px;
+  margin: 0 auto;
 }
 
 
