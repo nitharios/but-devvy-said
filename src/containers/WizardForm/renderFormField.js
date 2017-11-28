@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const renderFormField = ({ placeholder, label, type, meta: { touched, error } }) => (
+const renderFormField = ({ label, placeholder, type, meta: { touched, error } }) => (
   <div>
     <label>{label}</label>
     <div>

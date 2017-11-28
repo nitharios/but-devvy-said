@@ -1,8 +1,10 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import renderFormField from './renderFormField';
-import validate from '../../components/formValidation';
 
+/*COMPONENTS*/
+import renderFormField from './renderFormField';
+import textField from './textField';
+import validate from '../../components/formValidation';
 import TagInput from '../TagInput';
 
 
@@ -24,35 +26,41 @@ const ThirdPage = props => {
   return (
     <form onSubmit={handleSubmit}>
 
-      <TagInput />
-
       <div>
 
         <Field 
           name="note" 
           type="text"
           label="Notes"
-          component={renderFormField}
-          placeholder="" 
+          component={textField}
+          placeholder="Bullets Points Here.." 
         />
 
         <Field 
           name="example" 
           type="text" 
           label="Examples"
-          component={renderFormField} 
+          component={textField} 
           placeholder="Code Here.."
         />
 
         <Field 
           name="link" 
-          type="url" 
           label="Link"
-          component={renderFormField}
-          placeholder="URL here.."
-        />
+          component={({ label }) => { 
+            return (
+              <div>
+                <label>{label}</label>
+                <div>
+                  <input type="url" defaultValue="http://" />
+                </div>
+              </div>
+            );
+          }}/>
       
       </div>
+
+      <TagInput />
 
       <div>
         <button type="button" className="previous" onClick={previousPage} >

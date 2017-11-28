@@ -27,12 +27,16 @@ router.route('/')
   const data = req.body;
 
   return Resource.create({
+    //first page
     firstName : data.firstName,
     lastName : data.lastName,
     email : data.email,
 
+    //second page
+    track : data.track,
     cohort : data.cohort,
-    
+
+    //third page
     topics : data.topics,
     note : data.note,
     example : data.example,

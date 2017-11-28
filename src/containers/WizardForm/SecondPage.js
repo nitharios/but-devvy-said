@@ -13,6 +13,20 @@ const SecondPage = props => {
     <form onSubmit={nextPage, previousPage}>
 
       <div>
+        <Field
+          name="track"
+          component={(props) => {
+            return (
+              <div>
+                <label>{props.label}</label><br></br>
+                <input type="radio" name="track" />Full-Time<br></br>
+                <input type="radio" name="track" />Part-Time<br></br>
+              </div>
+            );
+          }}
+          label="DevLeague Track"
+          placeholder=""
+        />
         <Field 
           name="cohort"
           type="number"
