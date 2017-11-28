@@ -10,7 +10,6 @@ export const addNewResource = info => {
     return Axios.post(resourcesURL, info)
     .then(response => {
       const data = response.data;
-
       dispatch({
         type : ADD_RESOURCE,
         newResource : data.newResource
