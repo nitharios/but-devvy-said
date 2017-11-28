@@ -245,6 +245,42 @@ body {
   }
 }
 
+#footer {
+  background-color: $accent-color;
+  width: 100%;
+  height: 50px;
+
+  #footer-box {
+    @include flex-style(row nowrap, space-around);
+    align-items: center;
+    width: 25%;
+    height: inherit;
+    margin: 0 auto;
+
+    .footer-item {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+    }
+
+    #instagram {
+      background-image: url('/assets/instagram.png');
+    }
+
+    #twitter {
+      background-image: url('/assets/twitter.png');
+    }
+
+    #devleague {
+      background-image: url('/assets/devleague_logo.webp');
+      width: 125px;
+    }
+  }
+}
+
 /* Highlighter styles  */
 /* Docco style used in http://jashkenas.github.com/docco/ converted by Simon Madine (@thingsinjars) */
 
