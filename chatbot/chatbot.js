@@ -21,7 +21,7 @@ module.exports = (function() {
   });
 
   // create RTM connection
-  (function start() {
+  function start() {
     slackBot.startRTM((err, bot, payload) => {
       if (err) {
         slackController.log('ERROR! Could not connect to Slack');
@@ -31,7 +31,9 @@ module.exports = (function() {
 
       slackController.log('Slack connection established');
     }); 
-  })();
+  }
+
+  start();
 
   // activates when @DevvyCho is used
   // sends message to Wit to be deciphered
