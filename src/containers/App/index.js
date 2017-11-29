@@ -88,7 +88,6 @@ class App extends Component {
           <AccordionItem
             className="information"
             easing="ease"
-            expanded={ true }
             expandedClassName="expanded"
             titleClassName="information-title"
             title="Examples" >
