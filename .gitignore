@@ -38,6 +38,7 @@ jspm_packages/
 server/config/
 server/lib/setup.sql
 server/scripts
+server/config/config.js
 
 # Typescript v1 declaration files
 typings/
