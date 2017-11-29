@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 
-router.route()
-.get('/', (req, res, next) => {
+
+router.get('/login', (req, res) => {
   console.log('IN THE LOGIN ROUTE')
   res.send('Go back and register!');
 });
