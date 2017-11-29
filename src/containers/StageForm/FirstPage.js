@@ -3,13 +3,16 @@ import { Field, reduxForm } from 'redux-form';
 import formField from '../../components/formfield.component';
 import validate from '../../components/validate.component';
 
+/*STYLES*/
+import './FirstPage.css';
+
 const FirstPage = props => {
   const { nextPage } = props;
 
   return (
-    <form onSubmit={ nextPage }> 
+    <form className="FirstPage" onSubmit={ nextPage }> 
       
-      <div>
+      <div className="FirstPage-fields">
         <Field
           component={ formField }
           label="Name"
@@ -23,7 +26,7 @@ const FirstPage = props => {
           placeholder="(optional)"
           type="number" />
       </div>
-      <div>
+      <div className="FirstPage-next">
         <input 
           type="submit" 
           value="Next" />
