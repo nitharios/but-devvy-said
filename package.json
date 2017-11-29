@@ -48,6 +48,7 @@
     "react-dev-utils": "^4.2.1",
     "react-dom": "^16.1.1",
     "react-highlight": "briancappello/react-highlight#react-v16-compiled",
+    "react-quill": "^1.2.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-sanfona": "^1.0.6",

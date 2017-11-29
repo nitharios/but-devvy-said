@@ -1,10 +1,9 @@
 .CodeEditor {
-  border: 2px dashed black;
+  position: relative;
 }
 
 .CodeEditor-options {
   margin: 15px;
-  border: 1px solid black;
   text-align: center;
 }
 
