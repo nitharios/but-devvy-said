@@ -3,16 +3,6 @@ import Highlight from 'react-highlight';
 
 export default ({ informationList, type, label }) => {
   
-  // if (informationList.length < 1) {
-  //   return(
-  //     <div id={ type }>
-  //       <h3 className="resource-title">
-  //         Sorry! No { label } exists!
-  //       </h3>
-  //     </div>
-  //   )
-  // }
-
   return(    
     <div id={ type }>
       { 
