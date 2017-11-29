@@ -15,6 +15,8 @@ module.exports = (function() {
       // sends the received message to Wit
       return client.message(message.text)
       .then(data => {
+        console.log(data);
+        
         // possible returns on a message
         message.entities = data.entities;
         message.info_type = message.entities.info_type;
