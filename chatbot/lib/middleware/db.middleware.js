@@ -3,10 +3,15 @@ const { Topic, Resource } = db;
 
 module.exports = (bot, message, next) => {
   // if a db_query has been recognized query db with it
-  if (message.db_query) {
+  if (message.db_query) {    
     // need to handle the case where there are multiple queries
     let topicName = message.db_query[0].value;
-    let limit = message.number[0].value || 5;
+    let limit = 5;
+
+    if (message.number) {
+      limit = message.number[0].value;
+    }
+    
     // find a topic where name is topicName and include only the following attributes    
     return Topic.findOne({
       where : { name : topicName },
@@ -20,6 +25,8 @@ module.exports = (bot, message, next) => {
     })
     .then(topicInfo => {
       // if no match, singleTopic === null
+      console.log('HARNHTSENRAHTSIERANT', topicInfo);
+      
       message.results = topicInfo;
       next();
     })
