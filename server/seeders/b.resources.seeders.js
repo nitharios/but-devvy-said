@@ -25,7 +25,15 @@ module.exports = {
 
         note : 'An algorithm is a well-defined procedure, or series of steps that allows a computer to solve a problem. It is a lot like a recipe, involving ingredients, or inputs, a series of steps to follow, and a final result, or output.',
 
-        example : 'var colours = new Array ("Black", "Blue", "Brown", "Green", "Pink", "Red", "White", "Yellow"); var numbersHalf = new Array(); for (var i = 1; i < 2500; i++) { numbersHalf.push(i); }; var numbersFull = new Array(); for (var i = 1; i < 5000; i++) { numbersFull.push(i); };',
+        example : `var colours = new Array ("Black", "Blue", "Brown", "Green", "Pink", "Red", "White", "Yellow"); 
+var numbersHalf = new Array(); 
+for (var i = 1; i < 2500; i++) { 
+  numbersHalf.push(i); 
+}; 
+var numbersFull = new Array(); 
+for (var i = 1; i < 5000; i++) { 
+  numbersFull.push(i); 
+};`,
 
         link : 'http://bit.ly/2zOrmnm', //Khan Academy 'What is an algorithm?'
         createdAt : new Date(),
@@ -76,7 +84,10 @@ module.exports = {
         note : 'Synchronous programming is like being in line to buy a movie ticket. You cannot buy yours until everyone in front of you has bought theirs. In asynchronous programming, it is like waiting for your food at a sit-down restaurant. Other people order their food, but you can also order your food. You do not have to wait for them to receive their food and finish eating before you order. SetTimeout is the simplest example of asynchronous programming.',
 
         example : `console.log("Hello."); 
-setTimeout(function() { console.log("Goodbye!"); }, 2000); console.log("Hello again!");`,
+setTimeout(function() { 
+  console.log("Goodbye!"); 
+}, 2000); 
+console.log("Hello again!");`,
 
         link : 'http://bit.ly/2sTnrRl', //PluralSight
         createdAt : new Date(),
@@ -123,12 +134,6 @@ processUserInput(greeting);`,
         updatedAt : new Date(),
         topic_id : 4
       },
-      //started here... 7 done
-      //started here... 7 done
-      //started here... 7 done
-      //started here... 7 done
-      //started here... 7 done
-
       {
         name : 'Ella',
         cohort : 19,
@@ -200,7 +205,7 @@ var x; // Declare x`,
         topic_id : 42
       },
       {
-        name : 'Virgie',
+        name : 'Virgi',
         cohort : 19,
         title : 'What does the fat arrow do?',
         tags : ['arrow function', 'context', 'this', 'bind'],
@@ -210,7 +215,9 @@ var x; // Declare x`,
 return x * y; 
 };
 
-var multiply = (x, y) => { return x * y };`,
+var multiply = (x, y) => { 
+  return x * y 
+};`,
 
         link : 'http://bit.ly/2AdWQlV', //SitePoint
         createdAt : new Date(),
@@ -222,7 +229,7 @@ var multiply = (x, y) => { return x * y };`,
         cohort : 15,
         title : 'What is a closure?',
         tags : ['closures', 'variables', 'scope'],
-        note : 'A closure is an inner function that has access the outer, or enclosing, function variables. It is the Javascript way of imitating private variables. ,
+        note : 'A closure is an inner function that has access the outer, or enclosing, function variables. It is the Javascript way of imitating private variables.',
         example : `var G = 'G'; 
 // Define a function and create a closure 
 function functionA() { 
@@ -442,16 +449,16 @@ console.log(count); //Reference Error: count is not defined`,
         tags : ['closure', 'scope', 'private variable'],
         note : 'A closure is an inner function. A function defined within a function that has access to the outer function variables, its own variables, as well as global variables. It is the Javascript way of enforcing public and private methods or variables.',
 
-        example : `a = (function () { 
-    var privateFunction = function () { 
-        alert('hello');
-    }
+        example : `var a = (function () { 
+  var privateFunction = function () { 
+    alert('hello');
+  }
 
-    return {
-        publicFunction : function() { 
-            privateFunction();
-        }
-    } 
+  return {
+    publicFunction : function() { 
+      privateFunction();
+    }
+  } 
 })();`,
 
         link : '',
@@ -467,17 +474,19 @@ console.log(count); //Reference Error: count is not defined`,
         note : 'Understanding closures will make you a much better coder very quickly. It is a very powerful tool. Here is an example from class today.',
 
         example : `function outer() { 
-    var counter = 0; 
-    function inner() { 
-        alert(counter); 
-        counter++; 
-    } 
-    return inner;
+  var counter = 0; 
+  function inner() { 
+    alert(counter); 
+    counter++; 
   } 
-    var x = outer(); //x is a reference to inner 
-    x(); //alerts 0 
-    x(); //alerts 1 
-    x(); //alerts 2 `,
+  
+  return inner;
+}
+ 
+var x = outer(); //x is a reference to inner 
+x(); //alerts 0 
+x(); //alerts 1 
+x(); //alerts 2 `,
 
         link : '',
         createdAt : new Date(),

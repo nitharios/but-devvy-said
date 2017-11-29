@@ -611,8 +611,6 @@ module.exports = {
         name : 'yield'
       }
 
-
-
     ], {});
 
   },
