@@ -3,14 +3,15 @@ import { Field, reduxForm } from 'redux-form';
 import formField from '../../components/formfield.component';
 import validate from '../../components/validate.component';
 
-
+/*STYLES*/
+import './SecondPage.css';
 
 const SecondPage = props => {
   const { nextPage, previousPage, pristine, submitting, topicsList } = props;
 
   return (
-    <form onSubmit={ nextPage }>
-      <div>
+    <form className="SecondPage" onSubmit={ nextPage }>
+      <div className="SecondPage-fields">
         <Field
           component={ formField }
           label="Title"
@@ -33,7 +34,8 @@ const SecondPage = props => {
           }) }
         </Field>
       </div>
-      <div>
+
+      <div className="SecondPage-submit">
         <input 
           disabled={ pristine || submitting }
           type="submit" 
@@ -43,6 +45,7 @@ const SecondPage = props => {
           onClick={ previousPage }
           value="Back" />
       </div>
+      
     </form>
   );
 };

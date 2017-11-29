@@ -1,0 +1,44 @@
+.FirstPage {
+  border: 2px dashed black;
+  position: relative;
+}
+
+/* TOP HALF, NAME AND COHORT */
+.FirstPage-fields {
+  border: 1px solid blue;
+  width: 50%;
+  margin: 5px;
+  padding: 5px;
+  position: relative;
+  margin: 0 auto;
+}
+  .FirstPage-fields label {
+    border: 1px solid green;
+  }
+  .FirstPage-fields input {
+    border: 1px solid red;
+    padding: 2px;
+  }
+
+/* BOTTOM HALF, NEXT BUTTON */
+.FirstPage-next {
+  border: 1px solid magenta;
+  width: 50%;
+  margin: 5px;
+  padding: 5px;
+  margin: 0 auto;
+  text-align: center;
+}
+  .FirstPage-next input {
+    border: 1px solid black;
+    font-size: 1.25em;
+    border-radius: 3px;
+    margin: 5px;
+    padding: 2px;
+    width: 20%;
+  }
+  .FirstPage-next input:hover {
+    cursor: pointer;
+    font-weight: bold;
+  }
+

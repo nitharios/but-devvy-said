@@ -60,8 +60,6 @@ class TagInput extends Component {
       return i.name;
     }); //array of strings, only the 'name' property of our topicsList
 
-    console.log(tags);
-
     return (
       <div>
         <div className="TagInput-label"><span>Please Provide Topics..</span></div>

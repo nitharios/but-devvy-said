@@ -1,9 +1,8 @@
 const validate = values => {
-  let title =values.title;
-  let topic = values.topic;
+  let title = values.title;
 
   const errors = {};
-  console.log(values, 'the values <---')
+
   if(!values.title) {
     errors.title = 'required';
   
