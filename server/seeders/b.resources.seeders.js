@@ -401,7 +401,7 @@ function() {
         name : 'Katherine',
         cohort : 17,
         title : 'Why use an immediately invoked function expression?',
-        tags : ['iife', 'closure', 'scope'];
+        tags : ['iife', 'closure', 'scope'],
         note : 'The main reason to use an IIFE is to avoid polluting the global namespace. The variables used inside the IIFE are not visible outside its scope.',
 
         example : `(function () { 
@@ -419,7 +419,7 @@ console.log(count); //Reference Error: count is not defined`,
         cohort : 19,
         title : 'What is a let?',
         tags : ['let', 'scope', 'variable'],
-        note : 'let declares a variable able to be re-assigned within its block scope, making it ideal for loops.'
+        note : 'let declares a variable able to be re-assigned within its block scope, making it ideal for loops.',
 
         example : '',
 
@@ -482,11 +482,11 @@ console.log(count); //Reference Error: count is not defined`,
   
   return inner;
 }
- 
+
 var x = outer(); //x is a reference to inner 
 x(); //alerts 0 
 x(); //alerts 1 
-x(); //alerts 2 `,
+x(); //alerts 2`,
 
         link : '',
         createdAt : new Date(),
