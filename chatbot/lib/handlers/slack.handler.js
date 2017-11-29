@@ -1,8 +1,8 @@
 const stringBuilder = require('../helpers/stringBuilder');
 const user = require('../responses/user.responses');
-const EXAMPLES = 'examples';
-const NOTES = 'notes';
-const LINKS = 'links';
+const EXAMPLES = 'example';
+const NOTES = 'note';
+const LINKS = 'link';
 const RESPONSES = require('../responses/slack.responses');
 const { additional_query,
         affirmations,
