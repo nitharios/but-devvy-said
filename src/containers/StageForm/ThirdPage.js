@@ -4,7 +4,6 @@ import formField from '../../components/formfield.component';
 import validate from '../../components/validate.component';
 
 import CodeEditor from '../CodeEditor';
-import TextEditor from '../TextEditor';
 import TagInput from '../TagInput';
 
 /*STYLES*/
