@@ -10,7 +10,7 @@ module.exports = function(topicName, infoType, infoArr) {
 
   if (infoArr.length > 0) {
     infoString = infoArr.reduce((previous, current) => {
-      if (!current[infoType]) return;
+      if (!current[infoType]) return previous;
 
       return previous.concat(`${current.title}\n${current[infoType]}\n\n`);
     }, '');
