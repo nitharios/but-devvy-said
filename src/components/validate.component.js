@@ -1,10 +1,13 @@
 const validate = values => {
-  const errors = {};
+  let title =values.title;
+  let topic = values.topic;
 
+  const errors = {};
+  console.log(values, 'the values <---')
   if(!values.title) {
     errors.title = 'required';
   
-  } else if (values.title.length <= 5) {
+  } else if (title.length <= 5 ) {
     errors.title = 'too short';
   }
 
