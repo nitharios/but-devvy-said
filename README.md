@@ -6,7 +6,7 @@ At her core, Devvy relies on a natural language processor (NLP) called [Wit.ai](
 
 We used [Botkit](https://www.botkit.ai/) to build Devvy a body and integrate her in Slack and ther browser.
 
-The inspiration for Devvy is [here](https://github.com/devleague/Devvy-Cho)
+The inspiration for Devvy is [here](https://github.com/devleague/Devvy-Cho).
 
 ## See her in action
 <!-- Need to add website link -->
