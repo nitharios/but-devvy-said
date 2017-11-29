@@ -19,22 +19,22 @@ To use all of Devvy's features on your local machine, you will also need a .env 
 1. Fork and clone this project
 2. Change your directory to the project folder
 3. Run
-   ```
+   ```bash
     npm install
    ```
 4. Run
-   ```
+   ```bash
     cp .env-sample .env
    ```
 5. Edit .env
 6. Run
-   ```
+   ```bash
     npm start
    ```
-   ```
+   ```bash
     npm run devvy
    ```
-   ```
+   ```bash
     npm run nigel
    ```
 
