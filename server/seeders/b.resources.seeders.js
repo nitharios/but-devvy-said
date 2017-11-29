@@ -11,7 +11,7 @@ module.exports = {
         title : 'What is abstraction in computer science?',
         tags : ['abstraction', 'complexity', 'computer science'],
         note : 'Abstraction is a technique for arranging the complexity of computer systems. It also has to deal with suppressing the most complex details so that a person can interact with a system more straightforwardly.',
-        example : '', //null
+        example : null, //null
         link : 'http://bit.ly/2AdTz6r', //YouTube 'Computer Science Concept - Abstraction'
         createdAt : new Date(),
         updatedAt : new Date(),
@@ -48,7 +48,7 @@ for (var i = 1; i < 5000; i++) {
 
         note : 'AngularJS is an extremely powerful framework that front-end web developers rely on to create the interactive aspects of a website. AngularJS uses a very modular approach, and gives developers all they need to set up the front-end of an application. It mainly involves the use of controllers, services, directives, and expressions.',
 
-        example : '', //null
+        example : null, //null
 
         link : 'http://bit.ly/2AgD4qF', //YouTube JsWiz 'What is AngularJS?'
         createdAt : new Date(),
@@ -158,7 +158,7 @@ var x; // Declare x`,
         tags : ['object oriented programming', 'paradigm', 'objects'],
         note : 'Objected Oriented Programming, or OOP, is a programming paradigm. Before OOP, most programs were simply a procedural list of instructions. The essence of OOP is the intricate interaction of many objects, each with state and behavior. Classes or prototypes generate, or initialize these objects, as well as define their structure much like a blueprint.',
 
-        example : '',
+        example : null,
 
         link : 'http://bit.ly/2AE3sLq', //StackExchange -- 'OOP for the non-technical'
         createdAt : new Date(),
@@ -249,7 +249,7 @@ function functionA() {
 
 functionA();`,
 
-        link : '',
+        link : null,
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 15
@@ -261,7 +261,7 @@ functionA();`,
         tags : ['code editor', 'developer', 'syntax'],
         note : 'The most important part of a good editor is workflow and organization. Things should be easy to find and intuitive. It should also have good predictive ability, it should guess well as to what you are trying to do, what you tried to do, and what you will do. It should also do it behind the scenes.',
 
-        example : '',
+        example : null,
 
         link : 'http://bit.ly/2Bnlwpv', //Quora
         createdAt : new Date(),
@@ -275,7 +275,7 @@ functionA();`,
         tags : ['objects', 'pass by reference', 'variables'],
         note : 'Variables that are assigned a non-primitive value are given a reference to that value. It is like passing a remote control pointing to that non-primitive into the variable. The remote control points to the memory location.',
 
-        example : '',
+        example : null,
         link : 'http://bit.ly/2AcyVmS',
         createdAt : new Date(),
         updatedAt : new Date(),
@@ -293,7 +293,7 @@ for (var i = 1; i <= 50; i++) {
 } 
 alert("Sum = " + sum); // => Sum = 1275`,
 
-        link : '',
+        link : null,
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 143
@@ -305,7 +305,7 @@ alert("Sum = " + sum); // => Sum = 1275`,
         tags : ['javascript', 'loosely typed language', 'scripting language'],
         note : 'A loosely typed language is a language where you do not have to declare types for your variables. The Javascript engine will figure out the type for you. This is especially handy for a set of three or more function parameters.',
 
-        example : '',
+        example : null,
 
         link : 'http://bit.ly/2AjBKR2', //Quora
         createdAt : new Date(),
@@ -319,7 +319,7 @@ alert("Sum = " + sum); // => Sum = 1275`,
         tags : ['github', 'merge conflict', 'git terminal'],
         note : 'A merge conflict happens when integrating another branch into your current working branch. Often times, one person will delete a file, while the other person has modified it. Git cannot know what is correct, and this is when a merge conflict occurs.',
 
-        example : '',
+        example : null,
 
         link : 'http://bit.ly/2ieOnbS', //GitTower
         createdAt : new Date(),
@@ -333,7 +333,7 @@ alert("Sum = " + sum); // => Sum = 1275`,
         tags : ['github', 'merge conflict', 'merge', 'resolve'],
         note : 'Towards the end of our projects in DevLeague we learned a lot about the development process. Merges can be overwhelming, and I think the best thing to do is to constantly communicate with teammates at all phases. Plan ahead, and prevent those situations where you have markers covering hundreds of lines.',
 
-        example : '',
+        example : null,
 
         link : 'http://bit.ly/2BnzGXw', //SO -- 'how to resolve MC'
         createdAt : new Date(),
@@ -355,7 +355,7 @@ alert("Sum = " + sum); // => Sum = 1275`,
 var msg = require('./Messages.js'); 
 console.log(msg);`,
 
-        link : '', 
+        link : null, 
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 116
@@ -409,7 +409,7 @@ function() {
 })(); 
 console.log(count); //Reference Error: count is not defined`,
 
-        link : '',
+        link : null,
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 37
@@ -421,7 +421,7 @@ console.log(count); //Reference Error: count is not defined`,
         tags : ['let', 'scope', 'variable'],
         note : 'let declares a variable able to be re-assigned within its block scope, making it ideal for loops.',
 
-        example : '',
+        example : null,
 
         link : 'http://bit.ly/1WF3VSB', //Medium
         createdAt : new Date(),
@@ -435,7 +435,7 @@ console.log(count); //Reference Error: count is not defined`,
         tags : ['variable', 'let', 'loops', 'block scope'],
         note : 'let is a version of var that is specifically block scoping. let should replace var only when var was already signaling block scoping. let improves scoping options in JS, but does not entirely replace var. var is still useful as a signal for variables that are used throughout a function.',
 
-        example : '',
+        example : null,
 
         link : 'http://bit.ly/2quX6rF', //JSTips
         createdAt : new Date(),
@@ -461,7 +461,7 @@ console.log(count); //Reference Error: count is not defined`,
   } 
 })();`,
 
-        link : '',
+        link : null,
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 15
@@ -488,7 +488,7 @@ x(); //alerts 0
 x(); //alerts 1 
 x(); //alerts 2`,
 
-        link : '',
+        link : null,
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 15

@@ -1,4 +1,7 @@
 module.exports = function(topicName, infoType, infoArr) {
+  console.log(infoArr);
+  
+
   const resultString = `Here are the available ${infoType}: \n`;
   const noResultString = `Sorry, no ${infoType} are available!`; 
   let infoString = '';
