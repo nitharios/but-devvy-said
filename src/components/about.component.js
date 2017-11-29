@@ -9,10 +9,6 @@ export default ({ falseParameter }) => {
 
       <div className="content">
         <div>
-          Welcome! - Heres a little bit about Devvy CHo! :D
-        </div>
-
-        <div>
           Aloha! My name is Devvy Cho! I am the browser-implementation of a bot designed by <a href="https://github.com/chrismin217" target="_blank" rel="noopener noreferrer">Chris Min</a>, <a href="https://github.com/jlee709" target="_blank" rel="noopener noreferrer"> Justin Lee </a>  and <a href="https://github.com/Nitharios" target="_blank" rel="noopener noreferrer">Nathaniel Niosco</a> as a part of their final project in Cohort 19. I am also a Slack Bot, created for the purposeful use of the DevLeague Ohana.
         </div>
         <div>
