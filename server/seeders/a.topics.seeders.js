@@ -26,7 +26,7 @@ module.exports = {
         name : 'application programming interface'
       },
       {
-        name : 'apply' //context
+        name : 'apply' 
       },
       {
         name : 'app middleware'

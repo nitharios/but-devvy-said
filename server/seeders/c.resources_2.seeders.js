@@ -155,14 +155,12 @@ for (var i = 0; i < 10; i++) {
         cohort : 14,
         title : 'How to use body parser in expressjs',
         tags : ['middleware', 'body parser', 'express'],
-        note : 'Body parser is a middleware that express uses. It is almost required, as it saves you a ton of work from having to manually tinker with the request and response objects.',
+        note : 'Body parser is a middleware that express uses. It saves you a ton of work from having to manually tinker with the request and response objects. It gives you easy access to req.body. You supply body parser as an argument the express app.use().',
 
-        example : `const express = require('express'); 
-const Diagram = require('./api/diagram/diagram.controller'); 
-const router = express.Router(); 
-router.post('saveUpdateDiagram', function(req, res) { 
-    console.log(req.body); 
-});`,
+        example : `app.use(bodyParser.json()); // for parsing application/json 
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing 
+application/x-www-form-urlencoded 
+app.use(multer()); // for parsing multipart/form-data `,
 
         link : null,
         createdAt : new Date(),
@@ -172,11 +170,11 @@ router.post('saveUpdateDiagram', function(req, res) {
       {
         name : 'Jon',
         cohort : 19,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
+        title : 'Why do we use body parser?',
+        tags : ['request', 'http', 'body parser', 'express'],
+        note : 'Body parser will extract the body portion of an incoming request and expose it on req.body. It becomes a lot easier to work with the data in the body of a long and complicated request object.',
+        example : null,
+        link : 'http://bit.ly/2BxQTyH',
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 19
@@ -184,11 +182,11 @@ router.post('saveUpdateDiagram', function(req, res) {
       {
         name : 'Jessica',
         cohort : 15,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
+        title : 'How is a boolean useful?',
+        tags : ['boolean', 'data type', 'variable'],
+        note : 'A boolean represents exactly one of two values: true or false. Sometimes, you will run into a situation where you need to represent yes/no, on/off, or true/false. These are when you should booleans.',
+        example : null,
+        link : 'http://bit.ly/2AH9lI1',
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 20
@@ -196,11 +194,21 @@ router.post('saveUpdateDiagram', function(req, res) {
       {
         name : 'Corey',
         cohort : 14,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
+        title : 'Difference between boolean object and boolean primitive',
+        tags : ['primitive', 'new', 'object', 'boolean'],
+        note : 'An object of which the value is not undefined or null, including a Boolean object whose value is false will actually evaluate to true when passed to a conditional.',
+
+        example : `var x = new Boolean(false); 
+if (x) { 
+    //this code will execute. 
+} 
+
+var x = false; 
+if (x) { 
+    //this code will NOT execute. 
+}`,
+
+        link : 'https://mzl.la/1zgVz8P', //MDN
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 20
@@ -208,11 +216,11 @@ router.post('saveUpdateDiagram', function(req, res) {
       {
         name : 'Jon',
         cohort : 19,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
+        title : 'What is a branch in GIT?',
+        tags : ['git terminal', 'branch', 'github'],
+        note : 'A branch is a tool integrated in GIT that allows anyone to work away from the main line of development. In our workflow, we use a branch for every feature we are working on. It also important to communicate in a team what you are working on.',
+        example : null,
+        link : 'http://bit.ly/2k7WGGJ', //GCM
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 21
@@ -220,11 +228,16 @@ router.post('saveUpdateDiagram', function(req, res) {
       {
         name : 'Jessica',
         cohort : 15,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
+        title : 'How do I create a branch in GitHub?',
+        tags : ['github', 'branch', 'workflow'],
+        note : `A branch is like a sticky note, or pointer that is pointing to a commit. It is very lightweight. You add a new branch with the 'git checkout -b your_branch' command.`,
+
+        example : `git checkout -b your_branch 
+git push -u origin your_branch 
+//show all branches 
+git branch`,
+
+        link : 'http://bit.ly/2wZqIRj',
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 21
@@ -232,11 +245,11 @@ router.post('saveUpdateDiagram', function(req, res) {
       {
         name : 'Corey',
         cohort : 14,
-        title : '',
-        tags : [],
-        note : '',
+        title : 'How can you use the break keyword?',
+        tags : ['keyword', 'break', 'continue', 'label'],
+        note : 'You can use the break keyword in a non-conditional as long as you provide a',
         example : '',
-        link : '',
+        link : 'https://mzl.la/1zi77Gd', //MDN
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 22
@@ -244,11 +257,16 @@ router.post('saveUpdateDiagram', function(req, res) {
       {
         name : 'Jon',
         cohort : 19,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
+        title : 'When to use the break keyword',
+        tags : ['break', 'loops', 'keyword'],
+        note : 'You can use the break keyword to jump out of a for loop, as well as a switch statement. A for loop is much more common than a switch statement, and I find break much more useful in this situation.',
+
+        example : `for (i = 0; i < 10; i++) { 
+    if (i === 3) { break; } 
+    text += "The number is " + i + "<br>"; 
+}`,
+
+        link : 'https://www.w3schools.com/js/js_break.asp', //W3 schools
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 22
@@ -256,11 +274,26 @@ router.post('saveUpdateDiagram', function(req, res) {
       {
         name : 'Jessica',
         cohort : 15,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
+        title : 'What kind of algorithm is bubble sort?',
+        tags : ['algorithm', 'sorting', 'efficiency', 'bubble sort'],
+        note : 'Bubble sort is based on the idea of repeatedly comparing pairs of adjacent elements and then swapping their positions if they exist in the wrong order. The complexity of bubble sort is O(n2), because the entire array needs to be iterated for every element.',
+
+        example : `void bubble_sort( int A[ ], int n ) { 
+    int temp; 
+    for(int k = 0; k< n-1; k++) { 
+        // (n-k-1) is for ignoring comparisons of elements which have already been compared in earlier iterations 
+        for(int i = 0; i < n-k-1; i++) { 
+            if(A[ i ] > A[ i+1] ) { 
+                // here swapping of positions is being done. 
+                temp = A[ i ]; 
+                A[ i ] = A[ i+1 ]; 
+                A[ i + 1] = temp; 
+            } 
+        } 
+    } 
+}`,
+
+        link : 'http://bit.ly/2yQg6Wx', //Geeks4Geeks
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 23
@@ -268,11 +301,13 @@ router.post('saveUpdateDiagram', function(req, res) {
       {
         name : 'Corey',
         cohort : 14,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
+        title : 'A working example of bubble sort.',
+        tags : ['bubble sort', 'sorting', 'computer science', 'big o notation'],
+        note : 'Bubble sort is an algorithm in which each pair of adjacent elements is compared and the elements are swapped if they are not in order. It is typically not suitable for large data sets.',
+
+        example : null,
+
+        link : 'http://bit.ly/2k2kzxY',
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 23
@@ -280,11 +315,28 @@ router.post('saveUpdateDiagram', function(req, res) {
       {
         name : 'Jon',
         cohort : 19,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
+        title : 'What is the call() method?',
+        tags : ['context', 'apply', 'bind', 'call'],
+        note : 'Call will invoke a function with the context that you supply yourself. It is slightly different from apply() in that it expects all parameters to be passed individually and not as an array.',
+
+        example : 
+`var pokemon = { 
+    firstName : 'Pika',
+    lastName : 'Chu ',
+    getPokeName : function() { 
+        var fullname = this.firstname + ' ' + this.lastname; 
+        return fullname; 
+    } 
+}; 
+
+var pokemonName = function(snack, hobby) {
+    console.log(this.getPokeName() + ' loves ' + snack + ' and ' + hobby);
+};
+
+pokemonName.call(pokemon,'sushi', 'algorithms'); // Pika Chu  loves sushi and algorithms
+pokemonName.apply(pokemon,['sushi', 'algorithms']); // Pika Chu  loves sushi and algorithms`,
+
+        link : 'http://bit.ly/2nebTqS',
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 24
@@ -292,11 +344,13 @@ router.post('saveUpdateDiagram', function(req, res) {
       {
         name : 'Jessica',
         cohort : 15,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
+        title : 'How to use the call() method to invoke a function.',
+        tags : ['function invocation', 'context', 'call'],
+        note : 'The call() method calls a function with a given this value and arguments provided individually. We call, or invoke, a function a explicityly specify what the this keyword should reference within the calling function. Apply, bind, and call are functions that are built-in to Javascript.',
+
+        example : null,
+
+        link : 'http://bit.ly/2zQ3qQV',
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 24
@@ -304,11 +358,23 @@ router.post('saveUpdateDiagram', function(req, res) {
       {
         name : 'Corey',
         cohort : 14,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
+        title : 'what is a callback function?',
+        tags : ['callback function', 'function', 'argument'],
+        note : 'A callback function is a function passed as an argument into another function. It is executed after another function has finished executing.',
+
+        example : 
+`function greeting(name) { 
+    alert('Hello ' + name); 
+} 
+
+function processUserInput(callback) { 
+    var name = prompt('Please enter your name.'); 
+    callback(name);
+}
+
+processUserInput(greeting);`,
+
+        link : 'http://bit.ly/2ikmQFO',
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 25
@@ -316,11 +382,12 @@ router.post('saveUpdateDiagram', function(req, res) {
       {
         name : 'Jon',
         cohort : 19,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
+        title : 'An analogy for callback functions.',
+        tags : ['function', 'analogy', 'example'],
+        note : 'Imagine you are expecting a package in a couple of days. The package is a gift for your neighbor. Therefore, once you get the package, you want it brought over to the neighbors. You are out of town, and so you leave instructions for your spouse. The receiving of the package is like an event, and the instructions to bring the package to the neighbors is the callback.',
+
+        example : null,
+        link : 'http://bit.ly/2BmwgEJ',
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 25
