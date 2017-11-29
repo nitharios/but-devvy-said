@@ -1,7 +1,7 @@
 'use strict';
 
-//RESOURCES 20 TOTAL
-//HAS TOPIC ID 16 - 25, 2 EACH
+//RESOURCES = 21 TOTAL
+//HAS TOPIC ID 16 - 25, 2 EACH (3 for callback function topid_id 25)
 //want to randomize date..
 
 module.exports = {
@@ -20,7 +20,7 @@ module.exports = {
         link : '',
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 16
+        topic_id : 16 //'big o notation'
       },
       {
         name : 'Jon',
@@ -38,7 +38,7 @@ module.exports = {
         link : 'http://bit.ly/1LdV93M',
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 16
+        topic_id : 16 //'big o notation'
       },
       {
         name : 'Jessica',
@@ -66,7 +66,7 @@ module.exports = {
         link : null,
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 17
+        topic_id : 17 //'bind'
       },
       {
         name : 'Corey',
@@ -94,7 +94,7 @@ boundClick(); //bound, 'this' is myButton`,
         link : 'http://bit.ly/2k6yNiP', //SO
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 17
+        topic_id : 17 //'bind'
       },
       {
         name : 'Jon',
@@ -125,7 +125,7 @@ console.log(avatar + "'s primary element is " + element);`,
         link : null,
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 18
+        topic_id : 18 //'block level scope'
       },
       {
         name : 'Jessica',
@@ -148,7 +148,7 @@ for (var i = 0; i < 10; i++) {
         link : 'http://bit.ly/2BvAryK',
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 18
+        topic_id : 18 //'block level scope'
       },
       {
         name : 'Corey',
@@ -165,7 +165,7 @@ app.use(multer()); // for parsing multipart/form-data `,
         link : null,
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 19
+        topic_id : 19 //'body parser'
       },
       {
         name : 'Jon',
@@ -177,7 +177,7 @@ app.use(multer()); // for parsing multipart/form-data `,
         link : 'http://bit.ly/2BxQTyH',
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 19
+        topic_id : 19 //'body parser'
       },
       {
         name : 'Jessica',
@@ -189,7 +189,7 @@ app.use(multer()); // for parsing multipart/form-data `,
         link : 'http://bit.ly/2AH9lI1',
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 20
+        topic_id : 20 //'boolean'
       },
       {
         name : 'Corey',
@@ -211,7 +211,7 @@ if (x) {
         link : 'https://mzl.la/1zgVz8P', //MDN
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 20
+        topic_id : 20 //'boolean'
       },
       {
         name : 'Jon',
@@ -223,7 +223,7 @@ if (x) {
         link : 'http://bit.ly/2k7WGGJ', //GCM
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 21
+        topic_id : 21 //'branch'
       },
       {
         name : 'Jessica',
@@ -240,7 +240,7 @@ git branch`,
         link : 'http://bit.ly/2wZqIRj',
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 21
+        topic_id : 21 //'branch'
       },
       {
         name : 'Corey',
@@ -252,7 +252,7 @@ git branch`,
         link : 'https://mzl.la/1zi77Gd', //MDN
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 22
+        topic_id : 22 //'break'
       },
       {
         name : 'Jon',
@@ -269,7 +269,7 @@ git branch`,
         link : 'https://www.w3schools.com/js/js_break.asp', //W3 schools
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 22
+        topic_id : 22 //'break'
       },
       {
         name : 'Jessica',
@@ -296,7 +296,7 @@ git branch`,
         link : 'http://bit.ly/2yQg6Wx', //Geeks4Geeks
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 23
+        topic_id : 23 //'bubble sort'
       },
       {
         name : 'Corey',
@@ -310,7 +310,7 @@ git branch`,
         link : 'http://bit.ly/2k2kzxY',
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 23
+        topic_id : 23 //'bubble sort'
       },
       {
         name : 'Jon',
@@ -339,7 +339,7 @@ pokemonName.apply(pokemon,['sushi', 'algorithms']); // Pika Chu  loves sushi and
         link : 'http://bit.ly/2nebTqS',
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 24
+        topic_id : 24 //'call'
       },
       {
         name : 'Jessica',
@@ -353,7 +353,7 @@ pokemonName.apply(pokemon,['sushi', 'algorithms']); // Pika Chu  loves sushi and
         link : 'http://bit.ly/2zQ3qQV',
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 24
+        topic_id : 24 //'call'
       },
       {
         name : 'Corey',
@@ -377,7 +377,7 @@ processUserInput(greeting);`,
         link : 'http://bit.ly/2ikmQFO',
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 25
+        topic_id : 25 //'callback function'
       },
       {
         name : 'Jon',
@@ -390,10 +390,34 @@ processUserInput(greeting);`,
         link : 'http://bit.ly/2BmwgEJ',
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 25
+        topic_id : 25 //'callback function'
+      },
+      {
+        name : 'Nathan',
+        cohort : 19,
+        title : 'Examples of callback functions.',
+        tags : ['function', 'callback function', 'higher-order function'],
+
+        note : 'A callback function is a function passed to another function as a parameter. It is called or invoked inside that other function. It is often called when some event happens.',
+
+        example : `function greeting(name) { 
+alert('Hello ' + name); 
+} 
+
+function processUserInput(callback) { 
+  var name = prompt('Please enter your name.'); 
+  callback(name); 
+}
+
+processUserInput(greeting);`,
+
+        link : 'http://bit.ly/1g8CNBy', //JSisSexy 'how to use CB functions'
+        createdAt : new Date(),
+        updatedAt : new Date(),
+        topic_id : 25 //'callback function'
       }
       //END
-      //TOTAL 20
+      //TOTAL 21
 
     ], {});
 
