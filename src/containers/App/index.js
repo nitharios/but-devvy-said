@@ -78,15 +78,14 @@ class App extends Component {
         </div>
 
         { this.props.singleTopic.name
-          ? <div className="response-box">This is the information I have!</div>
+          ? <div className="response-box">Click below to see the information I have!</div>
           : <div className="response-box">Sorry! I don't have any info on that</div>
         }
 
         <Accordion 
-          allowMultiple={ true }
           easing="ease"
           className="information-box" >
-          <AccordionItem 
+          <AccordionItem
             className="information"
             easing="ease"
             expandedClassName="expanded"
@@ -97,7 +96,7 @@ class App extends Component {
               label="Examples"
               type="example" />
           </AccordionItem>
-          <AccordionItem 
+          <AccordionItem
             className="information"
             easing="ease"
             expandedClassName="expanded"

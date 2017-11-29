@@ -1,6 +1,6 @@
 // theme colors
 $bg-color: #FFFFFF;
-$contrast-bg-color: #E6E8FA; // glitter
+$contrast-bg-color: #AFEEEE; // magnolia
 $primary-color: #008B8B; // dark cyan
 $accent-color:  #F8DE7E; // jasmine
 $contrast-accent: #FFFF66; // laser lemon
@@ -36,7 +36,6 @@ html {
 
 *, *:before, *:after {
   @include box-style(inherit);
-  font-family: "Redressed";
 }
 
 body {
@@ -52,6 +51,7 @@ body {
   background-color: $primary-color;
   align-items: center;
   height: 60px;
+  font-family: "Redressed";
 
   a {
     color: $bg-color;
@@ -71,7 +71,7 @@ body {
     width: 50px;
     height: 50px;
     border: 3px solid $bg-color;
-    border-radius: 100%;
+    border-radius: 50%;
     margin-left: 10%;
 
     &:hover {
@@ -108,6 +108,7 @@ body {
 #app, #about {
   width: 75%;
   margin: 30px auto;
+  font-family: "Redressed";
 
   #banner {
     background-image: url('/assets/DevvyCho.jpg');
@@ -126,7 +127,7 @@ body {
     height: 200px;
     margin: 0 auto;
     border: 5px solid $accent-color;
-    border-radius: 25%;
+    border-radius: 10px
   }
 
   #welcome-msg {
@@ -174,6 +175,7 @@ body {
     width: 100%;
     margin: 20px auto;
     text-align: center;
+    font-size: 25px;
   }    
 
   .information-box {
@@ -181,12 +183,8 @@ body {
     height: 100%;
 
     .information {
-      border: 1px solid $primary-color;
-      border-left: 1px solid $primary-color;
-      border-right: 1px solid $primary-color;
+      // border: 1px solid $primary-color;
       border-radius: 10px;
-      max-height: 400px;
-      overflow: scroll;
 
       div {
         margin: 0px 5px 0px 5px;
@@ -196,22 +194,44 @@ body {
     .expanded {
       .information-title {
         background-color: $primary-color;
-        color: $bg-color;    
+        color: $bg-color; 
+        border-radius: 10px;
       }
     }
 
     .information-title {
+      text-align: center;
+      background-color: $contrast-bg-color;
+      border: 1px solid $primary-color;
+      border-radius: 10px;
       padding: 10px;
+      font-family: "Varela Round";
+      font-size: 25px;
+
       &:hover {
         background-color: $primary-color;
-        color: $bg-color;  
+        color: $bg-color;
+        border-radius: 10px;
       }
+    }
+
+    .react-sanfona-item-body-wrapper {
+      padding: 20px;
+      max-height: 400px;
+      overflow-y: scroll;
     }
   }
 }
 
 .resource-title {
-  padding-top: 10px;
+  margin: 10px;
+}
+
+.markdown {
+  background-color: #f8f8ff;
+  padding: 10px;
+  font-family: "Monaco";
+  font-size: 15px;
 }
   
 #about {
@@ -303,13 +323,15 @@ body {
 
 /* Highlighter styles  */
 /* Docco style used in http://jashkenas.github.com/docco/ converted by Simon Madine (@thingsinjars) */
-
 .hljs {
   display: block;
-  overflow-x: auto;
   padding: 0.5em;
+  overflow-x: scroll;
+  height: 100%; 
   color: #000;
   background: #f8f8ff;
+  // font-family: 'monaco';
+  // word-wrap: break-word;
 }
 
 .hljs-comment,

@@ -10,23 +10,21 @@ export default ({ informationList, type, label }) => {
         .map((info, idx) => {          
           return( 
             <div key={ idx }>
-              <div className="resource-title">{ info.title }</div>
+              <h3 className="resource-title">{ info.title }</h3>
               { type === 'link'
-                ? <Highlight className="markdown">
-                    <div>
-                     <a href={ info[type] }>
+                ? <div className="markdown">
+                    <a href={ info[type] }>
                       { info[type] }
-                      </a>
-                    </div>
-                  </Highlight>
+                    </a>
+                  </div>
                 : <div> 
                     { type === 'example'
                       ? <Highlight className="js">
-                          <div>{ info[type] }</div>
+                          { info[type] }
                         </Highlight>
-                      : <Highlight className="markdown">
-                          <div>{ info[type] }</div>
-                        </Highlight>
+                      : <div className="markdown">
+                          { info[type] }
+                        </div>
                     }
                   </div>
               }
