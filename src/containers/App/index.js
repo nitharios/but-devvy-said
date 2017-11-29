@@ -83,12 +83,12 @@ class App extends Component {
         }
 
         <Accordion 
-          allowMultiple={ true }
           easing="ease"
           className="information-box" >
-          <AccordionItem 
+          <AccordionItem
             className="information"
             easing="ease"
+            expanded={ true }
             expandedClassName="expanded"
             titleClassName="information-title"
             title="Examples" >
@@ -97,7 +97,7 @@ class App extends Component {
               label="Examples"
               type="example" />
           </AccordionItem>
-          <AccordionItem 
+          <AccordionItem
             className="information"
             easing="ease"
             expandedClassName="expanded"
