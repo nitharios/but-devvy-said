@@ -24,9 +24,7 @@ module.exports = (bot, message, next) => {
       ]
     })
     .then(topicInfo => {
-      // if no match, singleTopic === null
-      console.log('HARNHTSENRAHTSIERANT', topicInfo);
-      
+      // if no match, singleTopic === null      
       message.results = topicInfo;
       next();
     })
