@@ -134,7 +134,7 @@ console.log("Hello again!");`,
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 15 //'asynchronous'
-      },
+      }
  
       //END
       
