@@ -169,28 +169,45 @@ Function.prototype.papply = function() {
       },
       //THIS IS 5
       {
-        name : '',
+        name : 'Kaley',
         cohort : 19,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
+        title : 'What are arguments?',
+        tags : ['arguments', 'function', 'variables'],
+        note : 'Arguments are values passed to functions as they are invoked. The function starts off with access to those variables to begin with. It is slightly different from a parameter. Argument is like what you throw at a function, and a parameter is that function catching what you threw at it.',
+
+        example : `
+function foo(one, two) { 
+    return one + two; 
+};
+//this is invoking foo, while supplying two arguments, 5 and 6.
+foo(5, 6);`,
+
+        link : 'http://bit.ly/2j3WzIR',
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 1
+        topic_id : 5
       },
       {
-        name : '',
+        name : 'Devon',
         cohort : 19,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
+        title : 'Difference between argument and parameter',
+        tags : ['parameter', 'argument', 'variables', 'scope'],
+        note : 'A parameter is a variable defined within a function definition, whether through function declaration or expression. When a function is called or invoked, the data passing into the parameters are the arguments.',
+
+        example : `
+// Define a method with two parameters 
+int Sum(int num1, int num2) 
+{ 
+    return num1 + num2;
+}
+
+//Call the method using two arguments 
+var ret = Sum(2, 3);`,
+
+        link : 'http://bit.ly/2BntJtL',
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 1
+        topic_id : 5
       },
       {
         name : 'Virgi',
@@ -213,79 +230,99 @@ var multiply = (x, y) => {
         topic_id : 6 //'arrow function'
       },
       {
-        name : '',
-        cohort : 19,
-        title : '',
-        tags : [],
+        name : 'Reid',
+        cohort : 18,
+        title : 'Why the fat arrow is awesome.',
+        tags : ['function', 'arrow function', 'context'],
         note : '',
-        example : '',
-        link : '',
+
+        example : `
+//the fat arrow syntax is amazingly short and concise for single param functions
+hello = name => "Hi, "+name; 
+
+//'hello' is the variable, name is the single parameter
+//what is after the arrow is the return statement and you dont need the keyword`,
+
+        link : 'http://bit.ly/2zEeHze',
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 1
+        topic_id : 6
       },
       //THIS IS 7
       {
-        name : '',
+        name : 'Chris',
         cohort : 19,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
+        title : 'API in plain english',
+        tags : ['asynchronous', 'server', 'api', 'web service'],
+        note : 'One type of API is web service or web API. It is not necessarily the remote server, but rather part of the server that receives requests and sends responses. If we send a request to Facebook, to our browser, Facebook server is an API.',
+
+        example : null,
+
+        link : 'http://bit.ly/2AgbyJ6',
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 1
-      },
-      {
-        name : '',
-        cohort : 19,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
-        createdAt : new Date(),
-        updatedAt : new Date(),
-        topic_id : 1
+        topic_id : 7
       },
       //THIS IS 8
       {
-        name : '',
+        name : 'Nigel',
         cohort : 19,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
+        title : 'Difference between call() and apply()',
+        tags : ['context', 'call', 'apply', 'bind'],
+        note : 'The difference is that apply lets you invoke the function with arguments as an array; call requires the parameters be listed explicitly. A useful mnemonic is .. A for array and C for comma.',
+        example : `
+function theFunction(name, profession) { 
+    console.log("My name is " + name + " and I am a " + profession + "."); 
+} 
+theFunction("John", "fireman"); 
+theFunction.apply(undefined, ["Susan", "school teacher"]); 
+theFunction.call(undefined, "Claude", "mathematician"); 
+theFunction.call(undefined, ...["Matthew", "physicist"]); // used with the spread operator 
+
+//Output : 
+
+// My name is John and I am a fireman. 
+// My name is Susan and I am a school teacher. 
+// My name is Claude and I am a mathematician. 
+// My name is Matthew and I am a physicist.`,
+
+        link : 'http://bit.ly/2AJPQP5',
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 1
+        topic_id : 8
       },
       {
-        name : '',
+        name : 'Virgie',
         cohort : 19,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
+        title : 'Example of apply()',
+        tags : ['apply', 'console', 'function invocation'],
+        note : 'Apply lets you pass in an array to supply your own context for a function. The array can have only one element. It is highly similar to call().',
+
+        example : `
+function log() { 
+    console.log.apply(console, arguments); 
+}
+
+//If you call this like log('foo')..
+//then that translates to console.log.apply(console, ['foo']);`,
+
+        link : 'http://bit.ly/2i1D17a',
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 1
+        topic_id : 8
       },
       //THIS IS 9
       {
-        name : '',
-        cohort : 19,
-        title : '',
-        tags : [],
-        note : '',
+        name : 'Schmoo',
+        cohort : 18,
+        title : 'Using app level middleware',
+        tags : ['middleware', 'express', 'request'],
+        note : 'Middleware',
         example : '',
         link : '',
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 1
+        topic_id : 9
       },
       {
         name : '',
@@ -297,7 +334,7 @@ var multiply = (x, y) => {
         link : '',
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 1
+        topic_id : 9
       },
       //THIS IS 10
       {
