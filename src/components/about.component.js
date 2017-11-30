@@ -26,7 +26,7 @@ export default ({ falseParameter }) => {
           The original implementation for Devvy and inspiration for this project can be found <a href="https://github.com/devleague/Devvy-Cho" target="_blank" rel="noopener noreferrer">here</a>.
         </div>
         <div>
-         If our project has peaked your interested in learning web development and you would like more information on Devleague, please follow this link for more information~  <a href='https://www.devleague.com/' target="_blank" rel="noopener noreferrer">Devleague</a>
+         If our project has peaked your interested in learning web development and you would like more information on DevLeague, please follow this link for more information~  <a href='https://www.devleague.com/' target="_blank" rel="noopener noreferrer">DevLeague</a>
         </div>
         <div>
           Have a nice day!
