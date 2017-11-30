@@ -145,9 +145,9 @@ obj.foo() === obj; // true`,
       {
         name: 'mr bean',
         cohort:19,
-        title:'how to use contine',
+        title:'how to use continue',
         tags:['continue','javascript'],
-        note:'The continue statement breaks one iteration (in a loop), if a specified condition occurs, and continues with the next iteration in the loop.This example skips the value of 3',
+        note:'The continue statement breaks one iteration (in a loop), if a specified condition occurs, and continue with the next iteration in the loop.This example skips the value of 3',
         example:`
 for (i = 0; i < 10; i++) {
   if (i === 3) { continue; }
