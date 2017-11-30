@@ -1,13 +1,14 @@
 const validate = values => {
+
   let title = values.title;
 
   const errors = {};
 
   if(!values.title) {
-    errors.title = 'required';
+    errors.title = 'Please provide a title!';
   
   } else if (title.length <= 5 ) {
-    errors.title = 'too short';
+    errors.title = 'Title must be 6 characters or longer.';
   }
 
   if(!values.topic) {
@@ -16,6 +17,6 @@ const validate = values => {
 
   return errors;
 
-  };
+};
 
 export default validate;

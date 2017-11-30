@@ -1,7 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import formField from '../../components/formfield.component';
-import validate from '../../components/validate.component';
 
 /*STYLES*/
 import './FirstPage.css';
@@ -13,24 +12,37 @@ const FirstPage = props => {
     <form className="FirstPage" onSubmit={ nextPage }> 
       
       <div className="FirstPage-fields">
-        <Field
-          component={ formField }
-          label="Name"
-          name="name"
-          placeholder="(optional)"
-          type="text" />
-        <Field
-          component={ formField }
-          label="Cohort"
-          name="cohort"
-          placeholder="(optional)"
-          type="number" />
+
+        <div className="center-helper">
+          <div className="FirstPage-fields-name">
+          <label>Name</label>
+            <Field
+              component={ formField }
+              name="name"
+              placeholder="(optional)"
+              type="text" />
+          </div>
+        </div>
+
+        <div className="center-helper">
+          <div className="FirstPage-fields-cohort">
+          <label>Cohort</label>
+            <Field
+              component={ formField }
+              name="cohort"
+              placeholder="(optional)"
+              type="number" />
+          </div>
+        </div>
+
       </div>
+
       <div className="FirstPage-next">
         <input 
           type="submit" 
           value="Next" />
       </div>
+      
     </form>
   );
 };
@@ -41,6 +53,5 @@ export default reduxForm({
   // preserves form data
   destroyOnUnmount : false,
   // unregister fields on unmount
-  forceUnregisterOnUnmount : true,
-  validate,
+  forceUnregisterOnUnmount : true
 })(FirstPage);
