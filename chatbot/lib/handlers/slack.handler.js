@@ -3,18 +3,26 @@ const user = require('../responses/user.responses');
 const EXAMPLES = 'example';
 const NOTES = 'note';
 const LINKS = 'link';
+const names = require('../responses/names.responses');
+const { c19,
+        familiar,
+        nathan } = names;
 const RESPONSES = require('../responses/slack.responses');
 const { additional_query,
         affirmations,
         bye_msgs,
+        cohort_19,
         error_msgs,
+        familiarResponse,
         greetings, 
         missing_info,
         other_msgs,
         query_type,
         thanks_reply,
         timeout_msgs,
-        randomResponse } = RESPONSES;
+        randomResponse,
+        stranger,
+        waifu_target } = RESPONSES;
 
 module.exports = (function() {
 
@@ -44,9 +52,69 @@ module.exports = (function() {
         resourcesHandler(err, convo, message);
       });
 
+    } else if (message.contact) {
+      bot.reply(message, { type: "typing" });
+      bot.createConversation(message, (err, convo) => {
+        contactHandler(err, convo, message);
+      });
+
     } else {
-      bot.replyWithTyping(message, `${randomResponse(other_msgs)}`);
+      bot.replyWithTyping(message, `${randomResponse(missing_info)}`);
     }
+  }
+
+  // handles named individual contacts
+  function contactHandler(err, convo, message) {
+    console.log('CONTACT', message);
+    const { contact } = message;
+    const patternsArr = [
+      {
+        pattern : c19,
+        callback : (response, convo) => {
+          convo.gotoThread('c19_thread');
+        }
+      },      
+      {
+        pattern : familiar,
+        callback : (response, convo) => {
+          convo.gotoThread('familiar_thread');
+        }
+      },
+      {
+        pattern : nathan,
+        callback : (response, convo) => {
+          convo.gotoThread('nathan_thread');
+        }
+      },
+      {
+        default : true,
+        callback : (response, convo) => {
+          convo.gotoThread('stranger_thread');
+        }        
+      }
+    ];
+
+    convo.addMessage({
+      text : randomResponse(cohort_19),
+      action : 'completed'
+    }, 'c19_thread');
+
+    convo.addMessage({
+      text : familiarResponse(),
+      action : 'completed'
+    }, 'familiar_thread');
+
+    convo.addMessage({
+      text : randomResponse(waifu_target),
+      action : 'completed'
+    }, 'nathan_thread');
+
+    convo.addMessage({
+      text : randomResponse(stranger),
+      action : 'stop'
+    }, 'stranger_thread');
+
+    convo.activate();
   }
 
   function resourcesHandler(err, convo, message) {

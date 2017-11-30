@@ -18,6 +18,17 @@ module.exports = {
     "Have a great day!",
     "Okay, bye!"
   ],
+  cohort_19 : [
+    "Did you mean...CHOhort 19???",
+    "Cohort 19 is awesome!",
+    "Cohort 19 is the best!",
+    "I :heart: Cohort 19",
+    "You should ask Vic about Cohort 19",
+    "My Nathan was part of Cohort 19!",
+    "Nobody codes like Cohort 19!",
+    "C O H O R T 1 9 ! ! !",
+    "C19 4 LYFE!"
+  ],
   error_msgs : [
     "Oh no! Something went wrong!",
     "Hmm...check back later...",
@@ -53,23 +64,18 @@ module.exports = {
     "Sorry, can't help you with that :persevere:",
     "No idea!",
     "I'm sorry, I don't know :sob:",
-    "My Nathan might know!"
-
+    "My Nathan might know!",
+    "Eh?",
+    "What?",
+    "Huh?",
+    "idk...",
+    "Try again with smarter words..."
   ],
   other_msgs : [
     "poke",
     "Where should I hike this weekend?",
     "Mika is the cutest!!",
     "Mika will make it all better!",
-    "He hasn't resolved my `Promise()` yet ;(",
-    "The way he feels about me is `variable`",
-    "My love for him is `constant`",
-    "He makes my heart `function`",
-    "He treats me with so much `class`",
-    "He taught me how to practice safe `hex`",
-    "My love for him has `border: none`",
-    "Our love accepts no `arguments`",
-    "My love for him is un `conditional`",
     "When will my love `return`?",
     "I HATE the color pink!!!!",
     "I can't wait to go back to San Fran!!",
@@ -86,6 +92,15 @@ module.exports = {
     "Umm...do you want examples, links, or notes?",
     "What kind of resource would you like to see?"
   ],
+  stranger : [
+    "I don't know that person",
+    "Stranger Danger!",
+    "Who?",
+    "I don't know who that person is...",
+    "That name doesn't sound familiar",
+    "Idk, should I know him/her?",
+    "Eh?"
+  ],
   thanks_reply : [
     "You are very welcome! :slightly_smiling_face:",
     "No problem!",
@@ -101,6 +116,21 @@ module.exports = {
     "If not, I'm just going to play with Mika ",
     ":zzz:"
   ],
+  waifu_target : [
+    "He hasn't resolved my `Promise()` yet ;(",
+    "The way he feels about me is `variable`",
+    "My love for him is `constant`",
+    "He makes my heart `function`",
+    "He treats me with so much `class`",
+    "He taught me how to practice safe `hex`",
+    "My love for him has `border: none`",
+    "Our love accepts no `arguments`",
+    "My love for him is un `conditional`"
+  ],
+
+  familiarResponse : function(name) {
+    return `${name} is awesome!`;
+  },
 
   randomResponse : function(category) {
     return category[Math.floor(Math.random()*category.length)];  
