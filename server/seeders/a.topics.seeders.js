@@ -29,7 +29,7 @@ module.exports = {
         name : 'apply' 
       },
       {
-        name : 'app middleware'
+        name : 'apply middleware'
       },
       {
         name : 'arithmetic operator' //Topic ID# 10
@@ -89,7 +89,7 @@ module.exports = {
         name : 'catch'
       },
       {
-        name : 'chai'
+        name : 'chaijs'
       },
       {
         name : 'class' //Topic ID# 30
@@ -131,7 +131,7 @@ module.exports = {
         name : 'controller'
       },
       {
-        name : 'curly brace'
+        name : 'curly bracket'
       },
       {
         name : 'currying'
@@ -176,10 +176,10 @@ module.exports = {
         name : 'encapsulation'
       },
       {
-        name : 'errors'
+        name : 'error'
       },
       {
-        name : 'events'
+        name : 'event'
       },
       {
         name : 'exporting'
@@ -230,7 +230,7 @@ module.exports = {
         name : 'github'
       },
       {
-        name : 'git terminal'
+        name : 'git '
       },
       {
         name : 'global object'
@@ -269,7 +269,7 @@ module.exports = {
         name : 'insertion sort'
       },
       {
-        name : 'instanceof'
+        name : 'instance'
       },
       {
         name : 'interpreted language'
@@ -290,7 +290,7 @@ module.exports = {
         name : 'keyboard'
       },
       {
-        name : 'key value pair'
+        name : 'key-value pair'
       },
       {
         name : 'keyword'
@@ -311,7 +311,7 @@ module.exports = {
         name : 'logical operator'
       },
       {
-        name : 'loops'
+        name : 'loop'
       },
       {
         name : 'loosely typed language'
@@ -329,7 +329,7 @@ module.exports = {
         name : 'middleware'
       },
       {
-        name : 'mocha'
+        name : 'mochajs'
       },
       {
         name : 'mongodb'
@@ -362,19 +362,19 @@ module.exports = {
         name : 'object literal'
       },
       {
-        name : 'objects'
+        name : 'object'
       },
       {
-        name : 'object oriented programming'
+        name : 'object-oriented programming'
       },
       {
-        name : 'operators'
+        name : 'operator'
       },
       {
         name : 'object relational mapping'
       },
       {
-        name : 'pair programming'
+        name : 'pair-programming'
       },
       {
         name : 'parameter'
@@ -383,10 +383,10 @@ module.exports = {
         name : 'parenthesis'
       },
       {
-        name : 'pass by reference'
+        name : 'pass-by-reference'
       },
       {
-        name : 'pass by value'
+        name : 'pass-by-value'
       },
       {
         name : 'port'
@@ -410,7 +410,7 @@ module.exports = {
         name : 'promise'
       },
       {
-        name : 'props'
+        name : 'prop'
       },
       {
         name : 'prototypal inheritance'
