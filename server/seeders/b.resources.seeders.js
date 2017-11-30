@@ -317,6 +317,7 @@ function log() {
         cohort : 18,
         title : 'Using app level middleware',
         tags : ['middleware', 'express', 'request'],
+<<<<<<< HEAD
         note : 'Middleware can be defined on the application level in express. It is functionality that is executed on the end of each request to any route. You write app.use() and supply a custom or third-party middleware.',
 
         example : `
@@ -431,7 +432,6 @@ alert( fruits ); // Apple, Orange, Pear`,
         updatedAt : new Date(),
         topic_id : 11 //array
       },
-      
       {
         name : 'Kristin',
         cohort : 14,
@@ -452,7 +452,6 @@ alert( fruits ); // Apple, Orange, Pear`,
         updatedAt : new Date(),
         topic_id : 12 //array prototype method
       },
-      
       {
         name : 'Jerry',
         cohort : 19,
@@ -473,7 +472,6 @@ var index = imageList.indexOf(200); // 1
         updatedAt : new Date(),
         topic_id : 13 //array indices
       },
-      
       {
         name : 'Baseem',
         cohort : 19,
@@ -524,7 +522,6 @@ persons.map(person => person.firstname + person.lastname;`,
         updatedAt : new Date(),
         topic_id : 14 //array iterative method
       },
-      
       {
         name : 'Why is asynchronous programming important in Node?',
         cohort : 19,
@@ -574,11 +571,9 @@ console.log("Hello again!");`,
         updatedAt : new Date(),
         topic_id : 15 //asynchronous
       }
- 
       //END
       //TOTAL 25
       
-
     ], {});
 
   },
