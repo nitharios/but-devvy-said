@@ -1,5 +1,10 @@
+.center-helper {
+  position: relative;
+  left: 25%;
+}
 .SecondPage {
   border: 2px dashed black;
+  margin: 15px 0px;
   position: relative;
 }
 
@@ -11,14 +16,35 @@
   padding: 5px;
   position: relative;
   margin: 0 auto;
+  text-align: center;
 }
-  .SecondPage-fields label {
+  .SecondPage-fields-title {
+    margin: 15px 0px;
+    width: 50%;
+  }
+  .SecondPage-fields-title label {
     padding: 1px;
     margin: 2px;
     font-size: 0.75em;
     display: inline-block;
   }
-  .SecondPage-fields input {
+  .SecondPage-fields-title input {
+    padding: 4px;
+    margin: 2px;
+    width: 50%;
+  }
+
+  .SecondPage-fields-topic {
+    margin-bottom: 15px;
+    width: 50%;
+  }
+  .SecondPage-fields-topic label {
+    padding: 1px;
+    margin: 2px;
+    font-size: 0.75em;
+    display: block;
+  }
+  .SecondPage-fields-topic select {
     padding: 4px;
     margin: 2px;
     width: 50%;

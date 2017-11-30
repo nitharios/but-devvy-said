@@ -13,28 +13,36 @@ const SecondPage = props => {
     <form className="SecondPage" onSubmit={ nextPage }>
     
       <div className="SecondPage-fields">
+        
+        <div className="center-helper">
+          <div className="SecondPage-fields-title">
+            <label>Title</label>
+            <Field
+              component={ formField }
+              name="title"
+              placeholder="required"
+              type="text" />
+          </div>
+        </div>
 
-        <label>Title</label>
-        <Field
-          component={ formField }
-          name="title"
-          placeholder="Input a title"
-          type="text" />
-
-        <label>Select a Topic</label>
-        <Field
-          component="select"
-          name="topic_id" >
-          { topicsList.map((topic, idx) => {
-            return(
-              <option
-                key={ idx }
-                value={ topic.id } >
-                { topic.name }
-              </option>
-            )
-          }) }
-        </Field>
+        <div className="center-helper">
+          <div className="SecondPage-fields-topic">
+            <label>Select a Topic</label>
+            <Field
+              component="select"
+              name="topic_id" >
+              { topicsList.map((topic, idx) => {
+                return(
+                  <option
+                    key={ idx }
+                    value={ topic.id } >
+                    { topic.name }
+                  </option>
+                )
+              }) }
+            </Field>
+          </div>
+        </div>
 
       </div>
 
