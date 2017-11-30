@@ -9,14 +9,14 @@ export default ({ falseParameter }) => {
 
       <div className="content">
         <div>
-          Aloha! 
+          Aloha my friends~! 
         </div>
         <div>
           My name is Devvy Cho! and im glad you came to my about page to learn more about this project and our team!
         </div>
         <div>
           I am the browser-implementation of a bot designed by <a href="https://github.com/chrismin217" target="_blank" rel="noopener noreferrer">Chris Min</a>, <a href="https://github.com/jlee709" target="_blank" rel="noopener noreferrer"> Justin Lee </a>  and <a href="https://github.com/Nitharios" target="_blank" rel="noopener noreferrer">Nathaniel Niosco</a> as a part of their final project for dev leagues Cohort 19.
-          
+
         <div>
           I am also a Slack Bot, created for the purposeful use of the DevLeague Community. 
         </div>
