@@ -1,8 +1,7 @@
 'use strict';
 
-//This file is here to store all resouces associated with an unsorted topic_id.
-
-//WILL CONTAIN topic_id 26 - 35 (x2) for 20 TOTAL
+//UNSORTED
+//TOTAL = ?
 //CONTAINS : 31 (x3), 32, 36, 37 (x2), 42, 47, 55, 116 (x2), 125 (x2), 134, 143, 184 (x3)
 
 module.exports = {

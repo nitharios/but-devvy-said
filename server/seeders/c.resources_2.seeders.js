@@ -1,7 +1,7 @@
 'use strict';
 
-//RESOURCES = 21 TOTAL
-//HAS TOPIC ID 16 - 25, 2 EACH (3 for callback function topid_id 25)
+//TOTAL = 21
+//contains topic_id 16 - 25
 //want to randomize date..
 
 module.exports = {
