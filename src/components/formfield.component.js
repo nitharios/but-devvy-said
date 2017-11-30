@@ -1,17 +1,20 @@
+//HTML input tag dummy component
+//Fed into redux-form Field component
+
 import React from 'react';
 
-import '../containers/StageForm/ThirdPage.css';
+/*STYLES*/
+import '../containers/StageForm/SecondPage.css';
 
-// Handles Component rendering for fields on forms
-export default ({ input, placeholder, type }) => {
+
+export default ({ input, placeholder, type, meta : { touched, error } }) => {
   console.log('formField render');
-  console.log(input);
-  console.log(type);
-  
+
   return (
     <div>
       <input { ...input } placeholder={ placeholder } type={ type } />
-    </div>
+        { touched && error && <div className="error-msg"><img src='/assets/error.png' alt='' /><span>{ error }</span></div> }
+      </div>
   );
 
 

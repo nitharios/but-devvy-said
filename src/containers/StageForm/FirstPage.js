@@ -1,7 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import formField from '../../components/formfield.component';
-import validate from '../../components/validate.component';
 
 /*STYLES*/
 import './FirstPage.css';
@@ -35,7 +34,7 @@ const FirstPage = props => {
               type="number" />
           </div>
         </div>
-        
+
       </div>
 
       <div className="FirstPage-next">
@@ -54,6 +53,5 @@ export default reduxForm({
   // preserves form data
   destroyOnUnmount : false,
   // unregister fields on unmount
-  forceUnregisterOnUnmount : true,
-  validate,
+  forceUnregisterOnUnmount : true
 })(FirstPage);

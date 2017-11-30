@@ -31,6 +31,7 @@ const SecondPage = props => {
             <Field
               component="select"
               name="topic_id" >
+
               { topicsList.map((topic, idx) => {
                 return(
                   <option
@@ -40,6 +41,7 @@ const SecondPage = props => {
                   </option>
                 )
               }) }
+
             </Field>
           </div>
         </div>
@@ -65,5 +67,5 @@ export default reduxForm({
   form : 'stageform',                 
   destroyOnUnmount : false,
   forceUnregisterOnUnmount : true,
-  validate,
+  validate
 })(SecondPage);

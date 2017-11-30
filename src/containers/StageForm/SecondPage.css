@@ -1,16 +1,43 @@
+/* ERROR */
+.error-msg {
+  
+  margin: 2px;
+  width: 99%;
+}
+.error-msg span {
+  font-size: 0.75em;
+  font-weight: bold;
+  color: red;
+  margin-left: 2px;
+}
+.error-msg img {
+  padding: 1px;
+  height: 17px;
+  width: 17px;
+  position: relative;
+  top: 3px;
+}
+
 .center-helper {
   position: relative;
   left: 25%;
 }
+
+
 .SecondPage {
-  border: 2px dashed black;
+  
   margin: 15px 0px;
   position: relative;
 }
 
+.center-helper {
+  position: relative;
+  left: 25%;
+}
+
 /* TOP HALF, NAME AND COHORT */
 .SecondPage-fields {
-  border: 1px solid blue;
+  
   width: 50%;
   margin: 5px;
   padding: 5px;
@@ -19,29 +46,36 @@
   text-align: center;
 }
   .SecondPage-fields-title {
+    
     margin: 15px 0px;
     width: 50%;
+    text-align: left;
   }
   .SecondPage-fields-title label {
     padding: 1px;
     margin: 2px;
     font-size: 0.75em;
+    font-weight: bold;
     display: inline-block;
   }
   .SecondPage-fields-title input {
+    
     padding: 4px;
     margin: 2px;
-    width: 50%;
+    width: 99%;
   }
 
   .SecondPage-fields-topic {
+    
     margin-bottom: 15px;
     width: 50%;
+    text-align: left;
   }
   .SecondPage-fields-topic label {
     padding: 1px;
     margin: 2px;
     font-size: 0.75em;
+    font-weight: bold;
     display: block;
   }
   .SecondPage-fields-topic select {
@@ -52,7 +86,7 @@
 
 /* BOTTOM HALF, NEXT BUTTON */
 .SecondPage-submit {
-  border: 1px solid magenta;
+  
   width: 50%;
   margin: 5px;
   padding: 5px;
