@@ -58,7 +58,6 @@ const SecondPage = props => {
           onClick={ previousPage }
           value="Back" />
       </div>
-      
     </form>
   );
 };

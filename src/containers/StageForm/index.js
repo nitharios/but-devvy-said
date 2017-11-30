@@ -11,7 +11,8 @@ class StageForm extends Component {
     super();
 
     this.state = {
-      page : 1
+      page : 1,
+      error: false
     };
 
     this.nextPage = this.nextPage.bind(this);
