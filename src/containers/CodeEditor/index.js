@@ -47,6 +47,9 @@ class CodeEditor extends Component {
 
     const options = {
       lineNumbers : true,
+      lineSeparator : "\n",
+      indentUnit : 3,
+      tabSize : 3,
       readOnly : this.state.readOnly,
       mode : this.state.mode
     };
@@ -55,11 +58,12 @@ class CodeEditor extends Component {
       <div className="CodeEditor">
 
         <CodeMirror ref="editor"
-          name="example" 
+          name="example"
           value={this.state.code} 
           onChange={this.updateCode}
           options={options} 
-          autoFocus={true}
+          autoFocus={false} 
+          autoSave={true}
         />
 
         <div className="CodeEditor-options">

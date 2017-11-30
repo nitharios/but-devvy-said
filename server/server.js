@@ -6,13 +6,14 @@ const routes = require('./routes');
 const passport = require('passport');
 const session = require('express-session');
 const redis = require('connect-redis')(session);
+const path = require('path');
 
 const db = require('./models');
 
 const PORT = process.env.PORT || 8000;
 const app = express();
 
-app.use(express.static(__dirname + '..' + '/public'));
+app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : false }));
 app.use(session({
