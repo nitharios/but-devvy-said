@@ -126,7 +126,7 @@ function fibonacci(num) {
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 3 //'angular'
-      }
+      },
       {
         name : 'kevin',
         cohort : 19,
@@ -325,81 +325,6 @@ function log() {
         topic_id : 9
       },
       {
-        name : '',
-        cohort : 19,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
-        createdAt : new Date(),
-        updatedAt : new Date(),
-        topic_id : 9
-      },
-      //THIS IS 10
-      {
-        name : '',
-        cohort : 19,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
-        createdAt : new Date(),
-        updatedAt : new Date(),
-        topic_id : 1
-      },
-      {
-        name : '',
-        cohort : 19,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
-        createdAt : new Date(),
-        updatedAt : new Date(),
-        topic_id : 1
-      },
-      //THIS IS 11
-      {
-        name : '',
-        cohort : 19,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
-        createdAt : new Date(),
-        updatedAt : new Date(),
-        topic_id : 1
-      },
-      {
-        name : '',
-        cohort : 19,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
-        createdAt : new Date(),
-        updatedAt : new Date(),
-        topic_id : 1
-      },
-      //THIS IS 12
-      {
-        name : '',
-        cohort : 19,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
-        createdAt : new Date(),
-        updatedAt : new Date(),
-        topic_id : 1
-      },
-      {
         name : 'Kristin',
         cohort : 14,
         title : 'How to append something to the end of an array?',
@@ -420,68 +345,7 @@ function log() {
         topic_id : 12 //'array prototype method'
       },
       //THIS IS 13
-      {
-        name : '',
-        cohort : 19,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
-        createdAt : new Date(),
-        updatedAt : new Date(),
-        topic_id : 1
-      },
-      {
-        name : '',
-        cohort : 19,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
-        createdAt : new Date(),
-        updatedAt : new Date(),
-        topic_id : 1
-      },
-      //THIS IS 14
-      {
-        name : '',
-        cohort : 19,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
-        createdAt : new Date(),
-        updatedAt : new Date(),
-        topic_id : 1
-      },
-      {
-        name : '',
-        cohort : 19,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
-        createdAt : new Date(),
-        updatedAt : new Date(),
-        topic_id : 1
-      },
-      //THIS IS 15
-      {
-        name : '',
-        cohort : 19,
-        title : '',
-        tags : [],
-        note : '',
-        example : '',
-        link : '',
-        createdAt : new Date(),
-        updatedAt : new Date(),
-        topic_id : 1
-      },
+    
       {
         name : 'Kaley',
         cohort : 19,

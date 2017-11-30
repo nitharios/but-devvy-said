@@ -10,7 +10,7 @@ The inspiration for Devvy is [here](https://github.com/devleague/Devvy-Cho).
 
 ## See her in action
 <!-- Need to add website link -->
-Check Devvy out [here](https://github.com/Nitharios/but-devvy-said)
+Check Devvy out [here](http://devvycho.com/)
 
 ## Contribute
 ### Local Installation
