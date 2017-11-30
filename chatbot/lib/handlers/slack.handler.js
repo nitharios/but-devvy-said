@@ -53,68 +53,28 @@ module.exports = (function() {
       });
 
     } else if (message.contact) {
-      bot.reply(message, { type: "typing" });
-      bot.createConversation(message, (err, convo) => {
-        contactHandler(err, convo, message);
-      });
+      bot.replyWithTyping(message, contactHandler(message, message.contact[0].value));
 
     } else {
-      bot.replyWithTyping(message, `${randomResponse(missing_info)}`);
+      bot.replyWithTyping(message, randomResponse(missing_info));
     }
   }
 
   // handles named individual contacts
-  function contactHandler(err, convo, message) {
-    console.log('CONTACT', message);
-    const { contact } = message;
-    const patternsArr = [
-      {
-        pattern : c19,
-        callback : (response, convo) => {
-          convo.gotoThread('c19_thread');
-        }
-      },      
-      {
-        pattern : familiar,
-        callback : (response, convo) => {
-          convo.gotoThread('familiar_thread');
-        }
-      },
-      {
-        pattern : nathan,
-        callback : (response, convo) => {
-          convo.gotoThread('nathan_thread');
-        }
-      },
-      {
-        default : true,
-        callback : (response, convo) => {
-          convo.gotoThread('stranger_thread');
-        }        
-      }
-    ];
+  function contactHandler(message, name) {
+    switch(name) {
+      case c19:
+        return randomResponse(cohort_19);
 
-    convo.addMessage({
-      text : randomResponse(cohort_19),
-      action : 'completed'
-    }, 'c19_thread');
+      case familiar:
+        return familiarResponse(name);
 
-    convo.addMessage({
-      text : familiarResponse(),
-      action : 'completed'
-    }, 'familiar_thread');
+      case nathan:
+        return randomResponse(waifu_target);
 
-    convo.addMessage({
-      text : randomResponse(waifu_target),
-      action : 'completed'
-    }, 'nathan_thread');
-
-    convo.addMessage({
-      text : randomResponse(stranger),
-      action : 'stop'
-    }, 'stranger_thread');
-
-    convo.activate();
+      default:
+        return randomResponse(stranger);
+    }
   }
 
   function resourcesHandler(err, convo, message) {
