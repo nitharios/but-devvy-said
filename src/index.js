@@ -14,6 +14,7 @@ import App from './containers/App';
 import StageForm from './containers/StageForm';
 
 /* Components */
+import NotFound from './components/404.component';
 import About from './components/about.component';
 import NavBar from './components/navbar.component';
 import Footer from './components/footer.component';
@@ -44,7 +45,7 @@ ReactDOM.render(
         <Route exact path="/" component={ App } />
         <Route path="/about" component={ About } />
         <Route path="/addinfo" component={ StageForm } />
-        
+        <Route path="/404" component={ NotFound } />
         <Footer />
       </div>
     </Router>
