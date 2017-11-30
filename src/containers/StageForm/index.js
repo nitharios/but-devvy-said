@@ -28,7 +28,9 @@ class StageForm extends Component {
     this.setState({ page : this.state.page - 1 });
   }
 
-  handleSubmit(info) {    
+  handleSubmit(info) {
+    console.log('Submit');
+    console.log(info);    
     this.props.addNewResource(info);    
   }
 

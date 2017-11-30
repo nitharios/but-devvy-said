@@ -17,7 +17,6 @@ export const addNewResource = info => {
     })
     .catch(err => {
       console.log(err);
-      return;
     });
   };
 };

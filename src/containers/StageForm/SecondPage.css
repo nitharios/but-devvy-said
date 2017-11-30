@@ -12,6 +12,17 @@
   position: relative;
   margin: 0 auto;
 }
+  .SecondPage-fields label {
+    padding: 1px;
+    margin: 2px;
+    font-size: 0.75em;
+    display: inline-block;
+  }
+  .SecondPage-fields input {
+    padding: 4px;
+    margin: 2px;
+    width: 50%;
+  }
 
 /* BOTTOM HALF, NEXT BUTTON */
 .SecondPage-submit {

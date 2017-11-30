@@ -13,24 +13,26 @@ const FirstPage = props => {
     <form className="FirstPage" onSubmit={ nextPage }> 
       
       <div className="FirstPage-fields">
+        <label>Name</label>
         <Field
           component={ formField }
-          label="Name"
           name="name"
           placeholder="(optional)"
           type="text" />
+        <label>Cohort</label>
         <Field
           component={ formField }
-          label="Cohort"
           name="cohort"
           placeholder="(optional)"
           type="number" />
       </div>
+
       <div className="FirstPage-next">
         <input 
           type="submit" 
           value="Next" />
       </div>
+      
     </form>
   );
 };

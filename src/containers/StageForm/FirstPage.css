@@ -13,11 +13,15 @@
   margin: 0 auto;
 }
   .FirstPage-fields label {
-    border: 1px solid green;
+    padding: 1px;
+    margin: 2px;
+    font-size: 0.75em;
+    display: inline-block;
   }
   .FirstPage-fields input {
-    border: 1px solid red;
-    padding: 2px;
+    padding: 4px;
+    margin: 2px;
+    width: 50%;
   }
 
 /* BOTTOM HALF, NEXT BUTTON */

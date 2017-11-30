@@ -11,15 +11,17 @@ const SecondPage = props => {
 
   return (
     <form className="SecondPage" onSubmit={ nextPage }>
+    
       <div className="SecondPage-fields">
+
+        <label>Title</label>
         <Field
           component={ formField }
-          label="Title"
           name="title"
           placeholder="Input a title"
           type="text" />
 
-        <div>Select a Topic</div>
+        <label>Select a Topic</label>
         <Field
           component="select"
           name="topic_id" >
@@ -33,6 +35,7 @@ const SecondPage = props => {
             )
           }) }
         </Field>
+
       </div>
 
       <div className="SecondPage-submit">
