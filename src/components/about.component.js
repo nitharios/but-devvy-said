@@ -19,13 +19,13 @@ export default ({ falseParameter }) => {
         </div>
 
         <div>
-          Also if you are intersted in learning web development and would like more information on Devleague please follow this link  <a href='https://www.devleague.com/' target="_blank" rel="noopener noreferrer">Devleague </a>
+          If our project has peaked your intersted in learning web development and would like more information on Devleague, please follow this link for more information~  <a href='https://www.devleague.com/' target="_blank" rel="noopener noreferrer">Devleague </a>
         </div>
         <div>
           Have a nice day!
         </div>
         <div>
-          -- Devvy Cho ^^ 
+          - Devvy Cho~
         </div>
       </div>
     </div>
