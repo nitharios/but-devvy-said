@@ -41,11 +41,12 @@ router.route('/')
   })
   .then(newResource => {
     console.log('new resource added');
-    res.json(newResource);
+    console.log(newResource.dataValues);
+    return res.json(newResource);
   })
   .catch(err => {
     console.log('ERROR', err);
-    res.json(error_occurred);
+    return res.json(error_occurred);
     
   });
 });

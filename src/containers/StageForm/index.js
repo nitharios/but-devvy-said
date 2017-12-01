@@ -29,8 +29,7 @@ class StageForm extends Component {
   }
 
   handleSubmit(info) {
-    console.log('Submit');
-    console.log(info);    
+    info.example = this.props.code;
     this.props.addNewResource(info);    
   }
 
@@ -71,8 +70,9 @@ class StageForm extends Component {
 
 const mapStateToProps = state => {
   return {
-    topicsList : state.topicsList
-  }
+    topicsList : state.topicsList,
+    code : state.code
+  };
 }
 
 const mapDispatchToProps = dispatch => {
