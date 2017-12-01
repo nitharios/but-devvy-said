@@ -214,7 +214,7 @@ $(document).ready(function(){
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 95 //keyboard
-      },
+      }
 
     ], {});
 
