@@ -29,7 +29,7 @@ module.exports = {
         name : 'apply' 
       },
       {
-        name : 'apply middleware'
+        name : 'application middleware'
       },
       {
         name : 'arithmetic operator' //Topic ID# 10
@@ -230,7 +230,7 @@ module.exports = {
         name : 'github'
       },
       {
-        name : 'git '
+        name : 'git terminal'
       },
       {
         name : 'global object'
