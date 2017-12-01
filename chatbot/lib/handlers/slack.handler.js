@@ -3,18 +3,40 @@ const user = require('../responses/user.responses');
 const EXAMPLES = 'example';
 const NOTES = 'note';
 const LINKS = 'link';
+const names = require('../responses/names.responses');
+const { c19,
+        cohort,
+        dl,
+        familiar,
+        jaywon,
+        mentalgrinds,
+        nigle,
+        taesup,
+        team,
+        ra,
+        waifu_target } = names;
 const RESPONSES = require('../responses/slack.responses');
 const { additional_query,
         affirmations,
         bye_msgs,
+        cohort_19,
+        devleague,
+        ed,
         error_msgs,
-        greetings, 
+        familiarResponse,
+        greetings,
+        jason,
+        jesse,
         missing_info,
+        nigel,
         other_msgs,
         query_type,
         thanks_reply,
         timeout_msgs,
-        randomResponse } = RESPONSES;
+        randomResponse,
+        stranger,
+        vic,
+        waifu_msgs } = RESPONSES;
 
 module.exports = (function() {
 
@@ -38,15 +60,36 @@ module.exports = (function() {
       bot.replyWithTyping(message, randomResponse(thanks_reply));
 
     } else if (message.results) {
-
       bot.reply(message, { type: "typing" });
       bot.createConversation(message, (err, convo) => {
         resourcesHandler(err, convo, message);
       });
 
+    } else if (message.contact) {
+      bot.replyWithTyping(message, contactHandler(message, message.contact[0].value));
+
     } else {
-      bot.replyWithTyping(message, `${randomResponse(other_msgs)}`);
+      bot.replyWithTyping(message, randomResponse(missing_info));
     }
+  }
+
+  // handles named individual contacts
+  function contactHandler(message, name) {
+    console.log("HANDLER", name);
+
+    if (c19.test(name)) return randomResponse(cohort_19);
+    else if (cohort.test(name)) return familiarResponse(name);
+    else if (dl.test(name)) return randomResponse(devleague);
+    else if (familiar.test(name)) return familiarResponse(name);
+    else if (jaywon.test(name)) return randomResponse(jason);
+    else if (mentalgrinds.test(name)) return randomResponse(jesse);
+    else if (nigle.test(name)) return randomResponse(nigel);
+    else if (taesup.test(name)) return randomResponse(ed);
+    else if (team.test(name)) return familiarResponse(name);
+    else if (ra.test(name)) return randomResponse(vic);
+    else if (waifu_target.test(name)) return randomResponse(waifu_msgs);
+    else return randomResponse(stranger);
+
   }
 
   function resourcesHandler(err, convo, message) {
