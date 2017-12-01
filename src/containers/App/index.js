@@ -90,22 +90,22 @@ class App extends Component {
             easing="ease"
             expandedClassName="expanded"
             titleClassName="information-title"
-            title="Examples" >
+            title="Notes" >
             <ListBuilder
               informationList={ this.props.resourcesList }
-              label="Examples"
-              type="example" />
+              label="Notes"
+              type="note" />
           </AccordionItem>
           <AccordionItem
             className="information"
             easing="ease"
             expandedClassName="expanded"
             titleClassName="information-title"
-            title="Notes" >
+            title="Examples" >
             <ListBuilder
               informationList={ this.props.resourcesList }
-              label="Notes"
-              type="note" />
+              label="Examples"
+              type="example" />
           </AccordionItem>
           <AccordionItem
             className="information"
