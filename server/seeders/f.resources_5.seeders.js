@@ -129,7 +129,7 @@ catch (e) {
         name : '',
         cohort : 19,
         title : 'Events in Javascript.',
-        tags : [],
+        tags : ['events'],
         note : `Events are actions or occurrences that happen in the system you are programming, which the system tells you about so you can respond to them in some way if desired.\n For example if the user clicks a button on a webpage, you might want to respond to that action by displaying an information box.`,
         example : ``,
         link : 'https://mzl.la/2it893s',
@@ -141,7 +141,7 @@ catch (e) {
         name : '',
         cohort : 19,
         title : 'How do events get handled?',
-        tags : [],
+        tags : ['events'],
         note : `We use addEventListener and supply a callback to a DOM node to handle events.\n When you call addEventListener as shown previously, you are calling it as a method on the whole window because in the browser the global scope is equivalent to the window object. Every DOM element has its own addEventListener method, which allows you to listen specifically on that element.`,
         example : `
 <button>Click me</button>
@@ -201,7 +201,7 @@ fiz();`,
         name : '',
         cohort : 19,
         title : 'What are the double curly braces in an Angular app?',
-        tags : [],
+        tags : ['angular'],
         note : `Any time you see double curly braces, that is the value of an expression. It very much resembles handlebars, and is intuitive to use. We can define a string somewhere in our app, then render it onto our page. This allows for much more dynamic data flow on our front-end.`,
         example : `
 <div ng-app ng-init="name='Arun Banik'">
@@ -216,7 +216,7 @@ fiz();`,
         name : '',
         cohort : 19,
         title : 'A simple example with Numbers as expressions in AngularJS',
-        tags : [],
+        tags : ['number expressions', 'angular'],
         note : `We can define an expression 'cost' and 'quantity' in our application using Angular expressions. Then use double curly braces in our HTML to render it. `,
         example : `
 <p>Expense on Books : {{cost * quantity}} Rs</p>`,
@@ -229,7 +229,7 @@ fiz();`,
         name : '',
         cohort : 19,
         title : 'Why is Express so popular?',
-        tags : [],
+        tags : ['express'],
         note : `Express is a module framework that is the backbone for many web applications. Its flagship feature is its routing system that handles the interaction between two hosts. There are plenty of alternatives, however people love Express for its simplicity and clean syntax.`,
         example : `
 //this is a hello world in express
@@ -249,7 +249,7 @@ app.listen(3000, () => console.log('Example app listening on port 3000!'))`,
         name : '',
         cohort : 19,
         title : 'What does the extends keyword do?',
-        tags : [],
+        tags : ['extends', 'key word'],
         note : `This keyword allows you to subclass custom classes, as well as built-in objects. In other words you can create classes that inherit from a parent class. A good example is Dog extends Animal.`,
         example : `
 //this is a simple example of the extends keyword
@@ -276,7 +276,7 @@ class Square extends Polygon {
         name : '',
         cohort : 19,
         title : 'The finally keyword',
-        tags : [],
+        tags : ['finally', 'key word'],
         note : `It is a very uncommon keyword that has to do with error handling. The finally statement lets you execute code after a try-catch regardless of its result.`,
         example : `
 function myFunction()
@@ -306,7 +306,7 @@ function myFunction()
         name : '',
         cohort : 19,
         title : 'What is the flexbox framework?',
-        tags : [],
+        tags : ['flexbox'],
         note : `Flexbox makes CSS a little more intuitive. It is an amazing framework that allows you to make CSS grids very easily. Normally making rows, columns, and centering them is a pain.`,
         example : `
 //this is the HTML

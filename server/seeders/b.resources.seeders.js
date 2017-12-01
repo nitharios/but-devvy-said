@@ -317,7 +317,7 @@ function log() {
         cohort : 18,
         title : 'Using app level middleware',
         tags : ['middleware', 'express', 'request'],
-<<<<<<< HEAD
+
         note : 'Middleware can be defined on the application level in express. It is functionality that is executed on the end of each request to any route. You write app.use() and supply a custom or third-party middleware.',
 
         example : `
