@@ -232,13 +232,8 @@ myFunction(10, 2); // Will return 20`,
       {
         name : 'Jay',
         cohort : 19,
-<<<<<<< HEAD
-        title : '',
-        tags : ['scope'],
-=======
         title : 'What is function-level scope?',
         tags : ['scope', 'function-level', 'variables'],
->>>>>>> development
         note : `Scope has to do with what data, or variables, are accessible.\n Variables declared within a function are local variables and are only accessible within that function or by functions inside that function. This is function-level scope.`,
 
         example : `
