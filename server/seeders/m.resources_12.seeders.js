@@ -108,17 +108,44 @@ Note: If the port number is not specified or if it is the scheme's default port 
         topic_id:  130 //postgresql
       },
       {
-        name:
-        cohort:
-        title:
-        tags:
-        note:
-        example:
-        link:
+        name: 'ape',
+        cohort: 3,
+        title: 'what is a Primitive',
+        tags: ['Primitive', 'data type'],
+        note:'A primitive (primitive value, primitive data type) is data that is not an object and has no methods. In JavaScript, there are 6 primitive data types: string, number, boolean, null, undefined, symbol (new in ECMAScript 2015). \n Most of the time, a primitive value is represented directly at the lowest level of the language implementation. \n All primitives are immutable (cannot be changed).',
+
+        example:`
+// string
+// number
+//boolean
+//symbol
+`,
+        link: 'https://mzl.la/2zPPq8B',
         createdAt: new Date(),
         updatedAt: new Date(),
-        topic_id:  //
-      }
+        topic_id:  131 // Primitive
+      },
+      {
+        name: 'hbomb',
+        cohort: 15,
+        title: 'what is a Private method',
+        tags:['private method'],
+        note: 'Private Methods are are attached to the object, but they are not accessible to the outside, nor are they accessible to the objects own public methods. They are accessible to private methods. \nPrivate methods are inner functions of the constructor.',
+        example:`
+function init() {
+  var name = 'Mozilla'; // name is a local variable created by init
+  function displayName() { // displayName() is the inner function, a closure
+    alert(name); // use variable declared in the parent function    
+  }
+  displayName();    
+}
+init();`,
+
+        link: 'https://mzl.la/17lRliK',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        topic_id:  132 // Private method
+      },
 
     ], {});
 
