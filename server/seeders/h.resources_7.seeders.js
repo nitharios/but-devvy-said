@@ -149,6 +149,74 @@ console.log(p.m()); // 5
         createdAt: new Date(),
         updatedAt: new Date(),
         topic_id: 87 // inheritance
+      },
+      {
+        name: 'sorty joe',
+        cohort: 19,
+        title: 'what is insertion sort',
+        tags:['sorting', 'algorithm', 'sorting algorithm'],
+        note:'Insertion sort algorithm iterates, consuming one input element each repetition, and growing a sorted output list. Each iteration removes one element from the input data, finds the location it belongs within the sorted list, and inserts it there. It repeats until no input elements remain.',
+        example:`
+function sort(values) {
+  var length = values.length;
+  for(var i = 1; i < length; ++i) {
+    var temp = values[i];
+    var j = i - 1;
+    for(; j >= 0 && values[j] > temp; --j) {
+      values[j+1] = values[j];
+    }
+    values[j+1] = temp;
+  }
+};
+sort([7, 4, 5, 2, 9, 1]);
+//finished`,
+
+        link:'http://bit.ly/2Bqzffp',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        topic_id: 88 // insertion sort
+      },
+      {
+        name:'blowfish tim',
+        cohort: 12,
+        title: 'what is the instance of something',
+        tags:['instance of', 'instance'],
+        note:'The instanceof operator tests whether the prototype property of a constructor appears anywhere in the prototype chain of an object.',
+        example:`
+object instanceof constructor //syntax
+// defining constructors
+function C() {}
+function D() {}
+
+var o = new C();
+
+// true, because: Object.getPrototypeOf(o) === C.prototype
+o instanceof C;
+
+// false, because D.prototype is nowhere in o's prototype chain
+o instanceof D;
+
+o instanceof Object; // true, because:
+C.prototype instanceof Object // true
+
+C.prototype = {};
+var o2 = new C();
+
+o2 instanceof C; // true
+
+// false, because C.prototype is nowhere in
+// o's prototype chain anymore
+o instanceof C; 
+
+D.prototype = new C(); // add C to [[Prototype]] linkage of D
+var o3 = new D();
+o3 instanceof D; // true
+o3 instanceof C; // true since C.prototype is now in o3's prototype chain`,
+
+        link:'http://bit.ly/2Bqzffp',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        topic_id:  89 // instance of
       }
 
     ], {});
