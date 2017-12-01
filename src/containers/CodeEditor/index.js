@@ -7,9 +7,6 @@ import '../../../node_modules/codemirror/mode/javascript/javascript';
 import '../../../node_modules/codemirror/mode/markdown/markdown';
 import '../../../node_modules/codemirror/mode/css/css';
 
-/*STYLES*/
-import './CodeEditor.css';
-
 class CodeEditor extends Component {
 
   constructor(props) {
@@ -67,12 +64,12 @@ class CodeEditor extends Component {
         />
 
         <div className="CodeEditor-options">
-          <select onChange={this.changeMode} value={this.state.mode}>
+          <select className="select-option" onChange={this.changeMode} value={this.state.mode}>
             <option value="markdown">Markdown</option>
             <option value="css">CSS</option>
             <option value="javascript">JavaScript</option>
           </select>
-          <button onClick={this.toggleReadOnly}>Read-Only Mode is {this.state.readOnly ? 'ON' : 'OFF'}</button>
+          <button className="button" onClick={this.toggleReadOnly}>Read-Only {this.state.readOnly ? 'ON' : 'OFF'}</button>
         </div>
 
       </div>

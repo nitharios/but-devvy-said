@@ -6,9 +6,6 @@ import { WithContext as ReactTags } from 'react-tag-input';
 import { loadTopics } from '../../actions/topic.actions';
 import { addNewResource } from '../../actions/resource.actions';
 
-/*STYLES*/
-import './TagInput.css';
-
 class TagInput extends Component {
 
   constructor(props) {
@@ -62,12 +59,12 @@ class TagInput extends Component {
 
     return (
       <div>
-        <div className="TagInput-label"><span>Please Provide Topics..</span></div>
+        <div className="TagInput-label formField">Topics</div>
         <ReactTags
           name="tags"
           tags={tags}
           suggestions={suggestions}
-          placeholder="Enter Topics.."
+          placeholder="Select Topics"
           labelField="name"
           handleDelete={this.handleDelete}
           handleAddition={this.handleAddition}

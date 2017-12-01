@@ -43,6 +43,9 @@ class StageForm extends Component {
 
     return (
       <div className="stage-form">
+        <div className="header">
+          Add New Resource
+        </div>
         {
           page === 1 && 
           <FirstPage 
