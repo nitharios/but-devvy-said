@@ -464,13 +464,13 @@ module.exports = {
         name : 'semi-colon'
       },
       {
-        name : 'sequelize'
+        name : 'sequelizejs'
       },
       {
         name : 'single page application'
       },
       {
-        name : 'sockets'
+        name : 'socket'
       },
       {
         name : 'spread operator'
@@ -503,7 +503,7 @@ module.exports = {
         name : 'synchronous'
       },
       {
-        name : 'syntactic sugar'
+        name : 'syntactical sugar'
       },
       {
         name : 'syntax'
@@ -554,7 +554,7 @@ module.exports = {
         name : 'vim'
       },
       {
-        name : 'virtual dom'
+        name : 'virtual document object model'
       },
       {
         name : 'web service'
