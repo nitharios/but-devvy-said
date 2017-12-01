@@ -9,20 +9,20 @@ module.exports = {
 
     return queryInterface.bulkInsert('resources', [
 
-      //THIS IS HERE FOR TESTING PURPOSE DELETE IT
-      {
-        name : 'Nancy',
-        cohort : 19,
-        title : 'NoSQL explained',
-        tags : ['nosql', 'database', 'mongodb'],
-        note : `Developers are working with applications that create massive volumes of new, rapidly changing data types — structured, semi-structured, unstructured and polymorphic data.\n Relational databases were not designed to cope with the scale and agility challenges that face modern applications.\n This is what NoSQL was created for.`,
+     {
+        name: 'redward skrim',
+        cohort: 14,
+        title: 'what are relational database management systems',
+        tags:['rdms', 'relational database'],
+        note: 'A relational database management system (RDBMS) is a program that lets you create, update, and administer a relational database. Most commercial RDBMSs use the Structured Query Language (SQL) to access the database, although SQL was invented after the development of the relational model and is not necessary for its use.',
+        example:``,
 
-        example : ``,
-        link : 'http://bit.ly/1lvqNnb',
-        createdAt : new Date(),
-        updatedAt : new Date(),
-        topic_id : 116 //nosql
-      }
+        link: 'http://bit.ly/2it8A95',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        topic_id:  146 // relational database management system
+      },
+      
 
     ], {});
 
