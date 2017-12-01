@@ -25,6 +25,13 @@ class CodeEditor extends Component {
     this.toggleReadOnly = this.toggleReadOnly.bind(this);
   }
 
+  componentWillUnmount() {
+    this.setState({
+      mode : 'javascript',
+      readOnly : false
+    });
+  }
+
   updateCode(newCode) {
     this.props.addCode(newCode);
   }

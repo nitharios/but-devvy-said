@@ -26,7 +26,7 @@ const ThirdPage = props => {
             name="example" />
         </div>
           
-        <div className="formField">
+        <div className="formField link">
           <label>Link</label>
           <Field
             component={ formField } 
@@ -56,6 +56,6 @@ const ThirdPage = props => {
 
 export default reduxForm({
   form : 'stageform',               
-  destroyOnUnmount : false,       
+  destroyOnUnmount : true,       
   forceUnregisterOnUnmount : true
 })(ThirdPage);
