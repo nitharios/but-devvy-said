@@ -1,8 +1,8 @@
 'use strict';
 
-//Stretch and polish
-//CONTAINS topic_id 36 - 45 (x2) for 20 TOTAL
-//only (x1) for topics that cant really have snippets, EG 'angular' or 'api'
+//TOTAL : 10
+//contains topic_id 36 - 45
+
 
 module.exports = {
 

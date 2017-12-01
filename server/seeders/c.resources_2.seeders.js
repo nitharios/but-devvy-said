@@ -1,7 +1,7 @@
 'use strict';
 
 //TOTAL = 21
-//contains topic_id 16 - 25
+//contains topic_id 16 - 35
 //want to randomize date..
 
 module.exports = {
@@ -415,6 +415,102 @@ processUserInput(greeting);`,
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 25 //'callback function'
+      },
+      {
+        name : 'Avinash',
+        cohort : 15,
+        title : 'What is a closure?',
+        tags : ['closure', 'scope', 'private variable'],
+        note : 'A closure is an inner function. A function defined within a function that has access to the outer function variables, its own variables, as well as global variables. It is the Javascript way of enforcing public and private methods or variables.',
+
+        example : `var a = (function () { 
+  var privateFunction = function () { 
+    alert('hello');
+  }
+
+  return {
+    publicFunction : function() { 
+      privateFunction();
+    }
+  } 
+})();`,
+
+        link : null,
+        createdAt : new Date(),
+        updatedAt : new Date(),
+        topic_id : 31 //'closure'
+      },
+      {
+        name : 'Asil',
+        cohort : 19,
+        title : 'A real usage case of a closure.',
+        tags : ['closure', 'return', 'function', 'private variable'],
+        note : 'Understanding closures will make you a much better coder very quickly. It is a very powerful tool. Here is an example from class today.',
+
+        example : `function outer() { 
+  var counter = 0; 
+  function inner() { 
+    alert(counter); 
+    counter++; 
+  } 
+  
+  return inner;
+}
+
+var x = outer(); //x is a reference to inner 
+x(); //alerts 0 
+x(); //alerts 1 
+x(); //alerts 2`,
+
+        link : null,
+        createdAt : new Date(),
+        updatedAt : new Date(),
+        topic_id : 31 //'closure'
+      },
+      {
+        name : 'Jennifer',
+        cohort : 15,
+        title : 'What is a closure?',
+        tags : ['closures', 'variables', 'scope'],
+        note : 'A closure is an inner function that has access the outer, or enclosing, function variables. It is the Javascript way of imitating private variables.',
+
+        example : `var G = 'G'; 
+// Define a function and create a closure 
+function functionA() { 
+    var A = 'A' 
+    // Define a function and create a closure 
+    function functionB() { 
+        var B = 'B' 
+        console.log(A, B, G); 
+    } 
+
+    functionB(); // prints A, B, G 
+
+    // functionB closure does not get discarded 
+    A = 42; 
+    functionB(); // prints 42, B, G 
+} 
+
+functionA();`,
+
+        link : null,
+        createdAt : new Date(),
+        updatedAt : new Date(),
+        topic_id : 31 //closure
+      },
+      {
+        name : 'Mister',
+        cohort : 11,
+        title : 'What makes a good code editors?',
+        tags : ['code editor', 'developer', 'syntax'],
+        note : 'The most important part of a good editor is workflow and organization. Things should be easy to find and intuitive. It should also have good predictive ability, it should guess well as to what you are trying to do, what you tried to do, and what you will do. It should also do it behind the scenes.',
+
+        example : null,
+
+        link : 'http://bit.ly/2Bnlwpv', //Quora
+        createdAt : new Date(),
+        updatedAt : new Date(),
+        topic_id : 32 //code editor
       }
       //END
       //TOTAL 21
