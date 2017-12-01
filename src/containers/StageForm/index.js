@@ -29,7 +29,7 @@ class StageForm extends Component {
   }
 
   handleSubmit(info) {
-    info.code = this.props.code;
+    info.example = this.props.code;
     this.props.addNewResource(info);    
   }
 

@@ -22,7 +22,7 @@ for (var i = 1; i <= 50; i++) {
 } 
 alert("Sum = " + sum); // => Sum = 1275`,
 
-        link : null,
+        link : '',
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 66 //for loop
@@ -55,10 +55,10 @@ var arr = [[1,2], [3,4], [5,6]];
         note : `The for/in statement loops through the properties of an object.\n The block of code inside the loop will be executed once for each property. Use square-brackets to indicate the value for a key.`,
 
         example : `
-var obj = {a: 1, b: 2, c: 3};
+var obj = {a: 1, b: 2, c: 3};        
     
 for (const prop in obj) {
-  console.log(obj.${prop} = ${obj[prop]});
+  console.log(obj.prop = obj[prop]);
 }
 
 // Output:
@@ -115,19 +115,7 @@ alert(message instanceof Object);        // logs 'true'`,
         link : `http://bit.ly/2zSS8vd`,
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 69 //function
-      },
-      {
-        name : 'Linda',
-        cohort : 19,
-        title : 'Why use Functions in Javascript?',
-        tags : ['functions', 'javascript', 'code reuse'],
-        note : ``,
-        example : ``,
-        link : '',
-        createdAt : new Date(),
-        updatedAt : new Date(),
-        topic_id : 69 //function
+        topic_id : 69 //function DEMO
       },
       {
         name : 'Dave',
@@ -198,8 +186,8 @@ myFunction(10, 2); // Will return 20`,
       {
         name : 'Jay',
         cohort : 19,
-        title : '',
-        tags : [],
+        title : 'What is function-level scope?',
+        tags : ['scope', 'function-level', 'variables'],
         note : `Scope has to do with what data, or variables, are accessible.\n Variables declared within a function are local variables and are only accessible within that function or by functions inside that function. This is function-level scope.`,
 
         example : `
