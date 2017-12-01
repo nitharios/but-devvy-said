@@ -74,6 +74,23 @@ update(a);   // the _contents_ of 'a' are changed`,
         createdAt: new Date(),
         updatedAt: new Date(),
         topic_id: 128 // pass by value
+      },
+      {
+        name: 'jason vorhees',
+        cohort: 6,
+        title: 'what is a port',
+        tags: ['port'],
+        note:'The port property sets or returns the port number the server uses for a URL.Note: If the port number is not specified in the URL (or if it is the schemes default port - like 80, or 443), some browsers will display 0 or nothing',
+        example:`
+location.port = port
+Return Value: A String, representing the port number of a URL.
+
+Note: If the port number is not specified or if it is the scheme's default port (like 80 or 443), an empty string is returned`,
+
+        link: 'http://bit.ly/2zVGVtP',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        topic_id:  129 // Port
       }
 
     ], {});
