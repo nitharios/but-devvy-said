@@ -47,30 +47,30 @@ var arr = [[1,2], [3,4], [5,6]];
         updatedAt : new Date(),
         topic_id : 66 //for loop
       },
-      {
-        name : 'Ella',
-        cohort : 19,
-        title : 'For in loop is a for loop for objects.',
-        tags : ['objects', 'loops', 'for in'],
-        note : `The for/in statement loops through the properties of an object.\n The block of code inside the loop will be executed once for each property. Use square-brackets to indicate the value for a key.`,
+//       {
+//         name : 'Ella',
+//         cohort : 19,
+//         title : 'For in loop is a for loop for objects.',
+//         tags : ['objects', 'loops', 'for in'],
+//         note : `The for/in statement loops through the properties of an object.\n The block of code inside the loop will be executed once for each property. Use square-brackets to indicate the value for a key.`,
 
-        example : `
-var obj = {a: 1, b: 2, c: 3};
+//         example : `
+// var obj = {a: 1, b: 2, c: 3};
     
-for (const prop in obj) {
-  console.log(obj.${prop} = ${obj[prop]});
-}
+// for (const prop in obj) {
+//   console.log(obj.${prop} = ${obj[prop]});
+// }
 
-// Output:
-// "obj.a = 1"
-// "obj.b = 2"
-// "obj.c = 3"`,
+// // Output:
+// // "obj.a = 1"
+// // "obj.b = 2"
+// // "obj.c = 3"`,
 
-        link : 'https://mzl.la/1EhWBNV',
-        createdAt : new Date(),
-        updatedAt : new Date(),
-        topic_id : 67 //for in loop
-      },
+//         link : 'https://mzl.la/1EhWBNV',
+//         createdAt : new Date(),
+//         updatedAt : new Date(),
+//         topic_id : 67 //for in loop
+//       },
       {
         name : 'Coach',
         cohort : 19,
@@ -199,7 +199,7 @@ myFunction(10, 2); // Will return 20`,
         name : 'Jay',
         cohort : 19,
         title : '',
-        tags : [],
+        tags : ['scope'],
         note : `Scope has to do with what data, or variables, are accessible.\n Variables declared within a function are local variables and are only accessible within that function or by functions inside that function. This is function-level scope.`,
 
         example : `
