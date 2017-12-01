@@ -47,6 +47,45 @@ see link ^^ -devvy`,
         createdAt: new Date(),
         updatedAt: new Date(),
         topic_id: 148 // remote repository
+      },
+      {
+        name: 'return of the jedi',
+        cohort: 19,
+        title: 'what is a return',
+        tags:['return', 'return statement'],
+        note: 'The return statement ends function execution and specifies a value to be returned to the function caller.',
+        example:`
+return [[expression]]; 
+
+function square(x) {
+   return x * x;
+}
+var demo = square(3);
+// demo will equal 9`,
+
+        link: 'https://mzl.la/1AJkxYH',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        topic_id:  149// return
+      },
+      {
+        name: 'middleMan',
+        cohort: 19,
+        title:'what is router middlewawre',
+        tags: ['middlewawre', 'router middlewawre'],
+        note:'software that acts as a bridge between an operating system or database and applications, especially on a network. \n Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle. The next middleware function is commonly denoted by a variable named next.',
+        example:`
+app.use('/user/:id', function (req, res, next) {
+  console.log('Request URL:', req.originalUrl)
+  next()
+}, function (req, res, next) {
+  console.log('Request Type:', req.method)
+  next()
+})`,
+        link: 'http://bit.ly/2npkRlw',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        topic_id:  150 // router middlewawre
       }
 
 
