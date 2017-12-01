@@ -5,7 +5,7 @@ module.exports = (bot, message, next) => {
   // if a db_query has been recognized query db with it
   if (message.db_query) {    
     // need to handle the case where there are multiple queries
-    let topicName = message.db_query[0].value;    
+    let topicName = message.db_query[0].value;            
     let limit = 5;
 
     if (message.number) {
