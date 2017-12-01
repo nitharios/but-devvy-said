@@ -231,7 +231,7 @@ objectName[expression]       // x = "age"; person[x]
         createdAt: new Date(),
         updatedAt: new Date(),
         topic_id:   136 // Prop
-      }
+      },
 
     ], {});
 
