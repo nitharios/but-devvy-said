@@ -146,6 +146,42 @@ init();`,
         updatedAt: new Date(),
         topic_id:  132 // Private method
       },
+      {
+        name: 'peepin tom',
+        cohort: 19,
+        title:'what are private variables',
+        tags:['private variables'],
+        note:'similar to private methods, privte variables can also be made through closures',
+        example:`
+var Car = (function() {
+
+  var _ = PrivateParts.createKey();
+
+  function Car(mileage) {
+    // Store the mileage property privately.
+    _(this).mileage = mileage;
+  }
+
+  Car.prototype.drive = function(miles) {
+    if (typeof miles == 'number' && miles > 0) {
+      _(this).mileage += miles;
+    } else {
+      throw new Error('drive only accepts positive numbers');
+    }
+  }
+
+  Car.prototype.readMileage = function() {
+    return _(this).mileage;
+  }
+
+  return Car;
+}());`,
+
+        link:'http://bit.ly/2af5gOc',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        topic_id:  133 // private variables
+      }
 
     ], {});
 
