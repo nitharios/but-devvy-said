@@ -5,24 +5,38 @@ const NOTES = 'note';
 const LINKS = 'link';
 const names = require('../responses/names.responses');
 const { c19,
+        cohort,
+        dl,
         familiar,
-        nathan } = names;
+        jaywon,
+        mentalgrinds,
+        nigle,
+        taesup,
+        team,
+        ra,
+        waifu_target } = names;
 const RESPONSES = require('../responses/slack.responses');
 const { additional_query,
         affirmations,
         bye_msgs,
         cohort_19,
+        devleague,
+        ed,
         error_msgs,
         familiarResponse,
-        greetings, 
+        greetings,
+        jason,
+        jesse,
         missing_info,
+        nigel,
         other_msgs,
         query_type,
         thanks_reply,
         timeout_msgs,
         randomResponse,
         stranger,
-        waifu_target } = RESPONSES;
+        vic,
+        waifu_msgs } = RESPONSES;
 
 module.exports = (function() {
 
@@ -46,7 +60,6 @@ module.exports = (function() {
       bot.replyWithTyping(message, randomResponse(thanks_reply));
 
     } else if (message.results) {
-
       bot.reply(message, { type: "typing" });
       bot.createConversation(message, (err, convo) => {
         resourcesHandler(err, convo, message);
@@ -62,19 +75,21 @@ module.exports = (function() {
 
   // handles named individual contacts
   function contactHandler(message, name) {
-    switch(name) {
-      case c19:
-        return randomResponse(cohort_19);
+    console.log("HANDLER", name);
 
-      case familiar:
-        return familiarResponse(name);
+    if (c19.test(name)) return randomResponse(cohort_19);
+    else if (cohort.test(name)) return familiarResponse(name);
+    else if (dl.test(name)) return randomResponse(devleague);
+    else if (familiar.test(name)) return familiarResponse(name);
+    else if (jaywon.test(name)) return randomResponse(jason);
+    else if (mentalgrinds.test(name)) return randomResponse(jesse);
+    else if (nigle.test(name)) return randomResponse(nigel);
+    else if (taesup.test(name)) return randomResponse(ed);
+    else if (team.test(name)) return familiarResponse(name);
+    else if (ra.test(name)) return randomResponse(vic);
+    else if (waifu_target.test(name)) return randomResponse(waifu_msgs);
+    else return randomResponse(stranger);
 
-      case nathan:
-        return randomResponse(waifu_target);
-
-      default:
-        return randomResponse(stranger);
-    }
   }
 
   function resourcesHandler(err, convo, message) {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import formField from '../../components/formfield.component';
-import validate from '../../components/validate.component';
 
 import CodeEditor from '../CodeEditor';
 import TagInput from '../TagInput';
@@ -28,7 +27,7 @@ const ThirdPage = props => {
           placeholder="Add your notes here.."
         />
 
-        <div className="ThirdPage-label">Examples</div>
+        <div className="ThirdPage-label">Code Snippet</div>
         <Field
           component={CodeEditor}
           name="example"
@@ -37,7 +36,8 @@ const ThirdPage = props => {
         <div className="ThirdPage-label">Link</div>
         <Field
           component={ formField } 
-          name="link" 
+          name="link"
+          placeholder="Enter a URL.." 
           type="text" />
 
       </div>
@@ -62,6 +62,5 @@ const ThirdPage = props => {
 export default reduxForm({
   form : 'stageform',               
   destroyOnUnmount : false,       
-  forceUnregisterOnUnmount : true, 
-  validate,
+  forceUnregisterOnUnmount : true
 })(ThirdPage);
