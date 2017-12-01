@@ -3,18 +3,26 @@ const user = require('../responses/user.responses');
 const EXAMPLES = 'example';
 const NOTES = 'note';
 const LINKS = 'link';
+const names = require('../responses/names.responses');
+const { c19,
+        familiar,
+        nathan } = names;
 const RESPONSES = require('../responses/slack.responses');
 const { additional_query,
         affirmations,
         bye_msgs,
+        cohort_19,
         error_msgs,
+        familiarResponse,
         greetings, 
         missing_info,
         other_msgs,
         query_type,
         thanks_reply,
         timeout_msgs,
-        randomResponse } = RESPONSES;
+        randomResponse,
+        stranger,
+        waifu_target } = RESPONSES;
 
 module.exports = (function() {
 
@@ -44,8 +52,28 @@ module.exports = (function() {
         resourcesHandler(err, convo, message);
       });
 
+    } else if (message.contact) {
+      bot.replyWithTyping(message, contactHandler(message, message.contact[0].value));
+
     } else {
-      bot.replyWithTyping(message, `${randomResponse(other_msgs)}`);
+      bot.replyWithTyping(message, randomResponse(missing_info));
+    }
+  }
+
+  // handles named individual contacts
+  function contactHandler(message, name) {
+    switch(name) {
+      case c19:
+        return randomResponse(cohort_19);
+
+      case familiar:
+        return familiarResponse(name);
+
+      case nathan:
+        return randomResponse(waifu_target);
+
+      default:
+        return randomResponse(stranger);
     }
   }
 
