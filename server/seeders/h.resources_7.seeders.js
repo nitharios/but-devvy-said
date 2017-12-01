@@ -33,9 +33,12 @@ var x; // Declare x`,
         tags : ['iife', 'anonymous function', 'function'],
         note : 'An immediately invoked function expression is a special kind of anonymous function. It is wrapped inside a set of parenthesis, and has a set of opening and closing parenthesis after the code body, which serves to invoke it immediately.',
 
-        example : `//anonymous function 
+        example : `
+//anonymous function 
 function() { 
+
 //any code goes here 
+
 }(); //this set of parenthesis is what invokes it immediately.`,
 
         link : 'http://bit.ly/1AwyeMO', //GregFranko blog
