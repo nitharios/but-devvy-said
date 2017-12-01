@@ -287,6 +287,31 @@ check link below ^^ -devvy`,
         createdAt: new Date(),
         updatedAt: new Date(),
         topic_id:  93 //jquery
+      },
+      {
+        name: 'bison',
+        cohort: 17,
+        title: 'what is json',
+        tags:['json', 'json objects'],
+        note:'JSON stands for JavaScript Object Notation \n JSON is a lightweight data-interchange format; JSON is "self-describing" and easy to understand; \n JSON is language independent *. * JSON uses JavaScript syntax, but the JSON format is text only.',
+        example:`
+{
+coord: {
+lon: -0.13,
+lat: 51.51
+},
+weather: [
+{
+id: 300,
+main: "Drizzle",
+description: "light intensity drizzle",
+icon: "09d"
+}
+],`,
+        link: 'http://bit.ly/2i5xexe'
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        topic_id:  94 // json
       }
 
     ], {});
