@@ -26,7 +26,6 @@ class CodeEditor extends Component {
   }
 
   updateCode(newCode) {
-    console.log(newCode);
     this.props.addCode(newCode);
   }
 

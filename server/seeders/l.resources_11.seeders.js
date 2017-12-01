@@ -57,7 +57,7 @@ var o = {
         updatedAt : new Date(),
         topic_id : 118 //object initialization
       },
-      {
+/*      {
         name : 'Oscar',
         cohort : 19,
         title : 'Is an object literal just a series of key-value pairs?',
@@ -80,7 +80,7 @@ var o = {
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 120 //objects
-      },
+      },*/
       {
         name : 'Ricky',
         cohort : 19,
@@ -94,8 +94,8 @@ var o = {
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 121 //'object oriented programming'
-      },
-      {
+      }
+/*      {
         name : 'Peach',
         cohort : 19,
         title : 'Is pair programming popular?',
@@ -142,7 +142,7 @@ var o = {
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 125 //pass by reference
-      }
+      }*/
 
     ], {});
 
