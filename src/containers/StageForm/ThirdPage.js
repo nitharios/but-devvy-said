@@ -26,7 +26,7 @@ const ThirdPage = props => {
             name="example" />
         </div>
           
-        <div className="formField">
+        <div className="formField link">
           <label>Link</label>
           <Field
             component={ formField } 

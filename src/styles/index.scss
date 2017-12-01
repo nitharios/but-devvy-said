@@ -452,6 +452,7 @@ div.suggestionsClass ul li.activeSuggestionClass {
 /* StageForm */
 .stage-form {
   margin: 20px auto;
+  margin-bottom: 100px;
   font-family: "Varela Round";
 
   .header {
@@ -471,10 +472,18 @@ div.suggestionsClass ul li.activeSuggestionClass {
     border-radius: 10px;
     margin: 20px auto;
     padding: 20px;
+  
+    .link div input {
+      width: 500px;
+      max-width: 85%;
+    }
 
     .formField {
       // margin-top: 10px;
       // margin-bottom: 20px;
+      .thirdpage-input {
+        width: 50%;
+      }
 
       label {
         display: block;
