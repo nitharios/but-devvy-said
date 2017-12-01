@@ -294,21 +294,8 @@ check link below ^^ -devvy`,
         title: 'what is json',
         tags:['json', 'json objects'],
         note:'JSON stands for JavaScript Object Notation \n JSON is a lightweight data-interchange format; JSON is "self-describing" and easy to understand; \n JSON is language independent *. * JSON uses JavaScript syntax, but the JSON format is text only.',
-        example:`
-// JSON weather data object
-{
-coord: {
-lon: -0.13,
-lat: 51.51
-},
-weather: [
-{
-id: 300,
-main: "Drizzle",
-description: "light intensity drizzle",
-icon: "09d"
-}
-],`,
+        example:``,
+
         link: 'http://bit.ly/2i5xexe'
         createdAt: new Date(),
         updatedAt: new Date(),
