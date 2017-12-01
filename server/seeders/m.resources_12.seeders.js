@@ -196,16 +196,42 @@ var Car = (function() {
         topic_id:  134// programming paradigm
       },
       {
-        name:
-        cohort:
-        title:
-        tags:
-        note:
-        example:
-        link:
+        name: 'johnny wanny',
+        cohort: 5,
+        title: 'what is a promise',
+        tags:['promise', 'promises'],
+        note:'The Promise object represents the eventual completion (or failure) of an asynchronous operation, and its resulting value. \n the main uses of promises is for smoother flow to help deal with blocking actions',
+        example:`
+function myAsyncFunction(url) {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", url);
+    xhr.onload = () => resolve(xhr.responseText);
+    xhr.onerror = () => reject(xhr.statusText);
+    xhr.send();
+  });
+}`,
+        link: 'https://mzl.la/1jLTOHB',
         createdAt: new Date(),
         updatedAt: new Date(),
         topic_id:  135 // Promise
+      },
+      {
+        name: 'proper joe',
+        cohort: 19,
+        title: 'what is a prop',
+        tags: ['prop', 'props'],
+        note: 'Properties are the values associated with a JavaScript object.A JavaScript object is a collection of unordered properties. \nProperties can usually be changed, added, and deleted, but some are read only.',
+        example:`
+objectName.property          // person.age
+objectName["property"]       // person["age"]
+objectName[expression]       // x = "age"; person[x]
+`,
+
+        link: 'http://bit.ly/2BrpEER',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        topic_id:   136 // Prop
       }
 
     ], {});
