@@ -3,9 +3,6 @@ import React from 'react';
 export default ({ falseParameter }) => {
   return(
     <div id="about">
-      <div className="header">
-        About
-      </div>
       <div className="content">
         <div>
           <h2>Aloha!</h2> 
