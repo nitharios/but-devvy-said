@@ -8,8 +8,7 @@ module.exports = (function() {
     hears : hears    
   };
 
-  function receive(bot, message, next) {
-
+  function receive(bot, message, next) {    
     // Wit will only recieve TEXT
     if (message.text && message.type !== 'self_message') {
       // sends the received message to Wit

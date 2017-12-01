@@ -18,17 +18,6 @@ module.exports = {
     "Have a great day!",
     "Okay, bye!"
   ],
-  cohort_19 : [
-    "Did you mean...CHOhort 19???",
-    "Cohort 19 is awesome!",
-    "Cohort 19 is the best!",
-    "I :heart: Cohort 19",
-    "You should ask Vic about Cohort 19",
-    "My Nathan was part of Cohort 19!",
-    "Nobody codes like Cohort 19!",
-    "C O H O R T 1 9 ! ! !",
-    "C19 4 LYFE!"
-  ],
   error_msgs : [
     "Oh no! Something went wrong!",
     "Hmm...check back later...",
@@ -116,7 +105,7 @@ module.exports = {
     "If not, I'm just going to play with Mika ",
     ":zzz:"
   ],
-  waifu_target : [
+  waifu_msgs : [
     "He hasn't resolved my `Promise()` yet ;(",
     "The way he feels about me is `variable`",
     "My love for him is `constant`",
@@ -128,11 +117,53 @@ module.exports = {
     "My love for him is un `conditional`"
   ],
 
+  randomResponse : function(category) {
+    return category[Math.floor(Math.random()*category.length)];  
+  },
+
+  cohort_19 : [
+    "Did you mean...CHOhort 19???",
+    "Cohort 19 is awesome!",
+    "Cohort 19 is the best!",
+    "I :heart: Cohort 19",
+    "You should ask Vic about Cohort 19",
+    "My Nathan was part of Cohort 19!",
+    "Nobody codes like Cohort 19!",
+    "C O H O R T 1 9 ! ! !",
+    "C19 4 LYFE!"
+  ],
+  devleague : [
+    "DevLeague rocks!",
+    "I love DevLeague!",
+  ],
+  jason : [
+    "Jason has the best beard!",
+    "Nobody has thicker glasses than @jaywon!",
+    "You mean that Sudokrew guy?"
+  ],
+  jesse : [
+    "The guy with all those Star Wars t-shirts?",
+    "Jesse is hilarious!",
+    "@mentalgrinds? Yeah!"
+  ],
+  ed : [
+    "Ask Ed about his weird eating schedule",
+    "Ed knows how to fix things...but he won't tell you how!",
+    "@taesup is always here!"
+  ],
+  nigel : [
+    "He's really tall!",
+    "#butNigelSaid",
+    "OUR NIGEL!"
+  ],
+  vic : [
+    "@vic is the BEST RA!",
+    "Tell him to keep it high!",
+    "He's got the coolest shoe collection :open_mouth:"
+  ],
+
   familiarResponse : function(name) {
     return `${name} is awesome!`;
   },
 
-  randomResponse : function(category) {
-    return category[Math.floor(Math.random()*category.length)];  
-  }
 };
