@@ -217,6 +217,19 @@ o3 instanceof C; // true since C.prototype is now in o3's prototype chain`,
         createdAt: new Date(),
         updatedAt: new Date(),
         topic_id:  89 // instance of
+      },
+      {
+        name: 'johnny',
+        cohort:2,
+        title:'what is an interpreted language',
+        tags:['language', 'interpreted language'],
+        note:'JavaScript is a high-level, dynamic, untyped interpreted programming language \n An interpreted language is a programming language for which most of its implementations execute instructions directly and freely, without previously compiling a program into machine-language instructions. The interpreter executes the program directly, translating each statement into a sequence of one or more subroutines already compiled into machine code.',
+        example:`
+See above note ^^`,
+        link: 'http://bit.ly/2tdzs13',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        topic_id:  90 //interpreted language
       }
 
     ], {});
