@@ -59,6 +59,57 @@ console.log(count); //Reference Error: count is not defined`,
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 83 //'immediately invoked function expression'
+      },
+      {
+        name: 'cpt mcTavish',
+        cohort: 12,
+        title: 'what is the in keyword',
+        tags:['in', 'keyword','operator'],
+        note:'The in operator returns true if the specified property is in the specified object or its prototype chain.',
+        example:`
+prop in object
+var trees = new Array('redwood', 'bay', 'cedar', 'oak', 'maple');
+trees[3] = undefined;
+3 in trees; // returns true`, 
+
+        link: 'https://mzl.la/1GIORar',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        topic_id: 84 // in
+      },
+      {
+        name: 'winward jim',
+        cohort: 13,
+        title: 'what is indentation',
+        tags:['indentation', 'structure', 'code block'],
+        note:'Indentation is a style within javascript and other programming languages to help other programemrs to read said programs, in Javascript it is also used to easily identify scope',
+        example:`
+function draw() {
+  ctx.clearRect(0,0,WIDTH,HEIGHT);
+  for (var i = 0; i < 100; i++) {
+    ctx.beginPath();
+    ctx.fillStyle = 'rgba(255,0,0,0.5)';
+    ctx.arc(random(WIDTH), random(HEIGHT), random(50), 0, 2 * Math.PI);
+    ctx.fill();
+  }
+}`,
+
+        link: 'https://mzl.la/2BAjLGt',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        topic_id: 85 //indentation
+      },
+      {
+        name: 'jesse james',
+        cohort: 11,
+        title:'what is indexing',
+        tags:['indexing'],
+        note:'An array is an ordered set of values that you refer to with a name and an index. For example, you could have an array called emp that contains employees names indexed by their employee number.\n So emp[1] would beemployee number one, emp[2] employee number two, and so on.'
+        example:
+        link:
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        topic_id: 86 // indexing
       }
 
     ], {});
