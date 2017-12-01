@@ -227,7 +227,6 @@ objectName.property          // person.age
 objectName["property"]       // person["age"]
 objectName[expression]       // x = "age"; person[x]
 `,
-
         link: 'http://bit.ly/2BrpEER',
         createdAt: new Date(),
         updatedAt: new Date(),
