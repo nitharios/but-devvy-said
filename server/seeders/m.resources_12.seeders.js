@@ -91,6 +91,33 @@ Note: If the port number is not specified or if it is the scheme's default port 
         createdAt: new Date(),
         updatedAt: new Date(),
         topic_id:  129 // Port
+      },
+      {
+        name: 'ranger danger',
+        cohort: 9,
+        title: 'what is postgresql',
+        tags:['postgres', 'postgresql'],
+        note: 'PostgreSQL is a powerful, open source object-relational database system. It has more than 15 years of active development and a proven architecture that has earned it a strong reputation for reliability, data integrity, and correctness. \n It runs on all major operating systems, including Linux, UNIX (AIX, BSD, HP-UX, SGI IRIX, macOS, Solaris, Tru64), and Windows. It is fully ACID compliant, has full support for foreign keys, joins, views, triggers, and stored procedures (in multiple languages)',
+
+        example:`
+// see link`,
+
+        link: 'http://bit.ly/2BqoCJk',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        topic_id:  130 //postgresql
+      },
+      {
+        name:
+        cohort:
+        title:
+        tags:
+        note:
+        example:
+        link:
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        topic_id:  //
       }
 
     ], {});
