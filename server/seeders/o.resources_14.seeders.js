@@ -35,7 +35,19 @@ see link ^^ -devvy`,
         updatedAt: new Date(),
         topic_id:  147// relational operator
       },
-      
+      {
+        name: 'tea and soupe',
+        cohort: 19,
+        title: 'what is a remote repository',
+        tags: ['remote repository'],
+        note: 'A remote repository is utilized by technology companies to easily collaborate a code base, such as Github and BitBucket \n these remote repos are geneerally used by developers to save a code base ',
+        example:`
+// see link ^^ -devvy`,
+        link:'http://bit.ly/2ajfqc5',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        topic_id: 148 // remote repository
+      }
 
 
     ], {});
