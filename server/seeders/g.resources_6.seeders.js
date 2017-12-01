@@ -27,50 +27,50 @@ alert("Sum = " + sum); // => Sum = 1275`,
         updatedAt : new Date(),
         topic_id : 66 //for loop
       },
-      {
-        name : 'Jane',
-        cohort : 16,
-        title : 'Nested for loops',
-        tags : ['array', 'for loop', 'control flow'],
-        note : `To work with a 2d-array, or a nested array, you can use a for loop inside a for loop. It will increment the inner until completion, then increment the outer by one and repeat the code for the inner loop.`,
+//       {
+//         name : 'Jane',
+//         cohort : 16,
+//         title : 'Nested for loops',
+//         tags : ['array', 'for loop', 'control flow'],
+//         note : `To work with a 2d-array, or a nested array, you can use a for loop inside a for loop. It will increment the inner until completion, then increment the outer by one and repeat the code for the inner loop.`,
 
-        example : `
-var arr = [[1,2], [3,4], [5,6]];
-    for (var i=0; i < arr.length; i++) {
-        for (var j=0; j < arr[i].length; j++) {
-            console.log(arr[i][j]);
-        }
-    }`,
+//         example : `
+// var arr = [[1,2], [3,4], [5,6]];
+//     for (var i=0; i < arr.length; i++) {
+//         for (var j=0; j < arr[i].length; j++) {
+//             console.log(arr[i][j]);
+//         }
+//     }`,
 
-        link : 'http://bit.ly/2jAWQmh',
-        createdAt : new Date(),
-        updatedAt : new Date(),
-        topic_id : 66 //for loop
-      },
-      {
-        name : 'Ella',
-        cohort : 19,
-        title : 'For in loop is a for loop for objects.',
-        tags : ['objects', 'loops', 'for in'],
-        note : `The for/in statement loops through the properties of an object.\n The block of code inside the loop will be executed once for each property. Use square-brackets to indicate the value for a key.`,
+//         link : 'http://bit.ly/2jAWQmh',
+//         createdAt : new Date(),
+//         updatedAt : new Date(),
+//         topic_id : 66 //for loop
+//       },
+//       {
+//         name : 'Ella',
+//         cohort : 19,
+//         title : 'For in loop is a for loop for objects.',
+//         tags : ['objects', 'loops', 'for in'],
+//         note : `The for/in statement loops through the properties of an object.\n The block of code inside the loop will be executed once for each property. Use square-brackets to indicate the value for a key.`,
 
-        example : `
-var obj = {a: 1, b: 2, c: 3};
+//         example : `
+// var obj = {a: 1, b: 2, c: 3};
     
-for (const prop in obj) {
-  console.log(obj.${prop} = ${obj[prop]});
-}
+// for (const prop in obj) {
+//   console.log(obj.${prop} = ${obj[prop]});
+// }
 
-// Output:
-// "obj.a = 1"
-// "obj.b = 2"
-// "obj.c = 3"`,
+// // Output:
+// // "obj.a = 1"
+// // "obj.b = 2"
+// // "obj.c = 3"`,
 
-        link : 'https://mzl.la/1EhWBNV',
-        createdAt : new Date(),
-        updatedAt : new Date(),
-        topic_id : 67 //for in loop
-      },
+//         link : 'https://mzl.la/1EhWBNV',
+//         createdAt : new Date(),
+//         updatedAt : new Date(),
+//         topic_id : 67 //for in loop
+//       },
       {
         name : 'Coach',
         cohort : 19,
@@ -199,7 +199,7 @@ myFunction(10, 2); // Will return 20`,
         name : 'Jay',
         cohort : 19,
         title : '',
-        tags : [],
+        tags : ['scope'],
         note : `Scope has to do with what data, or variables, are accessible.\n Variables declared within a function are local variables and are only accessible within that function or by functions inside that function. This is function-level scope.`,
 
         example : `
