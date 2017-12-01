@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+/*ACTIONS*/
+import { addCode } from '../../actions/code.actions';
 
 /*CODEMIRROR*/
 import CodeMirror from 'react-codemirror';
@@ -12,7 +16,6 @@ class CodeEditor extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      code : '',
       mode : 'javascript',
       readOnly : false
     };
@@ -23,7 +26,8 @@ class CodeEditor extends Component {
   }
 
   updateCode(newCode) {
-    this.setState({code : newCode});
+    console.log(newCode);
+    this.props.addCode(newCode);
   }
 
   changeMode(e) {
@@ -80,4 +84,15 @@ class CodeEditor extends Component {
 }
 //end class
 
-export default CodeEditor;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addCode : (newCode) => {
+      dispatch(addCode(newCode));
+    }
+  };
+}
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(CodeEditor);
