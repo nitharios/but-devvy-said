@@ -245,6 +245,19 @@ please see above note :) -devvy`,
         createdAt: new Date(),
         updatedAt: new Date(),
         topic_id: 91 // interview
+      },
+      {
+        name: 'kyle simpson',
+        cohort: 1,
+        title: 'what is javascript',
+        tags:[javascript],
+        note:'JavaScript is a programming language that allows you to implement complex things on web pages — every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, or interactive maps, or animated 2D/3D graphics, or scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved. It is the third layer of the layer cake of standard web technologies, two of which (HTML and CSS) we have covered in much more detail in other parts of the Learning Area.',
+        example:`
+check link below ^^ -devvy`,
+        link:'https://mzl.la/2tJZOv3',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        topic_id: 92 // javascript
       }
 
     ], {});
