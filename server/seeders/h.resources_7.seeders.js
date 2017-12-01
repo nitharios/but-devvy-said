@@ -104,9 +104,18 @@ function draw() {
         cohort: 11,
         title:'what is indexing',
         tags:['indexing'],
-        note:'An array is an ordered set of values that you refer to with a name and an index. For example, you could have an array called emp that contains employees names indexed by their employee number.\n So emp[1] would beemployee number one, emp[2] employee number two, and so on.'
-        example:
-        link:
+        note:'An array is an ordered set of values that you refer to with a name and an index. For example, you could have an array called emp that contains employees names indexed by their employee number.\n So emp[1] would beemployee number one, emp[2] employee number two, and so on.',
+        example:`
+var arr = [42]; // Creates an array with only one element:
+                // the number 42.
+
+var arr = Array(42); // Creates an array with no elements
+                     // and arr.length set to 42; this is
+                     // equivalent to:
+var arr = [];
+arr.length = 42;`,
+
+        link:'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections',
         createdAt: new Date(),
         updatedAt: new Date(),
         topic_id: 86 // indexing
