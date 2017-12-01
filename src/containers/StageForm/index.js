@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { loadTopics } from '../../actions/topic.actions';
 import { addNewResource } from '../../actions/resource.actions';
 import FirstPage from './FirstPage';
@@ -11,14 +12,14 @@ class StageForm extends Component {
     super();
 
     this.state = {
-      page : 1
+      page : 1,
+      redirectHome: false
     };
 
     this.nextPage = this.nextPage.bind(this);
     this.previousPage = this.previousPage.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
 
   nextPage() {
     this.setState({ page : this.state.page + 1 });
@@ -30,7 +31,11 @@ class StageForm extends Component {
 
   handleSubmit(info) {
     info.example = this.props.code;
-    this.props.addNewResource(info);    
+    this.props.addNewResource(info);
+
+    this.setState({ 
+      redirectHome: true
+    });
   }
 
   componentWillMount() {
@@ -42,6 +47,12 @@ class StageForm extends Component {
 
     return (
       <div className="stage-form">
+        {
+          this.state.redirectHome 
+          ? <Redirect to="/" />
+          : null         
+        }
+
         <div className="header">
           Add New Resource
         </div>
@@ -60,6 +71,7 @@ class StageForm extends Component {
         {
           page === 3 &&
           <ThirdPage
+            redirectHome={ this.redirectHome }
             previousPage={ this.previousPage }
             onSubmit={ this.handleSubmit } />
         }

@@ -24,6 +24,12 @@ class TagInput extends Component {
     this.props.loadTopics();
   }
 
+  componentWillUnmount() {
+    this.setState({
+      tags : []
+    });
+  }
+
   handleDelete(i) {
     let tags = this.state.tags;
     tags.splice(i, 1);

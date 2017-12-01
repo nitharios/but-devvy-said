@@ -109,6 +109,7 @@ body {
   border: 1px solid $primary-color;
   display: inline-block;
   margin: 5px;
+  margin-top: 15px;
   width: 70px;
   height: 35px;
   font-family: "Varela Round";
@@ -123,6 +124,7 @@ body {
 #app, #about {
   width: 75%;
   margin: 30px auto;
+  margin-bottom: 100px;
   font-family: "Redressed";
 
   #banner {
@@ -376,6 +378,7 @@ body {
 .TagInput-label {
   display: block;
   margin: 0 auto;
+  margin-top: 20px;
 }
 
 /* ReactTags Styling */
@@ -449,6 +452,24 @@ div.suggestionsClass ul li.activeSuggestionClass {
   cursor: pointer;
 }
 
+/* ERROR */
+.error-msg {
+  width: 75%;
+}
+.error-msg span {
+  font-size: 0.75em;
+  font-weight: bold;
+  color: red;
+  margin-left: 2px;
+}
+.error-msg img {
+  padding: 1px;
+  height: 17px;
+  width: 17px;
+  position: relative;
+  top: 3px;
+}
+
 /* StageForm */
 .stage-form {
   margin: 20px auto;
@@ -495,7 +516,6 @@ div.suggestionsClass ul li.activeSuggestionClass {
         height: 35px;
         font-size: 20px;
         text-indent: 10px;
-        margin-bottom: 20px;
       }
 
       .select-option {

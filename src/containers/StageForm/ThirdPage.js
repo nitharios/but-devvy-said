@@ -56,6 +56,6 @@ const ThirdPage = props => {
 
 export default reduxForm({
   form : 'stageform',               
-  destroyOnUnmount : false,       
+  destroyOnUnmount : true,       
   forceUnregisterOnUnmount : true
 })(ThirdPage);
