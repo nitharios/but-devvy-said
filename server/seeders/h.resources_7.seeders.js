@@ -230,7 +230,7 @@ See above note ^^`,
         createdAt: new Date(),
         updatedAt: new Date(),
         topic_id:  90 //interpreted language
-      }
+      },
       {
         name: 'Nigel',
         cohort: 1,
@@ -250,7 +250,7 @@ please see above note :) -devvy`,
         name: 'kyle simpson',
         cohort: 1,
         title: 'what is javascript',
-        tags:[javascript],
+        tags:['javascript'],
         note:'JavaScript is a programming language that allows you to implement complex things on web pages — every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, or interactive maps, or animated 2D/3D graphics, or scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved. It is the third layer of the layer cake of standard web technologies, two of which (HTML and CSS) we have covered in much more detail in other parts of the Learning Area.',
         example:`
 check link below ^^ -devvy`,
@@ -296,7 +296,7 @@ check link below ^^ -devvy`,
         note:'JSON stands for JavaScript Object Notation \n JSON is a lightweight data-interchange format; JSON is "self-describing" and easy to understand; \n JSON is language independent *. * JSON uses JavaScript syntax, but the JSON format is text only.',
         example:``,
 
-        link: 'http://bit.ly/2i5xexe'
+        link: 'http://bit.ly/2i5xexe',
         createdAt: new Date(),
         updatedAt: new Date(),
         topic_id:  94 // json
