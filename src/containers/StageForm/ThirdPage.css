@@ -18,13 +18,16 @@
 
 .ThirdPage-label {
   margin-bottom: 5px;
+  font-size: 0.7em;
+  font-weight: bold;
   padding: 3px;
-  border: 1px solid black;
-  width: 100%;
+  display: inline-block;
 }
 
 .ThirdPage input {
-  width: 100%;
+  width: 90%;
+  padding: 2px;
+
 }
 .ThirdPage textarea {
   border: 1px solid green;

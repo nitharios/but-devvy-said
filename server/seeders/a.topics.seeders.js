@@ -152,7 +152,7 @@ module.exports = {
         name : 'default constructor'
       },
       {
-        name : 'denormalization'
+        name : 'denormalization' //Topic ID# 50
       },
       {
         name : 'delete'
@@ -182,7 +182,7 @@ module.exports = {
         name : 'event'
       },
       {
-        name : 'exporting'
+        name : 'exporting' //Topic ID# 60
       },
       {
         name : 'expression (angular)'
@@ -212,7 +212,7 @@ module.exports = {
         name : 'function'
       },
       {
-        name : 'function declaration'
+        name : 'function declaration' //Topic ID# 70
       },
       {
         name : 'function expression'
