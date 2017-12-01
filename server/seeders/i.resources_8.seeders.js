@@ -10,6 +10,161 @@ module.exports = {
     return queryInterface.bulkInsert('resources', [
 
       {
+        name : 'Schooze',
+        cohort : 19,
+        title : 'What is indexing for?',
+        tags : ['database', 'index', 'sql'],
+        note : `An index is a copy of selected columns of data from a table that can be searched very efficiently that also includes a low-level disk block address or direct link to the complete row of data it was copied from.\n Some databases extend the power of indexing by letting developers create indexes on functions or expressions. \nIn other words, it is a data structure that makes searching for a specific column in a database faster.`,
+
+        example : ``,
+        link : 'http://bit.ly/2AvSjvD',
+        createdAt : new Date(),
+        updatedAt : new Date(),
+        topic_id : 86 //indexing
+      },
+      {
+        name : 'John',
+        cohort : 19,
+        title : 'Inheritance in Javascript uses the objects themselves.',
+        tags : ['constructor', 'inheritance', 'prototype'],
+        note : `JavaScript does support inheritance on a prototypal way.\n What you need here is not classes but the encapsulation of behavior and the ability to override.`,
+        example : `
+function Piece() { }
+
+Piece.prototype.color = "white";
+Piece.prototype.getColor = function() { return this.color }
+Piece.prototype.move = function() { throw "pure function" };
+
+function Pawn() { }
+Pawn.prototype = new Piece();    
+Pawn.prototype.move = function() { alert("moved"); }
+
+//and now..
+var p = new Pawn(); p.color = "black";
+
+> p instanceof Piece`,
+
+        link : 'http://bit.ly/2dxx4w9',
+        createdAt : new Date(),
+        updatedAt : new Date(),
+        topic_id : 87 //inheritance
+      },
+      {
+        name : 'Schmoo',
+        cohort : 19,
+        title : 'Visualizing Insertion Sort',
+        tags : ['algorithm', 'sorting', 'complexity'],
+        note : `Insertion sort is kind of like how we would sort a playing-card deck.\n Insertion sort algorithm iterates, consuming one input element each repetition, and growing a sorted output list.\n Each iteration removes one element from the input data, finds the location it belongs within the sorted list, and inserts it there.\n It repeats until no input elements remain.`,
+
+        example : `
+// array to sort
+var array = [9, 2, 5, 6, 4, 3, 7, 10, 1, 8];
+
+function insertionSort(array) {
+  for(var i = 0; i < array.length; i++) {
+    var temp = array[i];
+    var j = i - 1;
+    while (j >= 0 && array[j] > temp) {
+      array[j + 1] = array[j];
+      j--;
+    }
+    array[j + 1] = temp;
+  }
+  return array;
+}
+
+console.log(insertionSort(array)); // => [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]`,
+
+        link : 'http://bit.ly/2ngFCiU',
+        createdAt : new Date(),
+        updatedAt : new Date(),
+        topic_id : 88 //insertion sort
+      },
+      {
+        name : 'Andy',
+        cohort : 19,
+        title : 'What is the instanceof operator?',
+        tags : ['keyword', 'instanceof', 'javascript'],
+        note : `The instanceof operator is used to check the type of an object at run time.\n The instanceof operator returns a boolean value that indicates if an object is an instance of a particular class.`,
+
+        example : `
+var string1 = "w3resource"; //Declaring string object  
+var date1 = new Date();  //Declaring Date object  
+if (string1 instanceof String) {  
+    console.log('it worked!');    
+};//this code will work and 'it worked!' will be logged`,
+
+        link : 'http://bit.ly/2jArgF7',
+        createdAt : new Date(),
+        updatedAt : new Date(),
+        topic_id : 89 //instanceof
+      },
+      {
+        name : 'Wayne',
+        cohort : 19,
+        title : 'What is an interpreted language?',
+        tags : ['javascript', 'interpreted language', 'compiler'],
+        note : `JavaScript is an interpreted language, not a compiled language.\n A program such as C++ or Java needs to be compiled before it is run. In Javascript, most of its implementations execute code directly.`,
+        example : ``,
+        link : 'http://bit.ly/2ApeoJZ',
+        createdAt : new Date(),
+        updatedAt : new Date(),
+        topic_id : 90 //interpreted language
+      },
+      {
+        name : 'Kyle',
+        cohort : 19,
+        title : 'What is Javascript?',
+        tags : ['javascript', 'language', 'scripting', 'interpreted'],
+        note : `JavaScript is a programming language that allows you to implement complex things on web pages.\n JavaScript is an interpreted language — the code is run from top to bottom and the result of running the code is immediately returned.\n It does not need a compiler like Java or C++.\n All the interactivity you see on a web site is done with Javascript!`,
+
+        example : `
+//we first start off with script tags, and add code inside!
+<script>
+
+  // JavaScript goes here
+
+</script>
+
+//next, we'll add some real stuff inside our script tags!
+function createParagraph() {
+  var para = document.createElement('p');
+  para.textContent = 'You clicked the button!';
+  document.body.appendChild(para);
+}
+
+var buttons = document.querySelectorAll('button');
+
+for (var i = 0; i < buttons.length ; i++) {
+  buttons[i].addEventListener('click', createParagraph);
+}`,
+
+        link : 'http://bit.ly/2Bzb4vT',
+        createdAt : new Date(),
+        updatedAt : new Date(),
+        topic_id : 92 //JAVASCRIPT .. DEMO
+      },
+      {
+        name : 'Quince',
+        cohort : 19,
+        title : 'What is jQuery for?',
+        tags : ['library', 'jQuery', 'javascript'],
+        note : `The purpose of jQuery is to make it much easier to use JavaScript on your website.\n jQuery is a lightweight, "write less, do more", JavaScript library.\n jQuery takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code.`,
+
+        example : `
+//jQuery syntax goes like this..
+$(document).ready(function(){
+
+   // jQuery methods go here...
+
+});`,
+
+        link : 'http://bit.ly/2i7qiQq',
+        createdAt : new Date(),
+        updatedAt : new Date(),
+        topic_id : 93 //jquery
+      },
+      {
         name : 'Colin',
         cohort : 9,
         title : 'What is JSON?',
@@ -47,6 +202,18 @@ module.exports = {
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 94 //'json'
+      },
+      {
+        name : 'Kay',
+        cohort : 19,
+        title : 'What keyboard should I use as a dev?',
+        tags : ['poker2', 'mechanical', 'dev'],
+        note : `I highly recommend using a mechanical keyboard. The Poker2 is an excellent choice. The tools you use as a dev make all the difference in the long run.`,
+        example : ``,
+        link : 'http://amzn.to/2j5WZyx',
+        createdAt : new Date(),
+        updatedAt : new Date(),
+        topic_id : 95 //keyboard
       }
 
     ], {});
