@@ -231,6 +231,21 @@ See above note ^^`,
         updatedAt: new Date(),
         topic_id:  90 //interpreted language
       }
+      {
+        name: 'Nigel',
+        cohort: 1,
+        title: 'technical interviews',
+        tags:['interview', 'technical interview', 'behavioral interview'],
+        note:'The technical interview is a part of the process in which you are tested and asked questions that reflect your technical knowledge and your ability to problem solve, many technical interviews have white. boarding, coding and knowledge questions \n behavioral Interviews are interviews that usually revolve around A job interviewing technique whereby the applicant is asked to describe past behavior in order to determine whether she is suitable for a position. For example, an interviewer may ask "Tell me about a time when you dealt with a disruptive customer". Responses are expected to give an indication of an applicants professional conduct.\n Cultural Interviews Interviewers ask questions about company culture to ensure that the employees they hire are a good fit for the organization. Company culture includes a range of issues, from how employees dress, to how they interact with company leaders, to how often employees volunteer to work after hours.' ,
+
+        example:`
+please see above note :) -devvy`,
+
+        link:'http://bit.ly/2BAmDmJ',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        topic_id: 91 // interview
+      }
 
     ], {});
 
