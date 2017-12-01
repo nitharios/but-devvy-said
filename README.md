@@ -1,16 +1,16 @@
 # but-devvy-said
-Devvy Cho is a smart bot that you can query for resources that have been useful to past or current DevLeague students. The resources available include notes, applicable examples, and external links.
+Devvy Cho is a smart bot that you can query for resources that have been useful to past or current DevLeague students. The resources available include notes, applicable examples, and external links. Devvy has the ability to display these resources in both the Web application version and the Slack implementation.
 
-## How it works
+## How It Works
 At her core, Devvy relies on a natural language processor (NLP) called [Wit.ai](https://wit.ai). Messages sent to Devvy are turned into actionable commands through Wit. These commands are then used to perform specific bot-related tasks.
 
-We used [Botkit](https://www.botkit.ai/) to build Devvy a body and integrate her in Slack and ther browser.
+We used [Botkit](https://www.botkit.ai/) to build Devvy a body and integrate her in Slack and the browser.
 
-The inspiration for Devvy is [here](https://github.com/devleague/Devvy-Cho).
+The original inspiration for Devvy is [here](https://github.com/devleague/Devvy-Cho).
 
-## See her in action
+## See Her In Action
 <!-- Need to add website link -->
-Check Devvy out [here](https://github.com/Nitharios/but-devvy-said)
+Check Devvy out [here](http://devvycho.com/)!
 
 ## Contribute
 ### Local Installation
