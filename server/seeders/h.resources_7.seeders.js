@@ -258,6 +258,35 @@ check link below ^^ -devvy`,
         createdAt: new Date(),
         updatedAt: new Date(),
         topic_id: 92 // javascript
+      },
+      {
+        name: 'query joe',
+        cohort: 8,
+        title: 'what is jquery',
+        tags:['jquery', 'javascript'],
+        note:'The purpose of jQuery is to make it much easier to use JavaScript on your website.\n jQuery is a lightweight, "write less, do more", JavaScript library.The purpose of jQuery is to make it much easier to use JavaScript on your website.jQuery takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code.jQuery also simplifies a lot of the complicated things from JavaScript, like AJAX calls and DOM manipulation. \n while useful, jQuery is currentyl being phased out in the light of new tools for web development',
+        example:`
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jQuery Document Ready Demo</title>
+    <link rel="stylesheet" type="text/css" href="/examples/css/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("p").text("Hello World!");
+        });
+    </script>
+</head>
+<body>
+    <p>Not loaded yet.</p>
+</body>
+</html> `,
+        link: 'http://bit.ly/2toKh53',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        topic_id:  93 //jquery
       }
 
     ], {});
