@@ -156,6 +156,20 @@ see link ^^ -devvy`,
         createdAt: new Date(),
         updatedAt: new Date(),
         topic_id: 154 // sequelize js
+      },
+      {
+        name: 'singler',
+        cohort: 19,
+        title:'what is a single page application',
+        tags:['spa', 'single page application'],
+        note: 'The term “single-page application” (or SPA) is usually used to describe applications that were built for the web. These applications are accessed via a web browser like other websites, but offer more dynamic interactions resembling native mobile and desktop apps.\n The most notable difference between a regular website and an SPA is the reduced amount of page refreshes. SPAs have a heavier usage of AJAX — a way to communicate with back-end servers without doing a full page refresh — to get data loaded into our application. As a result, the process of rendering pages happens mostly on the client-side',
+        example:`
+// see link below ^^ -devvy`,
+
+        link: 'http://bit.ly/2AAVpP0',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        topic_id:  155 // single page application
       }
 
     ], {});
