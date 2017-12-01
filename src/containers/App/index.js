@@ -20,6 +20,14 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillUnmount() {
+    this.setState({
+      devvyText : '',
+      userText : '',
+      userQuery : ''
+    });
+  }
+
   handleClear(e) {
     this.setState({ userQuery : '' });
   }
