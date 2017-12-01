@@ -11,7 +11,7 @@ module.exports = {
         name : 'algorithm'
       },
       {
-        name : 'angular'
+        name : 'angularjs'
       },
       {
         name : 'anonymous function' 
