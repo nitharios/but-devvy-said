@@ -59,12 +59,12 @@ class TagInput extends Component {
 
     return (
       <div>
-        <div className="TagInput-label"><span>Please Provide Topics..</span></div>
+        <div className="TagInput-label formField">Topics</div>
         <ReactTags
           name="tags"
           tags={tags}
           suggestions={suggestions}
-          placeholder="Enter Topics.."
+          placeholder="Select Topics"
           labelField="name"
           handleDelete={this.handleDelete}
           handleAddition={this.handleAddition}

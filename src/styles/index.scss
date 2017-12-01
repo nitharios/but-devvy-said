@@ -105,6 +105,20 @@ body {
   }
 }
 
+.button {
+  border: 1px solid $primary-color;
+  display: inline-block;
+  margin: 5px;
+  width: 70px;
+  height: 35px;
+  font-size: 15px;
+
+  &:hover {
+    background-color: $primary-color;
+    color: $bg-color;
+  }
+}
+
 #app, #about {
   width: 75%;
   margin: 30px auto;
@@ -155,20 +169,6 @@ body {
     width: 100%;
     text-align: center;
     margin-top: 10px;
-
-    .button {
-      border: 1px solid $primary-color;
-      display: inline-block;
-      margin: 5px;
-      width: 70px;
-      height: 35px;
-      font-size: 15px;
-
-      &:hover {
-        background-color: $primary-color;
-        color: $bg-color;
-      }
-    }
   }
 
   .response-box {
@@ -234,18 +234,18 @@ body {
   font-size: 15px;
 }
   
+.header {
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 15px;
+  margin-left: 30px;
+  font-family: "Niconne";
+  font-size: 40px;
+}
+
 #about {
   width: 75%;
   margin: 75px auto;
-
-  #header {
-    width: 100%;
-    margin-top: 60px;
-    margin-bottom: 15px;
-    margin-left: 30px;
-    font-family: "Niconne";
-    font-size: 40px;
-  }
 
   .content {
     background-color: $contrast-bg-color;
@@ -363,55 +363,44 @@ body {
 /* Tag Input */
 .TagInput-label {
   display: block;
-  width: 50%;
   margin: 0 auto;
-  font-size: 0.75em;
-  text-align: left;
-}
-.TagInput-label span {
-  margin-left: 5px;
 }
 
 /* ReactTags Styling */
 /* STYLES FOR THE MAIN DIV */
 div.tagsClass {
-  border: 1px solid black;
-  width: 50%;
   position: relative;
   margin: 0 auto;
+  border-radius: 10px;
+  height: 100px;
 }
-
 
 /* STYLES FOR INPUT */
 div.tagInputClass input.tagInputFieldClass {
-  height: 31px;
+  width: inherit;
   margin: 5px;
-  font-size: 12px;
-  width: 80%;
-  border: 1px solid black;
-  border-radius: 2px;
-}
-div.tagInputClass input.tagInputFieldClass:focus {
-  
+  font-size: 20px;
+  border-radius: 10px;
+  text-indent: 10px;
 }
 
 /* STYLES FOR SELECTED TAGS AND REMOVE BUTTON */
 div.selectedClass span.tagClass {
-  border: 1px solid black;
   position: relative;
-  border-radius: 2px;
-  background: #eee;
-  font-size: 0.85em;
+  border-radius: 10px;
+  background: $primary-color;
+  color: $bg-color;
+  font-size: 20px;
   display: inline-block;
-  padding: 4px 6px;
+  padding: 10px;
   margin: 5px;
   cursor: move;
 }
 div.selectedClass a.removeClass {
   position: relative;
-  left: 4px;
-  color: black;
-  font-size: 0.9em;
+  padding-left: 10px;
+  color: $font-color;
+  font-size: 20px;
   height: 50%;
   margin: 0 auto;
 }
@@ -449,259 +438,64 @@ div.suggestionsClass ul li.activeSuggestionClass {
 }
 
 /* StageForm */
-.FirstPage {
-  
-  margin: 15px 0px;
-  position: relative;
+.stage-form {
+  margin: 20px auto;
+  font-family: "Varela Round";
+
+  .header {
+    margin: 0px;
+    text-align: center;
+  }
 }
 
-.center-helper {
-  position: relative;
-  left: 25%;
-}
-/* TOP HALF, NAME AND COHORT */
-.FirstPage-fields {
-  
-  width: 50%;
-  margin: 5px;
-  padding: 5px;
-  position: relative;
-  margin: 0 auto;
-}
-
-.FirstPage-fields-name {
-  
-  margin: 15px 0px;
-  width: 50%;
-}
-
-.FirstPage-fields-name label {
-  
-  padding: 1px;
-  margin: 2px;
-  font-size: 0.75em;
-  font-weight: bold;
-  display: inline-block;
-}
-
-.FirstPage-fields-name input {
-  padding: 4px;
-  margin: 2px;
-  width: 99%;
-}
-
-.FirstPage-fields-cohort {
-  
-  margin-bottom: 15px;
-  width: 50%;
-}
-
-.FirstPage-fields-cohort label {
-  
-  padding: 1px;
-  margin: 2px;
-  font-size: 0.75em;
-  font-weight: bold;
-  display: inline-block;
-}
-
-.FirstPage-fields-cohort input {
-  padding: 4px;
-  margin: 2px;
-  width: 30%;
-}
-
-/* BOTTOM HALF, NEXT BUTTON */
-.FirstPage-next {
-  
-  width: 50%;
-  margin: 5px;
-  padding: 5px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.FirstPage-next input {
-  border: 1px solid black;
-  font-size: 1.25em;
-  border-radius: 3px;
-  margin: 5px;
-  padding: 2px;
-  width: 20%;
-}
-
-.FirstPage-next input:hover {
-  cursor: pointer;
-  font-weight: bold;
-}
-
-/* ERROR */
-.error-msg {
-  
-  margin: 2px;
-  width: 99%;
-}
-.error-msg span {
-  font-size: 0.75em;
-  font-weight: bold;
-  color: red;
-  margin-left: 2px;
-}
-.error-msg img {
-  padding: 1px;
-  height: 17px;
-  width: 17px;
-  position: relative;
-  top: 3px;
-}
-
-.center-helper {
-  position: relative;
-  left: 25%;
-}
-
-.SecondPage {
-  margin: 15px 0px;
-  position: relative;
-}
-
-.center-helper {
-  position: relative;
-  left: 25%;
-}
-
-/* TOP HALF, NAME AND COHORT */
-.SecondPage-fields {
-  
-  width: 50%;
-  margin: 5px;
-  padding: 5px;
-  position: relative;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.SecondPage-fields-title {
-  
-  margin: 15px 0px;
-  width: 50%;
-  text-align: left;
-}
-.SecondPage-fields-title label {
-  padding: 1px;
-  margin: 2px;
-  font-size: 0.75em;
-  font-weight: bold;
-  display: inline-block;
-}
-.SecondPage-fields-title input {
-  
-  padding: 4px;
-  margin: 2px;
-  width: 99%;
-}
-
-.SecondPage-fields-topic {
-  
-  margin-bottom: 15px;
-  width: 50%;
-  text-align: left;
-}
-.SecondPage-fields-topic label {
-  padding: 1px;
-  margin: 2px;
-  font-size: 0.75em;
-  font-weight: bold;
-  display: block;
-}
-.SecondPage-fields-topic select {
-  padding: 4px;
-  margin: 2px;
-  width: 50%;
-}
-
-/* BOTTOM HALF, NEXT BUTTON */
-.SecondPage-submit {
-  width: 50%;
-  margin: 5px;
-  padding: 5px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.SecondPage-submit input {
-  border: 1px solid black;
-  font-size: 1.25em;
-  border-radius: 3px;
-  margin: 5px;
-  padding: 2px;
-  width: 20%;
-}
-.SecondPage-submit input:hover {
-  cursor: pointer;
-  font-weight: bold;
-}
-
-/* PARENT DIV */
-.ThirdPage {
-  position: relative;
-}
-
-/* NOTES EXAMPLES LINK FIELDS AND LABELS */
-.ThirdPage-fields {
-  border: 1px solid blue;
-  width: 50%;
-  margin: 5px;
-  padding: 5px;
-  position: relative;
-  margin: 0 auto;
-}
-
-.ThirdPage-label {
-  margin-bottom: 5px;
-  font-size: 0.7em;
-  font-weight: bold;
-  padding: 3px;
-  display: inline-block;
-}
-
-.ThirdPage input {
-  width: 90%;
-  padding: 2px;
-
-}
-.ThirdPage textarea {
-  border: 1px solid green;
+.formPage {
+  @include flex-style(row nowrap, center);
   width: 100%;
+  margin-top: 20px;
+
+  form {
+    display: inline-block;
+    border: 1px solid $primary-color;
+    border-radius: 10px;
+    margin: 20px auto;
+    padding: 20px;
+
+    .formField {
+      // margin-top: 10px;
+      // margin-bottom: 20px;
+
+      label {
+        display: block;
+        margin: 5px;
+      }
+
+      input {
+        width: 300px;
+        height: 35px;
+        font-size: 20px;
+        text-indent: 10px;
+        margin-bottom: 20px;
+      }
+
+      .select-option {
+        display: block;
+        width: 75%;
+        height: 35px;
+        font-size: 20px;
+      }
+    }
+  }
 }
 
-.ThirdPage-example-box {
-  background-color: pink;
-}
-
-
-/* BOTTOM HALF, SUBMIT AND BACK BUTTONS */
-.ThirdPage-submit {
-  border: 1px solid magenta;
-  width: 50%;
-  margin: 5px;
-  padding: 5px;
+#thirdPage form {
+  width: 75%;
   margin: 0 auto;
-  text-align: center;
-}
 
-.ThirdPage-submit input {
-  border: 1px solid black;
-  font-size: 1.25em;
-  border-radius: 3px;
-  margin: 5px;
-  padding: 2px;
-  width: 20%;
-}
-
-.ThirdPage-submit input:hover {
-  cursor: pointer;
-  font-weight: bold;
+  textarea {
+    width: 100%;
+    height: 300px;
+    font-size: 20px;
+  }
 }
 
 /* Highlighter styles  */

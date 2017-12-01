@@ -6,41 +6,34 @@ const FirstPage = props => {
   const { nextPage } = props;
 
   return (
-    <form className="FirstPage" onSubmit={ nextPage }> 
-      
-      <div className="FirstPage-fields">
-
-        <div className="center-helper">
-          <div className="FirstPage-fields-name">
+    <div className="formPage">
+      <form onSubmit={ nextPage }> 
+        
+        <div className="formField">
           <label>Name</label>
             <Field
               component={ formField }
               name="name"
               placeholder="(optional)"
               type="text" />
-          </div>
         </div>
-
-        <div className="center-helper">
-          <div className="FirstPage-fields-cohort">
+        <div className="formField">
           <label>Cohort</label>
-            <Field
-              component={ formField }
-              name="cohort"
-              placeholder="(optional)"
-              type="number" />
-          </div>
+          <Field
+            component={ formField }
+            name="cohort"
+            placeholder="(optional)"
+            type="number" />
         </div>
 
-      </div>
-
-      <div className="FirstPage-next">
-        <input 
-          type="submit" 
-          value="Next" />
-      </div>
-      
-    </form>
+        <div>
+          <input
+            className="button"
+            type="submit" 
+            value="Next" />
+        </div>
+      </form>
+    </div>
   );
 };
 

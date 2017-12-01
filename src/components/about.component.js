@@ -3,7 +3,7 @@ import React from 'react';
 export default ({ falseParameter }) => {
   return(
     <div id="about">
-      <div id="header">
+      <div className="header">
         About
       </div>
       <div className="content">

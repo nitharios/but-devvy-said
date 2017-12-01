@@ -7,55 +7,51 @@ const SecondPage = props => {
   const { nextPage, previousPage, pristine, submitting, topicsList } = props;
 
   return (
-    <form className="SecondPage" onSubmit={ nextPage }>
-    
-      <div className="SecondPage-fields">
-        
-        <div className="center-helper">
-          <div className="SecondPage-fields-title">
-            <label>Title</label>
-            <Field
-              component={ formField }
-              name="title"
-              placeholder="required"
-              type="text" />
-          </div>
+    <div className="formPage">
+      <form className="SecondPage" onSubmit={ nextPage }>
+              
+        <div className="formField">
+          <label>Title</label>
+          <Field
+            component={ formField }
+            name="title"
+            placeholder="required"
+            type="text" />
+        </div>
+        <div className="formField">
+          <label>Select a Topic</label>
+          <Field
+            className="select-option"
+            component="select"
+            name="topic_id" >
+
+            { topicsList.map((topic, idx) => {
+              return(
+                <option
+                  key={ idx }
+                  value={ topic.id } >
+                  { topic.name }
+                </option>
+              )
+            }) }
+
+          </Field>
         </div>
 
-        <div className="center-helper">
-          <div className="SecondPage-fields-topic">
-            <label>Select a Topic</label>
-            <Field
-              component="select"
-              name="topic_id" >
-
-              { topicsList.map((topic, idx) => {
-                return(
-                  <option
-                    key={ idx }
-                    value={ topic.id } >
-                    { topic.name }
-                  </option>
-                )
-              }) }
-
-            </Field>
-          </div>
+        <div>
+          <input
+            className="button"
+            disabled={ pristine || submitting }
+            type="submit" 
+            value="Next" />
+          <input 
+            className="button"
+            type="button" 
+            onClick={ previousPage }
+            value="Back" />
         </div>
-
-      </div>
-
-      <div className="SecondPage-submit">
-        <input 
-          disabled={ pristine || submitting }
-          type="submit" 
-          value="Next" />
-        <input 
-          type="button" 
-          onClick={ previousPage }
-          value="Back" />
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 
