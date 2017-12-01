@@ -5,9 +5,6 @@ import formField from '../../components/formfield.component';
 import CodeEditor from '../CodeEditor';
 import TagInput from '../TagInput';
 
-/*STYLES*/
-import './ThirdPage.css';
-
 const ThirdPage = props => {
   const { handleSubmit, pristine, previousPage, submitting } = props;
 

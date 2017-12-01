@@ -7,9 +7,6 @@ import '../../../node_modules/codemirror/mode/javascript/javascript';
 import '../../../node_modules/codemirror/mode/markdown/markdown';
 import '../../../node_modules/codemirror/mode/css/css';
 
-/*STYLES*/
-import './CodeEditor.css';
-
 class CodeEditor extends Component {
 
   constructor(props) {

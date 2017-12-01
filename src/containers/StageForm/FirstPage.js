@@ -2,9 +2,6 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import formField from '../../components/formfield.component';
 
-/*STYLES*/
-import './FirstPage.css';
-
 const FirstPage = props => {
   const { nextPage } = props;
 

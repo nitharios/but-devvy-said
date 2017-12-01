@@ -6,9 +6,6 @@ import { WithContext as ReactTags } from 'react-tag-input';
 import { loadTopics } from '../../actions/topic.actions';
 import { addNewResource } from '../../actions/resource.actions';
 
-/*STYLES*/
-import './TagInput.css';
-
 class TagInput extends Component {
 
   constructor(props) {

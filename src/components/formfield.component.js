@@ -1,11 +1,6 @@
 //HTML input tag dummy component
 //Fed into redux-form Field component
-
 import React from 'react';
-
-/*STYLES*/
-import '../containers/StageForm/SecondPage.css';
-
 
 export default ({ input, placeholder, type, meta : { touched, error } }) => {
   console.log('formField render');
@@ -16,6 +11,4 @@ export default ({ input, placeholder, type, meta : { touched, error } }) => {
         { touched && error && <div className="error-msg"><img src='/assets/error.png' alt='' /><span>{ error }</span></div> }
       </div>
   );
-
-
 };
