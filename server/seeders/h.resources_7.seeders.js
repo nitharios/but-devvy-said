@@ -119,6 +119,36 @@ arr.length = 42;`,
         createdAt: new Date(),
         updatedAt: new Date(),
         topic_id: 86 // indexing
+      },
+      {
+        name: 'johhny belcher',
+        cohort: 5,
+        title:'what is inheritance',
+        tags:['inheritance', 'scope', 'function block'],
+        note:'When it comes to inheritance, JavaScript only has one construct: objects. Each object has a private property (referred to as [[Prototype]] ) which holds a link to another object called its prototype. That prototype object has a prototype of its own, and so on until an object is reached with null as its prototype. By definition, null has no prototype, and acts as the final link in this prototype chain.',
+        example:`
+var o = {
+  a: 2,
+  m: function() {
+    return this.a + 1;
+  }
+};
+
+console.log(o.m()); // 3
+// When calling o.m in this case, 'this' refers to o
+
+var p = Object.create(o);
+// p is an object that inherits from o
+
+p.a = 4; // creates a property 'a' on p
+console.log(p.m()); // 5
+// when p.m is called, 'this' refers to p.
+// So when p inherits the function m of o, 
+// 'this.a' means p.a, the property 'a' of p`,
+        link:'https://mzl.la/1FXbcAX',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        topic_id: 87 // inheritance
       }
 
     ], {});
