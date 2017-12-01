@@ -181,6 +181,31 @@ var Car = (function() {
         createdAt: new Date(),
         updatedAt: new Date(),
         topic_id:  133 // private variables
+      },
+      {
+        name: 'killer whale',
+        cohort: 12,
+        title:' what is programming paradigm',
+        tags:['programming paradigm'],
+        note:'Programming paradigms are a way to classify programming languages based on their features. Languages can be classified into multiple paradigms. \n Some paradigms are concerned mainly with implications for the execution model of the language, such as allowing side effects, or whether the sequence of operations is defined by the execution model. Other paradigms are concerned mainly with the way that code is organized, such as grouping a code into units along with the state that is modified by the code. Yet others are concerned mainly with the style of syntax and grammar.',
+        example:``,
+
+        link: 'http://bit.ly/2xiZxkT',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        topic_id:  134// programming paradigm
+      },
+      {
+        name:
+        cohort:
+        title:
+        tags:
+        note:
+        example:
+        link:
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        topic_id:  135 // Promise
       }
 
     ], {});
