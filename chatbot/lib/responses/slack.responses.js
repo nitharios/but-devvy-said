@@ -133,8 +133,8 @@ module.exports = {
     "C19 4 LYFE!"
   ],
   devleague : [
-    "DevLeague rocks!",
-    "I love DevLeague!",
+    "DevLeague rocks! :devleague:",
+    "I :heart: DevLeague!",
   ],
   jason : [
     "Jason has the best beard!",
@@ -144,7 +144,7 @@ module.exports = {
   jesse : [
     "The guy with all those Star Wars t-shirts?",
     "Jesse is hilarious!",
-    "@mentalgrinds? Yeah!"
+    "@jesse? He's a millenial in a Gen-X body"
   ],
   ed : [
     "Ask Ed about his weird eating schedule",
@@ -152,13 +152,13 @@ module.exports = {
     "@taesup is always here!"
   ],
   nigel : [
-    "He's really tall!",
+    "Ask @nigelearle about his cardboard cutout!",
     "#butNigelSaid",
     "OUR NIGEL!"
   ],
   vic : [
     "@vic is the BEST RA!",
-    "Tell him to keep it high!",
+    "Tell him to keep it up here! :up:",
     "He's got the coolest shoe collection :open_mouth:"
   ],
 

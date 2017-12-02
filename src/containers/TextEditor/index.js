@@ -5,9 +5,6 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import '../../../node_modules/react-quill/dist/quill.snow.css'
 
-/*STYLES*/
-import './TextEditor.css';
-
 class TextEditor extends Component {
 
   constructor(props) {

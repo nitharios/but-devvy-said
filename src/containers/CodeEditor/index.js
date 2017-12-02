@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+/*ACTIONS*/
+import { addCode } from '../../actions/code.actions';
 
 /*CODEMIRROR*/
 import CodeMirror from 'react-codemirror';
@@ -7,15 +11,11 @@ import '../../../node_modules/codemirror/mode/javascript/javascript';
 import '../../../node_modules/codemirror/mode/markdown/markdown';
 import '../../../node_modules/codemirror/mode/css/css';
 
-/*STYLES*/
-import './CodeEditor.css';
-
 class CodeEditor extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      code : '',
       mode : 'javascript',
       readOnly : false
     };
@@ -25,8 +25,15 @@ class CodeEditor extends Component {
     this.toggleReadOnly = this.toggleReadOnly.bind(this);
   }
 
+  componentWillUnmount() {
+    this.setState({
+      mode : 'javascript',
+      readOnly : false
+    });
+  }
+
   updateCode(newCode) {
-    this.setState({code : newCode});
+    this.props.addCode(newCode);
   }
 
   changeMode(e) {
@@ -67,12 +74,12 @@ class CodeEditor extends Component {
         />
 
         <div className="CodeEditor-options">
-          <select onChange={this.changeMode} value={this.state.mode}>
+          <select className="select-option" onChange={this.changeMode} value={this.state.mode}>
             <option value="markdown">Markdown</option>
             <option value="css">CSS</option>
             <option value="javascript">JavaScript</option>
           </select>
-          <button onClick={this.toggleReadOnly}>Read-Only Mode is {this.state.readOnly ? 'ON' : 'OFF'}</button>
+          <button className="button" onClick={this.toggleReadOnly}>Read-Only {this.state.readOnly ? 'ON' : 'OFF'}</button>
         </div>
 
       </div>
@@ -83,4 +90,15 @@ class CodeEditor extends Component {
 }
 //end class
 
-export default CodeEditor;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addCode : (newCode) => {
+      dispatch(addCode(newCode));
+    }
+  };
+}
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(CodeEditor);

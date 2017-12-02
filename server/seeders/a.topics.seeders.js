@@ -11,7 +11,7 @@ module.exports = {
         name : 'algorithm'
       },
       {
-        name : 'angular'
+        name : 'angularjs'
       },
       {
         name : 'anonymous function' 
@@ -20,7 +20,7 @@ module.exports = {
         name : 'argument'
       },
       { 
-        name : 'arrow function'
+        name : 'fat arrow'
       },
       {
         name : 'application programming interface'
@@ -38,7 +38,7 @@ module.exports = {
         name : 'array'
       },
       {
-        name : 'array prototype method'
+        name : 'array method'
       },
       {
         name : 'array indices'
@@ -137,13 +137,13 @@ module.exports = {
         name : 'currying'
       },
       {
-        name : 'data types'
+        name : 'datatype'
       },
       {
         name : 'debugger'
       },
       {
-        name : 'debugging'
+        name : 'debug'
       },
       {
         name : 'default'
@@ -167,7 +167,7 @@ module.exports = {
         name : 'document object model'
       },
       {
-        name : 'do while'
+        name : 'do while loop'
       },
       {
         name : 'dvorak'
@@ -182,7 +182,7 @@ module.exports = {
         name : 'event'
       },
       {
-        name : 'exporting' //Topic ID# 60
+        name : 'export' //Topic ID# 60
       },
       {
         name : 'expression (angular)'
@@ -560,7 +560,7 @@ module.exports = {
         name : 'web service'
       },
       {
-        name : 'while'
+        name : 'while loop'
       },
       {
         name : 'with'

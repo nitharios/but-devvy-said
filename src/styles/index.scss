@@ -105,9 +105,26 @@ body {
   }
 }
 
+.button {
+  border: 1px solid $primary-color;
+  display: inline-block;
+  margin: 5px;
+  margin-top: 15px;
+  width: 70px;
+  height: 35px;
+  font-family: "Varela Round";
+  font-size: 15px;
+
+  &:hover {
+    background-color: $primary-color;
+    color: $bg-color;
+  }
+}
+
 #app, #about {
   width: 75%;
   margin: 30px auto;
+  margin-bottom: 100px;
   font-family: "Redressed";
 
   #banner {
@@ -155,20 +172,6 @@ body {
     width: 100%;
     text-align: center;
     margin-top: 10px;
-
-    .button {
-      border: 1px solid $primary-color;
-      display: inline-block;
-      margin: 5px;
-      width: 70px;
-      height: 35px;
-      font-size: 15px;
-
-      &:hover {
-        background-color: $primary-color;
-        color: $bg-color;
-      }
-    }
   }
 
   .response-box {
@@ -183,7 +186,6 @@ body {
     height: 100%;
 
     .information {
-      // border: 1px solid $primary-color;
       border-radius: 10px;
 
       div {
@@ -234,18 +236,18 @@ body {
   font-size: 15px;
 }
   
+.header {
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 15px;
+  margin-left: 30px;
+  font-family: "Niconne";
+  font-size: 40px;
+}
+
 #about {
   width: 75%;
   margin: 75px auto;
-
-  #header {
-    width: 100%;
-    margin-top: 60px;
-    margin-bottom: 15px;
-    margin-left: 30px;
-    font-family: "Niconne";
-    font-size: 40px;
-  }
 
   .content {
     background-color: $contrast-bg-color;
@@ -254,6 +256,7 @@ body {
     padding-bottom: 25px;
     padding-left: 50px;
     padding-right: 50px;
+    font-family: "Andika";
     font-size: 25px;
 
     div {
@@ -266,6 +269,10 @@ body {
   background-color: $accent-color;
   width: 100%;
   height: 50px;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
 
   #footer-box {
     @include flex-style(row nowrap, space-around);
@@ -318,6 +325,218 @@ body {
       width: 35px;
       height: 35px;
     }
+  }
+}
+
+/* Error Page  */
+.container-404 {
+ margin: auto;
+ width: 50%;
+ padding: 10px;
+ font-size: 20px;
+ font-family: sans-serif;
+}
+
+.h3 {
+  position-fixed: center;
+}
+
+/* Code Editor */
+.CodeEditor {
+  position: relative;
+}
+
+.CodeEditor-options {
+  margin: 15px;
+  text-align: center;
+  font-size: 20px;
+
+  .select-option {
+    display: block;
+
+    width: 100px;
+    margin: 0 auto;
+
+    option {
+      width: inherit;
+    }
+  }
+
+  button {
+    width: 150px;
+    height: 60px;
+    font-size: 20px;
+  }
+}
+
+.CodeEditor-options select {
+  padding: 3px;
+  margin: 5px;
+}
+
+/* Tag Input */
+.TagInput-label {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+/* ReactTags Styling */
+/* STYLES FOR THE MAIN DIV */
+div.tagsClass {
+  position: relative;
+  margin: 0 auto;
+  border-radius: 10px;
+  height: 100px;
+}
+
+/* STYLES FOR INPUT */
+div.tagInputClass input.tagInputFieldClass {
+  width: inherit;
+  margin: 5px;
+  font-size: 20px;
+  border-radius: 10px;
+  text-indent: 10px;
+}
+
+/* STYLES FOR SELECTED TAGS AND REMOVE BUTTON */
+div.selectedClass span.tagClass {
+  position: relative;
+  border-radius: 10px;
+  background: $primary-color;
+  color: $bg-color;
+  font-size: 20px;
+  display: inline-block;
+  padding: 10px;
+  margin: 5px;
+  cursor: move;
+}
+div.selectedClass a.removeClass {
+  position: relative;
+  padding-left: 10px;
+  color: $font-color;
+  font-size: 20px;
+  height: 50%;
+  margin: 0 auto;
+}
+div.selectedClass a.removeClass:hover {
+  color: green;
+  cursor: pointer;
+}
+
+/* STYLES FOR SUGGESTIONS */
+div.suggestionsClass {
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 2px;
+  margin: 10px 5px;
+  background-color: pink;
+}
+div.suggestionsClass ul {
+  list-style-type: none;
+  display: table-row;
+  background: white;
+  box-shadow: .05em .01em .5em rgba(0,0,0,.2);
+}
+div.suggestionsClass li {
+  padding: 5px 10px;
+  margin: 0;
+}
+div.suggestionsClass li mark {
+  text-decoration: underline;
+  background: none;
+  font-weight: 600;
+}
+div.suggestionsClass ul li.activeSuggestionClass {
+  background: #b7cfe0;
+  cursor: pointer;
+}
+
+/* ERROR */
+.error-msg {
+  width: 75%;
+}
+.error-msg span {
+  font-size: 0.75em;
+  font-weight: bold;
+  color: red;
+  margin-left: 2px;
+}
+.error-msg img {
+  padding: 1px;
+  height: 17px;
+  width: 17px;
+  position: relative;
+  top: 3px;
+}
+
+/* StageForm */
+.stage-form {
+  margin: 20px auto;
+  margin-bottom: 100px;
+  font-family: "Varela Round";
+
+  .header {
+    margin: 0px;
+    text-align: center;
+  }
+}
+
+.formPage {
+  @include flex-style(row nowrap, center);
+  width: 100%;
+  margin-top: 20px;
+
+  form {
+    display: inline-block;
+    border: 1px solid $primary-color;
+    border-radius: 10px;
+    margin: 20px auto;
+    padding: 20px;
+  
+    .link div input {
+      width: 500px;
+      max-width: 85%;
+    }
+
+    .formField {
+      // margin-top: 10px;
+      // margin-bottom: 20px;
+      .thirdpage-input {
+        width: 50%;
+      }
+
+      label {
+        display: block;
+        margin: 5px;
+      }
+
+      input {
+        width: 300px;
+        height: 35px;
+        font-size: 20px;
+        text-indent: 10px;
+      }
+
+      .select-option {
+        margin-bottom: 10px;
+        display: block;
+        width: 75%;
+        height: 35px;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+#thirdPage form {
+  width: 75%;
+  margin: 0 auto;
+
+  textarea {
+    width: 100%;
+    height: 300px;
+    font-size: 20px;
   }
 }
 

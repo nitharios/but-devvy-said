@@ -8,7 +8,7 @@ const validate = values => {
     errors.title = 'Please provide a title!';
   
   } else if (title.length <= 5 ) {
-    errors.title = 'Title must be 6 characters or longer.';
+    errors.title = 'Title too short!';
   }
 
   if(!values.topic) {
