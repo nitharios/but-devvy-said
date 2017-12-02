@@ -16,8 +16,8 @@ module.exports = {
         title : 'What is Big O Notation?',
         tags : ['algorithm', 'efficiency', 'sorting'],
         note : 'Big O Notation is used to describe performance or complexity of an algorithm. It specifically describes the worst case scenario. It can be used to describe the execution time required or the space used. ',
-        example : '',
-        link : '',
+        example : ``,
+        link : 'http://bit.ly/1LdV93M',
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 16 //'big o notation'
@@ -63,7 +63,7 @@ module.exports = {
     //Assign an eventHandler to the button's click event 
     $("button').click(user.clickHandler); `,
 
-        link : null,
+        link : ``,
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 17 //'bind'
@@ -122,7 +122,7 @@ for (var i = 0; i < elements.length; i++) {
 //Outputs : "Ang's primary element is Water" 
 console.log(avatar + "'s primary element is " + element);`,
 
-        link : null,
+        link : ``,
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 18 //'block level scope'
@@ -173,7 +173,7 @@ app.use(multer()); // for parsing multipart/form-data `,
         title : 'Why do we use body parser?',
         tags : ['request', 'http', 'body parser', 'express'],
         note : 'Body parser will extract the body portion of an incoming request and expose it on req.body. It becomes a lot easier to work with the data in the body of a long and complicated request object.',
-        example : null,
+        example : ``,
         link : 'http://bit.ly/2BxQTyH',
         createdAt : new Date(),
         updatedAt : new Date(),
@@ -305,7 +305,7 @@ git branch`,
         tags : ['bubble sort', 'sorting', 'computer science', 'big o notation'],
         note : 'Bubble sort is an algorithm in which each pair of adjacent elements is compared and the elements are swapped if they are not in order. It is typically not suitable for large data sets.',
 
-        example : null,
+        example : ``,
 
         link : 'http://bit.ly/2k2kzxY',
         createdAt : new Date(),
@@ -386,7 +386,7 @@ processUserInput(greeting);`,
         tags : ['function', 'analogy', 'example'],
         note : 'Imagine you are expecting a package in a couple of days. The package is a gift for your neighbor. Therefore, once you get the package, you want it brought over to the neighbors. You are out of town, and so you leave instructions for your spouse. The receiving of the package is like an event, and the instructions to bring the package to the neighbors is the callback.',
 
-        example : null,
+        example : ``,
         link : 'http://bit.ly/2BmwgEJ',
         createdAt : new Date(),
         updatedAt : new Date(),
@@ -416,15 +416,22 @@ processUserInput(greeting);`,
         updatedAt : new Date(),
         topic_id : 25 //'callback function'
       },
+      //MAYBE HAVE 26 - 30
+      //DEMO CLOSURE!!!
+      //DEMO CLOSURE!!!
+      //DEMO CLOSURE!!!
+      //DEMO CLOSURE!!!
+      //DEMO CLOSURE!!!
       {
         name : 'Avinash',
         cohort : 15,
         title : 'What is a closure?',
         tags : ['closure', 'scope', 'private variable'],
-        note : 'A closure is an inner function. A function defined within a function that has access to the outer function variables, its own variables, as well as global variables. It is the Javascript way of enforcing public and private methods or variables.',
+        note : 'A closure is an inner function, or in other words, a function defined within a function that has access to the outer function variables, its own variables, as well as global variables.\n It is the Javascript way of enforcing public and private methods or variables.',
 
-        example : `var a = (function () { 
-  var privateFunction = function () { 
+        example : `
+var a = (function () { 
+var privateFunction = function () { 
     alert('hello');
   }
 
@@ -432,13 +439,13 @@ processUserInput(greeting);`,
     publicFunction : function() { 
       privateFunction();
     }
-  } 
+  };
 })();`,
 
-        link : null,
+        link : `http://bit.ly/1cCr5w8`, //JSisSexy
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 31 //'closure'
+        topic_id : 31 //closure DEMO
       },
       {
         name : 'Asil',
@@ -462,7 +469,7 @@ x(); //alerts 0
 x(); //alerts 1 
 x(); //alerts 2`,
 
-        link : null,
+        link : ``,
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 31 //'closure'
@@ -493,7 +500,7 @@ function functionA() {
 
 functionA();`,
 
-        link : null,
+        link : ``,
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 31 //closure
