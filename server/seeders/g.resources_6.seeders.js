@@ -58,7 +58,7 @@ var arr = [[1,2], [3,4], [5,6]];
 var obj = {a: 1, b: 2, c: 3};
     
 for (const prop in obj) {
-  console.log(obj.${prop} = ${obj[prop]});
+  console.log(obj.prop = obj[prop]);
 }
 
 // Output:
