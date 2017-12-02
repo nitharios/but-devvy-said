@@ -27,6 +27,10 @@ app.use(passport.session());
 
 /* routes */
 app.use('/api', routes);
+app.use('*', (req, res) => {
+  console.log('sanity');
+  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+});
 
 app.listen(PORT, () => {
   db.sequelize.sync({ force : false });
