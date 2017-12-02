@@ -27,52 +27,50 @@ alert("Sum = " + sum); // => Sum = 1275`,
         updatedAt : new Date(),
         topic_id : 66 //for loop
       },
+      {
+        name : 'Jane',
+        cohort : 16,
+        title : 'Nested for loops',
+        tags : ['array', 'for loop', 'control flow'],
+        note : `To work with a 2d-array, or a nested array, you can use a for loop inside a for loop. It will increment the inner until completion, then increment the outer by one and repeat the code for the inner loop.`,
 
-//       {
-//         name : 'Jane',
-//         cohort : 16,
-//         title : 'Nested for loops',
-//         tags : ['array', 'for loop', 'control flow'],
-//         note : `To work with a 2d-array, or a nested array, you can use a for loop inside a for loop. It will increment the inner until completion, then increment the outer by one and repeat the code for the inner loop.`,
+        example : `
+var arr = [[1,2], [3,4], [5,6]];
+    for (var i=0; i < arr.length; i++) {
+        for (var j=0; j < arr[i].length; j++) {
+            console.log(arr[i][j]);
+        }
+    }`,
 
-//         example : `
-// var arr = [[1,2], [3,4], [5,6]];
-//     for (var i=0; i < arr.length; i++) {
-//         for (var j=0; j < arr[i].length; j++) {
-//             console.log(arr[i][j]);
-//         }
-//     }`,
+        link : 'http://bit.ly/2jAWQmh',
+        createdAt : new Date(),
+        updatedAt : new Date(),
+        topic_id : 66 //for loop
+      },
+      {
+        name : 'Ella',
+        cohort : 19,
+        title : 'For in loop is a for loop for objects.',
+        tags : ['objects', 'loops', 'for in'],
+        note : `The for/in statement loops through the properties of an object.\n The block of code inside the loop will be executed once for each property. Use square-brackets to indicate the value for a key.`,
 
-//         link : 'http://bit.ly/2jAWQmh',
-//         createdAt : new Date(),
-//         updatedAt : new Date(),
-//         topic_id : 66 //for loop
-//       },
-//       {
-//         name : 'Ella',
-//         cohort : 19,
-//         title : 'For in loop is a for loop for objects.',
-//         tags : ['objects', 'loops', 'for in'],
-//         note : `The for/in statement loops through the properties of an object.\n The block of code inside the loop will be executed once for each property. Use square-brackets to indicate the value for a key.`,
-
-//         example : `
-// var obj = {a: 1, b: 2, c: 3};
+        example : `
+var obj = {a: 1, b: 2, c: 3};
     
-// for (const prop in obj) {
-//   console.log(obj.${prop} = ${obj[prop]});
-// }
+for (const prop in obj) {
+  console.log(obj.prop = obj[prop]);
+}
 
-// // Output:
-// // "obj.a = 1"
-// // "obj.b = 2"
-// // "obj.c = 3"`,
+// Output:
+// "obj.a = 1"
+// "obj.b = 2"
+// "obj.c = 3"`,
 
-//         link : 'https://mzl.la/1EhWBNV',
-//         createdAt : new Date(),
-//         updatedAt : new Date(),
-//         topic_id : 67 //for in loop
-//       },
-
+        link : 'https://mzl.la/1EhWBNV',
+        createdAt : new Date(),
+        updatedAt : new Date(),
+        topic_id : 67 //for in loop
+      },
       {
         name : 'Jane',
         cohort : 16,
@@ -130,27 +128,32 @@ for (const prop in obj) {
         updatedAt : new Date(),
         topic_id : 68 //framework
       },
+      //DEMO FUNCTION!!
+      //DEMO
+      //DEMO
       {
-        name : '',
-        cohort : 19,
+        name : 'Eric',
+        cohort : 18,
         title : 'What are functions in Javascript?',
         tags : ['function', 'subroutine', 'javascript'],
-        note : `Functions are the bread and butter of JavaScript programming.\n The concept of wrapping a piece of program in a value has many uses.\n It is a tool to structure larger programs, to reduce repetition, to associate names with subprograms, and to isolate these subprograms from each other.`,
+        note : `April 17, 2017 Notes\n What are functions?\n\n - Functions are the bread and butter of JavaScript programming.\n - The concept of wrapping a piece of program in a value has many uses.\n - Functions serve as a tool to structure larger programs, to reduce repetition, to associate names with subprograms, and to isolate these subprograms from each other.`,
+
         example : ``,
+
         link : 'http://bit.ly/2njb2FA',
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 69 //function
+        topic_id : 69 //function #1
       },
       {
-        name : '',
+        name : 'Linda',
         cohort : 19,
         title : 'Functions are first-class objects.',
         tags : ['functions', 'objects', 'first-class', 'arguments'],
-        note : `In JavaScript, functions are objects.\n You can work with functions as if they were objects.\n For example, you can assign functions to variables, to array elements, and to other objects.\n They can also be passed around as arguments to other functions or be returned from those functions.`,
+        note : `August 7, 2017 devleague notes\n Functions are first-class objects\n\n - In JavaScript, functions are objects.\n - You can work with functions as if they were objects.\n - For example, you can assign functions to variables, to array elements, and to other objects.\n - They can also be passed around as arguments to other functions or be returned from those functions.`,
 
         example : `
-//we confirm if a function is indeed an object instance
+//we confirm if a function is an object instance
 function message() {
     alert("Greetings Linda!");
 };
@@ -161,7 +164,73 @@ alert(message instanceof Object);        // logs 'true'`,
         link : `http://bit.ly/2zSS8vd`,
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 69 //function DEMO
+        topic_id : 69 //function #2
+      },
+      {
+        name : 'Nathan',
+        cohort : 19,
+        title : 'Defining and using functions',
+        tags : ['paranthesis', 'parameter', 'argument'],
+        note : `DevLeague Notes March 3, 2017\n Example of defining and using a function\n\n - A JavaScript function is a block of code designed to perform a particular task.\n - The syntax is defined with the 'function' keyword, followed by your chosen name for the function, and then finally a set of parenthesis.\n - The parenthesis list the set of parameters that the function will take in, and work with to produce a new result.`,
+
+        example : `
+// Declare the function myFunc
+function myFunc(theObject) {
+  theObject.brand = "Toyota";
+}
+
+//making a new object for the function to work with later
+var mycar = {
+  brand: "Honda",
+  model: "Accord",
+  year: 1998
+};
+
+console.log(mycar.brand); // logs 'Honda'
+
+//pass myCar into myFunc
+myFunc(mycar);
+
+console.log(mycar.brand); //this will log 'Toyota' after myFunc has done its job!`,
+
+        link : 'https://mzl.la/1ZYScL3',
+        createdAt : new Date(),
+        updatedAt : new Date(),
+        topic_id : 69 //function #3
+      },
+      {
+        name : 'Inca',
+        cohort : 16,
+        title : 'What is functional programming?',
+        tags : ['functional programming', 'paradigm'],
+        note : `May 1, 2017\n DevLeague notes\n What is functional programming?\n\n - Functional programming is the process of building software by composing pure functions, avoiding shared state, mutable data, and side-effects.\n - Functional programming is a programming paradigm, meaning that it is a way of thinking about software construction based on some fundamental, defining principles.`,
+
+        example : ``,
+
+        link : 'http://bit.ly/2qSaxAh',
+        createdAt : new Date(),
+        updatedAt : new Date(),
+        topic_id : 69 //function #4
+      },
+      {
+        name : 'Jordan',
+        cohort : 19,
+        title : 'What is a pure function?',
+        tags : ['pure function', 'function', 'javascript'],
+        note : `DevLeague Notes c19\n What is a pure function?\n\n - Pure functions are all about 'mapping.'\n - For each set of inputs, there exists a directly corresponding output.\n - A pure function will always return the same output given the same input, without any side effects.\n - An example of a 'side effect' is data mutation, or making a HTTP request.`,
+
+        example : `
+//a simple example of a pure function
+
+//calculating the price of a product after tax ALWAYS returns the same output
+function priceAfterTax(productPrice) {
+ return (productPrice * 0.20) + productPrice;
+}`,
+
+        link : 'http://bit.ly/2j8VjnT',
+        createdAt : new Date(),
+        updatedAt : new Date(),
+        topic_id : 69 //function #5
       },
       {
         name : 'Dave',
@@ -214,20 +283,6 @@ myFunction(10, 2); // Will return 20`,
         createdAt : new Date(),
         updatedAt : new Date(),
         topic_id : 72 //function invocation
-      },
-      {
-        name : 'Inca',
-        cohort : 16,
-        title : 'What is functional programming?',
-        tags : ['functional programming', 'paradigm'],
-        note : `Functional programming (often abbreviated FP) is the process of building software by composing pure functions, avoiding shared state, mutable data, and side-effects.\n Functional programming is a programming paradigm, meaning that it is a way of thinking about software construction based on some fundamental, defining principles (listed above).`,
-
-        example : ``,
-
-        link : 'http://bit.ly/2qSaxAh',
-        createdAt : new Date(),
-        updatedAt : new Date(),
-        topic_id : 73 //functional programming
       },
       {
         name : 'Jay',

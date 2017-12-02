@@ -111,12 +111,17 @@ if (string1 instanceof String) {
         updatedAt : new Date(),
         topic_id : 90 //interpreted language
       },
+      //DEMO
+      //DEMO
+      //DEMO
+      //DEMO
+      //DEMO
       {
         name : 'Kyle',
         cohort : 19,
         title : 'What is Javascript?',
         tags : ['javascript', 'language', 'scripting', 'interpreted'],
-        note : `JavaScript is a programming language that allows you to implement complex things on web pages.\n JavaScript is an interpreted language — the code is run from top to bottom and the result of running the code is immediately returned.\n It does not need a compiler like Java or C++.\n All the interactivity you see on a web site is done with Javascript!`,
+        note : `10.11.2017 notes\n What is Javascript?\n\n - JavaScript is a programming language that allows you to implement complex things on web pages.\n - JavaScript is an interpreted language; the code is run from top to bottom and the result of running the code is immediately returned.\n - It does not need a compiler like Java or C++.\n - All the interactivity you see on a web site is done with Javascript.`,
 
         example : `
 //we first start off with script tags, and add code inside!
@@ -142,8 +147,50 @@ for (var i = 0; i < buttons.length ; i++) {
         link : 'http://bit.ly/2Bzb4vT',
         createdAt : new Date(),
         updatedAt : new Date(),
-        topic_id : 92 //JAVASCRIPT .. DEMO
+        topic_id : 92 //javascript #1
       },
+      {
+        name : 'Quince',
+        cohort : 19,
+        title : 'What makes Javascript a powerful language?',
+        tags : ['loosely typed', 'interpreted', 'prototypal'],
+        note : `November 26, 2017\n What makes Javascript powerful?\n\n - Javascript is an extremely flexible language that runs straight out of your browser and has the support of a thriving community and tons of powerful and free frameworks.\n - It is also an interpreted language, meaning there is no time consuming edit-compile-execute cycle to have to contend with.\n - It is also much easier and intuitive to debug than other languages, as you can do it right from your browser!`,
+
+        example : ``,
+
+        link : 'http://bit.ly/2BBfGlb',
+        createdAt : new Date(),
+        updatedAt : new Date(),
+        topic_id : 92 //javascript #2
+      },
+      {
+        name : 'Quince',
+        cohort : 19,
+        title : 'Famous apps built in Javascript.',
+        tags : ['famous web apps', 'javascript', 'nodeJS'],
+        note : `September 19, 2017\n What are some famous web apps that were built with Javascript?\n\n - Polarr was created in Javascript, which is a browser photo editor comparable to the likes of Adobe Lightroom.\n Polarr allows photographers to create and share filters, has amazing UI design that compares to native desktop apps.\n\n - Flowkey is an amazing web app that teaches you how to play piano, using web APIs to access your computer's microphone to respond to you as you play along!\n\n - SoundCloud is another famous web app now one of the most popular platforms for sharing music.\n\n - DuoLingo is something I have used a ton to learn French.\n DuoLingo has over 120 million users and is constantly growing.`,
+
+        example : ``,
+
+        link : 'http://bit.ly/2AqCAMe',
+        createdAt : new Date(),
+        updatedAt : new Date(),
+        topic_id : 92 //javascript #3
+      },
+/*      {
+        name : 'Corey',
+        cohort : 18,
+        title : '',
+        tags : [''],
+        note : `May 16, 2016\n How does Javascript use objects?\n\n - `,
+
+        example : ``,
+
+        link : '',
+        createdAt : new Date(),
+        updatedAt : new Date(),
+        topic_id : 92 //javascript #4
+      },*/
       {
         name : 'Quince',
         cohort : 19,
