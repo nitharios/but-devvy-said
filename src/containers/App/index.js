@@ -60,30 +60,31 @@ class App extends Component {
           Hello, my name is Devvy Cho!
         </div>
 
-        <div id="text-box">
-          <input
-            id="text-input"
-            onChange={ this.handleChange }
-            name="userQuery"
-            placeholder="How can I help you?"
-            type="text" 
-            value={ this.state.userQuery } />
-        </div>
+        <form onSubmit = {this.handleSubmit}>
+          <div id="text-box">
+            <input
+              id="text-input"
+              onChange={ this.handleChange }
+              name="userQuery"
+              placeholder="How can I help you?"
+              type="text" 
+              value={ this.state.userQuery } />
+          </div>
 
-        <div id="button-box">
-          <input
-            className="button"
-            id="go-button"
-            onClick={ this.handleSubmit } 
-            type="button"
-            value="GO" />
-          <input
-            className="button"
-            id="clear-button"
-            onClick={ this.handleClear }
-            type="button"
-            value="CLEAR" />
-        </div>
+          <div id="button-box">
+            <input
+              className="button"
+              id="go-button" 
+              type="submit"
+              value="GO" />
+            <input
+              className="button"
+              id="clear-button"
+              onClick={ this.handleClear }
+              type="button"
+              value="CLEAR" />
+          </div>
+        </form>
 
         { this.props.singleTopic.name
           ? <div className="response-box">Click below to see the information I have!</div>
