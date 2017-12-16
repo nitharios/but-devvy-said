@@ -1,5 +1,3 @@
-/*THIS QUERIES ALL NOTES */
-
 const { Topic, Resource, Note, Example } = require('../../../server/models');
 
 module.exports = function() {
@@ -54,6 +52,4 @@ module.exports = function() {
       next();
     });
   }
-
-
 };
