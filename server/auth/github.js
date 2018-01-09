@@ -1,5 +1,3 @@
-
-
 passport.use(new GitHubStrategy({
     clientID: GITHUB_CLIENT_ID,
     clientSecret: GITHUB_CLIENT_SECRET,
@@ -12,13 +10,19 @@ passport.use(new GitHubStrategy({
   }
 ));
 
-
 app.get('/auth/github',
-  passport.authenticate('github', { scope: [ 'user:email' ] }));
+  passport.authenticate('github', { 
+    scope: [ 'user:email' ] 
+  })
+);
  
 app.get('/auth/github/callback', 
-  passport.authenticate('github', { failureRedirect: '/login' }),
+  passport.authenticate('github', { 
+    failureRedirect: '/login' 
+  }),
+  
   function(req, res, next) {
     // Successful authentication, redirect home.
     res.redirect('/');
-  });
+  }
+);
